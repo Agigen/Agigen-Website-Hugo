@@ -1,0 +1,15 @@
+---
+title: 'FWA Mobile - Bufferbusters'
+author: admin
+layout: post
+permalink: /2011/10/fwa-mobile-bufferbusters/
+categories:
+  - News
+---
+We got awarded a Mobile of the Day award from Favourite Website Awards!
+
+<a href="http://www.thefwa.com/mobile/vodafone-bufferbusters" target="_blank">http://www.thefwa.com/mobile/vodafone-bufferbusters</a>
+
+<!--more-->
+
+Concept and design by North Kingdom, sounds by DinahMoe, the app by Monterosa and the backend by Agigen! Such a great team.

@@ -1,0 +1,17 @@
+{{ template "partials/head.html" . }}
+{{ template "partials/header.html" . }}
+    <div class="grid"><!--
+    {{ range .Site.Sections.work }}
+        --><div class="grid__item one-half">
+
+            <h2>{{ .Page.Title }}</h2>
+
+
+
+
+        </div><!--
+    {{ end }}
+    --></div>
+
+{{ template "partials/footer.html" . }}
+{{ template "partials/foot.html" . }}

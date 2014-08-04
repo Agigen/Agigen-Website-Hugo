@@ -1,0 +1,19 @@
+{
+  "name": "AgigenHugo",
+  "version": "0.0.0",
+  "authors": [
+    "Daniel Mauno Pettersson <daniel@agigen.se>"
+  ],
+  "license": "None",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "inuit.css": "~5.0.1"
+  }
+}

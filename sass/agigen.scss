@@ -1,0 +1,17 @@
+@import "vars";
+@import "bower_components/inuit.css/inuit";
+
+
+@import 'header';
+@import 'footer';
+
+body {
+    margin: 0;
+    padding: 0;
+
+}
+.main-content {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}

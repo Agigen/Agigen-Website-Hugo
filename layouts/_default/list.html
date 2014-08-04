@@ -1,0 +1,16 @@
+{{ template "partials/head.html" . }}
+{{ template "partials/header.html" . }}
+
+<div class="content container">
+
+    Default list view
+
+    <ul class="posts">
+      {{ range .Data.Pages }}
+      <li><span><a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</h4></time></span></span></li>
+      {{ end }}
+    </ul>
+</div>
+
+{{ template "partials/footer.html" . }}
+{{ template "partials/foot.html" . }}

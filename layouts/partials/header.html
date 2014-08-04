@@ -1,0 +1,26 @@
+<header class="main-header">
+    <h1 class="main-header__title"><a href="/">Agigen</a></h1>
+
+    <nav class="main-header__main-menu">
+    <ul class="nav nav--stacked">
+        {{ $currentNode := . }}
+        {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <li class="sub-menu{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                <a href="{{.Url}}" class="">{{ .Pre }}{{ .Name }}</a>
+                <ul class="sub">
+                {{ range .Children }}
+                    <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.Url}}"> {{ .Name }} </a> </li>
+                {{ end }}
+                </ul>
+            {{else}}
+            <li>
+                <a class="" href="{{.Url}}">{{ .Pre }}{{ .Name }}</a>
+            {{end}}
+            </li>
+        {{end}}
+    </ul>
+    </nav>
+</header>
+
+

@@ -1,0 +1,53 @@
+baseurl = "http://agigen.se"
+MetaDataFormat = "json"
+languageCode = "en-us"
+title = "Agigen"
+pluralizeListTitles = false
+
+[indexes]
+  tag = "tags"
+  group = "groups"
+
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 0
+    identifier = "main"
+
+[[menu.main]]
+    name = "Services"
+    url = "/services/"
+    identifier = "services"
+    weight = 100
+
+[[menu.main]]
+    name = "Web Production"
+    parent = "services"
+    url = "/services/web-production"
+
+[[menu.main]]
+    name = "Product development"
+    parent = "services"
+    url = "/services/product-development"
+
+[[menu.main]]
+    name = "Labs"
+    parent = "services"
+    url = "/services/labs"
+
+[[menu.main]]
+    name = "Work"
+    weight = 200
+    url = "/work/"
+
+[[menu.main]]
+    name = "Get in touch"
+    weight = 500
+    url = "/contact/"
+
+[[menu.main]]
+    name = "About us"
+    weight = 400
+    url = "/about/"
+
