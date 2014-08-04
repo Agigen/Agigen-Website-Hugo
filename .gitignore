@@ -1,0 +1,4 @@
+.sass-cache
+public/*
+sass/bower_components/*
+static/css/*
