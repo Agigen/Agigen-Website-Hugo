@@ -6,7 +6,7 @@ For css-changes: Run ./watch-frontend.sh
 
 
 
-For rebuilding the site content: Run ./watch-hugo.sh
+For rebuilding the site content and run a local web server on port 1313: Run ./watch-hugo.sh
 
 
 You require Hugo, a static site generator built in Go.
