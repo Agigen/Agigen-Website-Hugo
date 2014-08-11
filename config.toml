@@ -17,7 +17,6 @@ pluralizeListTitles = false
 
 [[menu.main]]
     name = "Services"
-    url = "/services/"
     identifier = "services"
     weight = 100
 
@@ -25,16 +24,19 @@ pluralizeListTitles = false
     name = "Web Production"
     parent = "services"
     url = "/services/web-production"
+    weight = 100
 
 [[menu.main]]
     name = "Product development"
     parent = "services"
     url = "/services/product-development"
+    weight = 200
 
 [[menu.main]]
     name = "Labs"
     parent = "services"
     url = "/services/labs"
+    weight = 300
 
 [[menu.main]]
     name = "Work"

@@ -6,12 +6,32 @@
 
             <h2>{{ .Page.Title }}</h2>
 
-
-
+            <a href="{{ .Page.Permalink }}" class="btn">{{ .Page.Title }}</a>
 
         </div><!--
     {{ end }}
     --></div>
+
+
+    <hr>
+
+    <p>
+    We currently mostly work with Python and PHP, Amazon EC2 and Google App Engine. HTML5, CSS3, and advanced Javascript is in our blood and we push all our pixels around in Adobe Photoshop.
+    </p>
+
+    <hr>
+
+    <div class="grid"><!--
+    {{ range .Params.clients }}
+        --><div class="grid__item one-quarter">
+
+            {{ . }}
+
+        </div><!--
+    {{ end }}
+    --></div>
+
+
 
 {{ template "partials/footer.html" . }}
 {{ template "partials/foot.html" . }}

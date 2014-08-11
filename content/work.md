@@ -1,7 +1,6 @@
 {
     "title": "Work",
-    "type": "worklist"
+    "type": "worklist",
+    "clients": ["Google", "LEGO", "McDonalds", "Sony", "Nordea", "Carlsberg", "Samsung", "Netflix"]
 }
 
-
-Det vi gjort

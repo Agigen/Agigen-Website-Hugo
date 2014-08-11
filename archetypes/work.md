@@ -1,4 +1,6 @@
 {
     "title": "Our work",
-    "weight": 0
+    "weight": 0,
+    "client": "",
+    "partners": ""
 }

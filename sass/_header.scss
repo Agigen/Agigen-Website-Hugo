@@ -1,8 +1,29 @@
 .main-header {
-    background: #888;
     color: white;
-
+    background: #d91853 url(/img/test-header.jpg) no-repeat top center;
+    min-height: 500px;
     a {
         color: white;
     }
+    .container {
+        margin: 0 auto;
+        max-width: 1200px;
+
+    }
+    &__title {
+        svg {
+            width: 200px;
+            fill: white;
+        }
+    }
+
+    &__main-menu {
+        background: blue;
+        display: none;
+
+        &--expanded {
+            display: block;
+        }
+    }
+
 }
