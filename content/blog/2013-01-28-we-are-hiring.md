@@ -1,5 +1,5 @@
 ---
-title: 'We&#8217;re hiring'
+title: 'We are hiring'
 author: admin
 layout: post
 permalink: /2013/01/we-are-hiring/
