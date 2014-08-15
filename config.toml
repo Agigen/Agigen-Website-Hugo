@@ -19,6 +19,7 @@ pluralizeListTitles = false
     name = "Services"
     identifier = "services"
     weight = 100
+    url = "#"
 
 [[menu.main]]
     name = "Web Production"
@@ -44,12 +45,19 @@ pluralizeListTitles = false
     url = "/work/"
 
 [[menu.main]]
+    name = "About us"
+    weight = 400
+    url = "/about/"
+
+[[menu.main]]
+    name = "Our diary"
+    weight = 450
+    url = "/blog/"
+
+[[menu.main]]
     name = "Get in touch"
     weight = 500
     url = "/contact/"
 
-[[menu.main]]
-    name = "About us"
-    weight = 400
-    url = "/about/"
+
 
