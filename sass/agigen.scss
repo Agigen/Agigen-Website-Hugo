@@ -1,17 +1,20 @@
 @import "vars";
 @import "bower_components/inuit.css/inuit";
 @import "bower_components/bourbon/dist/bourbon";
+@import "resets";
 
-@import 'header';
-@import 'footer';
-
-body {
-    margin: 0;
-    padding: 0;
-
-}
-.main-content {
-    width: 80%;
-    max-width: 1080px;
+.container {
+    width: 90%;
+    max-width: 1170px;
     margin: 0 auto;
 }
+
+.main-content {
+}
+
+
+@import "topbar";
+@import "header";
+@import "footer";
+@import "menu";
+@import "sections";

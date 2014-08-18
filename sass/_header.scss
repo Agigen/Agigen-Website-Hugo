@@ -1,60 +1,6 @@
 .main-header {
     color: white;
     background: #d91853 url(/img/test-header.jpg) no-repeat top center;
-    min-height: 500px;
-    a {
-        color: white;
-    }
-    .container {
-        margin: 0 auto;
-        max-width: 1200px;
-
-    }
-    &__title {
-        svg {
-            width: 200px;
-            fill: white;
-        }
-    }
-
-
-
-}
-
-$main-menu-fontcolor: #fff;
-.main-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #cc0033;
-    z-index: -1;
-    width: 100%;
-    opacity: 0;
-    display: block;
-    font-size: 40px;
-    color: $main-menu-fontcolor;
-    @include transition(opacity 200ms ease);
-
-    &--expanded {
-        z-index: 100;
-        opacity: 1;
-    }
-
-
-    &__grid {
-        margin: 0 auto;
-        max-width: 1000px;
-        width: 80%;
-    }
-
-    &__link {
-        color: $main-menu-fontcolor;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-
-    }
+    height: 80vh;
+    background-size: cover;
 }

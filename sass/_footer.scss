@@ -1,4 +1,10 @@
+$footer-height: 88px;
+
 .main-footer {
-    background: #333;
+    background: #1c1f23;
     margin-top: 100px;
+    height: $footer-height;
+    line-height: $footer-height;
+    color: #fff;
+
 }

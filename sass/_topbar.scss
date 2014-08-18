@@ -1,0 +1,29 @@
+$topbar-height: 44px;
+$topbar-color: #fff;
+
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    height: $topbar-height;
+    line-height: $topbar-height;
+
+    a {
+        color: $topbar-color;
+    }
+    &__title {
+        float: left;
+        svg {
+            width: 200px;
+            height: 28px;
+            fill: white;
+        }
+    }
+
+    &__menu-button {
+        float: right;
+        color: $topbar-color;
+    }
+}
