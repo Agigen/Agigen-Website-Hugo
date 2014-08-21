@@ -74,7 +74,7 @@ $use-greybox:       false;
  $milli-size:        12px!default;
  $micro-size:        10px!default;
 
-
+ $arrow-size: 8px;
 
 .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
     font-family: "proxima-nova";
@@ -95,13 +95,6 @@ $use-greybox:       false;
     text-transform: uppercase;
 }
 
-.btn {
-    text-transform: uppercase;
-    border-width: 2px;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
 
 /*------------------------------------*\
     $CUSTOM

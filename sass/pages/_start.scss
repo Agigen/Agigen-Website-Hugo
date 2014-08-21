@@ -1,5 +1,6 @@
 .section {
     &--start-intro {
+        position: relative;
         @extend .text--center;
         @extend .text--dark;
         &__ingress {
@@ -12,7 +13,18 @@
                 margin: 0 auto;
             }
         }
-
+        &:before {
+            content: "Scrolla!";
+            display: block;
+            background: white;
+            width: 80px;
+            height: 80px;
+            top: -80px;
+            left: 50%;
+            position: absolute;
+            margin-left: -40px;
+            border-radius: 3px 3px 0 0;
+        }
     }
 
     &--start-webprod {
@@ -52,9 +64,12 @@
         @extend .text--light;
         @extend .bgcolor--pink;
 
+        &__ingress {
+            @include arrow(bottom, center, #ffffff)
+        }
+
         &__showcase {
             height: 650px;
-
         }
 
     }
@@ -62,6 +77,10 @@
     &--start-contact {
         @extend .text--center;
         @extend .text--light;
+
+        &__ingress {
+            @include arrow(bottom, center, #ffffff)
+        }
 
         background-color: #252525;
 
