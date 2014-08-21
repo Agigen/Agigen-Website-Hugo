@@ -1,0 +1,56 @@
+.uppercase {
+    text-transform: uppercase;
+}
+
+
+.color {
+    &--pink {
+        color: $color-proddev-pink;
+    }
+    &--blue {
+        color: $color-webprod-blue;
+    }
+}
+.bgcolor {
+    &--pink {
+        background-color: $color-proddev-pink;
+    }
+    &--blue {
+        background-color: $color-webprod-blue;
+    }
+}
+
+
+.beta, .gamma, .delta, .epsilon, .zeta {
+    color: #666;
+}
+
+.alpha {
+    color: #252525;
+}
+.epsilon {
+    color: #999;
+    padding: 10px 0;
+    letter-spacing: 2px;
+}
+.text {
+    &--dark {
+        .beta, .gamma, .delta, .epsilon, .zeta {
+            color: #666;
+        }
+
+        .alpha {
+            color: #252525;
+        }
+        .epsilon {
+            color: #999;
+        }
+    }
+
+    &--light {
+        color: #ffffff;
+        .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+            color: #fff;
+        }
+    }
+}

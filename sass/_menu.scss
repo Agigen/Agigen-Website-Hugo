@@ -1,11 +1,14 @@
 $main-menu-fontcolor: #fff;
 .main-menu {
+    @extend .text--center;
+    text-transform: uppercase;
+
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #cc0033;
+    background: #252525;
     z-index: -1;
     width: 100%;
     opacity: 0;
@@ -13,6 +16,10 @@ $main-menu-fontcolor: #fff;
     font-size: 40px;
     color: $main-menu-fontcolor;
     @include transition(opacity 200ms ease);
+
+    ul {
+        list-style-type: none;
+    }
 
     &--expanded {
         z-index: 100;
@@ -27,14 +34,21 @@ $main-menu-fontcolor: #fff;
     }
 
     &__link {
+        @extend .alpha;
+        display: block;
         color: $main-menu-fontcolor;
+        padding: 30px 0;
         text-decoration: none;
+        line-height: 100%;
         &:hover {
             text-decoration: underline;
         }
 
     }
     &__section-name {
-        font-size: 16px;
+        display: block;
+        border-top: 1px #464646 solid;
+        padding-top: 50px;
+        @extend .epsilon;
     }
 }

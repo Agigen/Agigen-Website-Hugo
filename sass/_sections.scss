@@ -1,3 +1,20 @@
 .section {
+    display: table;
+    width: 100%;
+    height: 30vh;
+    padding: 100px 0;
+    @include media-query(palm){
+        height: auto;
+        padding-top: 70px;
+        padding-bottom: 50px;
+    }
 
+    &__content {
+        display: table-cell;
+        vertical-align: middle;
+    }
 }
+
+@import "pages/web-production";
+@import "pages/product-development";
+@import "pages/start";

@@ -9,12 +9,20 @@
     margin: 0 auto;
 }
 
-.main-content {
+body {
+    font-family: "proxima-nova"
 }
 
+$light_gray: #f0f0f0;
+$color-proddev-pink: #ff0066;
+$color-webprod-blue: #00ccff;
+$color-labs-yellow: #ff9900;
+
+@import "helpers";
 
 @import "topbar";
 @import "header";
 @import "footer";
 @import "menu";
 @import "sections";
+@import "cases";

@@ -3,13 +3,17 @@ $topbar-color: #fff;
 
 .topbar {
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
     background: transparent;
     height: $topbar-height;
     line-height: $topbar-height;
+    h1 {
+        margin: 0;
+        padding: 0;
 
+    }
     a {
         color: $topbar-color;
     }
@@ -25,5 +29,6 @@ $topbar-color: #fff;
     &__menu-button {
         float: right;
         color: $topbar-color;
+        font-size: 28px;
     }
 }

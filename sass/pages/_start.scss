@@ -1,0 +1,83 @@
+.section {
+    &--start-intro {
+        @extend .text--center;
+        @extend .text--dark;
+        &__ingress {
+            padding: 0 0 100px;
+        }
+        &__logos {
+            padding: 120px 0 40px;
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+    }
+
+    &--start-webprod {
+        @extend .text--center;
+        @extend .text--light;
+        @extend .bgcolor--blue;
+
+        .btn {
+            background: white;
+            color: $color-webprod-blue;
+        }
+
+        &__ingress {
+            @include arrow(bottom, center, #ffffff)
+        }
+
+        &__showcase {
+            height: 650px;
+            position: relative;
+
+            &__thingy {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 30px;
+                @include transform(translate(-50%, -50%));
+                @include animation(spin 800ms linear infinite);
+                @include transform-origin(center center);
+
+            }
+        }
+
+    }
+
+    &--start-proddev {
+        @extend .text--center;
+        @extend .text--light;
+        @extend .bgcolor--pink;
+
+        &__showcase {
+            height: 650px;
+
+        }
+
+    }
+
+    &--start-contact {
+        @extend .text--center;
+        @extend .text--light;
+
+        background-color: #252525;
+
+    }
+}
+
+
+@include keyframes(spin) {
+  0% {
+    @include transform(rotate(0deg) scale(1) translate(-50%, -50%));
+  }
+  50% {
+    @include transform(rotate(180deg) scale(2) translate(-50%, -50%));
+
+  }
+  100% {
+    @include transform(rotate(360deg) scale(1) translate(-50%, -50%));
+  }
+}
