@@ -10,6 +10,9 @@
     &--blue {
         color: $color-webprod-blue;
     }
+    &--orange {
+        color: $color-labs-orange;
+    }
 }
 .bgcolor {
     &--pink {
@@ -18,7 +21,22 @@
     &--blue {
         background-color: $color-webprod-blue;
     }
+    &--orange {
+        background-color: $color-labs-orange;
+    }
 }
+
+.btn {
+    text-transform: uppercase;
+    border: 2px white solid;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    &--large {
+        line-height: 3;
+    }
+}
+
 
 
 .beta, .gamma, .delta, .epsilon, .zeta {
