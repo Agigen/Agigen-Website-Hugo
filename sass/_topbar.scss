@@ -7,22 +7,33 @@ $topbar-color: #fff;
     left: 0;
     width: 100%;
     background: transparent;
+    z-index: 1000;
     height: $topbar-height;
     line-height: $topbar-height;
     h1 {
         margin: 0;
         padding: 0;
-
     }
+
     a {
         color: $topbar-color;
     }
     &__title {
         float: left;
         svg {
-            width: 200px;
-            height: 28px;
+            width: auto;
+            height: 30px;
             fill: white;
+        }
+        &:hover {
+            svg {
+            }
+        }
+    }
+
+    &.menu-expanded {
+        .topbar__title:hover svg {
+            @include animation(colorz 4s linear infinite);
         }
     }
 
@@ -30,5 +41,34 @@ $topbar-color: #fff;
         float: right;
         color: $topbar-color;
         font-size: 28px;
+    }
+    svg {
+        path {
+            fill: inherit;
+        }
+    }
+}
+
+
+@include keyframes(colorz) {
+    0%, 100% {
+        fill: #ffffff;
+        color: #ffffff;
+        // @include transform(rotate(0deg));
+    }
+    25% {
+        fill: $color-webprod-blue;
+
+        // @include transform(rotate(90deg));
+    }
+    50% {
+        fill: $color-proddev-pink;
+        // @include transform(rotate(180deg));
+    }
+    75% {
+        // fill: green;
+        fill: $color-labs-orange;
+        // @include transform(rotate(270deg));
+
     }
 }
