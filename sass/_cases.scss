@@ -10,19 +10,57 @@
 
 
 
-
+.fullwidth-case-after {
+    padding-bottom: 240px;
+    &--start-billogram {
+        padding-bottom: 380px;
+    }
+}
 
 .case {
-    &__headline {
+    padding: 50px 0;
+
+
+    &__image {
+        display: block;
+        margin: 30px auto 0;
+    }
+
+    &__headline  {
         font-size: 20px;
+        padding: 20px 0 10px;
+        margin: 0;
     }
     &__title {
         font-size: 18px;
+        padding: 0;
+        margin: 0;
+    }
+    &__ingress {
+        color: #ffffff;
+        padding: 0 0 10px;
+        @include arrow(bottom, center, #ffffff)
     }
 
     &--fullwidth {
         @extend .text--center;
+        .container {
+            margin-top: -170px;
+        }
+        &--billogram {
+            .container {
+                margin-top: -300px;
+            }
+        }
+
     }
+
+
+
+    &__cta {
+        margin: 20px 0 0;
+    }
+
     .btn {
         border-color: #333;
     }
