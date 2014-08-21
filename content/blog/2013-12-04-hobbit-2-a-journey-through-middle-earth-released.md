@@ -2,7 +2,8 @@
 title: 'Hobbit 2 &#8211; A journey through middle earth released'
 author: admin
 layout: post
-permalink: /2013/12/hobbit-2-a-journey-through-middle-earth-released/
+permalink: /blog/2013/12/hobbit-2-a-journey-through-middle-earth-released/
+date: "2014-12-04"
 categories:
   - Work
 ---
@@ -14,7 +15,7 @@ Partners: North Kingdom, Dinahmoe, Plan 8, Schimpanz, More Media
 
 <!--more-->
 
-  
+
 &nbsp;
 
 &nbsp;

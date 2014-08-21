@@ -2,7 +2,8 @@
 title: Swedish Startup Space
 author: admin
 layout: post
-permalink: /2013/10/swedish-startup-space/
+permalink: /blog/2013/10/swedish-startup-space/
+date: "2013-10-12"
 categories:
   - News
 ---

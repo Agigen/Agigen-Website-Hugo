@@ -1,8 +1,9 @@
 ---
-title: Vodafone Bufferbusters
+title: Vodafone Bufferbusters LOL
 author: admin
 layout: post
-permalink: /2011/09/vodafone-bufferbusters/
+permalink: /blog/2011/09/vodafone-bufferbusters/
+date: "2011-09-29"
 categories:
   - Case studies
 ---
@@ -12,7 +13,7 @@ Buffermonster är nämligen små luriga varelser som inte är synliga för blott
 
 <!--more-->
 
-Reklamfilmen för kampanjen som visades på tv och biografer i Tyskland.  
+Reklamfilmen för kampanjen som visades på tv och biografer i Tyskland.
 
 
 Vi på Agigen ansvarade för spelets backend som byggdes i Python och kördes i Google AppEngine för maximal skalbarhet. Totalt genererades det ut ca 1,5 miljoner monsters runt om i Tyskland som lagras i en NoSQL-databas.

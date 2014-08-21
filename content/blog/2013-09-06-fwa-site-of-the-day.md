@@ -2,7 +2,8 @@
 title: FWA Site of the day
 author: admin
 layout: post
-permalink: /2013/09/fwa-site-of-the-day/
+permalink: /blog/2013/09/fwa-site-of-the-day/
+date: "2013-09-06"
 categories:
   - News
 ---

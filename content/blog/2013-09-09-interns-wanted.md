@@ -2,7 +2,8 @@
 title: Interns wanted
 author: admin
 layout: post
-permalink: /2013/09/interns-wanted/
+permalink: /blog/2013/09/interns-wanted/
+date: "2013-09-09"
 categories:
   - Work
 ---

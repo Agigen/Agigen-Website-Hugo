@@ -2,7 +2,8 @@
 title: 'Buick Encore: high scalability behind the Great Firewall of China'
 author: admin
 layout: post
-permalink: /2012/11/buick-encore-high-scalability-behind-the-great-firewall-of-china/
+permalink: /blog/2012/11/buick-encore-high-scalability-behind-the-great-firewall-of-china/
+date: "2012-11-30"
 categories:
   - Backstage
 tags:
@@ -49,8 +50,8 @@ Working with MongoDB in particular has been an interesting experience. It&#8217;
 
 Tornado on the other hand has generally been pretty smooth to work with. It&#8217;s quite easy to roll your own request handling stuff based on its powerful ioloop functionality, but even if you don&#8217;t want to do that, the request handlers it ships with are well designed and polished. Our old friends nginx and memcache are nothing new, of course; there&#8217;s a reason we keep using them everywhere.
 
-More about the project:  
-[Monterosa&#8217;s case page][9]  
+More about the project:
+[Monterosa&#8217;s case page][9]
 [Monterosa press release][10]
 
  [1]: http://monterosa.se

@@ -2,7 +2,8 @@
 title: 'FWA ONLY - The Liberation'
 author: admin
 layout: post
-permalink: /2012/06/fwa-only-the-liberation/
+permalink: /blog/2012/06/fwa-only-the-liberation/
+date: "2012-06-06"
 categories:
   - News
 ---

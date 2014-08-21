@@ -2,7 +2,8 @@
 title: Carlsberg Where is the Party 2013
 author: admin
 layout: post
-permalink: /2013/08/carlsberg-where-is-the-party-2013/
+permalink: /blog/2013/08/carlsberg-where-is-the-party-2013/
+date: "2013-08-22"
 categories:
   - Case studies
 ---
@@ -19,8 +20,8 @@ Together with our friends and longtime partners at North Kingdom, we created Car
 
 ## Project details
 
-Client: North Kingdom  
-End client: Carlsberg  
+Client: North Kingdom
+End client: Carlsberg
 Date: May 2013
 
 ## Links

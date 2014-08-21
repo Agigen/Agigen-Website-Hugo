@@ -2,7 +2,8 @@
 title: Netflix The Flixies
 author: admin
 layout: post
-permalink: /2013/08/netflix-the-flixies/
+permalink: /blog/2013/08/netflix-the-flixies/
+date: "2013-08-22"
 categories:
   - Case studies
 ---

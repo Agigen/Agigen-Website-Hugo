@@ -2,7 +2,8 @@
 title: A new API for Billogram
 author: admin
 layout: post
-permalink: /2013/08/a-new-api-for-billogram/
+permalink: /blog/2013/08/a-new-api-for-billogram/
+date: "2013-08-23"
 categories:
   - News
 ---

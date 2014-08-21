@@ -2,7 +2,8 @@
 title: Happy new year!
 author: admin
 layout: post
-permalink: /2014/01/happy-new-year/
+permalink: /blog/2014/01/happy-new-year/
+date: "2014-01-01"
 categories:
   - News
 ---

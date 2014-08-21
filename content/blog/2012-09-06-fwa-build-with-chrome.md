@@ -2,7 +2,8 @@
 title: 'FWA &#8211; Build with Chrome'
 author: admin
 layout: post
-permalink: /2012/09/fwa-build-with-chrome/
+permalink: /blog/2012/09/fwa-build-with-chrome/
+date: "2012-09-06"
 categories:
   - News
 ---

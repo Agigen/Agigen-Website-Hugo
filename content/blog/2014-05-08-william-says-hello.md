@@ -2,7 +2,8 @@
 title: William says Hello
 author: admin
 layout: post
-permalink: /2014/05/william-says-hello/
+permalink: /blog/2014/05/william-says-hello/
+date: "2014-05-08"
 categories:
   - News
 ---
@@ -11,12 +12,12 @@ categories:
 Den senaste tiden har vi haft förstärkning av William, i normala fall åttondeklassare på Internationella Engelska Skolan.
 
 > &#8220;Jag valde att ha min prao här på grund av att jag har ett stort intresse bland datorer och programmering och det såg roligt ut och det var det.
-> 
+>
 > <!--more-->
-> 
+>
 > Jag har fått göra en hemsida som var ganska svårt på grund av att det var min första men så tur så fick jag hjälp när jag behövde det och jag har lärt mig mycket av det, innan så visste jag bara &#8216;the basics&#8217; av html och css och nu känns det som jag kan otroligt mycket mer.&#8221;
 
-William fick som uppgift av oss att skapa en rolig intern sajt kallad &#8220;Veckans&#8221;.  
+William fick som uppgift av oss att skapa en rolig intern sajt kallad &#8220;Veckans&#8221;.
 Konceptet var att under veckans gång kunna lägga in roliga händelser på kontoret och utanför, för att sedan kunna rösta på dessa händelser för att få fram &#8220;veckans händelse&#8221;, t.ex om någon gjort ett roligt misstag i kod, ramlat och slagit sig (slapstick-humor blir aldrig gammalt) eller om någon kanske sagt en rolig wordpun som fick oss alla att skratta.
 
 Vår designer Max satt tillsammans med William och skissade fram en enkel wireframe till hur sajten skulle se ut och nästan direkt kunde arbetet med frontend-utveckling påbörjas.

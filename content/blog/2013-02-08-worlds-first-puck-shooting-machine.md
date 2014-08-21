@@ -2,7 +2,8 @@
 title: "World's first web-based puck shooting machine"
 author: admin
 layout: post
-permalink: /2013/02/worlds-first-puck-shooting-machine/
+permalink: /blog/2013/02/worlds-first-puck-shooting-machine/
+date: "2013-02-08"
 categories:
   - Backstage
 tags:

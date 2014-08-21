@@ -2,7 +2,8 @@
 title: Build with Chrome behind the scenes
 author: admin
 layout: post
-permalink: /2012/06/build-with-chrome-behind-the-scenes/
+permalink: /blog/2012/06/build-with-chrome-behind-the-scenes/
+date: "2012-06-26"
 categories:
   - Backstage
   - Case studies
@@ -51,9 +52,9 @@ We have also learned more about Google Maps (and more importantly what you canno
 
 ## &#8220;Interesting&#8221; numbers
 
-• Number of different coordinate systems used internally: 5 (latitude/longitude in WGS84 datum, Google Maps tile coordinates, Google Maps tile coordinates with the Y axis inverted, Morton code coordinates, &#8220;Spherical Mercator&#8221; metric coordinates (EPSG:3857))  
-• JS to Python code lines ratio: ~4.8:1 (~16550 lines of JS, 3400 lines of Python; both excluding third-party libraries other than GLOW)  
-• Number of real LEGO kits built during the development process: 4 (including the Death Star, see photo below)  
+• Number of different coordinate systems used internally: 5 (latitude/longitude in WGS84 datum, Google Maps tile coordinates, Google Maps tile coordinates with the Y axis inverted, Morton code coordinates, &#8220;Spherical Mercator&#8221; metric coordinates (EPSG:3857))
+• JS to Python code lines ratio: ~4.8:1 (~16550 lines of JS, 3400 lines of Python; both excluding third-party libraries other than GLOW)
+• Number of real LEGO kits built during the development process: 4 (including the Death Star, see photo below)
 • Number of dragons in the codebase: 3
 
 - Google&#8217;s official post about the project: <a title="http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html" href="http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html" target="_blank">http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html</a>
