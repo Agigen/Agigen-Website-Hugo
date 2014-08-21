@@ -9,13 +9,13 @@
                     <ul class="sub">
                     {{ range .Children }}
                         <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}>
-                        <a href="{{.Url}}" class="main-menu__link main-menu__link--sublink"> {{ .Name }} </a>
+                        <a href="{{.Url}}" class="main-menu__link main-menu__link--sublink main-menu__link--{{.Identifier}}"> {{ .Name }} </a>
                         </li>
                     {{ end }}
                     </ul>
                 {{else}}
                 <li>
-                    <a class="main-menu__link" href="{{.Url}}">{{ .Pre }}{{ .Name }}</a>
+                    <a class="main-menu__link main-menu__link--{{.Identifier}}" href="{{.Url}}">{{ .Pre }}{{ .Name }}</a>
                 {{end}}
                 </li>
             {{end}}

@@ -26,18 +26,22 @@ pluralizeListTitles = false
     parent = "services"
     url = "/services/web-production"
     weight = 100
+    identifier = "webprod"
 
 [[menu.main]]
     name = "Product development"
     parent = "services"
     url = "/services/product-development"
     weight = 200
+    identifier = "proddev"
 
 [[menu.main]]
     name = "Agigen Labs"
     parent = "services"
     url = "/services/labs"
     weight = 300
+    identifier = "labs"
+
 
 [[menu.main]]
     name = "Learn more"
@@ -50,29 +54,33 @@ pluralizeListTitles = false
     weight = 200
     url = "/work/"
     parent = "about"
+    identifier = "cases"
 
 [[menu.main]]
     name = "About us"
     weight = 400
     url = "/about/"
     parent = "about"
+    identifier = "aboutus"
 
 [[menu.main]]
     name = "Our diary"
     weight = 450
     url = "/blog/"
     parent = "about"
+    identifier = "blog"
 
 [[menu.main]]
     name = "Get in touch"
-    identifier = "contact"
+    identifier = "getintouch"
     weight = 500
     url = "#"
 
 [[menu.main]]
     name = "Contact us"
     url = "/contact/"
-    parent = "contact"
+    parent = "getintouch"
+    identifier = "contactus"
 
 
 
