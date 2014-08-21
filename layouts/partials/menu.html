@@ -1,0 +1,24 @@
+<nav class="main-menu" ng-class="{'main-menu--expanded': menuVisible}" ng-click="hideMenu($event)">
+    <section class="main-menu__grid">
+        <ul class="nav nav--stacked">
+            {{ $currentNode := . }}
+            {{ range .Site.Menus.main }}
+                {{ if .HasChildren }}
+                <li class="sub-menu{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+                    <span class="main-menu__section-name">{{ .Pre }}{{ .Name }}</span>
+                    <ul class="sub">
+                    {{ range .Children }}
+                        <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}>
+                        <a href="{{.Url}}" class="main-menu__link main-menu__link--sublink"> {{ .Name }} </a>
+                        </li>
+                    {{ end }}
+                    </ul>
+                {{else}}
+                <li>
+                    <a class="main-menu__link" href="{{.Url}}">{{ .Pre }}{{ .Name }}</a>
+                {{end}}
+                </li>
+            {{end}}
+        </ul>
+    </section>
+</nav>
