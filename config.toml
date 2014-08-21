@@ -34,30 +34,45 @@ pluralizeListTitles = false
     weight = 200
 
 [[menu.main]]
-    name = "Labs"
+    name = "Agigen Labs"
     parent = "services"
     url = "/services/labs"
     weight = 300
 
 [[menu.main]]
-    name = "Work"
+    name = "Learn more"
+    identifier = "about"
+    weight = 300
+    url = "#"
+
+[[menu.main]]
+    name = "Previous Work"
     weight = 200
     url = "/work/"
+    parent = "about"
 
 [[menu.main]]
     name = "About us"
     weight = 400
     url = "/about/"
+    parent = "about"
 
 [[menu.main]]
     name = "Our diary"
     weight = 450
     url = "/blog/"
+    parent = "about"
 
 [[menu.main]]
     name = "Get in touch"
+    identifier = "contact"
     weight = 500
+    url = "#"
+
+[[menu.main]]
+    name = "Contact us"
     url = "/contact/"
+    parent = "contact"
 
 
 
