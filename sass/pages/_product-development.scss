@@ -1,0 +1,19 @@
+.section {
+    &--proddev-definition {
+        background-color: $light_gray;
+
+
+    }
+
+
+    &--proddev-howwework {
+        background-color: $color-proddev-pink;
+        @extend .text--light;
+        @include sneddis(-5, 400px);
+    }
+
+    &--proddev-team {
+        background-color: $light_gray;
+        padding-top: 300px;
+    }
+}

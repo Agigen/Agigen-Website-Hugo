@@ -19,7 +19,7 @@
 
 .case {
     padding: 50px 0;
-
+    display: block;
 
     &__image {
         display: block;
@@ -43,7 +43,7 @@
     }
 
     &--fullwidth {
-        @extend .text--center;
+        text-align: center;
         .container {
             margin-top: -170px;
         }
@@ -66,13 +66,4 @@
     }
 
 
-    &--billogram {
-        background: #6abbb8;
-    }
-    &--yogobe {
-        background: #70b6e6;
-    }
-    &--uppsalastudent {
-        background: #434343;
-    }
 }

@@ -39,7 +39,71 @@
 .case {
     &--fullwidth {
         &--build {
+            position: relative;
+            padding: 0;
+            text-align: left;
+
+            @include transition (background-color 1000ms ease-in 300ms, color 1s ease-in 300ms);
+            .container {
+                position: relative;
+                margin-top: 0;
+                height: 153px;
+                z-index: 10;
+            }
+
+            .case__headline {
+                @extend .gamma;
+            }
             border-bottom: 5px #d8d8d8 solid;
+            .case__image {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+             &:hover {
+                color: white !important;
+                background-color: #000;
+             }
+
+
+             .spaceman {
+                top: 40px;
+                height: 80px;
+                position: absolute;
+                z-index: 5;
+                right: -120px;
+             }
+
+             &:hover .spaceman {
+                @include animation(spaceman 24s linear 1000ms infinite);
+             }
         }
     }
+}
+
+
+@include keyframes(spaceman) {
+  0%, 100% {
+    @include transform(translateX(0) rotate(0deg));
+  }
+  25% {
+    @include transform(translateX(-1500%) rotate(720deg));
+  }
+  50% {
+    @include transform(translateX(-3000%) rotate(1440deg));
+  }
+  75% {
+    @include transform(translateX(-4500%) rotate(2160deg));
+  }
+}
+
+
+@include keyframes(spin) {
+  from{
+    @include transform();
+  }
+  to {
+    @include transform();
+  }
 }
