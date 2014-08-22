@@ -72,3 +72,15 @@
         }
     }
 }
+
+
+.blocklink {
+    height: 300px;
+    color: #fff;
+    background: #252525;
+    line-height: 300px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    @extend .gamma;
+}

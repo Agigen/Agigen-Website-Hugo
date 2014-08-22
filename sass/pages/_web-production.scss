@@ -13,15 +13,33 @@
 
     }
     &--webprod-offer {
-        background-color: #1BC5F5;
+        background: $color-webprod-blue;
         min-height: 850px;
         &__image {
             float: right;
             margin-right: 65px;
         }
     }
-    &--webprod-thin-case {
-        background-color: #95acc8;
+
+    &--webprod-process {
+
     }
+
+    &--webprod-contact {
+        background: $color-webprod-blue;
+        @extend .text--light;
+    }
+
+
+
 }
 
+
+
+.case {
+    &--fullwidth {
+        &--build {
+            border-bottom: 5px #d8d8d8 solid;
+        }
+    }
+}
