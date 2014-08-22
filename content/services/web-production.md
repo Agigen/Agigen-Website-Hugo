@@ -9,7 +9,8 @@
 
             <h2 class="alpha">Our definition</h2>
             <p class="delta">
-                We create websites, facebook apps and basically everything digital for you. During the last five years have specialized in being the perfect fit for ad- and pr-angencies without enough digital competence in house.
+                We create basically everything digital for you; websites, facebook apps and interactive experiences.<br><br>
+                During the last five years we've specialized in becoming the perfect fit for ad- and pr-angencies with a need for digital expertise.
             </p>
         </div>
     </div>
@@ -26,11 +27,13 @@
                 --><div class="grid__item one-half">
                 <h2 class="alpha">Our offer</h2>
                 <p class="delta">
-                    We can help with you as much as you need. We can either start with a brief and deliver a completed product or convert your photoshop files and turn them into state of the art web sites.
+                    Agigen will help you with as much as you want. We can either turn your psd:s into what you envisioned, or create a concept and design with you from scratch.
                 </p>
                 <p class="delta">
-                    We understand the utmost importance of delivering on time and budget, and have a agile aproach in our projects.
+                    We understand the utmost importance of delivering on time and budget, and have an agile approach in all our projects.
                 </p>
+
+
                 </div>
             </div>
         </div>
@@ -49,6 +52,20 @@
 <section class="section">
     <div class="container">
         <h2 class="alpha">A typical case</h2>
+
+
+        * är det möjligt + konkretisera + göra iden bättre + offerera
+
+        * ux + design av koncept + kreativ process
+
+        * produktion + design i nära samarbete
+
+        * kärlek
+
+        * release, alla glada
+
+
+
 
         <p>
         A customer gets in touch about their new project. Usually with a rough time plan and budget. We then give them our feedback and suggestions.
