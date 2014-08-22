@@ -28,10 +28,10 @@
                 --><div class="grid__item one-half">
                 <h2 class="alpha">Our offer</h2>
                 <p class="delta">
-                    Agigen will help you with as much as you want. We can either turn your psd:s into what you envisioned, or create a concept and design with you from scratch.
+                    We like it best when we're as involved as possible, but you can pick and chose where you want our help. We can either turn your psd:s into what you envisioned, or create a concept and design with you from scratch.
                 </p>
                 <p class="delta">
-                    We understand the utmost importance of delivering on time and budget, and have an agile approach in all our projects.
+                    Working by an agile approach we stay changeable and armed with our extensive knowledge of all things web we'll achieve your vision on time and within budget.
                 </p>
 
 
@@ -55,27 +55,27 @@
         <h2 class="alpha">Case A-Z: Working with us explained</h2>
 
         <p>
-        Do you have an idea but you're not exactly sure if it's even possible to achieve? These are the projects where we excel. We'll consider your idea; how to make it real, what could be improved upon and then offer you a budget and a time plan.
+            Do you have an idea but you're not sure if it's even possible to realize? These are the projects where we excel. We'll consider your idea; how to make it real and even better, then offer you a budget and a time plan.
         </p>
 
         <p>
-        If you want, we'll lend you our experience in UX and concept design and together with you create the blueprints of the product. If you'd rather we just produce, we'll take your finished designs and put them to production. Never ones to keep quiet, we'll still probably make suggestions on perceived improvements.
+            If you want, we'll do UX and concept design together with you or if you'd rather we just produce, we'll turn your designs to code. Striving to make the best of everything we'll make suggestions on potential improvements.
         </p>
 
         <p>
-        During our actual production, we make sure to keep in close contact with you, to ensure we're all on the same page. We'll always consider the benefit of a feature versus the time frame together with you to keep the project on time and within budget. The agile approach demands that we rethink design and user experience to accomodate changes made to the product. Design is as much part of our production as producing code is. 
+            During production, we keep in close contact with you; keeping everyone up to speed. When changes are requested we reconsider design and user experience, which makes design as much part of our production as coding is.
         </p>
 
         <p>
-        Tweaking and testing is a constant part of our process, but as the project nears the finish line we of course invest extra into those efforts.
+            Tweaking and testing is a constant part of our process, but as the project nears the finish line we of course invest extra into those efforts.
         </p>
 
         <p>
-        We love it when we have some time left over to lavish affection on a product. It provides for a product with that extra polish and flair.
+            We love it when we have some time left over to lavish affection on a product; fitting it with that extra polish and flair.
         </p>
 
         <p>
-        Last step: release. Bring out the champagne, kick off your shoes and enjoy the happy smiles.
+            Last step: release. Bring out the champagne, kick off your shoes and enjoy the happy faces.
         </p>
 
     </div>
