@@ -43,14 +43,14 @@
 
 <article class="case case--fullwidth case--fullwidth--build">
     <div class="container">
-        <img src="/img/case/start/billogram_screens.png" class="case__image" width="320">
+        <img src="/img/webprod/case-build.png" class="case__image" width="320">
         <p class="case__headline">Build with Chrome <a href="#">View case study</a></p>
-        <h1 class="case__title">Google & LEGO</h1>
+        <h1 class="case__title">Google &amp; LEGO</h1>
     </div>
 </article>
 
 
-<section class="section">
+<section class="section section--webprod-process">
     <div class="container">
         <h2 class="alpha">A typical case</h2>
 
@@ -84,9 +84,9 @@
 </section>
 
 
-<section class="section">
+<section class="section section--webprod-contact">
     <div class="container text--center">
-        <h2 class="beta">We have helped companies like Google, Sony and Samsung during our years. We’d love to help you too.</h2>
+        <h2 class="delta">We have helped companies like Google, Sony and Samsung during our years. We’d love to help you too.</h2>
         <a href="btn">Get in touch</a>
     </div>
 </section>
@@ -125,6 +125,7 @@
 
 
 
+<a href="/work/" class="blocklink">See all of our <strong>work &raquo;</strong></a>
 
 
 
