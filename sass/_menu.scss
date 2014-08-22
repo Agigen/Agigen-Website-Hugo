@@ -1,4 +1,9 @@
 $main-menu-fontcolor: #f0f0f0;
+html, body {
+    min-height: 100%;
+    position: relative;
+}
+
 .main-menu {
     @extend .text--center;
     text-transform: uppercase;
@@ -10,20 +15,26 @@ $main-menu-fontcolor: #f0f0f0;
 
     padding-top: 120px;
 
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: -1;
+    pointer-events: none;
     width: 100%;
+    min-height: 100%;
+
     background: #252525;
 
-    opacity: 0;
+    opacity: 1;
     display: block;
 
-    @include transition(opacity 200ms ease);
-    overflow: auto;
+    @include transition(opacity 200ms ease, transform 400ms ease);
+
+
+    @include transform-origin(right top);
+    @include transform(skew(-90deg));
 
     ul, li {
         margin: 0;
@@ -32,8 +43,13 @@ $main-menu-fontcolor: #f0f0f0;
     }
 
     &--expanded {
+        pointer-events: auto;
+
+        @include transition(opacity 200ms ease, transform 400ms ease);
+
         z-index: 100;
         opacity: 1;
+        @include transform(skew(0deg));
     }
 
 

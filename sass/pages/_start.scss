@@ -1,7 +1,18 @@
 .section {
+    &--start {
+        @extend .text--center;
+        &__ingress {
+            @include arrow(bottom, center, #ffffff)
+        }
+        &__copy {
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
     &--start-intro {
         position: relative;
-        @extend .text--center;
         @extend .text--dark;
         &__ingress {
             padding: 0 0 100px;
@@ -28,17 +39,12 @@
     }
 
     &--start-webprod {
-        @extend .text--center;
         @extend .text--light;
         @extend .bgcolor--blue;
 
         .btn {
             background: white;
             color: $color-webprod-blue;
-        }
-
-        &__ingress {
-            @include arrow(bottom, center, #ffffff)
         }
 
         &__showcase {
@@ -60,13 +66,8 @@
     }
 
     &--start-proddev {
-        @extend .text--center;
         @extend .text--light;
         @extend .bgcolor--pink;
-
-        &__ingress {
-            @include arrow(bottom, center, #ffffff)
-        }
 
         &__showcase {
             height: 650px;
@@ -77,10 +78,6 @@
     &--start-contact {
         @extend .text--center;
         @extend .text--light;
-
-        &__ingress {
-            @include arrow(bottom, center, #ffffff)
-        }
 
         background-color: #252525;
 
