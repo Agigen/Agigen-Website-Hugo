@@ -12,12 +12,17 @@
 body {
     font-family: "proxima-nova"
 }
+.main-content {
+    overflow-x: hidden;
+}
 
 $light_gray: #f0f0f0;
 $color-proddev-pink: #ff0066;
 $color-webprod-blue: #00ccff;
 $color-labs-orange: #ff9900;
 
+
+@import "mixins";
 @import "helpers";
 
 @import "topbar";
@@ -26,3 +31,6 @@ $color-labs-orange: #ff9900;
 @import "menu";
 @import "sections";
 @import "cases";
+
+
+

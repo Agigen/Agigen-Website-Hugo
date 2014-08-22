@@ -1,0 +1,14 @@
+@mixin sneddis($degrees) {
+    position: relative;
+    &:after {
+        content: " ";
+        display: block;
+        background-color: inherit;
+        width: 200%;
+        height: 100px;
+        position: absolute;
+        bottom: -50px;
+        left: -50%;
+        @include transform(rotate(#{$degrees}deg));
+    }
+}

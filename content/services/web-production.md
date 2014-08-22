@@ -16,13 +16,14 @@
     </div>
 </section>
 
-
 <section class="section section--webprod-offer">
     <div class="section__content">
         <div class="container text--light">
-            <div class="grid grid--rev">
-                <div class="grid__item one-half">
-                    Tja
+            <div class="grid">
+                <div class="grid__item one-half text--right">
+
+                    <img src="/img/webprod/screen-with-chrome.png" class="section--webprod-offer__image" width="747">
+
                 </div><!--
                 --><div class="grid__item one-half">
                 <h2 class="alpha">Our offer</h2>

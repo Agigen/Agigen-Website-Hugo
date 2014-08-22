@@ -9,9 +9,16 @@
 .section {
     &--webprod-definition {
         background-color: $light_gray;
+        @include sneddis(-2);
+
     }
     &--webprod-offer {
         background-color: #1BC5F5;
+        min-height: 850px;
+        &__image {
+            float: right;
+            margin-right: 65px;
+        }
     }
     &--webprod-thin-case {
         background-color: #95acc8;
