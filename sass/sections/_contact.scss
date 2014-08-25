@@ -1,0 +1,28 @@
+.contactways {
+    color: #656565;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    dt, dd {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__label {
+        font-size: 16px;
+        font-weight: bold;
+        &--left {
+            text-align: right;
+        }
+    }
+    &__action {
+        &--left {
+            text-align: right;
+        }
+        font-size: 40px;
+        a {
+            color: #33cbff;
+        }
+    }
+
+}

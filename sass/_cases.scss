@@ -42,6 +42,14 @@
         @include arrow(bottom, center, #ffffff)
     }
 
+    &__cta {
+        margin: 20px 0 0;
+    }
+
+    .btn {
+        border-color: #333;
+    }
+
     &--fullwidth {
         text-align: center;
         .container {
@@ -54,16 +62,57 @@
         }
 
     }
+    &--thin {
+      padding: 0;
+      position: relative;
+      padding: 0;
+      text-align: left;
+      border-bottom: 5px #d8d8d8 solid;
 
+      .container {
+        position: relative;
+        margin-top: 0;
+        height: 153px;
+        z-index: 10;
+      }
 
+      .case__headline {
+        @extend .gamma;
+        color: inherit;
+      }
 
-    &__cta {
-        margin: 20px 0 0;
-    }
+      .case__image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
 
-    .btn {
-        border-color: #333;
-    }
+      &:hover {
+        color: white !important;
+        background-color: #000;
+      }
 
+      &--build {
+        @include transition (background-color 1000ms ease-in 300ms, color 1s ease-in 300ms);
+        .spaceman {
+          top: 40px;
+          height: 80px;
+          position: absolute;
+          z-index: 5;
+          right: -120px;
+        }
+
+        &:hover .spaceman {
+          @include animation(spaceman 24s linear 1000ms infinite);
+        }
+      } // &--build
+
+      &--billogram {
+        background: #6abbb8;
+        color: white;
+        border-bottom: 0;
+      }
+
+    } // &--thin
 
 }

@@ -1,9 +1,33 @@
-$footer-height: 88px;
 
 .main-footer {
-    background: #1c1f23;
-    height: $footer-height;
-    line-height: $footer-height;
+    background: #252525;
+    height: 80px;
+    padding: 20px 0;
+    line-height: 40px;
     color: #fff;
 
+    @extend .epsilon;
+    &__title {
+        svg {
+            height: 35px;
+            width: auto;
+            fill: white;
+        }
+        float: left;
+        display: inline-block;
+    }
+    &__links {
+        text-align: right;
+        text-transform: uppercase;
+    }
+    &__link {
+        display: inline-block;
+        margin: 0 20px;
+
+        &--bordered {
+            border-radius: 3px;
+            padding: 0 15px;
+            border: 2px #fff solid;
+        }
+    }
 }

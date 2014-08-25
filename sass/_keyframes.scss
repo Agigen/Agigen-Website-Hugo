@@ -1,0 +1,24 @@
+@include keyframes(spaceman) {
+  0%, 100% {
+    @include transform(translateX(0) rotate(0deg));
+  }
+  25% {
+    @include transform(translateX(-1500%) rotate(720deg));
+  }
+  50% {
+    @include transform(translateX(-3000%) rotate(1440deg));
+  }
+  75% {
+    @include transform(translateX(-4500%) rotate(2160deg));
+  }
+}
+
+
+@include keyframes(spin) {
+  from{
+    @include transform();
+  }
+  to {
+    @include transform();
+  }
+}

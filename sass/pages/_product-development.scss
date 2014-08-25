@@ -1,3 +1,11 @@
+.page {
+    &--product-development {
+        .main-header {
+            background: $color-proddev-pink;
+        }
+    }
+}
+
 .section {
     &--proddev-definition {
         background-color: $light_gray;
@@ -15,5 +23,23 @@
     &--proddev-team {
         background-color: $light_gray;
         padding-top: 300px;
+    }
+
+    &--proddev-contact {
+        min-height: 450px;
+        background: $color-proddev-pink;
+        color: white;
+    }
+
+    &--proddev-cases {
+        img {
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        .btn {
+            margin-top: 30px;
+            border-color: #333;
+        }
     }
 }
