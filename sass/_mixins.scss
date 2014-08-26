@@ -1,4 +1,4 @@
-@mixin sneddis($degrees, $height:100px) {
+@mixin sneddis($degrees, $height:100px, $background-color:"inherit") {
     position: relative;
     .container {
         position: relative;
@@ -7,7 +7,7 @@
     &:after {
         content: " ";
         display: block;
-        background-color: inherit;
+        background-color: $background-color;
         width: 200%;
         height: $height;
         position: absolute;

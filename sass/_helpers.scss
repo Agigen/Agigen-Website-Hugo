@@ -51,6 +51,9 @@
     padding: 10px 0;
     letter-spacing: 2px;
 }
+.delta {
+    line-height: 1.5;
+}
 .text {
     &--dark {
         .beta, .gamma, .delta, .epsilon, .zeta {
@@ -83,6 +86,10 @@
     width: 100%;
     display: block;
     @extend .gamma;
+    &--work {
+        background: #252525 url(/img/work-texture.jpg) no-repeat center center;
+        background-size: cover;
+    }
 }
 
 .text-wrapper {
