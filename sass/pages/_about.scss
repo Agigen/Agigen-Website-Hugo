@@ -1,0 +1,29 @@
+.team-member {
+    text-align: center;
+    padding-top: 70px;
+    &__photoframe {
+        width: 276px;
+        height: 276px;
+        border-radius: 138px;
+        overflow: hidden;
+        display: block;
+        margin: 0 auto;
+    }
+    &__photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    &__name {
+        padding-top: 20px;
+    }
+    &__title {
+        padding-top: 20px;
+        color: #656565;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+
