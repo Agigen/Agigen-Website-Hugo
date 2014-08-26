@@ -8,12 +8,13 @@
 
 .section {
     &--webprod-definition {
-        background-color: $light_gray;
-        @include sneddis(-2);
+        background-color: white;
+        @include sneddis(-2, 100px, white);
 
     }
     &--webprod-offer {
-        background: $color-webprod-blue;
+        background: $color-webprod-blue url(/img/webprod/blue-texture-retina.jpg) no-repeat top center;
+        backgorund-size: cover;
         min-height: 850px;
         &__image {
             float: right;
@@ -26,8 +27,36 @@
     }
 
     &--webprod-contact {
-        background: $color-webprod-blue;
+        background: $color-webprod-blue url(/img/webprod/contact-texture.jpg) no-repeat center center;
+        background-size: cover;
         @extend .text--light;
+    }
+
+    &--webprod-case {
+        .btn {
+            border-color: #333;
+        }
+        &--samsung {
+            @include sneddis(-9, 380px, white);
+            padding-bottom: 0;
+            height: auto;
+            min-height: 300px;
+            display: block;
+            &__illustration {
+                position: absolute;
+                right: 0;
+                bottom: -150px;
+            }
+        }
+        &--sj {
+            padding-top: 300px;
+            background: #f0f0f0;
+            .container {
+                position: relative;
+                z-index: 5;
+            }
+        }
+        &--carlsberg {}
     }
 }
 
