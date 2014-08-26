@@ -1,35 +1,114 @@
 {{ template "partials/head.html" . }}
-{{ template "partials/header.html" . }}
-    <div class="grid"><!--
-    {{ range .Site.Sections.work }}
-        --><div class="grid__item one-half">
+{{ template "partials/menu.html" . }}
+{{ template "partials/topbar.html" . }}
 
-            <h2>{{ .Page.Title }}</h2>
+<h1 class="accessibility">Our work</h1>
+<header class="main-header main-header--work">
+    <div class="main-header__content">
+        <div class="container">
+            <h3>Featured case</h3>
+            <h2>Build with Chrome</h2>
+            <p>Google teamed up with Warner Bros and LEGO to showcase the LEGO Movie and the WebGL capacities in Chrome.</p>
 
-            <a href="{{ .Page.Permalink }}" class="btn">{{ .Page.Title }}</a>
+            <a href="#" class="btn">View case study</a>
+            <a href="#" class="btn">Visit website</a>
+        </div>
+    </div>
+</header>
+<div class="main-content">
 
-        </div><!--
-    {{ end }}
-    --></div>
+<section class="section">
+    <div class="section__content">
+        <div class="container text--center">
+            <p class="beta">We’ve recieved some amazing awards during the years.</p>
+        </div>
+    </div>
+</section>
 
 
-    <hr>
 
-    <p>
-    We currently mostly work with Python and PHP, Amazon EC2 and Google App Engine. HTML5, CSS3, and advanced Javascript is in our blood and we push all our pixels around in Adobe Photoshop.
-    </p>
+<section class="case case--list case--list--samsung">
+    <div class="container">
+        <h3 class="epsilon">Youneedtoseethisapp.com</h3>
+        <h2 class="alpha">Samsung Tab S</h2>
+        <p class="delta">Search for details hidden in gigapixel photos of Stockholm, Helsinki, Copenhagen and Oslo.</p>
+    </div>
+</section>
 
-    <hr>
+<section class="case case--list case--list--sj">
+    <div class="container">
 
-    <div class="grid"><!--
-    {{ range .Params.clients }}
-        --><div class="grid__item one-quarter">
+        <div class="grid">
+            <div class="grid__item one-half">
 
-            {{ . }}
+            </div><!--
+            --><div class="grid__item one-half">
+                <h3 class="epsilon">Swedish railways</h3>
+                <h2 class="alpha">Beta SJ.SE</h2>
+                <p class="delta">Together with POND we've helped develop the first concept of what will come to be the new web for SJ.se</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        </div><!--
-    {{ end }}
-    --></div>
+<section class="case case--list case--list--carlsberg">
+    <div class="container text--center">
+        <h3 class="epsilon">Carlsberg</h3>
+        <h2 class="alpha">Where's the party</h2>
+        <div class="text-wrapper">
+            <p class="delta">Together with North Kingdom, we created Carlsberg’s Where’s the Party 2013 campaign, featuring Axwell of Swedish House Mafia fame.</p>
+        </div>
+    </div>
+</section>
+
+<section class="case case--list case--list--billogram">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-half">
+
+            </div><!--
+            --><div class="grid__item one-half">
+                <h3 class="epsilon">Invoicing in the cloud</h3>
+                <h2 class="alpha">Billogram</h2>
+                <p class="delta">Search for details hidden in gigapixel photos of Stockholm, Helsinki, Copenhagen and Oslo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="archives">
+    <div class="container">
+        <div class="text--center">
+            <h2 class="epsilon">Archives</h2>
+            <h3 class="alpha">The past glory</h3>
+        </div>
+
+        <div class="grid"><!--
+        {{ range .Site.Sections.work }}
+            --><div class="grid__item one-half">
+
+                <article class="archive-case">
+                    <h3 class="archive-case__tagline">Networks society</h3>
+                    <h2 class="archive-case__title">{{ .Page.Title }}</h2>
+
+                    <a href="{{ .Page.Permalink }}" class="btn">{{ .Page.Title }}</a>
+                </article>
+
+            </div><!--
+        {{ end }}
+        --></div>
+    </div>
+</section>
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,35 @@
+.main-header--work {
+    background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
+}
+
+.case--list {
+    @extend .text--light;
+    &--samsung {
+        background: #232120;
+    }
+    &--sj {
+        background: #1c92bf;
+    }
+    &--carlsberg {
+        background: #1c110f;
+    }
+    &--billogram {
+        background: #6abbb8;
+    }
+}
+
+
+.archive-case {
+    min-height: 300px;
+    display: block;
+    background: #f0f0f0;
+    margin-bottom: 24px;
+    @extend .text--center;
+
+    &__title {
+
+    }
+    &__tagline {
+
+    }
+}
