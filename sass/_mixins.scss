@@ -17,3 +17,23 @@
         z-index: 1;
     }
 }
+
+@mixin sneddisTop($degrees, $height:100px, $background-color:"inherit") {
+    position: relative;
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        background-color: $background-color;
+        width: 200%;
+        height: $height;
+        position: absolute;
+        top: -$height/2;
+        left: -50%;
+        @include transform(rotate(#{$degrees}deg));
+        z-index: 1;
+    }
+}

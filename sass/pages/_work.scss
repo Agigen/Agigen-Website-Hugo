@@ -1,21 +1,61 @@
 .main-header--work {
     background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
+    @extend .text--light;
+    .text-wrapper {
+        max-width: 60%;
+    }
 }
 
 .case--list {
     @extend .text--light;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     &--samsung {
-        background: #232120;
+        background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
+        padding-top: 190px;
+        min-height: 660px;
+
+        &__illustration {
+            position: absolute;
+            right: -650px;
+            bottom: -155px;
+            z-index:100;
+        }
     }
     &--sj {
-        background: #1c92bf;
+        background: #1d93c0 url(/img/work/sj-bg.jpg) no-repeat bottom center;
+        padding-top: 120px;
+        padding-bottom: 100px;
+        position: relative;
+
+        &__illustration {
+            position: absolute;
+            left: 0;
+            top: -200px;
+            z-index:100;
+        }
+
+
+        @include sneddisTop(-4, 175px, #3698C9);
+
     }
     &--carlsberg {
-        background: #1c110f;
+        padding: 180px 0 250px;
+        background: #1c110f url(/img/work/carlsberg-bg.jpg) no-repeat center center;
+        background-size: cover;
+
     }
     &--billogram {
+        @include sneddisTop(-4, 180px, #6abbb8);
+
         background: #6abbb8;
+        min-height: 400px;
     }
+}
+
+.archives {
+    padding-top: 100px;
 }
 
 
