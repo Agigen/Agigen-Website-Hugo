@@ -22,10 +22,6 @@
         }
     }
 
-    &--webprod-process {
-
-    }
-
     &--webprod-contact {
         background: $color-webprod-blue url(/img/webprod/contact-texture.jpg) no-repeat center center;
         background-size: cover;
@@ -58,5 +54,115 @@
         }
         &--carlsberg {}
     }
+    &--webprod-process {
+        .container {
+            height: 1800px;
+            transition: height 600ms ease-in-out 300ms;
+        }
+        &--small {
+            .container {
+                @include transition (height 600ms ease-in-out 300ms);
+                height: 990px;
+            }
+        }
+    }
 }
 
+
+
+.webprod-process {
+    position: relative;
+    font-size: 20px;
+    &__timeline {
+        position: relative;
+        margin-top: -200px;
+        height: 1800px;
+        width: 100%;
+        &--small {
+            margin-top: 150px;
+            height: 1000px;
+        }
+    }
+    &__point {
+        opacity: 0;
+        @include transition (opacity 300ms ease-in, transform 600ms ease-in-out);
+        &--1 {
+            opacity: 1;
+        }
+        &--2 {
+            &-up {
+                transform: translateY(-30px);
+            }
+        }
+        &--3 {
+            &-up {
+                transform: translateY(-58px);
+            }
+        }
+        &--4 {
+            &-up {
+                transform: translateY(-85px);
+            }
+        }
+        &--5 {
+            &-up {
+                transform: translateY(-111px);
+            }
+        }
+        &--6 {
+            &-up {
+                transform: translateY(-136px);
+            }
+        }
+    }
+    &__step {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 80px;
+        width: 380px;
+        text-align: left;
+        color: #676767;
+        opacity: 0;
+        @include transition (opacity 300ms ease-in, top 600ms ease-in-out, transform 600ms ease-in-out);
+        &--1 {
+            width: 460px;
+            left: 340px;
+            text-align: center;
+            opacity: 1;
+        }
+        &--2 {
+            left: 680px;
+            top: 370px;
+            &-up {
+                transform: translateY(-170px);
+            }
+        }
+        &--3 {
+            top: 670px;
+            &-up {
+                transform: translateY(-345px);
+            }
+        }
+        &--4 {
+            left: 680px;
+            top: 965px;
+            &-up {
+                transform: translateY(-484px);
+            }
+        }
+        &--5 {
+            top: 1260px;
+            &-up {
+                transform: translateY(-642px);
+            }
+        }
+        &--6 {
+            left: 680px;
+            top: 1545px;
+            &-up {
+                transform: translateY(-774px);
+            }
+        }
+    }
+}
