@@ -83,39 +83,6 @@ $time_between_points: 800ms;
     }
 }
 
-@include keyframes(proddevprocess) {
-    0% {
-      stroke-dashoffset: 1221;
-    }
-    20% {
-        stroke-dashoffset: 977;
-    }
-    40% {
-        stroke-dashoffset: 733;
-    }
-    60% {
-        stroke-dashoffset: 489;
-    }
-    80% {
-        stroke-dashoffset: 245;
-    }
-    100% {
-      stroke-dashoffset: 0;
-    }
-}
-
-@include keyframes(processpoint) {
-    0% {
-        @include transform(scale(0.2));
-    }
-    80% {
-        @include transform(scale(1.5));
-    }
-    100% {
-        @include transform(scale(1));
-    }
-}
-
 .section {
     &--proddev-definition {
         background-color: whiite;

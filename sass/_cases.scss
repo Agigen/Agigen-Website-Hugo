@@ -93,7 +93,10 @@
       }
 
       &--build {
-        @include transition (background-color 1000ms ease-in 300ms, color 1s ease-in 300ms);
+        background: #2466bd;
+        color:#fff;
+        border-bottom:0;
+        @include transition (background-color 1000ms ease-in 300ms);
         .spaceman {
           top: 40px;
           height: 80px;
@@ -103,7 +106,7 @@
         }
 
         &:hover .spaceman {
-          @include animation(spaceman 24s linear 1000ms infinite);
+          @include animation(spaceman 12s linear 1000ms infinite);
         }
       } // &--build
 
