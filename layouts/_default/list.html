@@ -2,7 +2,8 @@
 {{ template "partials/header.html" . }}
 
 <div class="content container">
-    <ul id="all-tags">
+
+    <ul class="categories nav nav--banner">
       {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
           <li><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
       {{ end }}

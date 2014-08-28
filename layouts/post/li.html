@@ -1,11 +1,15 @@
 <li>
     <article class="post">
-        <figure class="post__imagewrapper">
+        <a class="post__imagewrapper" href="{{ .Permalink }}">
             <img src="http://placekitten.com/300/300" class="post__image">
-        </figure>
+        </a>
         <div class="post__wrapper">
             <header>
-                <span class="post__category">Category</span>
+                <span class="post__category">
+                    {{ range .Params.categories }}
+                      <a href="tags/{{ . | urlize }}" class="post__category-link post__category-link--{{ . | urlize }}">{{ . }}</a>
+                    {{ end }}
+                </span>
                 <time class="post__time">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
             </header>
             <h2 class="post__title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>

@@ -1,3 +1,7 @@
+.page--blogs .main-header {
+    height: 30vh;
+}
+
 .posts {
     list-style: none;
     margin: 0 auto;
@@ -5,9 +9,17 @@
     @extend .eight-tenths;
 }
 
+.categories {
+    padding: 60px 0 0;
+    @extend .epsilon;
+    li {
+        padding: 0 10px;
+    }
+}
+
 .post {
     min-height: 228px;
-    border-bottom: 1px gray solid;
+    border-bottom: 1px #d9d9d9 solid;
     padding: 60px 30px;
     &__imagewrapper {
         width: 160px;
@@ -27,6 +39,9 @@
     &__category {
         @extend .epsilon;
         color: $color-proddev-pink;
+        &--news {
+            color: blue;
+        }
     }
     &__time {
         @extend .epsilon;
