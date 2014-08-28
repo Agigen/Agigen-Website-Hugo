@@ -85,8 +85,11 @@ $push: true;
     font-weight: 700;
     padding-bottom: 20px;
 }
-
+.beta {
+}
 .beta, .gamma {
+    padding-bottom: 20px;
+
     font-weight: 300;
 }
 
