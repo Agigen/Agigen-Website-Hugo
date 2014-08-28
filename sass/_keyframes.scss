@@ -61,3 +61,18 @@
         @include transform(scale(1));
     }
 }
+
+@include keyframes(colorz) {
+    0% {
+        fill: #ffffff;
+    }
+    25% {
+        fill: $color-webprod-blue;
+    }
+    50% {
+        fill: $color-proddev-pink;
+    }
+    75% {
+        fill: $color-labs-orange;
+    }
+}
