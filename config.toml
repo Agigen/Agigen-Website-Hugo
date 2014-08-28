@@ -8,6 +8,8 @@ pluralizeListTitles = false
   tag = "tags"
   group = "groups"
 
+[Taxonomies]
+    category = "categories"
 
 [[menu.main]]
     name = "Home"
