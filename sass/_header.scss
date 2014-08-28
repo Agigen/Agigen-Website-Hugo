@@ -2,14 +2,30 @@
     @extend .text--center;
     width: 100%;
     background: #d91853 no-repeat top center;
-    height: 80vh;
+    height: 75vh;
     padding: 0;
     background-size: cover;
     display: table;
     color: #fff;
+    overflow: hidden;
+    position: relative;
     &__content {
         display: table-cell;
         vertical-align: middle;
+        position: relative;
+        z-index: 10;
     }
-
+    &__video {
+        z-index: 5;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+        max-height: none;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.15;
+    }
 }
