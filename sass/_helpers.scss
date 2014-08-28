@@ -1,7 +1,12 @@
 .uppercase {
     text-transform: uppercase;
 }
-
+.illustration-wrapper {
+    position: relative;
+    img {
+        max-width: none;
+    }
+}
 
 .color {
     &--pink {
@@ -35,6 +40,17 @@
     margin: 10px;
     &--large {
         line-height: 3;
+    }
+    &--nomargin {
+        margin: 0;
+        &--left {
+            margin-left: 0;
+        }
+    }
+    @include transition(all 250ms ease);
+    &:hover {
+        background-color: white;
+        color: black;
     }
 }
 
