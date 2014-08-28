@@ -16,6 +16,12 @@
     }
     &__name {
         padding-top: 20px;
+        span {
+            display: none;
+        }
+        img {
+            width: 280px;
+        }
     }
     &__title {
         padding-top: 20px;
