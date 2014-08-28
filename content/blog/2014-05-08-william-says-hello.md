@@ -1,7 +1,5 @@
 ---
 title: William says Hello
-author: admin
-layout: post
 permalink: /blog/2014/05/william-says-hello/
 date: "2014-05-08"
 categories:

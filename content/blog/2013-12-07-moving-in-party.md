@@ -1,7 +1,5 @@
 ---
 title: Moving in party
-author: admin
-layout: post
 permalink: /blog/2013/12/moving-in-party/
 date: "2013-12-07"
 categories:

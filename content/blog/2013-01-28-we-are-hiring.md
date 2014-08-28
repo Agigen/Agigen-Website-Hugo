@@ -1,7 +1,5 @@
 ---
 title: 'We are hiring'
-author: admin
-layout: post
 permalink: /blog/2013/01/we-are-hiring/
 date: "2013-01-28"
 categories:

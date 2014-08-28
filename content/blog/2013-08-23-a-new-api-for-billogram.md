@@ -1,7 +1,5 @@
 ---
 title: A new API for Billogram
-author: admin
-layout: post
 permalink: /blog/2013/08/a-new-api-for-billogram/
 date: "2013-08-23"
 categories:

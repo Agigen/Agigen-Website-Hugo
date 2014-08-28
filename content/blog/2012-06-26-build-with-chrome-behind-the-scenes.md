@@ -1,7 +1,5 @@
 ---
 title: Build with Chrome behind the scenes
-author: admin
-layout: post
 permalink: /blog/2012/06/build-with-chrome-behind-the-scenes/
 date: "2012-06-26"
 categories:

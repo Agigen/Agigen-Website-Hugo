@@ -1,7 +1,5 @@
 ---
 title: Front end developer wanted
-author: admin
-layout: post
 permalink: /blog/2013/09/front-end-developer-wanted/
 date: "2013-09-05"
 categories:

@@ -1,7 +1,6 @@
 ---
 title: 'FWA Mobile - Bufferbusters'
 author: admin
-layout: post
 permalink: /blog/2011/10/fwa-mobile-bufferbusters/
 date: "2011-10-05"
 categories:

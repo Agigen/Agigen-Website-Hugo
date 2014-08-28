@@ -1,7 +1,5 @@
 ---
 title: Handy handymen!
-author: admin
-layout: post
 permalink: /blog/2013/10/handy-handymen/
 date: "2013-10-10"
 categories:
