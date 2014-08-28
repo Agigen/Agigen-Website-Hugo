@@ -1,5 +1,5 @@
 ---
-title: 'Hobbit 2 &#8211; A journey through middle earth released'
+title: 'Hobbit 2 - A journey through middle earth released'
 permalink: /blog/2013/12/hobbit-2-a-journey-through-middle-earth-released/
 date: "2013-12-04"
 categories:
