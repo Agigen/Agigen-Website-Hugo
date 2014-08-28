@@ -5,13 +5,18 @@ date: "2014-05-08"
 categories:
   - News
 ---
+
+This is a guest blog post by our 14year old trainee William! Unfortunately available in Swedish only.
+
+<!--more-->
+
 **The following entry is in swedish only.**
 
 Den senaste tiden har vi haft förstärkning av William, i normala fall åttondeklassare på Internationella Engelska Skolan.
 
 > &#8220;Jag valde att ha min prao här på grund av att jag har ett stort intresse bland datorer och programmering och det såg roligt ut och det var det.
 >
-> <!--more-->
+>
 >
 > Jag har fått göra en hemsida som var ganska svårt på grund av att det var min första men så tur så fick jag hjälp när jag behövde det och jag har lärt mig mycket av det, innan så visste jag bara &#8216;the basics&#8217; av html och css och nu känns det som jag kan otroligt mycket mer.&#8221;
 
