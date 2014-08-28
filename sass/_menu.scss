@@ -26,12 +26,12 @@ html, body {
     width: 100%;
     min-height: 100%;
 
-    background: #252525;
+    background: rgba(0,0,0,0);
 
     opacity: 1;
     display: block;
 
-    @include transition(opacity 200ms ease, transform 400ms ease);
+    @include transition(background 200ms ease, transform 400ms ease, z-index 10ms linear 0ms);
 
 
     @include transform-origin(right top);
@@ -42,24 +42,30 @@ html, body {
         padding: 0;
         list-style-type: none;
     }
-
-    &--expanded {
-        pointer-events: auto;
-
-        @include transition(opacity 200ms ease, transform 400ms ease);
-
-        z-index: 100;
-        opacity: 1;
-        @include transform(skew(0deg));
-    }
-
-
     &__grid {
         margin: 0 auto;
         max-width: 1000px;
         width: 80%;
-
+        opacity: 0;
+        @include transition(opacity 400ms ease 400ms);
     }
+
+    &--expanded {
+        pointer-events: auto;
+
+        // @include transition(opacity 200ms ease, transform 100ms ease);
+        background: rgba(0,0,0,1);
+
+        z-index: 100;
+        opacity: 1;
+        @include transform(skew(0deg));
+        .main-menu__grid {
+            opacity: 1;
+        }
+    }
+
+
+
 
     &__link {
         display: block;
