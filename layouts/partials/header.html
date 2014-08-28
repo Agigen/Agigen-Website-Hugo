@@ -3,9 +3,11 @@
 
 <header class="main-header">
     <div class="main-header__content">
-        <div class="container">
-            <h1 class="alpha text--light">{{ .Title }}</h1>
-
+        <div class="container text--light">
+            <h1 class="alpha">{{ .Title }}</h1>
+            {{ if isset .Params "subtitle" }}
+                <h2 class="beta">{{ .Params.subtitle }}</h2>
+            {{ end }}
 
 
         </div>
