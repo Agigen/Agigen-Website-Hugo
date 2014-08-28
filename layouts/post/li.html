@@ -1,0 +1,20 @@
+<li>
+    <article class="post">
+        <figure class="post__imagewrapper">
+            <img src="http://placekitten.com/300/300" class="post__image">
+        </figure>
+        <div class="post__wrapper">
+            <header>
+                <span class="post__category">Category</span>
+                <time class="post__time">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
+            </header>
+            <h2 class="post__title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+            <div class="post__summary">
+                {{ .Summary }}
+            </div>
+            <a href="{{ .Permalink }}" class="post__link">Read full post</a>
+
+        </div>
+
+    </article>
+</li>
