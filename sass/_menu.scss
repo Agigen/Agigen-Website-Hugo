@@ -5,6 +5,7 @@ html, body {
 }
 
 .main-menu {
+    @include user-select(none);
     @extend .text--center;
     text-transform: uppercase;
     font-family: "proxima-nova";
