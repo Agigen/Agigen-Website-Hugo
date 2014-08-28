@@ -43,8 +43,7 @@
         @extend .bgcolor--blue;
 
         .btn {
-            background: white;
-            color: $color-webprod-blue;
+            @include btnColors(white, $color-webprod-blue);
         }
 
         &__showcase {

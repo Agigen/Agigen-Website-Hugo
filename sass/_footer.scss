@@ -25,9 +25,9 @@
         margin: 0 20px;
 
         &--bordered {
-            border-radius: 3px;
+            @extend .btn;
             padding: 0 15px;
-            border: 2px #fff solid;
+            @include btnColors(white, $color-proddev-pink);
         }
     }
 }
