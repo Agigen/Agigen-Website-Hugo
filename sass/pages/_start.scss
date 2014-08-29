@@ -50,16 +50,6 @@
             height: 650px;
             position: relative;
 
-            &__thingy {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                font-size: 30px;
-                @include transform(translate(-50%, -50%));
-                @include animation(spin 800ms linear infinite);
-                @include transform-origin(center center);
-
-            }
         }
 
     }
@@ -83,16 +73,3 @@
     }
 }
 
-
-@include keyframes(spin) {
-  0% {
-    @include transform(rotate(0deg) scale(1) translate(-50%, -50%));
-  }
-  50% {
-    @include transform(rotate(180deg) scale(2) translate(-50%, -50%));
-
-  }
-  100% {
-    @include transform(rotate(360deg) scale(1) translate(-50%, -50%));
-  }
-}
