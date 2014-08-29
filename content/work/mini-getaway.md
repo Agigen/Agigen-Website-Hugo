@@ -4,8 +4,8 @@
    "nocasestudy": 1,
    "partners": "",
    "small_image": "mini.jpg",
-   "subtitle": "",
-   "title": "mini getaway",
+   "subtitle": "MiniCooper",
+   "title": "Mini Getaway",
    "weight": 0
 }
 

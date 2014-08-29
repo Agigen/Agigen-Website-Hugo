@@ -1,0 +1,20 @@
+.page--contact .main-header {
+    display: none;
+}
+
+.section {
+    &--contact {
+        &__header {
+            height: 80vh;
+            @extend .text--light;
+            background: #222;
+
+
+        }
+        &__work {
+            padding: 200px 0 300px;
+            background: white url(/img/contact/sthlm-skyline.jpg) no-repeat bottom center;
+            background-size: 100%;
+        }
+    }
+}

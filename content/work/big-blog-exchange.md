@@ -5,8 +5,8 @@
    "partners": "",
    "siteurl": "http://www.bigblogexchange.org/",
    "small_image": "bigblog.jpg",
-   "subtitle": "",
-   "title": "big blog exchange",
+   "subtitle": "Hostelling International",
+   "title": "Big Blog Exchange",
    "weight": 0
 }
 
