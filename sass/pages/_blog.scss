@@ -1,8 +1,8 @@
-$color-category-work: red;
-$color-category-backstage: blue;
-$color-category-casestudies: green;
-$color-category-news: pink;
-$color-category-officefun: purple;
+$color-category-work: #ff0066;
+$color-category-backstage: #00b585;
+$color-category-casestudies: #00ccff;
+$color-category-news: #ff9900;
+$color-category-officefun: #9549b2;
 
 .page--blogs .main-header {
     height: 30vh;
@@ -24,7 +24,7 @@ $color-category-officefun: purple;
     a {
         color: inherit;
         &:hover {
-            color: #000;
+            color: #252525;
         }
     }
     &--backstage a:hover {
