@@ -55,8 +55,9 @@
             top: -200px;
             z-index:100;
         }
-
-
+        .btn {
+            @include btnColors(white, #3698C9);
+        }
         @include sneddisTop(-4, 175px, #3698C9);
 
     }
@@ -64,7 +65,9 @@
         padding: 180px 0 250px;
         background: #1c110f url(/img/work/carlsberg-bg.jpg) no-repeat center center;
         background-size: cover;
-
+        .btn {
+            @include btnColors(white, #222);
+        }
     }
     &--billogram {
         @include sneddisTop(-4, 180px, #6abbb8);
@@ -75,6 +78,9 @@
             position: absolute;
             right: 30px;
             bottom: -350px;
+        }
+        .btn {
+            @include btnColors(white, #6abbb8);
         }
     }
 }
