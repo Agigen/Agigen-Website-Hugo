@@ -1,0 +1,11 @@
+{{ template "partials/head.html" . }}
+{{ template "partials/header.html" . }}
+
+<div class="content">
+    <article class="blog-post">
+        {{ .Content }}
+    </article>
+</div>
+
+{{ template "partials/footer.html" . }}
+{{ template "partials/foot.html" . }}

@@ -1,7 +1,9 @@
 <li>
     <article class="post">
         <a class="post__imagewrapper" href="{{ .Permalink }}">
-            <img src="http://placekitten.com/300/300" class="post__image">
+            {{ if isset .Params "list_image" }}
+                <img src="/img/blog/{{ .Params.list_image }}" class="post__image">
+            {{ end }}
         </a>
         <div class="post__wrapper">
             <header>

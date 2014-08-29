@@ -2,6 +2,7 @@
 title: Happy new year!
 permalink: /blog/2014/01/happy-new-year/
 date: "2014-01-01"
+list_image: "newyear2013_320.jpg"
 categories:
   - News
 ---

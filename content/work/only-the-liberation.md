@@ -5,6 +5,7 @@
    "partners": "",
    "siteurl": "http://onlybecausewecan.com/",
    "small_image": "only.jpg",
+   "color": "#7da7d9",
    "subtitle": "Only",
    "title": "The liberation",
    "weight": 0

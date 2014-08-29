@@ -3,6 +3,7 @@
    "title": "McDonalds Go&Get",
    "weight": 0,
    "nocasestudy": 1,
-   "small_image": "mcwrap.jpg"
+   "small_image": "mcwrap.jpg",
+   "color": "#eeb23e"
 }
 

@@ -3,6 +3,7 @@
    "title": "The Hobbit 2",
    "subtitle": "Warner Bros & Google",
    "weight": 0,
+   "color": "#113b60",
    "siteurl": "http://middle-earth.thehobbit.com/",
    "small_image": "hobbit.jpg"
 }

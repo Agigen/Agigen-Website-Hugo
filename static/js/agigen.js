@@ -6,5 +6,5 @@
         $scope.menuVisible = false;
     }])
 
-
+    $('.animate--in-view').inView({style: 'sticky'});
 }(jQuery, window));

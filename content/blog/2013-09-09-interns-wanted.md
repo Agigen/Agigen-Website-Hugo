@@ -7,8 +7,6 @@ categories:
 ---
 Want to be a top-notch web developer? Are you burning with passion and feeling that you&#8217;re not progressing as fast as you should? Are you fed up with the worthless programming education in Sweden?
 
-Then read this!
-
 <!--more-->
 
 **Är du en driven men oerfaren programmerare som vill utvecklas? Agigen startar i höst vårt internship-program och söker två engagerade utvecklare.**

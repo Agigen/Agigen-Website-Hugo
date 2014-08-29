@@ -19,16 +19,6 @@
   }
 }
 
-
-@include keyframes(spin) {
-  from{
-    @include transform();
-  }
-  to {
-    @include transform();
-  }
-}
-
 @include keyframes(proddevprocess) {
     0% {
       stroke-dashoffset: 1221;
