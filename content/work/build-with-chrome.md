@@ -64,4 +64,4 @@
 <h2>Afterwards</h2>
 <p>This project cannot be called anything other than a success; at the time of writing there are 678 394 different builds in the Build with Chrome world and the site has had literally millions of visitors.</p>
 <p>We learned lots.</p>
-<p>As the grande finale to the project we all went to the cinemas and saw LEGO the Movie.</p>
+<p>As the grande finale of the project we all went to the cinemas and saw LEGO the Movie.</p>
