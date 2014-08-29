@@ -1,7 +1,8 @@
 {
    "date": "2014-08-02T16:15:51+02:00",
    "draft": true,
-   "title": "Ericsson City Index"
+   "title": "Ericsson City Index",
+   "subtitle": "Networked society"
 }
 
 Ericsson - all about phones and stuff
