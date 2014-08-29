@@ -2,6 +2,7 @@
 title: 'FWA ONLY - The Liberation'
 permalink: /blog/2012/06/fwa-only-the-liberation/
 date: "2012-06-06"
+list_image: "only_fwa_320.jpg"
 categories:
   - News
 ---

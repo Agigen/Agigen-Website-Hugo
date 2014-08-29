@@ -2,6 +2,7 @@
 title: "World's first web-based puck shooting machine"
 permalink: /blog/2013/02/worlds-first-puck-shooting-machine/
 date: "2013-02-08"
+list_image: "hockeymachine_320.jpg"
 categories:
   - Backstage
 tags:
