@@ -15,7 +15,13 @@
         font-weight: bold;
     }
     &__title {
-
+        span {
+            display:none;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -38,6 +44,7 @@
     }
     &--sj {
         background: #1d93c0 url(/img/work/sj-bg.jpg) no-repeat bottom center;
+        background-size: auto;
         padding-top: 120px;
         padding-bottom: 100px;
         position: relative;
@@ -48,8 +55,9 @@
             top: -200px;
             z-index:100;
         }
-
-
+        .btn {
+            @include btnColors(white, #3698C9);
+        }
         @include sneddisTop(-4, 175px, #3698C9);
 
     }
@@ -57,7 +65,9 @@
         padding: 180px 0 250px;
         background: #1c110f url(/img/work/carlsberg-bg.jpg) no-repeat center center;
         background-size: cover;
-
+        .btn {
+            @include btnColors(white, #222);
+        }
     }
     &--billogram {
         @include sneddisTop(-4, 180px, #6abbb8);
@@ -68,6 +78,9 @@
             position: absolute;
             right: 30px;
             bottom: -350px;
+        }
+        .btn {
+            @include btnColors(white, #6abbb8);
         }
     }
 }
