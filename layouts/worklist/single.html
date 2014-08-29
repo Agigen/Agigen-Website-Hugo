@@ -91,8 +91,8 @@
 <section class="case case--list case--list--billogram">
     <div class="container">
         <div class="grid">
-            <div class="grid__item one-half">
-
+            <div class="grid__item one-half illustration-wrapper">
+                <img src="/img/work/billogram.png" class="case--list--billogram__illustration">
             </div><!--
             --><div class="grid__item one-half">
                 <h3 class="epsilon">Invoicing in the cloud</h3>
@@ -118,12 +118,32 @@
             --><div class="grid__item one-half">
 
                 <article class="archive-case">
-                    <h3 class="archive-case__tagline">Networks society</h3>
-                    <h2 class="archive-case__title">{{ .Page.Title }}</h2>
 
-                    <a href="{{ .Page.Permalink }}" class="btn">{{ .Page.Title }}</a>
+                    <div class="archive-case__content">
+                        <h3 class="archive-case__tagline">
+                            {{ if isset .Page.Params "subtitle" }}
+                                {{ .Page.Params.subtitle }}
+                            {{ else }}
+                                Case
+                            {{ end }}
+                        </h3>
+                        <h2 class="archive-case__title">{{ .Page.Title }}</h2>
+
+
+                        {{ if isset .Page.Params "nocasestudy" }}
+                        {{ else }}
+                            <a href="{{ .Page.Permalink }}" class="btn">View case study</a>
+                        {{ end }}
+
+                        {{ if isset .Page.Params "siteurl" }}
+                            <a href="{{ .Page.Params.siteurl }}" class="btn">Visit website</a>
+                        {{ end }}
+
+                    </div>
+
+                    <div class="archive-case__hilight"></div>
+                    <img src="/img/work/small/ericsson.jpg" class="archive-case__image">
                 </article>
-
             </div><!--
         {{ end }}
         --></div>
