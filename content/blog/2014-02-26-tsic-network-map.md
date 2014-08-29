@@ -2,6 +2,7 @@
 title: TSIC Network Map
 permalink: /blog/2014/02/tsic-network-map/
 date: "2014-02-26"
+list_image: "tsic_320.jpg"
 categories:
   - Work
 ---

@@ -2,6 +2,7 @@
 title: 'MittVatten - taking great care of Swedens water supply'
 permalink: /blog/2014/02/mittvatten-taking-great-care-of-swedens-water-supply/
 date: "2014-02-26"
+list_image: "mittvatten_320.jpg"
 categories:
   - Work
 ---
