@@ -2,6 +2,7 @@
 title: Moving in party
 permalink: /blog/2013/12/moving-in-party/
 date: "2013-12-07"
+list_image: "agigram_320.jpg"
 categories:
   - Office fun
 format: image
