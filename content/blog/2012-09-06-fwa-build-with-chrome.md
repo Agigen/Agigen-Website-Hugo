@@ -1,7 +1,8 @@
 ---
-title: 'FWA &#8211; Build with Chrome'
+title: 'FWA - Build with Chrome'
 permalink: /blog/2012/09/fwa-build-with-chrome/
 date: "2012-09-06"
+list_image: "build_fwa_320.jpg"
 categories:
   - News
 ---
