@@ -2,5 +2,8 @@
     "title": "Our work",
     "weight": 0,
     "client": "",
-    "partners": ""
+    "partners": "",
+    "subtitle": "",
+    "siteurl": "",
+    "nocasestudy": 1
 }
