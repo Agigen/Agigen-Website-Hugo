@@ -21,7 +21,7 @@
 
 <h2>Background</h2>
 <p>
-    Early summer 2014 we got a call from our relative new partner Wenderfalck asking us if we wanted to collaborate on a project for Samsung. We said yes (of course) and together we created this technically challenging application to promote the new tablet Tab S.
+    Early summer 2014 we got a call from our relatively new partner Wenderfalck asking us if we wanted to collaborate on a project for Samsung. We said yes (of course) and together we created this technically challenging application to promote the new tablet Tab S.
 </p>
 
 <h2>What have we done?(!)</h2>

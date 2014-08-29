@@ -48,7 +48,7 @@
 
 <h3>Build mode</h3>
 <p>
-    In Build mode the user is presented with their chosen baseplate on which they are free to create whatever they want with a bunch of LEGO-bricks in different shapes and colours. We were responsible for the UI; rotating bricks, changing colour and brick types, saving and publishing. We worked closely with programmers at NK who did the actual webGL code, while we created HTML-templates, CSS and AJAX API calls to save peoples builds.
+    In Build mode the user is presented with their chosen baseplate on which they are free to create whatever they want with a bunch of LEGO-bricks in different shapes and colours. We were responsible for the UI; rotating bricks, changing colour and brick types, saving and publishing. We worked closely with programmers at NK who did the actual webGL code, while we created HTML-templates, CSS and AJAX API calls to save people's builds.
 </p>
 
 <h3>Academy mode</h3>
