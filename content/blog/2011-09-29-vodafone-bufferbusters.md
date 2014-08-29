@@ -2,6 +2,7 @@
 title: Vodafone Bufferbusters
 permalink: /blog/2011/09/vodafone-bufferbusters/
 date: "2011-09-29"
+list_image: "bufferbusters_320.jpg"
 categories:
   - Case studies
 ---

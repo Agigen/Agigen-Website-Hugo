@@ -1,6 +1,7 @@
 ---
 title: Front end developer wanted
 permalink: /blog/2013/09/front-end-developer-wanted/
+draft: true
 date: "2013-09-05"
 categories:
   - Work

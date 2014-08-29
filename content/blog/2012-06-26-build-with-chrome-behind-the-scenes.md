@@ -2,6 +2,7 @@
 title: Build with Chrome behind the scenes
 permalink: /blog/2012/06/build-with-chrome-behind-the-scenes/
 date: "2012-06-26"
+list_image: "bwc_backstage_320.jpg"
 categories:
   - Backstage
   - Case studies
