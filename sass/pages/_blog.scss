@@ -1,3 +1,9 @@
+$color-category-work: red;
+$color-category-backstage: blue;
+$color-category-casestudies: green;
+$color-category-news: pink;
+$color-category-officefun: purple;
+
 .page--blogs .main-header {
     height: 30vh;
 }
@@ -12,10 +18,32 @@
 .categories {
     padding: 60px 0 0;
     @extend .epsilon;
-    li {
-        padding: 0 10px;
+}
+.category-link {
+    padding: 0 10px;
+    a {
+        color: inherit;
+        &:hover {
+            color: #000;
+        }
+    }
+    &--backstage a:hover {
+        color: $color-category-backstage;
+    }
+    &--case-studies a:hover {
+        color: $color-category-casestudies;
+    }
+    &--news a:hover {
+        color: $color-category-news;
+    }
+    &--office-fun a:hover {
+        color: $color-category-officefun;
+    }
+    &--work a:hover {
+        color: $color-category-work;
     }
 }
+
 
 .post {
     min-height: 228px;
@@ -36,11 +64,24 @@
     &__wrapper {
         margin-left: 190px;
     }
-    &__category {
+    &__category-link {
         @extend .epsilon;
         color: $color-proddev-pink;
+
+        &--backstage {
+            color: $color-category-backstage;
+        }
+        &--case-studies {
+            color: $color-category-casestudies;
+        }
         &--news {
-            color: blue;
+            color: $color-category-news;
+        }
+        &--office-fun {
+            color: $color-category-officefun;
+        }
+        &--work {
+            color: $color-category-work;
         }
     }
     &__time {
