@@ -5,5 +5,6 @@
     "partners": "",
     "subtitle": "",
     "siteurl": "",
-    "nocasestudy": 1
+    "nocasestudy": 1,
+    "small_image": ""
 }
