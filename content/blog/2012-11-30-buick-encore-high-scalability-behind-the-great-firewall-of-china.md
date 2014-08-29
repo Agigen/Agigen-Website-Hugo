@@ -1,7 +1,5 @@
 ---
 title: 'Buick Encore: high scalability behind the Great Firewall of China'
-author: admin
-layout: post
 permalink: /blog/2012/11/buick-encore-high-scalability-behind-the-great-firewall-of-china/
 date: "2012-11-30"
 categories:

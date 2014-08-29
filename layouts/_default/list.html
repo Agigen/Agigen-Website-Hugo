@@ -3,11 +3,15 @@
 
 <div class="content container">
 
-    Default list view
+    <ul class="categories nav nav--banner">
+      {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
+          <li><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
+      {{ end }}
+    </ul>
 
     <ul class="posts">
       {{ range .Data.Pages }}
-      <li><span><a href="{{ .Permalink }}">{{ .Title }}</a><time class="pull-right post-list">{{ .Date.Format "Mon, Jan 2, 2006" }}</h4></time></span></span></li>
+          {{ .Render "post/li" }}
       {{ end }}
     </ul>
 </div>

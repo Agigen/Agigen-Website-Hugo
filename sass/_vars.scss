@@ -73,7 +73,6 @@ $push: true;
 
  $milli-size:        12px!default;
  $micro-size:        10px!default;
-
  $arrow-size: 8px;
 
 .alpha, .beta, .gamma, .delta, .epsilon, .zeta {
@@ -86,8 +85,11 @@ $push: true;
     font-weight: 700;
     padding-bottom: 20px;
 }
-
+.beta {
+}
 .beta, .gamma {
+    padding-bottom: 20px;
+
     font-weight: 300;
 }
 
@@ -95,11 +97,3 @@ $push: true;
     font-weight: 700;
     text-transform: uppercase;
 }
-
-
-/*------------------------------------*\
-    $CUSTOM
-\*------------------------------------*/
-/**
- * Place any of your own variables that sit on top of inuit.css here.
- */

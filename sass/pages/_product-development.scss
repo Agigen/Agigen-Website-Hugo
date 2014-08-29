@@ -49,10 +49,9 @@ $time_between_points: 800ms;
         left: 0;
         text-align: left;
         strong {
-            font-size: 40px;
             color: #ff0065;
             display: block;
-            font-weight: 300;
+            @extend .gamma
         }
 
         &--1 {
@@ -89,6 +88,7 @@ $time_between_points: 800ms;
     }
 
     &--proddev-howwework {
+        padding-top: 50px;
         min-height: 675px;
         background: $color-proddev-pink url(/img/proddev/pink-texture.jpg) no-repeat top center;
         background-size: cover;
@@ -96,7 +96,7 @@ $time_between_points: 800ms;
         @include sneddis(-4, 180px, white);
         &__illustration {
             position: absolute;
-            bottom: -110px;
+            bottom: -160px;
         }
         .delta {
             max-width: 80%;
@@ -105,17 +105,18 @@ $time_between_points: 800ms;
 
     &--proddev-team {
         background-color: white;
-        padding-top: 0px;
+        padding-top: 100px;
         .container {
             z-index: 5;
             position: relative;
         }
         &__illustration {
-            float: right;
-            margin-right: 70px;
+            position: absolute;
+            left: -55px;
+            bottom: -120px;
         }
-        .alpha {
-            padding-top: 140px;
+        .gamma {
+            // padding-top: 100px;
         }
     }
 
@@ -131,12 +132,16 @@ $time_between_points: 800ms;
         .btn {
             margin-top: 30px;
             border-color: #333;
+            @include btnColors(#333, white);
         }
 
         &--billogram {
             @include sneddis(-9, 380px, white);
             padding-bottom: 0;
             height: 300px;
+            &__illustration {
+                position: absolute;
+            }
         }
         &--yogobe {
             background: #f0f0f0;
@@ -145,8 +150,18 @@ $time_between_points: 800ms;
                 position: relative;
                 z-index: 5;
             }
+            &__illustration {
+                position: absolute;
+                right:0;
+                bottom: -450px;
+                max-width: none;
+            }
+            &__illustration-container {
+                position: relative;
+            }
         }
-        &--uppsalastudent {}
+        &--uppsalastudent {
+        }
 
     }
 }

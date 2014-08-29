@@ -1,7 +1,5 @@
 ---
 title: Netflix The Flixies
-author: admin
-layout: post
 permalink: /blog/2013/08/netflix-the-flixies/
 date: "2013-08-22"
 categories:

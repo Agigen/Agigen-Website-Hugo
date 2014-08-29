@@ -1,7 +1,5 @@
 ---
 title: TSIC Network Map
-author: admin
-layout: post
 permalink: /blog/2014/02/tsic-network-map/
 date: "2014-02-26"
 categories:

@@ -1,3 +1,14 @@
+@mixin btnColors($border, $background) {
+    border-color: $border;
+    color: $border;
+    background-color: transparent;
+    &:hover {
+        background-color: $border;
+        color: $background;
+    }
+}
+
+
 @mixin sneddis($degrees, $height:100px, $background-color:"inherit") {
     position: relative;
     .container {

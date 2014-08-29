@@ -30,11 +30,14 @@
         font-size: 20px;
         padding: 20px 0 10px;
         margin: 0;
+        text-transform: uppercase;
     }
     &__title {
         font-size: 18px;
         padding: 0;
         margin: 0;
+        @extend .epsilon;
+        color: #ffffff;
     }
     &__ingress {
         color: #ffffff;
@@ -44,6 +47,7 @@
 
     &__cta {
         margin: 20px 0 0;
+        @include btnColors(#333333, white);
     }
 
     .btn {
@@ -79,6 +83,8 @@
       .case__headline {
         @extend .gamma;
         color: inherit;
+        padding: 40px 0 0;
+        margin: 0;
       }
 
       .case__image {
