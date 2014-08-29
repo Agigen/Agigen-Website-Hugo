@@ -30,16 +30,22 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    &__illustration {
+        position: absolute;
+        z-index:100;
+        opacity: 0;
+        @include transition(opacity 500ms ease 200ms);
+    }
+
     &--samsung {
         background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
         padding-top: 190px;
         min-height: 660px;
 
         &__illustration {
-            position: absolute;
             right: -650px;
             bottom: -155px;
-            z-index:100;
         }
     }
     &--sj {
@@ -50,15 +56,13 @@
         position: relative;
 
         &__illustration {
-            position: absolute;
             left: 0;
             top: -200px;
-            z-index:100;
         }
         .btn {
-            @include btnColors(white, #3698C9);
+            @include btnColors(white, #2e92c4);
         }
-        @include sneddisTop(-4, 175px, #3698C9);
+        @include sneddisTop(-4, 175px, #2e92c4);
 
     }
     &--carlsberg {
@@ -75,13 +79,31 @@
         background: #6abbb8;
         min-height: 400px;
         &__illustration {
-            position: absolute;
             right: 30px;
             bottom: -350px;
         }
         .btn {
             @include btnColors(white, #6abbb8);
         }
+    }
+}
+
+
+
+.case--list__illustration.in-view--partial {
+    @include animation(popin 300ms ease 200ms);
+    opacity: 1;
+}
+
+@include keyframes(popin){
+    0% {
+      @include transform(scale(0));
+    }
+    80% {
+      @include transform(scale(1.2));
+    }
+    100% {
+      @include transform(scale(1));
     }
 }
 
