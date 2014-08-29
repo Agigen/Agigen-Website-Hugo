@@ -52,6 +52,10 @@
         background-color: white;
         color: black;
     }
+    @include transform-origin(center center);
+    &:active {
+        @include transform(scale(0.95));
+    }
 }
 
 

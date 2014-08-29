@@ -47,7 +47,7 @@ html, body {
         max-width: 1000px;
         width: 80%;
         opacity: 0;
-        @include transition(opacity 400ms ease 400ms);
+        @include transition(opacity 300ms linear 400ms);
     }
 
     &--expanded {
