@@ -55,15 +55,12 @@
         &--carlsberg {}
     }
     &--webprod-process {
-        .container {
-            height: 1800px;
-            transition: height 600ms ease-in-out 300ms;
+        figure {
+            position: relative;
         }
-        &--small {
-            .container {
-                @include transition (height 600ms ease-in-out 300ms);
-                height: 990px;
-            }
+        .container {
+            height: 990px;
+            transition: height 600ms ease-in-out 300ms;
         }
     }
 }
@@ -75,45 +72,8 @@
     font-size: 20px;
     &__timeline {
         position: relative;
-        margin-top: -200px;
-        height: 1800px;
+        margin-top: 150px;
         width: 100%;
-        &--small {
-            margin-top: 150px;
-            height: 1000px;
-        }
-    }
-    &__point {
-        opacity: 0;
-        @include transition (opacity 300ms ease-in, transform 600ms ease-in-out);
-        &--1 {
-            opacity: 1;
-        }
-        &--2 {
-            &-up {
-                transform: translateY(-30px);
-            }
-        }
-        &--3 {
-            &-up {
-                transform: translateY(-58px);
-            }
-        }
-        &--4 {
-            &-up {
-                transform: translateY(-85px);
-            }
-        }
-        &--5 {
-            &-up {
-                transform: translateY(-111px);
-            }
-        }
-        &--6 {
-            &-up {
-                transform: translateY(-136px);
-            }
-        }
     }
     &__step {
         display: block;
@@ -123,46 +83,31 @@
         width: 380px;
         text-align: left;
         color: #676767;
-        opacity: 0;
         @include transition (opacity 300ms ease-in, top 600ms ease-in-out, transform 600ms ease-in-out);
         &--1 {
             width: 460px;
             left: 340px;
             text-align: center;
-            opacity: 1;
         }
         &--2 {
             left: 680px;
-            top: 370px;
-            &-up {
-                transform: translateY(-170px);
-            }
+            top: 215px;
         }
         &--3 {
-            top: 670px;
-            &-up {
-                transform: translateY(-345px);
-            }
+            top: 335px;
         }
         &--4 {
             left: 680px;
-            top: 965px;
-            &-up {
-                transform: translateY(-484px);
-            }
+            top: 470px;
         }
         &--5 {
-            top: 1260px;
-            &-up {
-                transform: translateY(-642px);
-            }
+            top: 585px;
         }
         &--6 {
-            left: 680px;
-            top: 1545px;
-            &-up {
-                transform: translateY(-774px);
-            }
+            width: 460px;
+            left: 340px;
+            text-align: center;
+            top: 800px;
         }
     }
 }
