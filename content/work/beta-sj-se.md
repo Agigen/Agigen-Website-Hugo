@@ -10,17 +10,10 @@
 
 <h2>tl;dr:</h2>
 <ul>
-    <li>Prototype new concept for Swedish Railways' site</li>
-    <li>Revamp, redesign, IMPROVE</li>
-    <li>Using:</li>
-    <ul>
-        <li>BackboneJS</li>
-        <li>Bootstrap</li>
-        <li>HTML5</li>
-        <li>SCSS</li>
-        <li>Python</li>
-        <li>AEM</li>
-    </ul>
+    <li>Project for SJ (Swedish railways)</li>
+    <li>Together with Pond</li>
+    <li>Prototype concept for SJ's brand new site</li>
+    <li>Revamp, redesign and improve</li>
 </ul>
 
 <h2>Background</h2>

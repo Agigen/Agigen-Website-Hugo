@@ -10,12 +10,10 @@
 
 <h2>tl;dr:</h2>
 <ul>
-    <li>Add to the hype around the Hobbit (as if that's really necessary...)</li>
-    <li>Explore Middle-Earth and play mini games on different locations</li>
-    <li>Using:</li>
-    <ul>
-        <li>Python</li>
-    </ul>
+    <li>Project for Google and Warner Bros.</li>
+    <li>Together with North Kingdom</li>
+    <li>An interactive webGL experience set in Middle-Earth</li>
+    <li>Explore Middle-Earth and get into the Tolkien-groove by playing mini games set at different locations</li>
 </ul>
 
 <h2>Background</h2>

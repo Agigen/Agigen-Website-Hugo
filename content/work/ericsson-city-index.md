@@ -9,16 +9,10 @@
 
 <h2>tl;dr:</h2>
 <ul>
-    <li>Ericsson City Index tool</li>
-    <li>How does IT-infrastructure affect other aspects of society? Lots of numbers!</li>
-    <li>Using:</li>
-    <ul>
-        <li>Ember.js</li>
-        <li>inuit.css</li>
-        <li>HTML5</li>
-        <li>SCSS</li>
-        <li>Laravel</li>
-    </ul>
+    <li>Project for Ericsson</li>
+    <li>Together with DDB</li>
+    <li>A business to business/government tool to explain and show off Ericsson's City Index</li>
+    <li>Graphs and maps show you how IT-infrastructure affect other aspects of society</li>
 </ul>
 
 <h2>Background</h2>

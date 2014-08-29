@@ -7,14 +7,10 @@
 
 <h2>tl;dr:</h2>
 <ul>
-    <li>Carlsberg's epic annual party</li>
-    <li>Axwell's performing?! Gotta get that on the site!</li>
-    <li>Using:</li>
-    <ul>
-        <li>Python</li>
-        <li>SCSS</li>
-        <li>HTML5</li>
-    </ul>
+    <li>Project for Carlsberg</li>
+    <li>Together with North Kingdom</li>
+    <li>An interactive music video to promote Carlsberg's annual 'Where's the party?'</li>
+    <li>Follow the beat to find out when and where that party is</li>
 </ul>
 
 <h2>Background</h2>

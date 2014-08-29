@@ -6,18 +6,10 @@
 
 <h2>tl;dr:</h2>
 <ul>
-    <li>Awesome Google + LEGO project</li>
+    <li>Project for Google and LEGO</li>
+    <li>Together with North Kingdom</li>
     <li>Build whatever you want with LEGO, wherever you want in the world</li>
-    <li>Using:</li>
-    <ul>
-        <li>Google Maps</li>
-        <li>Google+</li>
-        <li>HTML5</li>
-        <li>SCSS</li>
-        <li>Tons of Javascript</li>
-        <li>Our own awesome translation tool</li>
-        <li>Python</li>
-    </ul>
+    <li>A webGL interactive experience to showcase the features of Google Chrome and promote the feature film LEGO the Movie</li>
 </ul>
 
 <h2>Background</h2>

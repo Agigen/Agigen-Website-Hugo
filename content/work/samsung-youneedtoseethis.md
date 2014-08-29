@@ -8,15 +8,10 @@
 
 <h2>tl;dr:</h2>
 <ul>
-    <li>Promote Samsung's Tab S</li>
-    <li>Zoom, pan and interact with gigalpixel photograph and find all the details</li>
-    <li>Using:</li>
-    <ul>
-        <li>AngularJS</li>
-        <li>inuit.css</li>
-        <li>HTML5</li>
-        <li>Python</li>
-    </ul>
+    <li>Project for Samsung</li>
+    <li>Together with Wenderfalck</li>
+    <li>A gigapixel photograph provides the setting to showcase the new screen of Samsung's Tab S</li>
+    <li>Zoom, pan and interact with the gigalpixel photograph and find all the details to compete for a spot on the high score</li>
 </ul>
 
 <h2>Background</h2>
