@@ -8,18 +8,13 @@ categories:
 ---
 To promote the release of The Hobbit 2 &#8211; The Desolation of Smaug we created a interactive experience together with North Kingdom, Google and Warner Bros. Agigen took care of everything on the back end side, such as scaling, market- and language-handling as well as the admin tools.
 
+<!--more-->
+
 [Visit the site][1]
 
 Partners: North Kingdom, Dinahmoe, Plan 8, Schimpanz, More Media
 
-<!--more-->
 
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 # Press
 
