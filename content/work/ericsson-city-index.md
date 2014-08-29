@@ -26,7 +26,7 @@
     Ericsson was looking to renew their City Index tool. They've gathered loads of metrics from about 30 cities around the world and these numbers show how IT-infrastructure relates to other aspects of society such as literacy rate, health and environmental pollution.
 </p>
 <p>
-    Their old site was built on flash, complete with funny noises and animations on hover. The old site was also only marginally interactive, basically just displaying the different scores. Needless to say, it needed some pimpin'. DDB was tasked with said assignment and they wanted to work with us.
+    Their old site was built on flash, complete with funny noises and animations on hover. The old site was also only marginally interactive, basically just displaying the different scores. Needless to say, it needed some pimpin'. DDB was tasked with said assignment and they wanted to work with us. Being mainly business to business (or at least business to governments) it wasn't the most exciting project we've ever taken on, but it presented some challenges and we got to try out some new frameworks for real.
 </p>
 
 <h2>What have we done?(!)</h2>
