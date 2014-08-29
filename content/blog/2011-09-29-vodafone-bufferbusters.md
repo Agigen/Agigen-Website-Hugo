@@ -1,6 +1,5 @@
 ---
-title: Vodafone Bufferbusters LOL
-author: admin
+title: Vodafone Bufferbusters
 permalink: /blog/2011/09/vodafone-bufferbusters/
 date: "2011-09-29"
 categories:
