@@ -115,6 +115,9 @@
 
         <div class="grid"><!--
         {{ range .Site.Sections.work }}
+            {{ if isset .Page.Params "featured" }}
+
+            {{ else }}
             --><div class="grid__item one-half">
 
                 <article class="archive-case">
@@ -145,6 +148,7 @@
                     <img src="/img/work/small/ericsson.jpg" class="archive-case__image">
                 </article>
             </div><!--
+            {{ end }}
         {{ end }}
         --></div>
     </div>

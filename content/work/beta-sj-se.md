@@ -4,6 +4,7 @@
    "partners": "",
    "title": "beta sj se",
    "siteurl": "http://beta.sj.se",
-   "weight": 0
+   "weight": 0,
+   "featured": 1
 }
 
