@@ -2,6 +2,7 @@
 title: FWA Site of the day
 permalink: /blog/2013/09/fwa-site-of-the-day/
 date: "2013-09-06"
+list_image: "fwa_wtp_320.jpg"
 categories:
   - News
 ---

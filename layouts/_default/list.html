@@ -4,8 +4,9 @@
 <div class="content container">
 
     <ul class="categories nav nav--banner">
+      <li class="category-link category-link--all"><a href="/blog/">All</a></li>
       {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
-          <li><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
+          <li class="category-link category-link--{{ $key | urlize }}"><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
       {{ end }}
     </ul>
 

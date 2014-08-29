@@ -2,6 +2,7 @@
 title: Handy handymen!
 permalink: /blog/2013/10/handy-handymen/
 date: "2013-10-10"
+list_image: "handy_320.jpg"
 categories:
   - News
 ---
