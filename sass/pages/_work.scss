@@ -15,7 +15,13 @@
         font-weight: bold;
     }
     &__title {
-
+        span {
+            display:none;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -38,6 +44,7 @@
     }
     &--sj {
         background: #1d93c0 url(/img/work/sj-bg.jpg) no-repeat bottom center;
+        background-size: auto;
         padding-top: 120px;
         padding-bottom: 100px;
         position: relative;
