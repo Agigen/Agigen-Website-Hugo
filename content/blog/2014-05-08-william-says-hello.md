@@ -2,6 +2,7 @@
 title: William says Hello
 permalink: /blog/2014/05/william-says-hello/
 date: "2014-05-08"
+list_image: "william_320.jpg"
 categories:
   - News
 ---

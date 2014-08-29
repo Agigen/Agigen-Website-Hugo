@@ -2,6 +2,7 @@
 title: Netflix The Flixies
 permalink: /blog/2013/08/netflix-the-flixies/
 date: "2013-08-22"
+list_image: "flixies_320.jpg"
 categories:
   - Case studies
 ---

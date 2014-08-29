@@ -2,6 +2,7 @@
 title: Carlsberg Where is the Party 2013
 permalink: /blog/2013/08/carlsberg-where-is-the-party-2013/
 date: "2013-08-22"
+list_image: "wtp_320.jpg"
 categories:
   - Case studies
 ---
