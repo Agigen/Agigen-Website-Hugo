@@ -1,6 +1,14 @@
 .team-member {
     text-align: center;
     padding-top: 70px;
+
+    opacity: 0;
+    @include transition(opacity 500ms ease 200ms);
+    &.in-view--partial {
+        opacity: 1;
+    }
+
+
     &__photoframe {
         width: 276px;
         height: 276px;
