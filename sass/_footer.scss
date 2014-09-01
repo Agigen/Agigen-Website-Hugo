@@ -7,6 +7,11 @@
     color: #fff;
 
     @extend .epsilon;
+    @include media-query(palm){
+        font-size: 9px;
+        padding: 10px 0;
+        height: 60px;
+    }
     &__title {
         svg {
             height: 35px;
@@ -15,6 +20,9 @@
         }
         float: left;
         display: inline-block;
+        @include media-query(palm){
+            display: none;
+        }
     }
     &__links {
         text-align: right;
@@ -23,11 +31,20 @@
     &__link {
         display: inline-block;
         margin: 0 20px;
+        @include media-query(palm){
+            margin: 0 5px;
+        }
 
         &--bordered {
             @extend .btn;
             padding: 0 15px;
             @include btnColors(white, $color-proddev-pink);
+            @include media-query(palm){
+                padding: 0 5px;
+                font-size: 10px;
+            }
         }
+
+
     }
 }

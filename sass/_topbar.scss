@@ -5,12 +5,22 @@ $topbar-color: #fff;
     @include user-select(none);
     position: absolute;
     top: 60px;
+
     left: 0;
     width: 100%;
     background: transparent;
     z-index: 1000;
     height: $topbar-height;
     line-height: $topbar-height;
+
+    @include media-query(palm){
+        top: 20px;
+        position: fixed;
+        .container {
+            width: 90%;
+        }
+    }
+
     h1 {
         margin: 0;
         padding: 0;
@@ -43,6 +53,11 @@ $topbar-color: #fff;
         float: right;
         color: $topbar-color;
         font-size: 28px;
+        display: block;
+        padding: 0;
+        i {
+            display: block;
+        }
     }
     svg {
         path {

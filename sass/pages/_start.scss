@@ -1,9 +1,14 @@
+.one-seventh {
+    width: 14.284% !important;
+}
+
 .section {
     &--start {
         @extend .text--center;
         &__ingress {
         }
         &__copy {
+            @extend .beta;
             max-width: 80%;
             margin-left: auto;
             margin-right: auto;
@@ -15,13 +20,23 @@
         @extend .text--dark;
         &__ingress {
             padding: 0 0 100px;
-        }
-        &__logos {
-            padding: 30px 0 40px;
-            img {
-                display: block;
-                margin: 0 auto;
+            @include media-query(palm){
+                padding: 0 0 0 0;
             }
+        }
+
+        &__logos {
+            padding-top: 30px;
+            padding-bottom: 40px;
+            @extend .grid;
+        }
+        &__logo {
+            @extend .grid__item;
+            @extend .one-sixth;
+        }
+        &__logos-header {
+            @extend .epsilon;
+            display: none;
         }
     }
 
@@ -60,3 +75,15 @@
     }
 }
 
+.case--fullwidth {
+    &--billogram {
+        .case__image {
+            width: 320px;
+        }
+    }
+    &--samsung {
+        .case__image {
+            width: 380px;
+        }
+    }
+}

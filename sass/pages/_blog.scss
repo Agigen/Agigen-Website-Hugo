@@ -5,7 +5,7 @@ $color-category-news: #ff9900;
 $color-category-officefun: #9549b2;
 
 .page--blogs .main-header {
-    height: 30vh;
+    @include vhFejk(30);
 }
 
 .posts {
@@ -13,6 +13,9 @@ $color-category-officefun: #9549b2;
     margin: 0 auto;
     display: block;
     @extend .eight-tenths;
+    @include media-query(palm){
+        width: 100%;
+    }
 }
 
 .categories {
@@ -49,6 +52,10 @@ $color-category-officefun: #9549b2;
     min-height: 228px;
     border-bottom: 1px #d9d9d9 solid;
     padding: 60px 30px;
+    @include media-query(palm){
+        padding: 0 20px 80px;
+        border: none;
+    }
     &__imagewrapper {
         width: 160px;
         height: 160px;
@@ -56,13 +63,28 @@ $color-category-officefun: #9549b2;
         border-radius: 80px;
         overflow: hidden;
         float: left;
+        @include media-query(palm){
+            height: 80px;
+            width: 130%;
+            left: -15%;
+            position: relative;
+            border-radius: 0;
+            margin-bottom: 10px;
+        }
+
     }
     &__image {
         min-width: 100%;
         min-height: 100%;
+        @include media-query(palm){
+            margin-top: -22%;
+        }
     }
     &__wrapper {
         margin-left: 190px;
+        @include media-query(palm){
+            margin-left: 0;
+        }
     }
     &__category-link {
         @extend .epsilon;
@@ -95,11 +117,15 @@ $color-category-officefun: #9549b2;
     &__summary {
         p {
             @extend .delta;
+            @include media-query(palm){
+                font-size: 12px;
+            }
         }
     }
     &__link {
         @extend .delta;
         text-decoration: underline;
+
     }
 }
 

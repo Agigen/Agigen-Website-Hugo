@@ -15,6 +15,9 @@ html, body {
 
 
     padding-top: 120px;
+    @include media-query(palm){
+        padding-top: 20px;
+    }
 
     position: absolute;
     top: 0;
@@ -70,9 +73,8 @@ html, body {
     &__link {
         display: block;
         color: $main-menu-fontcolor;
-        padding: 30px 0;
         text-decoration: none;
-        line-height: 100%;
+        line-height: 200%;
 
         @include transition(color 200ms ease);
 
@@ -82,19 +84,19 @@ html, body {
         }
 
         @media screen and ( max-height: 1200px ){
-            padding: 15px 0;
             font-size: 50px;
         }
 
         @media screen and ( max-height: 750px ){
-            padding: 15px 0;
             font-size: 40px;
         }
         @media screen and ( max-height: 650px ){
-            padding: 10px 0;
             font-size: 35px;
         }
 
+        @include media-query(palm){
+            font-size: 20px;
+        }
 
         &--main {
 
@@ -124,8 +126,13 @@ html, body {
     &__section-name {
         display: block;
         border-top: 1px #464646 solid;
-        padding-top: 50px;
         @extend .epsilon;
+        padding-top: 10px;
+        line-height: 200%;
+        @include media-query(palm){
+            font-size: 10px;
+        }
+
     }
 }
 

@@ -48,3 +48,15 @@
         z-index: 1;
     }
 }
+
+
+@mixin vhFejk($vh) {
+    $i: 2000;
+    @while $i > 400 {
+        @media screen and ( max-height: #{$i}px ){
+            height: #{$vh/100*$i}px;
+        }
+        $i: $i - 100;
+    }
+}
+

@@ -2,7 +2,11 @@
     @extend .text--center;
     width: 100%;
     background: #d91853 no-repeat top center;
-    height: 75vh;
+    @include vhFejk(75);
+    @include media-query(palm){
+        height: 300px;
+    }
+
     padding: 0;
     background-size: cover;
     display: table;
@@ -27,5 +31,8 @@
         top: 0;
         left: 0;
         opacity: 0.05;
+        @include media-query(palm){
+            display: none;
+        }
     }
 }
