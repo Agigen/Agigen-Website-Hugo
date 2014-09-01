@@ -4,6 +4,9 @@
     text-align: center;
 
     padding: 100px 0 120px;
+    @include media-query(palm){
+        padding: 0;
+    }
     margin: 0;
     dt, dd {
         // padding: 0;
@@ -30,6 +33,9 @@
         }
         font-weight: 300;
         font-size: 40px;
+        @include media-query(palm){
+            font-size: 30px;
+        }
         a {
             color: #33cbff;
         }
