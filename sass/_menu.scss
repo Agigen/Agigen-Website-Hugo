@@ -16,7 +16,7 @@ html, body {
 
     padding-top: 120px;
     @include media-query(palm){
-        padding-top: 20px;
+        padding-top: 60px;
     }
 
     position: absolute;
@@ -127,10 +127,11 @@ html, body {
         display: block;
         border-top: 1px #464646 solid;
         @extend .epsilon;
-        padding-top: 10px;
+        margin-top: 15px;
+        padding-top: 30px;
         line-height: 200%;
         @include media-query(palm){
-            font-size: 10px;
+            font-size: 9px;
         }
 
     }

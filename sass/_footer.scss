@@ -27,6 +27,9 @@
     &__links {
         text-align: right;
         text-transform: uppercase;
+        @include media-query(palm){
+            text-align: center;
+        }
     }
     &__link {
         display: inline-block;

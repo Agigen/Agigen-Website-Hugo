@@ -6,6 +6,7 @@
     &--start {
         @extend .text--center;
         &__ingress {
+            margin: 0;
         }
         &__copy {
             @extend .beta;
@@ -50,8 +51,10 @@
 
         &__showcase {
             height: 650px;
+            @include media-query(palm){
+                height: auto;
+            }
             position: relative;
-
         }
 
     }
@@ -62,6 +65,9 @@
 
         &__showcase {
             height: 650px;
+            @include media-query(palm){
+                height: auto;
+            }
         }
 
     }
@@ -75,15 +81,4 @@
     }
 }
 
-.case--fullwidth {
-    &--billogram {
-        .case__image {
-            width: 320px;
-        }
-    }
-    &--samsung {
-        .case__image {
-            width: 380px;
-        }
-    }
-}
+

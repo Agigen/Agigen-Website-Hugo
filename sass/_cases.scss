@@ -31,6 +31,9 @@
         padding: 20px 0 10px;
         margin: 0;
         text-transform: uppercase;
+        @include media-query(palm){
+          font-size: 12px;
+        }
     }
     &__title {
         font-size: 18px;
@@ -38,6 +41,9 @@
         margin: 0;
         @extend .epsilon;
         color: #ffffff;
+        @include media-query(palm){
+          font-size: 14px;
+        }
     }
     &__ingress {
         color: #ffffff;
@@ -62,10 +68,22 @@
         &--billogram {
             .container {
                 margin-top: -300px;
+
             }
         }
         .case__title {
           color: #333;
+        }
+
+        &--billogram {
+            .case__image {
+                width: 320px;
+            }
+        }
+        &--samsung {
+            .case__image {
+                width: 380px;
+            }
         }
 
     }
