@@ -2,7 +2,6 @@
     &--start {
         @extend .text--center;
         &__ingress {
-            // @include arrow(bottom, center, #ffffff)
         }
         &__copy {
             max-width: 80%;
@@ -23,18 +22,6 @@
                 display: block;
                 margin: 0 auto;
             }
-        }
-        &:before {
-            content: "Scrolla!";
-            display: block;
-            background: white;
-            width: 80px;
-            height: 80px;
-            top: -80px;
-            left: 50%;
-            position: absolute;
-            margin-left: -40px;
-            border-radius: 3px 3px 0 0;
         }
     }
 
