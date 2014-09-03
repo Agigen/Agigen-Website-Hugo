@@ -2,6 +2,32 @@
     width: 14.284% !important;
 }
 
+.client-logo {
+    vertical-align: middle;
+    display: inline-block;
+    max-height: 61px;
+    margin: 20px 20px;
+    max-width: 160px;
+    opacity: 0.4;
+
+    &--mcdonalds {
+        width: 60px;
+        height: 50px;
+    }
+    &--lego {}
+    &--google {}
+    &--sj {}
+    &--sony {}
+    &--vodafone {}
+    &--wb {}
+    &--samsung {}
+    &--adidas {}
+    &--volvo {}
+    &--carlsberg {}
+    &--netflix {}
+    &--mini {}
+}
+
 .section {
     &--start {
         @extend .text--center;
@@ -27,13 +53,18 @@
         }
 
         &__logos {
-            padding-top: 30px;
-            padding-bottom: 40px;
-            @extend .grid;
+            // padding-top: 30px;
+            // padding-bottom: 40px;
+            // @extend .grid;
+            text-align: center;
+            vertical-align: middle;
+
         }
         &__logo {
-            @extend .grid__item;
-            @extend .one-sixth;
+
+
+            // @extend .grid__item;
+            // @extend .one-sixth;
         }
         &__logos-header {
             @extend .epsilon;
