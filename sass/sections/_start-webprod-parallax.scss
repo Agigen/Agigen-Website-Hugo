@@ -5,6 +5,8 @@
 
 $front-scale: 1.8;
 $middle-scale: 1.3;
+$chrome-rotate: -8deg;
+$samsung-rotate: 14deg;
 
 .section--start-webprod {
     @extend .bgcolor--blue;
@@ -71,11 +73,11 @@ $middle-scale: 1.3;
             height: 400px;
             top: 30%;
             right: 15%;
-            @include transform(rotate(-8deg));
+            @include transform(rotate($chrome-rotate));
             background-image: url(/img/start/webprod/chrome-start.png);
             background-size: cover;
             &:hover {
-                @include transform(rotate(-8deg) scale(1.05));
+                @include animation(pulsateChrome 1800ms $ease-in-out-sine);
             }
         }
         &--samsung {
@@ -84,17 +86,17 @@ $middle-scale: 1.3;
             width: 234px;
             height: 384px;
             top: 24%;
-            left: 9%;
-            @include transform(rotate(14deg));
+            left: 15%;
+            @include transform(rotate($samsung-rotate));
             &:hover {
-                @include transform(rotate(14deg) scale(1.05));
+                @include animation(pulsateSamsung 1800ms $ease-in-out-sine);
             }
             background-image: url(/img/start/webprod/samsung-start.png);
             background-size: cover;
         }
 
         &:hover {
-
+            @include animation-iteration-count(infinite);
         }
     }
 
@@ -147,4 +149,19 @@ $middle-scale: 1.3;
         @include transform(scale($front-scale));
     }
 }
-
+@include keyframes(pulsateSamsung){
+    0%,100% {
+        @include transform(scale(1) rotate($samsung-rotate));
+    }
+    50% {
+        @include transform(scale(1.05) rotate($samsung-rotate));
+    }
+}
+@include keyframes(pulsateChrome){
+    0%,100% {
+        @include transform(scale(1) rotate($chrome-rotate));
+    }
+    50% {
+        @include transform(scale(1.05) rotate($chrome-rotate));
+    }
+}
