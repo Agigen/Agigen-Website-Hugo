@@ -3,10 +3,10 @@
    "date": "2014-08-29T16:56:20+02:00",
    "nocasestudy": 1,
    "partners": "",
-   "siteurl": "",
-   "small_image": "",
-   "subtitle": "",
-   "title": "uppsalastudent",
+   "siteurl": "https://uppsalastudent.com",
+   "small_image": "uppsalastudent.jpg",
+   "subtitle": "Kuratorskonventet",
+   "title": "Uppsalastudent.com",
    "weight": 0
 }
 
