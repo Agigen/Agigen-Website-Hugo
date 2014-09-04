@@ -19,7 +19,7 @@
     .controller('parallaxCtrl', ['$scope', function($scope){
         $scope.width = $(window).innerWidth()
 
-        var targetX, targetY, damping = 150 /* higher value = slower damping*/;
+        var targetX, targetY, damping = 150 /* higher value = slower damping */;
 
         $scope.x = targetX = 0.5;
         $scope.y = targetY = 0.5;
