@@ -21,8 +21,9 @@
 
         var targetX, targetY, damping = 150 /* higher value = slower damping*/;
 
-        $scope.x = targetX = 0.5;
-        $scope.y = targetY = 0.5;
+        $scope.x = $scope.x2 = $scope.x3 = targetX = 0;
+        $scope.y = $scope.y2 = $scope.y3 = targetY = 0;
+
 
         $scope.updateParallax = function($event) {
             // console.log($event.clientX, $event.clientY);

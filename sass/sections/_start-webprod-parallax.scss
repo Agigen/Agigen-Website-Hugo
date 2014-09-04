@@ -7,28 +7,12 @@ $front-scale: 1.8;
 $middle-scale: 1.3;
 
 .section--start-webprod {
-    .section__content {
-        vertical-align: bottom;
-    }
-
-    @extend .text--light;
     @extend .bgcolor--blue;
-    @include vhFejk(90);
-    overflow: hidden;
 
-    position: relative;
     .container {
         position: relative;
         z-index: 50;
-        // opacity: 0;
-        // @include transition (opacity 250ms ease-out 1000ms);
         pointer-events: none;
-    }
-
-    .falldown {
-        // @include transform(translateY(150px));
-        // @include transition (transform 250ms ease-out 1000ms);
-
     }
     .btn {
         pointer-events: auto;
@@ -43,11 +27,6 @@ $middle-scale: 1.3;
         }
     }
 }
-
-// .case--fullwidth--samsung {
-//     position: relative;
-//     background: white;
-// }
 
 .lax {
     position: absolute;

@@ -1,7 +1,3 @@
-.one-seventh {
-    width: 14.284% !important;
-}
-
 .client-logo {
     vertical-align: middle;
     display: inline-block;
@@ -10,22 +6,19 @@
     max-width: 160px;
     opacity: 0.4;
 
-    &--mcdonalds {
-        width: 60px;
-        height: 50px;
-    }
-    &--lego {}
-    &--google {}
-    &--sj {}
-    &--sony {}
-    &--vodafone {}
-    &--wb {}
-    &--samsung {}
-    &--adidas {}
-    &--volvo {}
-    &--carlsberg {}
-    &--netflix {}
-    &--mini {}
+    // &--mcdonalds {}
+    // &--lego {}
+    // &--google {}
+    // &--sj {}
+    // &--sony {}
+    // &--vodafone {}
+    // &--wb {}
+    // &--samsung {}
+    // &--adidas {}
+    // &--volvo {}
+    // &--carlsberg {}
+    // &--netflix {}
+    // &--mini {}
 }
 
 .section {
@@ -45,6 +38,8 @@
     &--start-intro {
         position: relative;
         @extend .text--dark;
+        background: white;
+
         &__ingress {
             padding: 0 0 100px;
             @include media-query(palm){
@@ -53,39 +48,28 @@
         }
 
         &__logos {
-            // padding-top: 30px;
-            // padding-bottom: 40px;
-            // @extend .grid;
             text-align: center;
             vertical-align: middle;
-
         }
-        background: white;
 
-        &__logo {
-            // @extend .grid__item;
-            // @extend .one-sixth;
-        }
         &__logos-header {
             @extend .epsilon;
             display: none;
         }
     }
 
-
-
+    &--start-webprod ,
     &--start-proddev {
         @extend .text--light;
-        @extend .bgcolor--pink;
-
+        @include vhFejk(90);
+        overflow: hidden;
+        position: relative;
     }
 
     &--start-contact {
         @extend .text--center;
         @extend .text--light;
-
         background-color: #252525;
-
     }
 }
 @import "sections/start-webprod-parallax";
