@@ -33,6 +33,8 @@
         }
         font-weight: 300;
         font-size: 40px;
+        color: #33cbff;
+
         @include media-query(palm){
             font-size: 30px;
         }
