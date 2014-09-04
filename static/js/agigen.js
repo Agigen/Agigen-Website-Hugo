@@ -26,8 +26,8 @@
 
         $scope.updateParallax = function($event) {
             // console.log($event.clientX, $event.clientY);
-            targetX = ($event.clientX / $scope.width) * 1.2;
-            targetY = ($event.clientY / $scope.width) * 1.2;
+            targetX = ($event.clientX / $scope.width) * 1.4;
+            targetY = ($event.clientY / $scope.width) * 1.4;
         };
 
         var updateParallax = function() {
@@ -38,7 +38,11 @@
 
                 $scope.x2 = $scope.x*-1;
                 $scope.y2 = $scope.y*-1;
+                $scope.x3 = ($scope.x2*-1);
+                $scope.y3 = ($scope.y2*-1);
+
                 $scope.$digest();
+
             }
 
             requestAnimFrame(updateParallax);

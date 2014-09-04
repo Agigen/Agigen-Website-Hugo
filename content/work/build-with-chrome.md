@@ -29,6 +29,7 @@
     The application is loosely divided into four different sections: Build mode, Explore mode, Academy mode and CMS for the LEGO people to keep an eye on all the creations.
 </p>
 
+
 <h3>Explore mode</h3>
 <p>
     Entering the Explore mode the user is shown a view of their current geographic location, populated with markers to indicate where people have built their LEGO-structures. Using a zoom control, the user can zoom in on any geographic spot to view the creations in webGL 3D. We used Google Maps' API to present the world, where each tile of from the API equaled one baseplate - the unit each user is given upon entering Build mode. Users can either specifically select a base plate in 3D mode, or get one randomly assigned based on their geographical location. We did HTML-templates, javascript, CSS and API integrations.

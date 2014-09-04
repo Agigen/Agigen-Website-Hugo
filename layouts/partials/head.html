@@ -28,16 +28,13 @@
 </head>
 <body ng-app="agigenApp" ng-controller="menuCtrl"
 class="
-page--{{ .Title | urlize }}
+page--{{ .Title | lower | urlize }}
 {{ if .IsNode }}
   page--node
 {{ else }}
   page--page
   page--{{ .Type }}
 {{ end }}
-
-
-
 ">
 {{ "<!-- " | safeHtml }}
 
