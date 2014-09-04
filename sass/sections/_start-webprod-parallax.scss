@@ -126,9 +126,9 @@ $samsung-rotate: 14deg;
     .lax {
         @include transform-origin(center center);
 
-        &--front  { @include animation(laxInFront 1500ms $ease-out-back);}
-        &--middle { @include animation(laxIn 1500ms $ease-out-back 250ms);}
-        &--back   { @include animation(laxIn 1500ms $ease-out-back 500ms);}
+        &--front  { @include animation(laxInFront 1500ms $ease-in-out-cubic);}
+        &--middle { @include animation(laxIn 1500ms $ease-in-out-cubic 250ms);}
+        &--back   { @include animation(laxIn 1500ms $ease-in-out-cubic 500ms);}
     }
 }
 
