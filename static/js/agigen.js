@@ -19,15 +19,15 @@
     .controller('parallaxCtrl', ['$scope', function($scope){
         $scope.width = $(window).innerWidth()
 
-        var targetX, targetY, damping = 75 /* higher value = slower damping*/;
+        var targetX, targetY, damping = 150 /* higher value = slower damping*/;
 
         $scope.x = targetX = 0.5;
         $scope.y = targetY = 0.5;
 
         $scope.updateParallax = function($event) {
             // console.log($event.clientX, $event.clientY);
-            targetX = ($event.clientX / $scope.width) * 1.4;
-            targetY = ($event.clientY / $scope.width) * 1.4;
+            targetX = ($event.clientX / $scope.width) * 2;
+            targetY = ($event.clientY / $scope.width) * 2;
         };
 
         var updateParallax = function() {
