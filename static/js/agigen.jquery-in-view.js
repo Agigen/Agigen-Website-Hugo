@@ -8,7 +8,7 @@
                                       window[vendors[x]+'CancelRequestAnimationFrame'];
     }
 
-    if (!window.requestAnimationFrame)
+    if (!window.requestAnimationFrame) {
         window.requestAnimationFrame = function(callback) {
             var currTime = new Date().getTime();
             var timeToCall = Math.max(0, 16 - (currTime - lastTime));
@@ -17,11 +17,13 @@
             lastTime = currTime + timeToCall;
             return id;
         };
+    }
 
-    if (!window.cancelAnimationFrame)
+    if (!window.cancelAnimationFrame) {
         window.cancelAnimationFrame = function(id) {
             clearTimeout(id);
         };
+    }
 }());
 
 /* global define, module */
@@ -40,7 +42,12 @@
 }(function($) {
     "use strict";
 
-    $.fn.inView = function() {
+    $.fn.inView = function(options) {
+        options = $.extend({
+            style: 'toggle'
+        }, options);
+        console.log(options);
+
         var callback = function() {
             this.each(function() {
                 var inViewTop, inViewBottom,
@@ -54,10 +61,47 @@
                 inViewBottom = offset.top + $el.height() > scrollTop &&
                                offset.top + $el.height() <= scrollTop + window.innerHeight;
 
-                $el.toggleClass('in-view in-view--whole', inViewTop && inViewBottom);
-                $el.toggleClass('in-view in-view--partial', inViewTop || inViewBottom);
-                $el.toggleClass('in-view in-view--top', inViewTop);
-                $el.toggleClass('in-view in-view--bottom', inViewBottom);
+                if (options.style === 'toggle') {
+                    if (inViewTop && inViewBottom) {
+                        if (!$el.hasClass('in-view--whole')) {
+                            $el.trigger('in-view');
+                            $el.addClass('in-view in-view--whole');
+                        }
+                    } else if (inViewTop || inViewBottom) {
+                        if (!$el.hasClass('in-view--partial')) {
+                            $el.trigger('in-view-partial');
+                            $el.addClass('in-view in-view--partial');
+                        }
+
+                        $el.toggleClass('in-view--top', inViewTop);
+                        $el.toggleClass('in-view--bottom', inViewBottom);
+                        $el.removeClass('in-view--whole');
+                    } else {
+                        $el.removeClass('in-view in-view--whole in-view--partial');
+                    }
+                } else {
+                    if (inViewTop && inViewBottom) {
+                        if (!$el.hasClass('in-view--whole')) {
+                            $el.trigger('in-view');
+                        }
+                        $el.addClass('in-view in-view--whole');
+                    }
+
+                    if (inViewTop || inViewBottom) {
+                        if (!$el.hasClass('in-view--partial')) {
+                            $el.trigger('in-view-partial');
+                        }
+                        $el.addClass('in-view in-view--partial');
+                    }
+
+                    if (inViewTop) {
+                        $el.addClass('in-view in-view--top');
+                    }
+
+                    if (inViewBottom) {
+                        $el.addClass('in-view in-view--bottom');
+                    }
+                }
             });
         }.bind(this)
 

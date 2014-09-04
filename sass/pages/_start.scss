@@ -60,9 +60,9 @@
             vertical-align: middle;
 
         }
+        background: white;
+
         &__logo {
-
-
             // @extend .grid__item;
             // @extend .one-sixth;
         }
@@ -72,34 +72,11 @@
         }
     }
 
-    &--start-webprod {
-        @extend .text--light;
-        @extend .bgcolor--blue;
 
-        .btn {
-            @include btnColors(white, $color-webprod-blue);
-        }
-
-        &__showcase {
-            height: 650px;
-            @include media-query(palm){
-                height: auto;
-            }
-            position: relative;
-        }
-
-    }
 
     &--start-proddev {
         @extend .text--light;
         @extend .bgcolor--pink;
-
-        &__showcase {
-            height: 650px;
-            @include media-query(palm){
-                height: auto;
-            }
-        }
 
     }
 
@@ -111,5 +88,5 @@
 
     }
 }
-
+@import "sections/start-webprod-parallax";
 

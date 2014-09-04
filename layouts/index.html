@@ -28,69 +28,42 @@
         <img src="/img/start/logos/logga_carlsberg.svg" alt="Carlsberg" class="client-logo client-logo--carlsberg" width="120" height="43">
         <img src="/img/start/logos/logga_mini.svg" alt="Mini" class="client-logo client-logo--mini" width="120" height="50">
         <img src="/img/start/logos/logga_netflix.svg" alt="Netflix" class="client-logo client-logo--netflix" width="120" height="30">
-
-
-
     </div>
-
-    <div class="container">
-        <div class="section--start-intro__logos">
-            <div class="section--start-intro__logo">
-
-            </div><!--
-            --><div class="section--start-intro__logo">
-
-            </div><!--
-            --><div class="section--start-intro__logo">
-
-            </div><!--
-            --><div class="section--start-intro__logo">
-
-            </div><!--
-            --><div class="section--start-intro__logo">
-
-            </div><!--
-            --><div class="section--start-intro__logo">
-
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-            </div><!--
-            --><div class="section--start-intro__logo one-seventh">
-
-
-            </div>
-        </div>
-    </div>
-
-
 
 </section>
 
 
-<section class="section section--start section--start-webprod text--center fullwidth-case-after">
-    <div class="container">
+<section class="section section--start section--start-webprod text--center fullwidth-case-after animate--in-view"
+ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
 
-        <p class="section--start__ingress section--start-webprod__ingress epsilon">All shapes and sizes</p>
-        <h2 class="alpha"><a href="/services/web-production">Web Production</a></h2>
+    <div class="section__content">
+        <div class="container">
 
-        <div class="section--start-webprod__showcase">
-            <span class="section--start-webprod__showcase__thingy">Cool shit</span>
+            <p class="falldown section--start__ingress section--start-webprod__ingress epsilon">All shapes and sizes</p>
+            <h2 class="falldown alpha"><a href="/services/web-production">Web Production</a></h2>
+
+            <p class="falldown section--start__copy beta">We build awesome websites for our clients. Are you in need of kickass frontend development or scalable backends you should check us out.</p>
+
+            <a href="/services/web-production" class="btn btn--large">Learn about our process</a>
         </div>
-
-        <p class="section--start__copy beta">We build awesome websites for our clients. Are you in need of kickass frontend development or scalable backends you should check us out.</p>
-
-        <a href="/services/web-production" class="btn btn--large">Learn about our process</a>
     </div>
+    <img src="/img/start/webprod/back-lax.png" class="lax lax--back">
+
+    <div class="lax lax--middle">
+        <img src="/img/start/webprod/middle-lax.png" ng-style="{'-webkit-transform': 'translate3d('+x+'%,'+y+'%,0)'}">
+        <div class="lax__container" ng-style="{'-webkit-transform': 'translate3d('+x+'%,'+y+'%,0)'}">
+            <a href="/work/build-with-chrome/" class="lax__link lax__link--chrome">Build with Chrome</a>
+            <a href="/work/samsung-youneedtoseethis/" class="lax__link lax__link--samsung">Samsung Youneedtoseethisapp.com</a>
+
+
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+        </div>
+    </div>
+    <div class="lax lax--front">
+        <img src="/img/start/webprod/front-lax.png" ng-style="{'-webkit-transform': 'translate3d('+x2+'%,'+y2+'%,0)'}">
+    </div>
+
+
 </section>
 
 <article class="case case--fullwidth case--fullwidth--samsung">
@@ -108,10 +81,6 @@
     <div class="container">
         <p class="section--start__ingress section--start-proddev__ingress epsilon">From idea to pixel perfect</p>
         <h2 class="alpha"><a href="/services/product-development">Product development</a></h2><br>
-
-        <div class="section--start-proddev__showcase">
-            <img src="/img/temp/eld.gif">
-        </div>
 
         <p class="section--start__copy beta">We develop new products and services. Whether you're a established organization or a startup we'll help you out - from idea to finished product.</p>
 

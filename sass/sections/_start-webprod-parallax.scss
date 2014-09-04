@@ -1,0 +1,148 @@
+.case--fullwidth--samsung ,
+.section--start-intro {
+    z-index: 10;
+}
+
+.section--start-webprod {
+    @extend .text--light;
+    @extend .bgcolor--blue;
+    @include vhFejk(100);
+    overflow: hidden;
+
+    position: relative;
+    .container {
+        position: relative;
+        z-index: 50;
+        opacity: 0;
+        @include transition (opacity 250ms ease-out 1000ms);
+        pointer-events: none;
+    }
+
+    .falldown {
+        @include transform(translateY(150px));
+        @include transition (transform 250ms ease-out 1000ms);
+
+    }
+    .btn {
+        pointer-events: auto;
+        opacity: 0;
+        @include btnColors(white, $color-webprod-blue);
+        @include transform(translateY(-80px));
+
+        @include transition(all 250ms ease, opacity 250ms ease-out 1100ms);
+
+        &:hover {
+
+        }
+    }
+}
+
+// .case--fullwidth--samsung {
+//     position: relative;
+//     background: white;
+// }
+
+.lax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &--back {
+        pointer-events: none;
+        z-index: 5;
+    }
+    &--middle {
+        z-index: 10;
+    }
+    &--front {
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    @include transform(scale(1.5));
+    @include transform-origin(center center);
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__link {
+
+        position: absolute;
+        background: transparent url() no-repeat top left;
+        &--chrome {
+            width: 419px;
+            width: 210px;
+            height: 800px;
+            height: 400px;
+            top: 315px;
+            right: 462px;
+            @include transform(rotate(-8deg));
+            background-image: url(/img/start/webprod/chrome-start.png);
+            background-size: cover;
+            &:hover {
+                @include transform(rotate(-8deg) scale(1.05));
+            }
+        }
+        &--samsung {
+            width: 555px;
+            height: 900px;
+            width: 234px;
+            height: 384px;
+            top: 280px;
+            left: 340px;
+            @include transform(rotate(14deg));
+            &:hover {
+                @include transform(rotate(14deg) scale(1.05));
+            }
+            background-image: url(/img/start/webprod/samsung-start.png);
+            background-size: cover;
+        }
+
+        &:hover {
+
+        }
+    }
+
+
+    img {
+        pointer-events: none;
+        max-width: none;
+        width: auto;
+        height: 100%;
+    }
+}
+
+.in-view--partial {
+
+    .container {
+        opacity: 1;
+    }
+
+    .falldown {
+        @include transform(translateY(0));
+    }
+
+    .btn {
+        @include transform(translateY(0));
+        opacity: 1;
+    }
+    .lax {
+        @include transform-origin(center center);
+        @include animation(laxIn 500ms ease-in);
+    }
+}
+
+@include keyframes(laxIn) {
+    from {
+        @include transform(scale(0));
+    }
+    to {
+        @include transform(scale(1.5));
+    }
+}
+
