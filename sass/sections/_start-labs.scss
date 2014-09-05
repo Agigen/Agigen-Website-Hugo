@@ -1,0 +1,58 @@
+.section--labs {
+    height: 340px;
+    padding: 0;
+    position: relative;
+    .container {
+        height: 100%;
+        position: relative;
+    }
+}
+
+.computer {
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 702px;
+    height: 706px;
+    background: transparent url(/img/start/labs/datta-retina.png) no-repeat top left;
+    background-size: 702px 706px;
+    @include transform(translateY(400px));
+    @include transition(transform 500ms ease);
+    &--connected {
+        @include transform(translateY(0));
+    }
+
+}
+.screen {
+    position: absolute;
+    padding-top: 150px;
+    padding-left: 120px;
+    top: 0;
+    left: 0;
+    color: #0f0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    &__lines {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+    &__line {
+        padding: 0;
+        margin: 0;
+        &:before {
+            content: "> ";
+        }
+    }
+    &__input {
+        color: #0f0;
+        outline: none;
+        background: transparent;
+        border: none;
+    }
+
+}
+
+

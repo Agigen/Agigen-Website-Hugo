@@ -53,8 +53,49 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         requestAnimFrame(updateParallax);
     }])
+    .controller('chatCtrl', ['$scope', function($scope){
+        $scope.messages = [
+            "Hello, what's your name?"
+        ];
+        $scope.connected = false;
+        $scope.username = "";
+        $scope.message = "";
 
-    if (true) {
+        $scope.onConnected = function(){
+            $scope.connected = true;
+            $scope.messages.push("Connected!");
+            $scope.$digest();
+        };
+        $scope.onIncomingMessage = function(msg, user) {
+            $scope.messages.push(user + ": " + msg);
+            $scope.$digest();
+        };
+        $scope.send = function(){
+            if ($scope.message.indexOf('sudo') === 0) {
+                $scope.messages.push("Oh come on man ;)");
+                $scope.message = "";
+                return;
+            };
+
+            if (!$scope.username) {
+                $scope.messages.push($scope.message);
+                $scope.message = "";
+            };
+
+            if ($scope.messages.length == 2) {
+                $scope.username = $scope.messages[1];
+                $scope.messages.push("Hi " + $scope.username + ". We're connecting you...");
+            };
+
+        };
+
+        // example, bind this to the real class later
+        window.incomingMessage = $scope.onIncomingMessage;
+        window.connected = $scope.onConnected;
+
+    }]);
+
+    if ($('#map-canvas').length > 0) {
         window.initializeGoogleMaps = function() {
             var mapStyles = [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}];
 

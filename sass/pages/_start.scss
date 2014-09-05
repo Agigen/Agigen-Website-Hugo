@@ -74,8 +74,11 @@
         @extend .text--center;
         @extend .text--light;
         background-color: #252525;
+        position: relative;
+        z-index: 10;
     }
 }
 @import "sections/start-webprod-parallax";
 @import "sections/start-proddev-parallax";
+@import "sections/start-labs";
 
