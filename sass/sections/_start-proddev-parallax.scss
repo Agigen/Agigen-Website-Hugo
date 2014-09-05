@@ -1,4 +1,47 @@
 .section--start-proddev {
-    @extend .bgcolor--pink;
+    .btn {
+        @include btnColors(white, $color-proddev-pink);
+    }
+}
 
+$yogobe-rotate: -9deg;
+$billogram-rotate: 12deg;
+.section--start-proddev {
+    @extend .bgcolor--pink;
+    .lax {
+        @include transform-origin(center bottom);
+        &__link {
+            text-indent: 0px;
+
+            &__img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                &--standard {}
+                &--hover {
+                    @include transition(opacity 1500ms $ease-in-out-circ 100ms);
+                    opacity: 0;
+                }
+            }
+
+            &--billogram {
+                width: 243px;
+                height: 360px;
+                top: 40%;
+                right: 15%;
+                @include transform(rotate($yogobe-rotate));
+            }
+            &--yogobe {
+                width: 243px;
+                height: 360px;
+                top: 37%;
+                left: 18%;
+                @include transform(rotate($billogram-rotate));
+            }
+
+            &:hover .lax__link__img--hover {
+                opacity: 1;
+            }
+        }
+    }
 }

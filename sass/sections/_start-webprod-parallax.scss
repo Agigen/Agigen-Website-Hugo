@@ -8,9 +8,8 @@ $middle-scale: 1.3;
 $chrome-rotate: -8deg;
 $samsung-rotate: 14deg;
 
+.section--start-proddev ,
 .section--start-webprod {
-    @extend .bgcolor--blue;
-
     .container {
         position: relative;
         z-index: 50;
@@ -19,14 +18,17 @@ $samsung-rotate: 14deg;
     .btn {
         pointer-events: auto;
         opacity: 0;
-        @include btnColors(white, $color-webprod-blue);
         @include transform(translateY(-80px));
-
         @include transition(all 250ms ease, opacity 250ms ease-out 1100ms);
+    }
+}
 
-        &:hover {
 
-        }
+
+.section--start-webprod {
+    @extend .bgcolor--blue;
+    .btn {
+        @include btnColors(white, $color-webprod-blue);
     }
 }
 
@@ -67,9 +69,10 @@ $samsung-rotate: 14deg;
         position: absolute;
         background: transparent url() no-repeat top left;
         &--chrome {
-            width: 419px;
+            // height: 800px;
+            // width: 419px;
+
             width: 210px;
-            height: 800px;
             height: 400px;
             top: 30%;
             right: 15%;
@@ -114,11 +117,6 @@ $samsung-rotate: 14deg;
     .container {
         opacity: 1;
     }
-
-    .falldown {
-        @include transform(translateY(0));
-    }
-
     .btn {
         @include transform(translateY(0));
         opacity: 1;

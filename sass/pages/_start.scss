@@ -66,6 +66,10 @@
         position: relative;
     }
 
+    &--labs {
+        background-color: $color-labs-orange;
+    }
+
     &--start-contact {
         @extend .text--center;
         @extend .text--light;
