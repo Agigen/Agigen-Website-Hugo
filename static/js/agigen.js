@@ -104,6 +104,26 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         window.location = v;
     });
 
+    // visually count up to a number
+    $('.count-up').each(function(i,e){
+        var $e = $(e);
+        var val = $e.text();
+        $e.data('count_to', val);
+        $e.text('0');
+        var countUp = function(){
+            var current = parseInt($e.text(), 10),
+                next = current + 1,
+                max = parseInt($e.data('count_to'), 10);
+            if (next > max) {
+                clearInterval(interval);
+                return;
+            }
+            $e.text(next);
+        };
+        var interval = setInterval(countUp, 70);
+    });
+
+
 
     var animateSvgs = function(){
         var path = $('.animate--svg path').each(function(i,e){
