@@ -17,9 +17,11 @@ $samsung-rotate: 14deg;
     }
     .btn {
         pointer-events: auto;
-        opacity: 0;
-        @include transform(translateY(-80px));
-        @include transition(all 250ms ease, opacity 250ms ease-out 1100ms);
+        @include media-query(palm-and-up){
+            opacity: 0;
+            @include transform(translateY(-80px));
+            @include transition(all 250ms ease, opacity 250ms ease-out 1100ms);
+        }
     }
 }
 

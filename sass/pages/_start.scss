@@ -122,11 +122,14 @@
     }
     @media only screen and (max-width: 700px) {
         max-width: 49px;
+        max-height: 40px;
         margin: 10px;
     }
     @include media-query(palm) {
         margin: 0 3px;
         max-width: 30px;
+        max-height: 18px;
+
     }
 
 
@@ -150,6 +153,10 @@
             @media only screen and (max-width: 1400px) {
                 max-width: 70%;
                 font-size: 30px;
+            }
+            @include media-query(palm){
+                max-width: 80%;
+                font-size: 18px;
             }
 
         }
@@ -184,16 +191,27 @@
         @include vhFejk(90);
         overflow: hidden;
         position: relative;
-    }
-    &--start-webprod {
-
         @include media-query(palm){
             background-image: url(/img/start/webprod/mobile-bg.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top center;
             padding-top: 100px;
-            padding-bottom: 240px;
+            padding-bottom: 180px;
+        }
+    }
+    &--start-webprod {
+        @include media-query(palm){
+            background-image: url(/img/start/webprod/mobile-bg.jpg);
+            padding-top: 100px;
+            padding-bottom: 180px;
+        }
+    }
+
+    &--start-proddev {
+        @include media-query(palm){
+            background-image: url(/img/start/webprod/mobile-bg.jpg);
+            padding-bottom: 280px;
         }
     }
 
