@@ -1,0 +1,24 @@
+.page--work {
+
+
+    .container {
+    }
+
+    .container--tight {
+        max-width: 720px
+    }
+    p {
+        @extend .delta;
+    }
+
+    h2 {
+        @extend .beta;
+    }
+
+}
+
+
+.page--work .main-header {
+    @include vhFejk(60);
+    background: #226ABB;
+}
