@@ -3,7 +3,7 @@
 
     @include media-query(palm) {
         height: 340px;
-        background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat 120px 270px;
+        background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat center 280px;
         background-size: 178px 177px;
     }
     padding: 60px 0 0;

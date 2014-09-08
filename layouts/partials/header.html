@@ -5,8 +5,10 @@
     <div class="main-header__content">
         <div class="container text--light">
 
-            {{ if  eq .Type "work" }}
+            {{ if isset . "Type" }}
+            {{ if eq .Type "work" }}
                 <h2>Case study</h2>
+            {{ end }}
             {{ end }}
 
             <h1 class="alpha">{{ .Title }}</h1>

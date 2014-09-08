@@ -208,14 +208,14 @@
     &--start-webprod {
         @include media-query(palm){
             padding-top: 100px;
-            padding-bottom: 180px;
+            padding-bottom: 150px;
         }
     }
 
     &--start-proddev {
         @include media-query(palm){
             background-image: url(/img/start/proddev/mobile-bg.jpg);
-            padding-bottom: 280px;
+            padding-bottom: 180px;
         }
     }
 

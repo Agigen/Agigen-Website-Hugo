@@ -45,11 +45,16 @@
         text-align: center;
         .container {
             margin-top: -170px;
+            @include media-query(palm){
+              margin-top: -140px;
+            }
         }
         &--billogram {
             .container {
                 margin-top: -300px;
-
+                @include media-query(palm){
+                  margin-top: -180px;
+                }
             }
         }
         .case__title {
@@ -59,11 +64,13 @@
         &--billogram {
             .case__image {
                 width: 320px;
+                max-width: 70%;
             }
         }
         &--samsung {
             .case__image {
                 width: 380px;
+                max-width: 80%;
             }
         }
 
