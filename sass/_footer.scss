@@ -38,6 +38,10 @@
             margin: 0 5px;
             font-size: 13px;
         }
+        @include media-query(palm) {
+            font-size: 10px;
+        }
+
 
         &--bordered {
             @extend .btn;

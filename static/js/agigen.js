@@ -97,6 +97,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
     $('.start-circle').addClass('animate');
 
+
+    // Category selection in blog for mobile devices
+    $('.categories--mobile').on('change', function(){
+        var v = $(this).val();
+        window.location = v;
+    });
+
+
     var animateSvgs = function(){
         var path = $('.animate--svg path').each(function(i,e){
             var path = e;

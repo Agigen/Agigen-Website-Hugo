@@ -3,12 +3,21 @@
 
 <div class="content container">
 
-    <ul class="categories nav nav--banner">
+    <ul class="categories nav nav--banner palm-hidden">
       <li class="category-link category-link--all"><a href="/blog/">All</a></li>
       {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
           <li class="category-link category-link--{{ $key | urlize }}"><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
       {{ end }}
     </ul>
+
+    <p class="lap-and-up-hidden categories--mobile__label epsilon">Filter on category</p>
+    <select class="lap-and-up-hidden categories--mobile">
+      <option value="#" disabled selected>Select category</option>
+      <option value="/blog/">All</option>
+      {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
+          <option value="/categories/{{ $key | urlize }}">{{ $key | title }}</li>
+      {{ end }}
+    </select>
 
     <ul class="posts">
       {{ range .Data.Pages }}

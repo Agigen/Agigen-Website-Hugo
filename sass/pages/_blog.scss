@@ -21,7 +21,19 @@ $color-category-officefun: #9549b2;
 .categories {
     padding: 60px 0 0;
     @extend .epsilon;
+    &--mobile {
+        width: 100%;
+        margin: 0 auto 30px;
+        &__label {
+            @extend .epsilon;
+            text-align: center;
+            margin: 0;
+            padding-top: 30px;
+
+        }
+    }
 }
+
 .category-link {
     padding: 0 10px;
     a {
