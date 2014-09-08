@@ -72,6 +72,10 @@
     margin: 10px;
     @include media-query(palm){
         font-size: 12px;
+        letter-spacing: 1px;
+        margin: 5px;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
     &--large {
