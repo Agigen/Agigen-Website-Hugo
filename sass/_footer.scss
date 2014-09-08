@@ -34,8 +34,9 @@
     &__link {
         display: inline-block;
         margin: 0 20px;
-        @include media-query(palm){
+        @media only screen and (max-width: 640px) {
             margin: 0 5px;
+            font-size: 13px;
         }
 
         &--bordered {

@@ -92,6 +92,11 @@
 $time_between_points: 300ms;
 
 .webprod-process {
+    figure {
+        max-width: 90%;
+        position: relative;
+        margin: 0 auto;
+    }
     position: relative;
     font-size: 20px;
     &__timeline {
@@ -127,7 +132,7 @@ $time_between_points: 300ms;
         display: block;
         position: absolute;
         top: 0;
-        left: 80px;
+        left: 0;
         width: 380px;
         text-align: left;
         color: #676767;
@@ -137,31 +142,36 @@ $time_between_points: 300ms;
         @include transition (opacity 300ms $ease-out-back);
         @include transform-origin(center center);
 
-        &--1 {
-            width: 460px;
-            left: 340px;
+        &--1 ,
+        &--6 {
+            width: 100%;
+            left: 0;
             text-align: center;
+            p {
+                max-width: 460px;
+                margin: 0 auto;
+            }
         }
-        &--2 {
-            left: 680px;
+        &--2 ,
+        &--4 {
+            left: auto;
+            right: 0;
             top: 215px;
         }
         &--3 {
             top: 335px;
         }
         &--4 {
-            left: 680px;
             top: 470px;
         }
         &--5 {
             top: 585px;
         }
         &--6 {
-            width: 460px;
-            left: 340px;
-            text-align: center;
             top: 800px;
         }
+
+
 
         &--1 { @include transition-delay(0); }
         &--2 { @include transition-delay($time_between_points*1+200); }

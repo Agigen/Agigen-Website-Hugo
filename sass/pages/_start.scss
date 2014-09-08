@@ -136,13 +136,22 @@
     &--start {
         @extend .text--center;
         &__ingress {
+            @extend .epsilon;
             margin: 0;
+        }
+        &__title {
+            @extend .alpha;
         }
         &__copy {
             @extend .beta;
             max-width: 80%;
             margin-left: auto;
             margin-right: auto;
+            @media only screen and (max-width: 1400px) {
+                max-width: 70%;
+                font-size: 30px;
+            }
+
         }
     }
 
@@ -175,6 +184,17 @@
         @include vhFejk(90);
         overflow: hidden;
         position: relative;
+    }
+    &--start-webprod {
+
+        @include media-query(palm){
+            background-image: url(/img/start/webprod/mobile-bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+            padding-top: 100px;
+            padding-bottom: 240px;
+        }
     }
 
     &--labs {

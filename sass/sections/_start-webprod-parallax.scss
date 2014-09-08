@@ -68,12 +68,21 @@ $samsung-rotate: 14deg;
         text-align: left;
         position: absolute;
         background: transparent url() no-repeat top left;
+        @media only screen and (max-width: 1100px) {
+            display: none;
+        }
+
         &--chrome {
             // height: 800px;
             // width: 419px;
 
             width: 210px;
             height: 400px;
+
+            @media only screen and (max-width: 1700px) {
+                width: 140px;
+                height: 267px;
+            }
             top: 30%;
             right: 15%;
             @include transform(rotate($chrome-rotate));
@@ -87,7 +96,13 @@ $samsung-rotate: 14deg;
             width: 555px;
             height: 900px;
             width: 234px;
-            height: 384px;
+            height: 379px;
+
+            @media only screen and (max-width: 1700px) {
+                width: 160px;
+                height: 259px;
+            }
+
             top: 24%;
             left: 15%;
             @include transform(rotate($samsung-rotate));
