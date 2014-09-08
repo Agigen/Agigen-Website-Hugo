@@ -1,4 +1,7 @@
 .main-header--start {
+    background-image: url(/img/temp/agigenberget.jpg);
+    background-position: top center;
+    background-size: cover;
     @media only screen and (max-width: 640px) {
         height: 400px;
     }
