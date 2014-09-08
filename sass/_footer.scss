@@ -2,7 +2,7 @@
 .main-footer {
     background: $color-proddev-pink;
     height: 80px;
-    padding: 20px 0;
+    padding: 15px 0 0;
     line-height: 40px;
     color: #fff;
 
@@ -13,6 +13,7 @@
         height: 60px;
     }
     &__title {
+        margin-top: 8px;
         svg {
             height: 35px;
             width: auto;
@@ -34,6 +35,9 @@
     &__link {
         display: inline-block;
         margin: 0 20px;
+        &:hover {
+            text-decoration: underline;
+        }
         @media only screen and (max-width: 640px) {
             margin: 0 5px;
             font-size: 13px;
@@ -47,6 +51,9 @@
             @extend .btn;
             padding: 0 15px;
             @include btnColors(white, $color-proddev-pink);
+            &:hover {
+                text-decoration: none;
+            }
             @include media-query(palm){
                 padding: 0 5px;
                 font-size: 10px;

@@ -152,10 +152,10 @@
         }
         &__copy {
             @extend .beta;
-            max-width: 80%;
+            max-width: 90%;
             margin-left: auto;
             margin-right: auto;
-            @media only screen and (max-width: 1400px) {
+            @media only screen and (max-width: 1300px) {
                 max-width: 70%;
                 font-size: 30px;
             }
