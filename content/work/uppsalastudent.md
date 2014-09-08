@@ -1,7 +1,6 @@
 {
    "client": "",
    "date": "2014-08-29T16:56:20+02:00",
-   "nocasestudy": 1,
    "partners": "",
    "siteurl": "https://uppsalastudent.com",
    "small_image": "uppsalastudent.jpg",
