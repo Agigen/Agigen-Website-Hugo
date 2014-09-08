@@ -5,6 +5,13 @@
     .text-wrapper {
         max-width: 60%;
     }
+    @include media-query(palm) {
+        padding: 80px 0;
+        .text-wrapper {
+            max-width: 90%;
+        }
+    }
+
 }
 
 
@@ -13,6 +20,9 @@
         color: #676767;
         font-size: 90px;
         font-weight: bold;
+        @include media-query(palm) {
+            font-size: 50px;
+        }
     }
     &__title {
         span {
@@ -121,12 +131,11 @@
 
 
 .archive-case {
-    min-height: 300px;
+
     display: block;
     background: #f0f0f0;
     margin-bottom: 24px;
     position: relative;
-    height: 300px;
     @extend .text--center;
 
     &__image {
@@ -135,7 +144,8 @@
     &__content {
         width: 100%;
         position: absolute;
-        top: 90px;
+        top: 30%;
+
         left: 0;
         z-index: 2;
         @include transition(transform 300ms ease, color 300ms ease);
@@ -170,10 +180,15 @@
     }
     &__title {
         @extend .gamma;
+        @include media-query(palm) {
+            font-size: 24px;
+        }
         color: inherit;
     }
     &__tagline {
         @extend .epsilon;
+        @include media-query(palm) {
+        }
         color: inherit;
     }
 }

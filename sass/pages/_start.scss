@@ -52,11 +52,15 @@
     }
     &__scroll {
         position: absolute;
-        bottom: 0;
+        bottom: -5px;
         width: 40px;
         height: 40px;
         left: 47%;
 
+        @media only screen and (min-width: 640px) {
+            @include transition(opacity 400ms ease 2800ms);
+            opacity: 0;
+        }
         @media only screen and (max-width: 640px) {
             left: 125px;
             width: 30px;
@@ -66,7 +70,8 @@
 }
 .animate {
     @media only screen and (min-width: 640px) {
-        .start-circle__title {
+        .start-circle__title ,
+        .start-circle__scroll {
             opacity: 1;
         }
         .start-circle__circle__path {
@@ -202,7 +207,6 @@
     }
     &--start-webprod {
         @include media-query(palm){
-            background-image: url(/img/start/webprod/mobile-bg.jpg);
             padding-top: 100px;
             padding-bottom: 180px;
         }
@@ -210,7 +214,7 @@
 
     &--start-proddev {
         @include media-query(palm){
-            background-image: url(/img/start/webprod/mobile-bg.jpg);
+            background-image: url(/img/start/proddev/mobile-bg.jpg);
             padding-bottom: 280px;
         }
     }
