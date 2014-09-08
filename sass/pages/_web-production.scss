@@ -1,7 +1,8 @@
 .page {
     &--web-production {
         .main-header {
-            background: $color-webprod-blue;
+            background: $color-webprod-blue url(/img/webprod/header-bg.jpg) no-repeat top center;
+            background-size: cover;
         }
     }
 }

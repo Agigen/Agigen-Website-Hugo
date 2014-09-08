@@ -1,7 +1,8 @@
 .page {
     &--product-development {
         .main-header {
-            background: $color-proddev-pink;
+            background: $color-proddev-pink url(/img/proddev/header-bg.jpg) no-repeat top center;
+            background-size: cover;
         }
     }
 }
