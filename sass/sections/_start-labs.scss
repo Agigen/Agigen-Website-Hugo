@@ -1,6 +1,12 @@
 .section--labs {
-    height: 340px;
-    padding: 0;
+    height: 580px;
+
+    @include media-query(palm) {
+        height: 340px;
+        background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat 120px 270px;
+        background-size: 178px 177px;
+    }
+    padding: 60px 0 0;
     position: relative;
     .container {
         height: 100%;
@@ -9,15 +15,17 @@
 }
 
 .computer {
+    text-align: left;
     z-index: 5;
     position: absolute;
     bottom: 0;
-    right: 0;
+    left: 50%;
     width: 702px;
+    margin-left: -351px;
     height: 706px;
     background: transparent url(/img/start/labs/datta-retina.png) no-repeat top left;
     background-size: 702px 706px;
-    @include transform(translateY(400px));
+    @include transform(translateY(440px));
     @include transition(transform 500ms ease);
     &--connected {
         @include transform(translateY(0));
