@@ -1,5 +1,5 @@
 {{ template "partials/head.html" . }}
-{{ template "partials/header.html" . }}
+{{ template "partials/header-start.html" . }}
 
 <section class="section section--start section--start-intro">
     <h1 class="accessibility">Agigen - Agile Generation AB</h1>
@@ -119,8 +119,10 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
     </div>
 </article>
 
-<section class="section section--labs">
+<section class="section section--labs text--light">
     <div class="container">
+        <h2 class="alpha text--center">Labs</h2>
+
 
         <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}">
             <label class="screen" for="screen-input">

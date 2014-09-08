@@ -1,3 +1,92 @@
+.main-header--start {
+    @media only screen and (max-width: 640px) {
+        height: 400px;
+    }
+}
+
+.start-circle {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 600px;
+    height: 600px;
+
+    @media only screen and (max-width: 640px) {
+        width: 280px;
+        height: 280px;
+    }
+
+    &__title {
+        @extend .delta;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        text-transform: uppercase;
+        margin-top: -20px;
+        @media only screen and (min-width: 640px) {
+            @include transition(opacity 400ms ease 2400ms);
+            opacity: 0;
+        }
+        .break {
+            @media only screen and (min-width: 640px) {
+                display: none;
+            }
+        }
+
+    }
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        &__path {
+            @media only screen and (min-width: 640px) {
+                stroke-dasharray: 1821;
+                stroke-dashoffset: 1821;
+            }
+
+        }
+
+    }
+    &__scroll {
+        position: absolute;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        left: 47%;
+
+        @media only screen and (max-width: 640px) {
+            left: 125px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+.animate {
+    @media only screen and (min-width: 640px) {
+        .start-circle__title {
+            opacity: 1;
+        }
+        .start-circle__circle__path {
+            @include animation(dash 2400ms ease-in forwards);
+        }
+    }
+
+}
+
+@include keyframes(dash) {
+    from {
+        stroke-dashoffset: 1821;
+
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
 .client-logo {
     vertical-align: middle;
     display: inline-block;
@@ -5,6 +94,8 @@
     margin: 20px 20px;
     max-width: 160px;
     opacity: 0.4;
+
+
 
     // &--mcdonalds {}
     // &--lego {}
@@ -19,6 +110,26 @@
     // &--carlsberg {}
     // &--netflix {}
     // &--mini {}
+
+    @media only screen and (max-width: 1180px) {
+        max-width: 120px;
+    }
+    @media only screen and (max-width: 1080px) {
+        max-width: 100px;
+    }
+    @media only screen and (max-width: 1080px) {
+        max-width: 90px;
+    }
+    @media only screen and (max-width: 700px) {
+        max-width: 49px;
+        margin: 10px;
+    }
+    @include media-query(palm) {
+        margin: 0 3px;
+        max-width: 30px;
+    }
+
+
 }
 
 .section {

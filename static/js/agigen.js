@@ -95,6 +95,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
     }]);
 
+    $('.start-circle').addClass('animate');
+
     if ($('#map-canvas').length > 0) {
         window.initializeGoogleMaps = function() {
             var mapStyles = [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}];
