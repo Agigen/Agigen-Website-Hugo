@@ -1,2 +1,2 @@
 #!/bin/bash
-sass --watch sass:static/css --style compressed --sourcemap
+sass --watch sass:site/static/css --style compressed --sourcemap
