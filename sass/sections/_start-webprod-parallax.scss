@@ -112,6 +112,13 @@ $samsung-rotate: 14deg;
     }
 }
 
+@include media-query(palm) {
+    .lax {
+        display: none;
+    }
+}
+
+
 .in-view--partial {
 
     .container {

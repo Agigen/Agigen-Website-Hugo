@@ -1,7 +1,12 @@
 
 .fullwidth-case-after {
-    padding-bottom: 240px;
+    @include media-query(palm){
+        padding-bottom: 80px;
+    }
     &--start-billogram {
+      @include media-query(palm){
+          padding-bottom: 180px;
+      }
         // padding-bottom: 380px;
     }
 }

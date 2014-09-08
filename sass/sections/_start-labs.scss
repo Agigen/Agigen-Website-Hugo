@@ -22,6 +22,9 @@
     &--connected {
         @include transform(translateY(0));
     }
+    @media only screen and (max-width: 640px) {
+        display: none;
+    }
 
 }
 .screen {
