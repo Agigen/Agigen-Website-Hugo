@@ -1,3 +1,9 @@
+.page--meet-the-team .main-header {
+    background: $color-proddev-pink url(/img/about/header.jpg) no-repeat top center;
+    background-size: cover;
+    @include vhFejk(50);
+}
+
 .team-member {
     text-align: center;
     padding-top: 70px;

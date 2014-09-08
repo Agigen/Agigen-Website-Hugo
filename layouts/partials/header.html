@@ -6,9 +6,13 @@
         <div class="container text--light">
 
             {{ if isset . "Type" }}
-            {{ if eq .Type "work" }}
-                <h2>Case study</h2>
+                {{ if eq .Type "work" }}
+                    <h2>Case study</h2>
+                {{ end }}
             {{ end }}
+
+            {{ if isset .Params "pretitle" }}
+                <h2 class="epsilon">{{ .Params.pretitle }}</h2>
             {{ end }}
 
             <h1 class="alpha">{{ .Title }}</h1>
