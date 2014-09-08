@@ -97,6 +97,27 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
     $('.start-circle').addClass('animate');
 
+    var animateSvgs = function(){
+        var path = $('.animate--svg path').each(function(i,e){
+            var path = e;
+            var length = e.getTotalLength();
+            // Clear any previous transition
+            path.style.transition = path.style.WebkitTransition = 'none';
+            // Set up the starting positions
+            path.style.strokeDasharray = length + ' ' + length;
+            path.style.strokeDashoffset = length;
+            // Trigger a layout so styles are calculated & the browser
+            // picks up the starting position before animating
+            path.getBoundingClientRect();
+            // Define our transition
+            path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 2s ease-in-out';
+            // Go!
+            path.style.strokeDashoffset = '0';
+        });
+    };
+    animateSvgs();
+
+
     if ($('#map-canvas').length > 0) {
         window.initializeGoogleMaps = function() {
             var mapStyles = [{"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]}];

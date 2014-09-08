@@ -89,6 +89,7 @@
 }
 
 
+$time_between_points: 300ms;
 
 .webprod-process {
     position: relative;
@@ -97,6 +98,30 @@
         position: relative;
         margin-top: 150px;
         width: 100%;
+        &__dot {
+            opacity: 0;
+            @include transform(scale(0.01));
+            @include transition (all 300ms $ease-out-back);
+            @include transform-origin(center center);
+
+
+            &--1 { @include transition-delay(0); }
+            &--2 { @include transition-delay($time_between_points*1+200); }
+            &--3 { @include transition-delay($time_between_points*2+300); }
+            &--4 { @include transition-delay($time_between_points*3+400); }
+            &--5 { @include transition-delay($time_between_points*4+630); }
+            &--6 { @include transition-delay($time_between_points*5+780); }
+        }
+    }
+    &__line {
+        background: #00C6FF;
+        width: 3px;
+        height: 1px;
+        position: absolute;
+        margin-left: -1.5px;
+        top: 165px;
+        left: 50%;
+        @include transition(height $time_between_points*6 linear 300ms);
     }
     &__step {
         display: block;
@@ -106,7 +131,12 @@
         width: 380px;
         text-align: left;
         color: #676767;
-        @include transition (opacity 300ms ease-in, top 600ms ease-in-out, transform 600ms ease-in-out);
+        opacity: 0;
+        font-size: 16px;
+
+        @include transition (opacity 300ms $ease-out-back);
+        @include transform-origin(center center);
+
         &--1 {
             width: 460px;
             left: 340px;
@@ -132,5 +162,26 @@
             text-align: center;
             top: 800px;
         }
+
+        &--1 { @include transition-delay(0); }
+        &--2 { @include transition-delay($time_between_points*1+200); }
+        &--3 { @include transition-delay($time_between_points*2+300); }
+        &--4 { @include transition-delay($time_between_points*3+400); }
+        &--5 { @include transition-delay($time_between_points*4+630); }
+        &--6 { @include transition-delay($time_between_points*5+780); }
+    }
+
+    &.in-view--partial {
+       .webprod-process__step {
+           opacity: 1;
+       }
+       .webprod-process__timeline__dot {
+            opacity: 1;
+            @include transform(scale(1));
+       }
+       .webprod-process__line {
+            height: 595px;
+       }
     }
 }
+

@@ -1,3 +1,32 @@
+@mixin helper-setup($namespace: "") {
+    .#{$namespace}hidden     { display: none !important; }
+    .#{$namespace}invisible  { visibility: hidden !important; }
+}
+
+@include helper-setup();
+
+@include media-query(palm){
+    @include helper-setup("palm-");
+}
+
+@include media-query(lap){
+    @include helper-setup("lap-");
+}
+
+@include media-query(lap-and-up){
+    @include helper-setup("lap-and-up-");
+}
+
+@include media-query(portable){
+    @include helper-setup("portable-");
+}
+
+@include media-query(desk){
+    @include helper-setup("desk-");
+}
+
+
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -7,6 +36,9 @@
         max-width: none;
     }
 }
+
+
+
 
 .color {
     &--pink {
