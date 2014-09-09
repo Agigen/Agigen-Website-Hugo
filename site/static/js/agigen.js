@@ -39,10 +39,10 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 $scope.x = $scope.x + (targetX - $scope.x) / damping;
                 $scope.y = $scope.y + (targetY - $scope.y) / damping;
 
-                $scope.x2 = $scope.x*-1;
-                $scope.y2 = $scope.y*-1;
-                $scope.x3 = ($scope.x2*-1);
-                $scope.y3 = ($scope.y2*-1);
+                $scope.x2 = $scope.x*2*-1;
+                $scope.y2 = $scope.y*1*-1;
+                $scope.x3 = $scope.x*8*-1;
+                $scope.y3 = $scope.y*3*-1;
 
                 $scope.$digest();
 
