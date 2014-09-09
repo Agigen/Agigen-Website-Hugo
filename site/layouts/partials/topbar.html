@@ -10,6 +10,13 @@
 
         </a></h1>
 
-        <button class="topbar__menu-button" ng-click="menuVisible = !menuVisible"><i class="fa fa-align-justify"></i></button>
+        <button class="topbar__menu-button" ng-click="menuVisible = !menuVisible" ng-class="{'topbar__menu-button--active': menuVisible}">
+
+            <div class="topbar__menu-button__inner"></div>
+            <span class="accessibility">Menu</span>
+
+        </button>
+
+
     </div>
 </div>

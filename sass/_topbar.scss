@@ -52,12 +52,76 @@ $topbar-color: #fff;
     &__menu-button {
         float: right;
         color: $topbar-color;
-        font-size: 28px;
         display: block;
         padding: 0;
-        i {
-            display: block;
+        font-size: 26px;
+
+
+
+
+        &__inner {
+            position: relative;
+            display: inline-block;
+
+
+            &, &:before, &:after {
+                width: 1em;
+                height: 0.125em;
+                background-color: white;
+                // .transition-smooth(transform, background-color, top);
+                @include transition(all 300ms $ease-in-out-cubic);
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+
+                @include transform-origin(50% 50%);
+
+            }
+
+            &:before {
+                top: -0.3em;
+            }
+
+            &:after {
+                top: 0.3em;
+            }
         }
+
+        &:hover {
+           .topbar__menu-button__inner {
+                &:before {
+                    width: 80%;
+                }
+                &:after {
+                    width: 40%;
+                }
+           }
+        }
+
+
+        &--active {
+            .topbar__menu-button__inner {
+                background: transparent;
+                &:before {
+                    width: 100% !important;
+                    @include transform(rotate3d(0,0,1,45deg));
+                }
+
+                &:after {
+                    width: 100% !important;
+                    @include transform(rotate3d(0,0,1,-45deg));
+                }
+
+                &:before, &:after {
+                    top: 0;
+                }
+            }
+        }
+
+
     }
     svg {
         path {
