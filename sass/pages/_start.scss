@@ -1,11 +1,60 @@
 .main-header--start {
-    background-image: url(/img/temp/agigenberget.jpg);
+    background-image: url(/img/start/splash/mountain.jpg);
     background-position: top center;
-    background-size: cover;
+
+    &__cloud {
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        width: 1920px;
+
+        &--1 {
+            height: 720px;
+            background-image: url(/img/start/splash/cloud_1920_720.png);
+            z-index: 15;
+            bottom: -360px;
+            right: 50%;
+            // border: 1px blue solid;
+            @include animation(cloudsRight 120s linear);
+        }
+        &--2 {
+            height: 1000px;
+            background-image: url(/img/start/splash/cloud_1920_1000.png);
+            z-index: 5;
+            bottom: -500px;
+            // border: 1px yellow solid;
+            left: 50%;
+            @include animation(cloudsLeft 300s linear);
+        }
+    }
+
     @media only screen and (max-width: 640px) {
         height: 400px;
+        &__cloud {
+            display: none;
+        }
     }
 }
+
+@include keyframes(cloudsLeft) {
+    from {
+        @include transform(translateX(0%))
+    }
+    to {
+        @include transform(translateX(-150%))
+    }
+}
+@include keyframes(cloudsRight) {
+    from {
+        @include transform(translateX(0%))
+    }
+    to {
+        @include transform(translateX(200%))
+    }
+}
+
+
 
 .start-circle {
     display: block;
@@ -27,6 +76,8 @@
         top: 50%;
         text-transform: uppercase;
         margin-top: -20px;
+        z-index: 30;
+
         @media only screen and (min-width: 640px) {
             @include transition(opacity 400ms ease 2400ms);
             opacity: 0;
@@ -42,6 +93,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 10;
 
         width: 100%;
         &__path {
@@ -59,6 +111,7 @@
         width: 40px;
         height: 40px;
         left: 47%;
+        z-index: 30;
 
         @media only screen and (min-width: 640px) {
             @include transition(opacity 400ms ease 2800ms);
@@ -78,7 +131,7 @@
             opacity: 1;
         }
         .start-circle__circle__path {
-            @include animation(dash 2400ms ease-in forwards);
+            @include animation(dash 3000ms $ease-in-out-quint forwards);
         }
     }
 
