@@ -76,60 +76,63 @@
 
     }
     &--thin {
-      padding: 0;
-      position: relative;
-      padding: 0;
-      text-align: left;
-      border-bottom: 5px #d8d8d8 solid;
-
-      .container {
+        padding: 0;
         position: relative;
-        margin-top: 0;
-        height: 153px;
-        z-index: 10;
-      }
+        padding: 0;
+        text-align: left;
+        border-bottom: 5px #d8d8d8 solid;
 
-      .case__headline {
-        @extend .gamma;
-        color: inherit;
-        padding: 40px 0 0;
-        margin: 0;
-      }
-
-      .case__image {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
-
-      &:hover {
-        color: white !important;
-        background-color: #000;
-      }
-
-      &--build {
-        background: #2466bd;
-        color:#fff;
-        border-bottom:0;
-        @include transition (background-color 1000ms ease-in 300ms);
-        .spaceman {
-          top: 40px;
-          height: 80px;
-          position: absolute;
-          z-index: 5;
-          right: -120px;
+        .container {
+            position: relative;
+            margin-top: 0;
+            height: 153px;
+            z-index: 10;
         }
 
-        &:hover .spaceman {
-          @include animation(spaceman 12s linear 1000ms infinite);
+        .case__headline {
+            @extend .gamma;
+            color: inherit;
+            padding: 40px 0 0;
+            margin: 0;
         }
-      } // &--build
 
-      &--billogram {
-        background: #6abbb8;
-        color: white;
-        border-bottom: 0;
-      }
+        .case__image {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include media-query(palm) {
+                position: static;
+                margin: 0 auto 0;
+            }
+        }
+
+        &:hover {
+            color: white !important;
+            background-color: #000;
+        }
+
+        &--build {
+            background: #2466bd;
+            color:#fff;
+            border-bottom:0;
+            @include transition (background-color 1000ms ease-in 300ms);
+            .spaceman {
+                top: 40px;
+                height: 80px;
+                position: absolute;
+                z-index: 5;
+                right: -120px;
+            }
+            &:hover .spaceman {
+                @include animation(spaceman 12s linear 1000ms infinite);
+            }
+        } // &--build
+
+        &--billogram {
+            background: #6abbb8;
+            color: white;
+            border-bottom: 0;
+        }
 
     } // &--thin
 
