@@ -1,5 +1,68 @@
 .page--work {
 
+    .work {
+        &__header-image {
+            margin: -280px auto 0;
+            position: relative;
+            z-index: 5;
+            display: block;
+        }
+
+        &__list {
+            list-style-type: none;
+            @extend .delta;
+            &:first-child {
+                padding-top: 0 !important;
+            }
+
+            li {
+                border-bottom: 1px #dfdfdf solid;
+                padding: 0.5em 0.5em 0.5em 0;
+            }
+        }
+        &__section {
+            background: white;
+            padding: 100px 0;
+
+            &--tilted {
+                &--top {
+                    @include sneddisTop(-5, 150px);
+                    padding-bottom: 100px;
+                }
+
+                &--bottom {
+                    padding-top: 100px;
+                    @include sneddis(-5, 150px);
+                    margin-bottom: 150px;
+
+                }
+            }
+            &--awards {
+                padding: 90px 0;
+                background: #f0f0f0;
+            }
+
+
+            &--build {
+                &--what-have-we-done {
+                    height: 640px;
+                    background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
+                    background-size: cover;
+                }
+            }
+        }
+
+        &__image {
+            &--fullsize {
+                width: 100%;
+                padding-bottom: 100px;
+            }
+        }
+
+    }
+
+
+
 
     .container {
     }

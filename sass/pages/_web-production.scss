@@ -22,6 +22,9 @@
             left: 100px;
             top: -80px;
         }
+        @include media-query(palm) {
+            min-height: 0;
+        }
     }
 
     &--webprod-tools {
