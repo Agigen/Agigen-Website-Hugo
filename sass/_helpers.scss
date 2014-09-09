@@ -139,14 +139,19 @@
 
 
 .blocklink {
+    @extend .gamma;
     height: 300px;
+    line-height: 300px;
+    @include media-query(palm){
+        height: 140px;
+        line-height: 140px;
+        font-size: 24px;
+    }
     color: #fff;
     background: #252525;
-    line-height: 300px;
     text-align: center;
     width: 100%;
     display: block;
-    @extend .gamma;
     &--work {
         background: #252525 url(/img/work-texture.jpg) no-repeat center center;
         background-size: cover;

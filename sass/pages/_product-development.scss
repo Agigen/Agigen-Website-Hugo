@@ -152,20 +152,31 @@ $time_between_points: 800ms;
         }
     }
 
-    &--proddev-contact {
+
+    &--contact {
         min-height: 450px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        @extend .text--light;
+
         @media only screen and (max-width: 640px) {
             min-height: 0;
         }
-        background: $color-proddev-pink url(/img/proddev/contact-texture.jpg) no-repeat top center;
-        background-size: cover;
-        color: white;
+
         &__content {
             @extend .gamma;
+            @extend .text-wrapper;
             @media only screen and (max-width: 640px) {
                 font-size: 20px;
             }
         }
+    }
+
+    &--proddev-contact {
+        background-color: $color-proddev-pink;
+        background-image: url(/img/proddev/contact-texture.jpg) ;
+
     }
 
     &--proddev-case {

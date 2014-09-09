@@ -30,7 +30,12 @@
         position: absolute;
         top: 0;
         left: 0;
-        opacity: 0.1;
+        opacity: 0;
+        @include transition(opacity 100ms ease);
+
+        &--loaded {
+            opacity: 1;
+        }
         @include media-query(palm){
             display: none;
         }

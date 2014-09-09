@@ -82,11 +82,18 @@
         text-align: left;
         border-bottom: 5px #d8d8d8 solid;
 
+        @include media-query(palm) {
+            text-align: center;
+        }
         .container {
             position: relative;
             margin-top: 0;
             height: 153px;
             z-index: 10;
+
+            @include media-query(palm) {
+                height: auto;
+            }
         }
 
         .case__headline {
@@ -94,15 +101,33 @@
             color: inherit;
             padding: 40px 0 0;
             margin: 0;
+            @include media-query(palm) {
+                font-size: 20px;
+                padding: 0;
+                margin-top: -30px;
+                strong {
+                    font-size: 16px;
+                    display: block;
+                }
+            }
         }
 
+        .case__title {
+            @include media-query(palm) {
+                font-size: 14px;
+                padding: 10px 0 30px;
+            }
+        }
         .case__image {
             position: absolute;
             bottom: 0;
             right: 0;
             @include media-query(palm) {
-                position: static;
+                position: relative;
                 margin: 0 auto 0;
+                top: -60px;
+                width: auto;
+                height: 160px;
             }
         }
 
