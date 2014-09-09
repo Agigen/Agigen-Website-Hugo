@@ -9,7 +9,7 @@
 }
 
 
-@mixin sneddis($degrees, $height:100px, $background-color:"inherit") {
+@mixin sneddis($degrees, $height:100px, $background-color:inherit) {
     position: relative;
     .container {
         position: relative;
@@ -29,7 +29,7 @@
     }
 }
 
-@mixin sneddisTop($degrees, $height:100px, $background-color:"inherit") {
+@mixin sneddisTop($degrees, $height:100px, $background-color:inherit) {
     position: relative;
     .container {
         position: relative;
