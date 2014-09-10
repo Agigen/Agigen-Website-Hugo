@@ -7,6 +7,9 @@
             z-index: 5;
             display: block;
         }
+        &__tldr {
+            padding: 50px 0;
+        }
 
         &__list {
             list-style-type: none;
@@ -26,15 +29,13 @@
 
             &--tilted {
                 &--top {
-                    @include sneddisTop(-5, 150px);
+                    @include sneddisTop(-5, 200px);
                     padding-bottom: 100px;
                 }
 
                 &--bottom {
                     padding-top: 100px;
-                    @include sneddis(-5, 150px);
-                    margin-bottom: 150px;
-
+                    @include sneddis(-5, 200px);
                 }
             }
             &--awards {
@@ -44,10 +45,36 @@
 
 
             &--build {
+                &--green {
+                    padding-top: 250px;
+                    @extend .text--light;
+                    background: #0ba05d url(/img/work/case/build/lego-bg-green.jpg) repeat center center;
+                }
+
+                &--red {
+                    @extend .text--light;
+                    background: #de4432 url(/img/work/case/build/lego-bg-red.jpg) repeat center center;
+                }
+
                 &--what-have-we-done {
+                    @extend .text--light;
                     height: 640px;
                     background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
                     background-size: cover;
+                }
+
+                &--grandfinale {
+                    height: 800px;
+                    @extend .text--light;
+                    @extend .text--center;
+                    background: #222 url(/img/work/case/build/legomovie.jpg) no-repeat center center;
+                    background-size: 100%;
+                    &__header {
+                        @extend .epsilon;
+                    }
+                    &__copy {
+                        @extend .alpha;
+                    }
                 }
             }
         }
