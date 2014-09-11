@@ -39,6 +39,8 @@
     position: absolute;
     padding-top: 150px;
     padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 220px;
     top: 0;
     left: 0;
     color: #0f0;
@@ -58,6 +60,7 @@
         }
     }
     &__input {
+        width: 100%;
         color: #0f0;
         outline: none;
         background: transparent;
