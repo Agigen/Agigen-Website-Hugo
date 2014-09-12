@@ -54,6 +54,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         requestAnimFrame(updateParallax);
     }])
     .controller('chatCtrl', ['$scope', '$timeout', function($scope, $timeout){
+        var audio = new Audio('/audio/icq.mp3');
         $scope.messages = [
             "Hello, what's your name?"
         ];
@@ -72,6 +73,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.onIncomingMessage = function(msg, user) {
             $scope.messages.push(user + ": " + msg);
             $scope.$digest();
+            audio.play();
         };
         $scope.pulse = function() {
             var url = $scope.url
