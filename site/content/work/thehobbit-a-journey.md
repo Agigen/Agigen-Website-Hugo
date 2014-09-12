@@ -8,18 +8,37 @@
    "small_image": "hobbit.jpg"
 }
 
-<h2>tl;dr:</h2>
-<ul>
-    <li>Project for Google and Warner Bros.</li>
-    <li>Together with North Kingdom</li>
-    <li>An interactive webGL experience set in Middle-Earth</li>
-    <li>Explore Middle-Earth and get into the Tolkien-groove by playing mini games set at different locations</li>
-</ul>
 
-<h2>Background</h2>
-<p>
-    There are quite a few fantasy geeks at our office, and even those not particularly interested will still get their asses to the cinemas when there's a Tolkien film goin up. Imagine our delight at being part of this interactive experience in Middle-Earth, once again partnering up with North Kingdom to create some magic.
-</p>
+<section class="work__tldr">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item lap-and-up-one-half">
+
+                <ul class="work__list">
+                  <li>Project for Google and Warner Bros.</li>
+                  <li>Together with North Kingdom</li>
+                  <li>An interactive webGL experience set in Middle-Earth</li>
+                </ul>
+
+            </div><!--
+            --><div class="grid__item lap-and-up-one-half">
+
+                <p>
+                  Explore Middle-Earth and get into the Tolkien-groove by playing mini games set at different locations
+                </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container container--tight work__section">
+    <h2>Background</h2>
+
+    <p>
+        There are quite a few fantasy geeks at our office, and even those not particularly interested will still get their asses to the cinemas when there's a Tolkien film goin up. Imagine our delight at being part of this interactive experience in Middle-Earth, once again partnering up with North Kingdom to create some magic.
+    </p>
+</section>
 
 <h2>What have we done?(!)</h2>
 <p>

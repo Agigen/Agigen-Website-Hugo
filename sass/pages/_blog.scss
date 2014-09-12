@@ -61,6 +61,13 @@ $color-category-officefun: #9549b2;
 
 
 .post {
+
+    opacity: 0;
+    @include transition(opacity 350ms ease-in 70ms);
+    &.in-view--partial {
+        opacity: 1;
+    }
+
     min-height: 228px;
     border-bottom: 1px #d9d9d9 solid;
     padding: 60px 30px;

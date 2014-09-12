@@ -3,13 +3,6 @@
 @import "bower_components/bourbon/dist/bourbon";
 @import "resets";
 
-.container {
-    width: 90%;
-    max-width: 1170px;
-    margin: 0 auto;
-    position: relative;
-}
-
 body {
     font-family: "proxima-nova";
     overflow-x: hidden;

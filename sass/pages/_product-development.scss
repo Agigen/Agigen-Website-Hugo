@@ -140,7 +140,6 @@ $time_between_points: 800ms;
         padding-top: 100px;
         .container {
             z-index: 5;
-            position: relative;
         }
         &__illustration {
             position: absolute;
@@ -207,7 +206,6 @@ $time_between_points: 800ms;
             background: #f0f0f0;
             padding-top: 300px;
             .container {
-                position: relative;
                 z-index: 5;
             }
             &__illustration {

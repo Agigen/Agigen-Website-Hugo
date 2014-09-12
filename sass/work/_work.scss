@@ -1,4 +1,4 @@
-.page--work {
+.content--page-work {
 
     .work {
         &__header-image {
@@ -8,7 +8,10 @@
             display: block;
         }
         &__tldr {
-            padding: 50px 0;
+            padding: 100px 0 50px;
+            .container {
+                width: 80%;
+            }
         }
 
         &__list {
@@ -89,14 +92,6 @@
     }
 
 
-
-
-    .container {
-    }
-
-    .container--tight {
-        max-width: 720px
-    }
     p {
         @extend .delta;
     }

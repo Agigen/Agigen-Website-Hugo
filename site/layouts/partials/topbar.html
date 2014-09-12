@@ -1,6 +1,6 @@
 <div class="topbar" ng-class="{'menu-expanded': menuVisible}">
     <div class="container">
-        <h1 class="topbar__title"><a href="/">
+        <h1 class="topbar__title"><a href="/" title="Agigen.se">
 
             <svg class="color-animation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                  viewBox="0 0 244.8 190.6" enable-background="new 0 0 244.8 190.6" xml:space="preserve">
@@ -9,6 +9,13 @@
             </svg>
 
         </a></h1>
+
+        {{ if .IsPage }}
+        {{ if eq .Type "work" }}
+            <a href="/work/" class="topbar__work-back">Go back</a>
+        {{ end }}
+        {{ end }}
+
 
         <button class="topbar__menu-button" ng-click="menuVisible = !menuVisible" ng-class="{'topbar__menu-button--active': menuVisible}">
 

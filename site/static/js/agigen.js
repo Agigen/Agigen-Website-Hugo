@@ -160,7 +160,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 center: new google.maps.LatLng(59.332779, 18.081026),
                 styles: mapStyles,
                 disableDefaultUI: true,
-                backgroundColor: "#222222"
+                backgroundColor: "#222222",
+                scrollwheel: false
+
             };
 
             var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);

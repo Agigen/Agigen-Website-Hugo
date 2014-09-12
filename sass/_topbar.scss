@@ -42,6 +42,18 @@ $topbar-color: #fff;
         }
     }
 
+    &__work-back {
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+        top: -5px;
+        padding-left: 60px;
+        &:before {
+            content: "<";
+            padding-right: 10px;
+        }
+    }
+
     &.menu-expanded {
         .topbar__title:hover svg {
             @include transform-origin(center top);

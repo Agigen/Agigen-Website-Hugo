@@ -25,6 +25,16 @@
     @include helper-setup("desk-");
 }
 
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    &--tight {
+        max-width: 720px
+    }
+
+}
 
 
 .uppercase {
