@@ -33,7 +33,14 @@
     &--tight {
         max-width: 720px
     }
+}
 
+.grid {
+    &--vertically-centered {
+        .grid__item {
+            vertical-align: middle;
+        }
+    }
 }
 
 
@@ -72,6 +79,8 @@
         background-color: $color-labs-orange;
     }
 }
+
+
 
 .btn {
     text-transform: uppercase;

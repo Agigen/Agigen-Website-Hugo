@@ -4,6 +4,7 @@
    "title": "Ericsson City Index",
    "small_image": "ericsson.jpg",
    "siteurl": "http://www.ericsson.com/thinkingahead/networked_society/city-life/city-index/",
+   "color": "#000066",
    "subtitle": "Networked society"
 }
 

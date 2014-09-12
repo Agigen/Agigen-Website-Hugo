@@ -195,6 +195,7 @@ $time_between_points: 800ms;
         }
 
         &--billogram {
+            @extend .text--dark;
             @include sneddis(-9, 380px, white);
             padding-bottom: 0;
             height: 300px;

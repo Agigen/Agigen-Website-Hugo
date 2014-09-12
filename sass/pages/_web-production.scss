@@ -14,13 +14,20 @@
     &--webprod-offer {
         background: $color-webprod-blue url(/img/webprod/blue-texture-retina.jpg) no-repeat top center;
         backgorund-size: cover;
-        padding-top: 40px;
+        padding-top: 100px;
         min-height: 730px;
         &__illustration {
-            position: absolute;
-            z-index: 10;
-            left: 100px;
-            top: -80px;
+            position: static;
+            // z-index: 10;
+            // left: 100px;
+            // top: -80px;
+            &__animation {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                margin: 5% 0 0 9%;
+                width: 116%;
+            }
         }
         @include media-query(palm) {
             min-height: 0;
@@ -34,9 +41,9 @@
         min-height: 500px;
         &__illustration {
             position: absolute;
-            left: -100px;
-            top: -150px;
-            max-width: none;
+            left: -70px;
+            top: -120px;
+            width: 100%;
         }
         @include media-query(palm) {
             min-height: 0;

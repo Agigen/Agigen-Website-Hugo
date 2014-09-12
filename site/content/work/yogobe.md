@@ -6,6 +6,7 @@
    "small_image": "yogobe.jpg",
    "subtitle": "Mindfulness in the cloud",
    "title": "Yogobe",
+   "color": "#70b6e6",
    "weight": 0
 }
 

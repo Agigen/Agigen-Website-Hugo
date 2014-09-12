@@ -1,4 +1,11 @@
 .content--page-work {
+    p {
+        @extend .delta;
+    }
+
+    h2 {
+        @extend .beta;
+    }
 
     .work {
         &__header-image {
@@ -8,24 +15,22 @@
             display: block;
         }
         &__tldr {
+            &__pretitle {
+                @extend .epsilon;
+            }
             padding: 100px 0 50px;
-            .container {
-                width: 80%;
+            @extend .beta;
+            text-align: center;
+            h2 {
+                @extend .gamma;
+            }
+            .btn {
+                @include btnColors(#333, white);
             }
         }
 
-        &__list {
-            list-style-type: none;
-            @extend .delta;
-            &:first-child {
-                padding-top: 0 !important;
-            }
 
-            li {
-                border-bottom: 1px #dfdfdf solid;
-                padding: 0.5em 0.5em 0.5em 0;
-            }
-        }
+
         &__section {
             background: white;
             padding: 100px 0;
@@ -41,27 +46,43 @@
                     @include sneddis(-5, 200px);
                 }
             }
+
+            &--three-points {
+                @extend .text--light;
+                background: #222;
+                text-align: center;
+                @extend .delta;
+
+            }
             &--awards {
+                &__pretitle {
+                    @extend .epsilon;
+                }
                 padding: 90px 0;
                 background: #f0f0f0;
             }
 
 
             &--build {
+                &--three-points {
+                    background: #226ABB;
+                }
+
                 &--green {
-                    padding-top: 250px;
+                    height: 450px;
                     @extend .text--light;
                     background: #0ba05d url(/img/work/case/build/lego-bg-green.jpg) repeat center center;
                 }
 
                 &--red {
+                    height: 450px;
                     @extend .text--light;
                     background: #de4432 url(/img/work/case/build/lego-bg-red.jpg) repeat center center;
                 }
 
-                &--what-have-we-done {
+                &--explore {
                     @extend .text--light;
-                    height: 640px;
+                    height: 540px;
                     background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
                     background-size: cover;
                 }
@@ -92,18 +113,13 @@
     }
 
 
-    p {
-        @extend .delta;
-    }
 
-    h2 {
-        @extend .beta;
-    }
 
 }
 
 
 .page--work .main-header {
     @include vhFejk(60);
-    background: #226ABB;
+    background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
+    background-size: cover;
 }

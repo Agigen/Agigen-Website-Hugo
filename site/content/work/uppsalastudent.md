@@ -6,6 +6,7 @@
    "small_image": "uppsalastudent.jpg",
    "subtitle": "Kuratorskonventet",
    "title": "Uppsalastudent.com",
+   "color": "#ce7800",
    "weight": 0
 }
 
