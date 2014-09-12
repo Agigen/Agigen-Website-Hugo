@@ -18,6 +18,22 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     app.controller('menuCtrl', ['$scope', function($scope){
         $scope.menuVisible = false;
     }])
+    .controller('introCtrl', ['$scope', function($scope) {
+        var $cloud1 = $('.could-wrapper--1'),
+            $cloud2 = $('.could-wrapper--2');
+
+        $scope.$watch('scrollTop', function(v) {
+            if (typeof v !== 'undefined') {
+                $cloud1.css({
+                    transform: 'translateY(' + -v/3 + 'px)'
+                });
+
+                $cloud2.css({
+                    transform: 'translateY(' + -v/2 + 'px)'
+                });
+            }
+        });
+    }])
     .controller('parallaxCtrl', ['$scope', function($scope){
         $scope.width = $(window).innerWidth()
 
@@ -147,6 +163,28 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         window.incomingMessage = $scope.onIncomingMessage;
         window.connected = $scope.onConnected;
 
+    }])
+    .directive('scrollSpy', ['$timeout', function($timeout) {
+        /*
+        Keeps track of the current scroll position and updates the scope accordingly
+        */
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs) {
+                var $window = $(window);
+
+                var _updateScroll = function(event) {
+                    scope.scrollTop = $window.scrollTop();
+                    console.log(scope.scrollTop);
+                    scope.$apply();
+                };
+
+                var updateScroll = _updateScroll;
+                $window.on('scroll', updateScroll);
+
+                $timeout(function() { updateScroll(); }, 0);
+            }
+        };
     }]);
 
     $('.start-circle').addClass('animate');
