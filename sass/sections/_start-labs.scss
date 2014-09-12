@@ -1,5 +1,11 @@
 .section--labs {
+    @include transition(height 500ms ease);
     height: 580px;
+
+    &-connected {
+        @include transition(height 500ms ease);
+        height: 1000px;
+    }
 
     @include media-query(palm) {
         height: 340px;

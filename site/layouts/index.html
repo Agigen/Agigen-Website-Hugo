@@ -134,7 +134,7 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
                     <li class="screen__line" ng-repeat="message in messages track by $index">{{"{{"}} message {{"}}"}}</li>
                 </ul>
                 <form ng-submit="send()">
-                    <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown()">
+                    <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown()" autocomplete="off">
                 </form>
             </label>
 
