@@ -70,7 +70,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         requestAnimFrame(updateParallax);
     }])
     .controller('chatCtrl', ['$scope', '$timeout', function($scope, $timeout){
-        var audio = new Audio('/audio/icq.mp3');
+        var msgAudio = new Audio('/audio/icq.mp3'),
+            typeAudio = new Audio('/audio/type.mp3');
         $scope.messages = [
             "Hello, what's your name?"
         ];
@@ -80,7 +81,11 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.lastMessage = "";
         $scope.lastSentMessage = "";
         $scope.url = "http://agigen-slack-chat.appspot.com";
-
+        $scope.keyDown = function(){
+            typeAudio.pause();
+            typeAudio.currentTime = 0;
+            typeAudio.play();
+        };
         $scope.onConnected = function(){
             $scope.connected = true;
             $scope.messages.push("Connected!");
@@ -89,7 +94,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.onIncomingMessage = function(msg, user) {
             $scope.messages.push(user + ": " + msg);
             $scope.$digest();
-            audio.play();
+            msgAudio.play();
         };
         $scope.pulse = function() {
             var url = $scope.url
