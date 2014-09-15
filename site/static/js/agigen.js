@@ -200,7 +200,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         return {
             restrict: 'A',
             template: '\
-<ul class="screen-carousel__items">\
+<ul class="screen-carousel">\
     <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
         ng-class="{\
             \'screen-carousel__item--current\': $index == index,\
@@ -213,11 +213,22 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         <img ng-src="{{src}}" ng-click="setSlide($index)">\
     </li>\
 </ul>\
+<nav>\
+    <ul class="screen-carousel-nav">\
+        <li ng-repeat="src in srcs track by $index" class="screen-carousel-nav__item"\
+            ng-class="{\
+                \'screen-carousel-nav__item--current\': $index == index,\
+            }"\
+        >\
+            <a ng-click="setSlide($index)">Item {{$index}}</a>\
+        </li>\
+    </ul>\
+</nav>\
             ',
             link: function(scope, element, attrs) {
-                element.addClass('screen-carousel');
+                element.addClass('screen-carousel-wrapper');
                 scope.srcs = attrs.screenCarousel.split(',');
-                scope.index = 0;
+                scope.index = scope.srcs.length > 2 ? 1 : 0;
 
                 scope.setSlide = function(index) {
                     scope.index = index;
