@@ -195,6 +195,35 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 $timeout(function() { updateScroll(); }, 0);
             }
         };
+    }])
+    .directive('screenCarousel', ['$interval', function($interval) {
+        return {
+            restrict: 'A',
+            template: '\
+<ul class="screen-carousel__items">\
+    <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
+        ng-class="{\
+            \'screen-carousel__item--current\': $index == index,\
+            \'screen-carousel__item--prev\': $index == (index - 1),\
+            \'screen-carousel__item--next\': $index == (index + 1),\
+            \'screen-carousel__item--below\': $index < index,\
+            \'screen-carousel__item--over\': $index > index,\
+        }"\
+    >\
+        <img ng-src="{{src}}" ng-click="setSlide($index)">\
+    </li>\
+</ul>\
+            ',
+            link: function(scope, element, attrs) {
+                element.addClass('screen-carousel');
+                scope.srcs = attrs.screenCarousel.split(',');
+                scope.index = 0;
+
+                scope.setSlide = function(index) {
+                    scope.index = index;
+                };
+            },
+        };
     }]);
 
     $('.start-circle').addClass('animate');
