@@ -12,6 +12,10 @@ $topbar-color: #fff;
     height: $topbar-height;
     line-height: $topbar-height;
 
+    .menu-open & {
+        position: fixed;
+    }
+
     @include media-query(palm){
         opacity: 0.9;
         top: 20px;

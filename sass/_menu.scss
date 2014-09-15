@@ -2,10 +2,10 @@ $main-menu-fontcolor: #f0f0f0;
 html, body {
     min-height: 100%;
     position: relative;
+}
 
-    &.menu-open {
-        overflow: hidden;
-    }
+html.menu-open {
+    overflow: hidden;
 }
 
 
@@ -77,7 +77,7 @@ html, body {
 
             padding-bottom: 120px;
             @include media-query(palm){
-                padding-bottom: 60px;
+                padding-bottom: 240px;
             }
         }
     }
@@ -109,8 +109,12 @@ html, body {
             font-size: 35px;
         }
 
+        @include media-query(lap){
+            font-size: 24px;
+        }
+
         @include media-query(palm){
-            font-size: 20px;
+            font-size: 16px;
         }
 
         &--main {
@@ -136,8 +140,12 @@ html, body {
         &--blog {}
         &--contactus {}
 
+        .touch-device &:hover {
+            color: $main-menu-fontcolor !important;
+        }
 
     }
+
     &__section-name {
         display: block;
         border-top: 1px #464646 solid;
@@ -145,8 +153,12 @@ html, body {
         margin-top: 15px;
         padding-top: 30px;
         line-height: 200%;
+
         @include media-query(palm){
             font-size: 9px;
+            padding-top: 10px;
+            padding-bottom: 0px;
+            margin-top: 5px;
         }
 
     }

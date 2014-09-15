@@ -37,13 +37,12 @@ pluralizeListTitles = false
     weight = 200
     identifier = "proddev"
 
-#[[menu.main]]
-#    name = "Agigen Labs"
-#    parent = "services"
-#    url = "/services/labs"
-#    weight = 300
-#    identifier = "labs"
-
+[[menu.main]]
+    name = "Agigen Labs"
+    parent = "services"
+    url = "/services/labs"
+    weight = 300
+    identifier = "labs"
 
 [[menu.main]]
     name = "Learn more"
