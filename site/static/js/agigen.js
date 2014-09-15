@@ -34,7 +34,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 });
 
                 $container.css({
-                    backgroundPosition: '0px ' + v/6 + 'px',
+                    backgroundPosition: 'center ' + v/6 + 'px',
                 })
             }
         });

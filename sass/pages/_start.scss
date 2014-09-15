@@ -33,6 +33,9 @@
 
     @media only screen and (max-width: 640px) {
         height: 400px;
+        // override js parallax
+        background-position: top center !important;
+
         &__cloud {
             display: none;
         }
