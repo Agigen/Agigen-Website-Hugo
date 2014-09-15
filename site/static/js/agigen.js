@@ -26,15 +26,15 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.$watch('scrollTop', function(v) {
             if (typeof v !== 'undefined') {
                 $cloud1.css({
-                    transform: 'translateY(' + -v/5 + 'px)'
+                    transform: 'translateY(' + -v/12 + 'px)'
                 });
 
                 $cloud2.css({
-                    transform: 'translateY(' + -v/3 + 'px)'
+                    transform: 'translateY(' + -v/9 + 'px)'
                 });
 
                 $container.css({
-                    backgroundPosition: 'center ' + v/6 + 'px',
+                    backgroundPosition: 'center ' + -v/6 + 'px',
                 })
             }
         });

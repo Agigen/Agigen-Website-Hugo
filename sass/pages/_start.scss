@@ -14,7 +14,6 @@
         &--1 {
             height: 720px;
             background-image: url(/img/start/splash/cloud_1920_720.png);
-            z-index: 15;
             bottom: -360px;
             right: 50%;
             // border: 1px blue solid;
@@ -23,7 +22,6 @@
         &--2 {
             height: 1000px;
             background-image: url(/img/start/splash/cloud_1920_1000.png);
-            z-index: 5;
             bottom: -500px;
             // border: 1px yellow solid;
             left: 50%;
@@ -48,6 +46,11 @@
     height: 100%;
     top: 0;
     left: 0;
+    &--1 {
+        z-index: 15;
+    }
+    &--2 {
+    }
 }
 
 @include keyframes(cloudsLeft) {
