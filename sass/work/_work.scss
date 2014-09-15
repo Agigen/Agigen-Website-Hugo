@@ -52,7 +52,12 @@
                 background: #222;
                 text-align: center;
                 @extend .delta;
-
+                font-weight: 300;
+                strong {
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
             }
             &--awards {
                 &__pretitle {
