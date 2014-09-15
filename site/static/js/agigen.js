@@ -20,17 +20,22 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     }])
     .controller('introCtrl', ['$scope', function($scope) {
         var $cloud1 = $('.could-wrapper--1'),
-            $cloud2 = $('.could-wrapper--2');
+            $cloud2 = $('.could-wrapper--2'),
+            $container = $('.main-header--start');
 
         $scope.$watch('scrollTop', function(v) {
             if (typeof v !== 'undefined') {
                 $cloud1.css({
-                    transform: 'translateY(' + -v/3 + 'px)'
+                    transform: 'translateY(' + -v/5 + 'px)'
                 });
 
                 $cloud2.css({
-                    transform: 'translateY(' + -v/2 + 'px)'
+                    transform: 'translateY(' + -v/3 + 'px)'
                 });
+
+                $container.css({
+                    backgroundPosition: '0px ' + v/6 + 'px',
+                })
             }
         });
     }])
