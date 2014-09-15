@@ -20,7 +20,7 @@
 
 <h2>Background</h2>
 <p>
-    Hostelling International works to provide safe, affordable accomodations to promote cultural exchange among youths. With this in mind Pond developed the concept of the Big blog exchange, what better way to learn about a new culture than to live it?
+    Hostelling International works to provide safe, affordable accomodations to promote cultural exchange among youths. With this in mind Pond developed the concept of the Big blog exchange; what better way to learn about a new culture than to live it?
 </p>
 <p>
     Pond wanted bloggers from all over the world to sign up for the challenge, promoting their own blogs and gaining votes to become the top blogs of their continent. The most popular blogs would then be paired up and the writers would swap lives with each other, blogging about it all the while.
