@@ -120,8 +120,20 @@ $time_between_points: 800ms;
         @extend .text--light;
         @include sneddis(-4, 180px, white);
         &__illustration {
-            position: absolute;
-            bottom: -160px;
+            position: static;
+            &-wrapper {
+                position: relative;
+            }
+            &__animation {
+                position: absolute;
+                top: 9.3%;
+                left: 11.1%;
+                right: 22.6%;
+                bottom: 17.8%;
+                background: transparent url(/img/proddev/productdevelopment-animation.gif) no-repeat 0px 0px;
+                background-size:cover;
+
+            }
         }
         .section--proddev__text {
             max-width: 80%;

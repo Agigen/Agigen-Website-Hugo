@@ -71,9 +71,8 @@ $topbar-color: #fff;
         display: block;
         padding: 0;
         font-size: 26px;
-
-
-
+        position: relative;
+        top: -7px;
 
         &__inner {
             position: relative;
