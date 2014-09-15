@@ -79,9 +79,39 @@
     width: 600px;
     height: 600px;
 
-    @media only screen and (max-width: 640px) {
+    @include media-query(lap) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @include media-query(palm) {
         width: 280px;
         height: 280px;
+    }
+
+    @media only screen and (max-height: 900px) {
+        width: 550px;
+        height: 550px;
+    }
+
+    @media only screen and (max-height: 800px) {
+        width: 500px;
+        height: 500px;
+    }
+
+    @media only screen and (max-height: 700px) {
+        width: 450px;
+        height: 450px;
+    }
+
+    @media only screen and (max-height: 600px) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media only screen and (max-height: 500px) {
+        width: 350px;
+        height: 350px;
     }
 
     &__title {
@@ -99,7 +129,7 @@
             opacity: 0;
         }
         .break {
-            @media only screen and (min-width: 640px) {
+            @media only screen and (min-width: 640px) and (min-height: 500px) {
                 display: none;
             }
         }
