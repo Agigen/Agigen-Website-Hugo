@@ -18,7 +18,7 @@
             &__pretitle {
                 @extend .epsilon;
             }
-            padding: 100px 0 50px;
+            padding: 50px 0 100px;
             @extend .beta;
             text-align: center;
             h2 {
@@ -57,9 +57,20 @@
             &--awards {
                 &__pretitle {
                     @extend .epsilon;
+                    padding-bottom: 50px;
                 }
-                padding: 90px 0;
+                padding: 50px 0 100px;
                 background: #f0f0f0;
+                .border--left {
+                    border-left: 1px #dbdbdb solid;
+                }
+
+            }
+
+            &--samsung {
+                &--three-points {
+                    background: #333;
+                }
             }
 
 
@@ -122,4 +133,13 @@
     @include vhFejk(60);
     background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
     background-size: cover;
+}
+
+.page--work {
+    &--samsung {
+        .main-header {
+            background-color: #333;
+            background-image: url(/img/work/case/samsung/header.jpg);
+        }
+    }
 }
