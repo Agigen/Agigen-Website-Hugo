@@ -2,9 +2,10 @@ $main-menu-fontcolor: #f0f0f0;
 html, body {
     min-height: 100%;
     position: relative;
-}
-body.menu-open {
 
+    &.menu-open {
+        overflow: hidden;
+    }
 }
 
 
@@ -23,7 +24,7 @@ body.menu-open {
         padding-top: 60px;
     }
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -66,9 +67,18 @@ body.menu-open {
 
         z-index: 100;
         opacity: 1;
+        height: 100%;
+
         @include transform(skew(0deg));
         .main-menu__grid {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             opacity: 1;
+
+            padding-bottom: 120px;
+            @include media-query(palm){
+                padding-bottom: 60px;
+            }
         }
     }
 
