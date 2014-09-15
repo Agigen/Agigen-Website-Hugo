@@ -65,8 +65,8 @@
 
 .screen-carousel-nav__item {
     opacity: 0.5;
-    @include transform(scale(0.75));
-    @include transition(all 200ms);
+    @include transform(scale(0.666667));
+    @include transition(all 300ms ease);
 
     display: inline-block;
     margin: 0 $base-spacing-unit/4;
