@@ -251,6 +251,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     };
     animateSvgs();
 
+    $(document).one('touchstart.touchdetect', function() {
+        $('html').addClass('touch-device');
+    });
 
     if ($('#map-canvas').length > 0) {
         window.initializeGoogleMaps = function() {
