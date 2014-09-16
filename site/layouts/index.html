@@ -126,20 +126,17 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
         <h2 class="section--start__title">Labs</h2>
         <p class="delta">Our playground where we try out new tech and broaden our expertise.</p>
         <a href="/services/labs" class="btn btn--large">Get inspired</a>
+    </div>
 
-
-        <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}">
-            <label class="screen" for="screen-input">
-                <ul class="screen__lines">
-                    <li class="screen__line" ng-repeat="message in messages track by $index">{{"{{"}} message {{"}}"}}</li>
-                </ul>
-                <form ng-submit="send()">
-                    <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown()" autocomplete="off">
-                </form>
-            </label>
-
-
-        </div>
+    <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}">
+        <label class="screen" for="screen-input">
+            <ul class="screen__lines">
+                <li class="screen__line" ng-repeat="message in messages track by $index">{{"{{"}} message {{"}}"}}</li>
+            </ul>
+            <form ng-submit="send()">
+                <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown()" autocomplete="off">
+            </form>
+        </label>
     </div>
 </section>
 
