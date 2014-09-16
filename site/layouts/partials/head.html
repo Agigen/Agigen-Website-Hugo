@@ -13,8 +13,14 @@
 
   <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
 
+  <script>
+    if ("ActiveXObject" in window) {
+      document.getElementsByTagName('html')[0].className += ' browser-ie';
+    }
+  </script>
+
   <!-- CSS -->
-<!--   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+  <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="/css/agigen.css">
 
   <!-- Icons -->

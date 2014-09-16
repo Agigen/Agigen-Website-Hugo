@@ -40,6 +40,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         });
     }])
     .controller('parallaxCtrl', ['$scope', function($scope){
+        var isIe = $('html').hasClass('browser-ie');
         $scope.width = $(window).innerWidth()
 
         var targetX, targetY, damping = 150 /* higher value = slower damping */;
@@ -49,6 +50,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
 
         $scope.updateParallax = function($event) {
+            if (isIe) {return;}
+
             // console.log($event.clientX, $event.clientY);
             targetX = ($event.clientX / $scope.width) * 2;
             targetY = ($event.clientY / $scope.width) * 2;

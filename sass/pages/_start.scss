@@ -118,6 +118,7 @@
         // @extend .delta;
         position: absolute;
         width: 80%;
+        height: 53.33333%;
         // text-align: center;
         // top: 50%;
         // text-transform: uppercase;
@@ -129,10 +130,9 @@
         @media only screen and (min-width: 640px) {
             @include transition(opacity 450ms ease 2400ms);
             opacity: 0;
-        }
-        .break {
-            @media only screen and (min-width: 640px) and (min-height: 500px) {
-                display: none;
+
+            @at-root .browser-ie & {
+                @include transition(opacity 450ms ease 600ms);
             }
         }
 
@@ -148,6 +148,10 @@
             @media only screen and (min-width: 640px) {
                 stroke-dasharray: 1821;
                 stroke-dashoffset: 1821;
+
+                @at-root .browser-ie & {
+                    stroke-dashoffset: 0;
+                }
             }
 
         }
@@ -165,6 +169,10 @@
         @media only screen and (min-width: 640px) {
             @include transition(opacity 400ms ease 2800ms);
             opacity: 0;
+
+            @at-root .browser-ie & {
+                @include transition(opacity 400ms ease 1000ms);
+            }
         }
         @media only screen and (max-width: 640px) {
             margin-left: -15px;
@@ -183,7 +191,6 @@
             @include animation(dash 3000ms $ease-in-out-quint forwards);
         }
     }
-
 }
 
 @include keyframes(dash) {
