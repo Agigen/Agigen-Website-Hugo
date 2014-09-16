@@ -88,7 +88,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.message = "";
 
 
-        var chat = new agigen.SlackChat("http://test.agigen-slack-chat.appspot.com");
+        var chat = new agigen.SlackChat("http://agigen-slack-chat.appspot.com");
 
         chat.onConnect = function() { $scope.$apply(function() { $scope.onConnected(); }); };
         chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
