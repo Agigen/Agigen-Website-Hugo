@@ -4,9 +4,36 @@ $color-category-casestudies: #00ccff;
 $color-category-news: #ff9900;
 $color-category-officefun: #9549b2;
 
-.page--blog .main-header {
-    @include vhFejk(30);
+
+.page--news,
+.page--backstage,
+.page--case-studies,
+.page--office-fun,
+.page--work.page--node ,
+.page--blog {
+    .main-header {
+        @include vhFejk(30);
+    }
 }
+
+.page--news .main-header {
+    background-color: $color-category-news;
+}
+.page--backstage .main-header {
+    background-color: $color-category-backstage;
+}
+.page--case-studies .main-header {
+    background-color: $color-category-casestudies;
+}
+.page--office-fun .main-header {
+    background-color: $color-category-officefun;
+}
+.page--work.page--node  .main-header {
+    background: $color-category-work;
+
+}
+
+
 
 .posts {
     list-style: none;

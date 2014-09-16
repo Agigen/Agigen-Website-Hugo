@@ -6,7 +6,7 @@
     <ul class="categories nav nav--banner palm-hidden">
       <li class="category-link category-link--all"><a href="/blog/">All</a></li>
       {{ range $key, $taxonomy := .Site.Taxonomies.categories }}
-          <li class="category-link category-link--{{ $key | urlize }}"><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
+          <li class="category-link category-link--{{ $key | urlize | lower }}"><a href="/categories/{{ $key | urlize }}">{{ $key }}</a> </li>
       {{ end }}
     </ul>
 

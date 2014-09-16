@@ -11,7 +11,7 @@
             <header>
                 <span class="post__category">
                     {{ range .Params.categories }}
-                      <a href="tags/{{ . | urlize }}" class="post__category-link post__category-link--{{ . | urlize }}">{{ . }}</a>
+                      <a href="tags/{{ . | urlize }}" class="post__category-link post__category-link--{{ . | urlize | lower }}">{{ . }}</a>
                     {{ end }}
                 </span>
                 <time class="post__time">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
