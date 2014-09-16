@@ -75,30 +75,28 @@ $samsung-rotate: 14deg;
         }
 
         &--chrome {
-            // height: 800px;
-            // width: 419px;
+            // height: 600px;
+            // width: 889px;
 
-            width: 210px;
-            height: 400px;
+            width: 270px;
+            height: 403px;
 
             @media only screen and (max-width: 1700px) {
-                width: 140px;
-                height: 267px;
+                width: 150px;
+                height: 222px;
             }
             top: 30%;
             right: 15%;
             @include transform(rotate($chrome-rotate));
-            background-image: url(/img/start/webprod/chrome-start.png);
+            background-image: url(/img/start/webprod/chrome2.png);
             background-size: cover;
             &:hover {
                 @include animation(pulsateChrome 1800ms $ease-in-out-sine);
             }
         }
         &--samsung {
-            width: 555px;
-            height: 900px;
-            width: 234px;
-            height: 379px;
+            width: 205px;
+            height: 400px;
 
             @media only screen and (max-width: 1700px) {
                 width: 160px;
@@ -106,12 +104,12 @@ $samsung-rotate: 14deg;
             }
 
             top: 24%;
-            left: 15%;
+            left: 17%;
             @include transform(rotate($samsung-rotate));
             &:hover {
                 @include animation(pulsateSamsung 1800ms $ease-in-out-sine);
             }
-            background-image: url(/img/start/webprod/samsung-start.png);
+            background-image: url(/img/start/webprod/sj.png);
             background-size: cover;
         }
 
