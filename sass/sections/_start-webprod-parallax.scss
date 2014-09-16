@@ -58,7 +58,6 @@ $samsung-rotate: 14deg;
     &--front {
         z-index: 20;
         pointer-events: none;
-        @include transform(scale($front-scale));
     }
 
     @include transform-origin(center center);
@@ -151,9 +150,9 @@ $samsung-rotate: 14deg;
     .lax {
         @include transform-origin(center center);
 
-        &--front  { @include animation(laxInFront 1500ms $ease-in-out-quint);}
-        &--middle { @include animation(laxIn 1500ms $ease-in-out-quint 250ms);}
-        &--back   { @include animation(laxIn 1500ms $ease-in-out-quint 500ms);}
+        &--front  { @include animation(laxInFront 1500ms $ease-in-out-quint forwards);}
+        &--middle { @include animation(laxIn 1500ms $ease-in-out-quint 250ms forwards);}
+        &--back   { @include animation(laxIn 1500ms $ease-in-out-quint 500ms forwards);}
     }
 }
 
