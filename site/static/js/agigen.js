@@ -105,9 +105,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             msgAudio.play();
         };
         $scope.pulse = function() {
-            var url = $scope.url
-            $.get(url, function(content) {
-                var data = JSON.parse(content)
+            $.get($scope.url + '/api/latest', function(response) {
+                var data = response.data;
                 if($scope.lastMessage != data.message && data.message != "None") {
                     if(data.message != $scope.lastSentMessage) {
                         $scope.lastMessage = data.message

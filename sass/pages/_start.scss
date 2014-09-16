@@ -131,12 +131,14 @@
         left: 10%;
         top: 30%;
 
-        @media only screen and (min-width: 640px) {
-            @include transition(opacity 450ms ease 2400ms);
-            opacity: 0;
+        path {
+            @media only screen and (min-width: 640px) {
+                @include transition(opacity 450ms ease 2400ms);
+                opacity: 0;
 
-            @at-root .browser-ie & {
-                @include transition(opacity 450ms ease 600ms);
+                @at-root .browser-ie & {
+                    @include transition(opacity 450ms ease 600ms);
+                }
             }
         }
 
@@ -170,14 +172,17 @@
         margin-left: -20px;
         z-index: 30;
 
-        @media only screen and (min-width: 640px) {
-            @include transition(opacity 400ms ease 2800ms);
-            opacity: 0;
+        path {
+            @media only screen and (min-width: 640px) {
+                @include transition(opacity 400ms ease 2800ms);
+                opacity: 0;
 
-            @at-root .browser-ie & {
-                @include transition(opacity 400ms ease 1000ms);
+                @at-root .browser-ie & {
+                    @include transition(opacity 400ms ease 1000ms);
+                }
             }
         }
+
         @media only screen and (max-width: 640px) {
             margin-left: -15px;
             width: 30px;
@@ -187,9 +192,11 @@
 }
 .animate {
     @media only screen and (min-width: 640px) {
-        .start-circle__title ,
+        .start-circle__title,
         .start-circle__scroll {
-            opacity: 1;
+            path {
+                opacity: 1;
+            }
         }
         .start-circle__circle__path {
             @include animation(dash 3000ms $ease-in-out-quint forwards);
@@ -290,8 +297,13 @@
 
         &__ingress {
             padding: 0 0 100px;
+            font-size: 40px;
+            @media only screen and (max-width: 1220px) {
+                font-size: 32px;
+            }
             @include media-query(palm){
                 padding: 0 0 0 0;
+                font-size: 18px;
             }
         }
 
