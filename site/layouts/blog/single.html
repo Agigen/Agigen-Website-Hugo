@@ -10,7 +10,7 @@
         <div class="container text--light">
 
             <h2 class="epsilon">Blog post</h2>
-            <h1 class="main-header__title">{{ .Title }}</h1>
+            <h1 class="main-header__title text-wrapper">{{ .Title }}</h1>
             <p>
                 Posted {{ .Date.Format "Mon, Jan 2, 2006" }} in {{ range .Params.categories }} {{ . }} {{ end }}
             </p>
