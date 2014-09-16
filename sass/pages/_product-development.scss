@@ -122,13 +122,14 @@ $time_between_points: 800ms;
         &__illustration {
             position: static;
             &-wrapper {
-                position: relative;
+                position: absolute;
+                top: -225px;
             }
             &__animation {
                 position: absolute;
                 top: 9.3%;
                 left: 11.1%;
-                right: 22.6%;
+                right: 9.3%;
                 bottom: 17.8%;
                 background: transparent url(/img/proddev/productdevelopment-animation.gif) no-repeat 0px 0px;
                 background-size:cover;
