@@ -86,9 +86,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.connected = false;
         $scope.username = "";
         $scope.message = "";
-        $scope.lastMessage = "";
-        $scope.lastSentMessage = "";
-        $scope.url = "http://agigen-slack-chat.appspot.com";
+
+
+        var chat = new agigen.SlackChat("http://test.agigen-slack-chat.appspot.com");
+
+        chat.onConnect = function() { $scope.$apply(function() { $scope.onConnected(); }); };
+        chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
+        chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
+
         $scope.keyDown = function(){
             typeAudio.pause();
             typeAudio.currentTime = 0;
@@ -97,24 +102,16 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.onConnected = function(){
             $scope.connected = true;
             $scope.messages.push("Connected!");
-            $scope.pulse()
         };
-        $scope.onIncomingMessage = function(msg, user) {
-            $scope.messages.push(user + ": " + msg);
+        $scope.onCloseed = function(){
+            $scope.connected = false;
+            $scope.messages.push("Connection lost! :(");
+        };
+        $scope.onIncomingMessage = function(msg) {
+            $scope.messages.push(msg.username + ": " + msg.text);
+            $scope.messages = $scope.messages.slice(-15);
             $scope.$digest();
             msgAudio.play();
-        };
-        $scope.pulse = function() {
-            $.get($scope.url + '/api/latest', function(response) {
-                var data = response.data;
-                if($scope.lastMessage != data.message && data.message != "None") {
-                    if(data.message != $scope.lastSentMessage) {
-                        $scope.lastMessage = data.message
-                        $scope.onIncomingMessage(data.message, data.from)
-                    }
-                }
-            });
-            $timeout($scope.pulse, 2500);
         };
 
         $scope.send = function(){
@@ -124,56 +121,97 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 return;
             };
 
+            if($scope.message == '') {
+                return;
+            }
+
             if (!$scope.username) {
-                $scope.messages.push($scope.message);
-                $scope.message = "";
-            };
-
-            if ($scope.messages.length == 2) {
                 // Connect user
-                $scope.username = $scope.messages[1];
-                var data = {
-                    'username': $scope.username
-                };
+                $scope.username = $scope.message;
+                $scope.message = "";
                 $scope.messages.push("Hi " + $scope.username + ". We're connecting you...");
-                $.ajax({
-                    url: $scope.url + '/api/connect',
-                    type: 'POST',
-                    data: data
-                }).done(function(data) {
-                    $scope.onConnected()
-                });
 
-            };
-
-            if ($scope.messages.length > 2) {
-                if($scope.message == '') {
-                    return;
-                }
+                chat.connect($scope.username);
+            } else {
                 // Send message
-                var data = {
-                    'username': $scope.username,
-                    'text': $scope.message
-                };
-
-                $.ajax({
-                    url: $scope.url + '/api/sendmessage',
-                    type: 'POST',
-                    data: data
-                }).done(function(data) {
-                    $scope.messages.push($scope.username + ": " + $scope.message)
-                    $scope.lastSentMessage = $scope.message;
-                    $scope.message = "";
-                    $scope.lastMessage = "";
-                    $scope.$digest();
-                });
+                chat.send($scope.message);
+                $scope.message = "";
             }
 
         };
 
-        // example, bind this to the real class later
-        window.incomingMessage = $scope.onIncomingMessage;
-        window.connected = $scope.onConnected;
+
+
+        // $scope.pulse = function() {
+        //     $.get($scope.url + '/api/latest', function(response) {
+        //         var data = response.data;
+        //         if($scope.lastMessage != data.message && data.message != "None") {
+        //             if(data.message != $scope.lastSentMessage) {
+        //                 $scope.lastMessage = data.message
+        //                 $scope.onIncomingMessage(data.message, data.from)
+        //             }
+        //         }
+        //     });
+        //     $timeout($scope.pulse, 2500);
+        // };
+
+        // $scope.send = function(){
+        //     if ($scope.message.indexOf('sudo') === 0) {
+        //         $scope.messages.push("Oh come on man ;)");
+        //         $scope.message = "";
+        //         return;
+        //     };
+
+        //     if (!$scope.username) {
+        //         $scope.messages.push($scope.message);
+        //         $scope.message = "";
+        //     };
+
+        //     if ($scope.messages.length == 2) {
+        //         // Connect user
+        //         $scope.username = $scope.messages[1];
+        //         var data = {
+        //             'username': $scope.username
+        //         };
+        //         $scope.messages.push("Hi " + $scope.username + ". We're connecting you...");
+        //         $.ajax({
+        //             url: $scope.url + '/api/connect',
+        //             type: 'POST',
+        //             data: data
+        //         }).done(function(data) {
+        //             $scope.onConnected()
+        //         });
+
+        //     };
+
+        //     if ($scope.messages.length > 2) {
+        //         if($scope.message == '') {
+        //             return;
+        //         }
+        //         // Send message
+        //         var data = {
+        //             'username': $scope.username,
+        //             'text': $scope.message
+        //         };
+
+        //         $.ajax({
+        //             url: $scope.url + '/api/sendmessage',
+        //             type: 'POST',
+        //             data: data
+        //         }).done(function(data) {
+        //             $scope.messages.push($scope.username + ": " + $scope.message)
+        //             $scope.lastSentMessage = $scope.message;
+        //             $scope.message = "";
+        //             $scope.lastMessage = "";
+        //             $scope.$digest();
+        //         });
+        //     }
+
+        // };
+
+        // // example, bind this to the real class later
+        // window.incomingMessage = $scope.onIncomingMessage;
+        // window.connected = $scope.onConnected;
 
     }])
     .directive('scrollSpy', ['$timeout', function($timeout) {
