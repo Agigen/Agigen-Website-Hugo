@@ -9,14 +9,13 @@
 
     .work {
         &__header-image {
-            margin: -280px auto 0;
+            margin: -10% auto 0;
             position: relative;
             z-index: 5;
             display: block;
             max-width: 500px;
             @media only screen and (max-width: 1180px) {
                 max-width: 50%;
-                margin-top: -10%;
             }
         }
         &__tldr {
@@ -34,7 +33,15 @@
             }
         }
 
-
+        &__divider {
+            height: 400px;
+            @extend .text--light;
+            background-size: cover;
+            &__title {
+                @extend .kilo;
+                margin-bottom: 0;
+            }
+        }
 
         &__section {
             background: white;
@@ -82,6 +89,21 @@
                 margin: 0 auto 25%;
             }
 
+            &--carlsberg {
+                &--video {
+                    background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
+                }
+                &--trivia {
+                    @extend .text--light;
+                    @extend .text--center;
+                    height: 700px;
+                    background: #321651 url(/img/work/case/carlsberg/party-bg.jpg) no-repeat top center;
+                }
+                &--three-points {
+                    background: #071e24;
+                }
+            }
+
             &--samsung {
                 $samsung-case-color: #F6C365;
                 &--three-points {
@@ -120,22 +142,15 @@
                 }
 
                 &--green {
-                    height: 400px;
-                    @extend .text--light;
                     background: #2f9d60;
                 }
 
                 &--red {
-                    height: 400px;
-                    @extend .text--light;
                     background: #d63d3d url(/img/work/case/build/academy-bg.jpg) repeat center center;
                 }
 
                 &--explore {
-                    @extend .text--light;
-                    height: 400px;
                     background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
-                    background-size: cover;
                 }
 
                 &--black {
@@ -172,7 +187,7 @@
 
 
 .page--work .main-header {
-    @include vhFejk(60);
+    @include vhFejk(80);
     background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
     background-size: cover;
 }
@@ -182,6 +197,12 @@
         .main-header {
             background-color: #333;
             background-image: url(/img/work/case/samsung/header.jpg);
+        }
+    }
+    &--where-is-the-party {
+        .main-header {
+            background-color: #333;
+            background-image: url(/img/work/case/carlsberg/carlsberg-bg.jpg);
         }
     }
 }
