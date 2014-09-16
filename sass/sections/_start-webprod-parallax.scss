@@ -43,6 +43,10 @@ $samsung-rotate: 14deg;
     //@include transform(scale($middle-scale));
     @include transform(scale(0));
 
+    .browser-ie & {
+        display: none;
+    }
+
 
     &--back {
         pointer-events: none;

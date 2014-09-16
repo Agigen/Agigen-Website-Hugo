@@ -51,6 +51,10 @@
     }
     &--2 {
     }
+
+    .browser-ie & {
+        display: none;
+    }
 }
 
 @include keyframes(cloudsLeft) {
