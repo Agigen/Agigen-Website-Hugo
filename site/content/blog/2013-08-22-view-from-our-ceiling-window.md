@@ -7,3 +7,4 @@ categories:
   - Office fun
 format: image
 ---
+<img src="/img/blog/posts/2013/08/view-from-our-window.jpg" >

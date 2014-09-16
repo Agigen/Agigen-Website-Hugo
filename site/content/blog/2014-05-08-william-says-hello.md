@@ -7,6 +7,8 @@ categories:
   - News
 ---
 
+<img src="/img/blog/posts/2014/05/william_1.jpg" >
+
 This is a guest blog post by our 14year old trainee William! Unfortunately available in Swedish only.
 
 <!--more-->
@@ -24,11 +26,11 @@ Konceptet var att under veckans gång kunna lägga in roliga händelser på kont
 
 Vår designer Max satt tillsammans med William och skissade fram en enkel wireframe till hur sajten skulle se ut och nästan direkt kunde arbetet med frontend-utveckling påbörjas.
 
-<img alt="william_3" src="http://blog.agigen.se/wp-content/uploads/2014/05/william_3.jpg">
+<img alt="william_3" src="/img/blog/posts/2014/05/william_3.jpg">
 
 Designen i sig var relativt enkel, men även simplistiska layouts kräver mycket CSS &#8211; speciellt eftersom den skulle fungera i både mobil, dator och till och med en TV för våra morgonmöten.
 
-<img alt="william_2" src="http://blog.agigen.se/wp-content/uploads/2014/05/william_2.jpg">
+<img alt="william_2" src="/img/blog/posts/2014/05/william_2.jpg">
 
 Efter några dagar var grunden klar och det gick att klicka sig runt både i mobil och dator, mission accomplished. Vi kände att det fanns nog med frontend färdigt för att fortsätta med backend-biten själva. Vi tackar William för tiden han kunde ge och önskar honom ett stort lycka till i världen av kod och design!
 

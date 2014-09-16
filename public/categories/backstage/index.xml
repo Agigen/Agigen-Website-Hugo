@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Backstage on Agigen </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://localhost:1313/categories/backstage/index.xml</link>
+    <language>en-us</language>
+    
+    
+    <updated>Fri, 08 Feb 2013 00:00:00 UTC</updated>
+    
+    <item>
+      <title>World&#39;s first web-based puck shooting machine</title>
+      <link>http://localhost:1313/blog/2013-02-08-worlds-first-puck-shooting-machine</link>
+      <pubDate>Fri, 08 Feb 2013 00:00:00 UTC</pubDate>
+      
+      <guid>http://localhost:1313/blog/2013-02-08-worlds-first-puck-shooting-machine</guid>
+      <description>&lt;p&gt;For the &lt;a href=&#34;http://www.swehockey.se/Landslag/Herr/Tre-Kronor/OddsetHockeyGames2013/&#34;&gt;Oddset Hockey Games&lt;/a&gt;, in cooperation with &lt;a href=&#34;http://theviralcompany.com&#34;&gt;The Viral Company&lt;/a&gt;, &lt;a href=&#34;http://www.paramecanic.se&#34;&gt;Paramecanic&lt;/a&gt; and &lt;a href=&#34;https://svenskaspel.se&#34;&gt;Svenska Spel&lt;/a&gt;, we built a web application to remote control a machine that shoots hockey pucks at a live goalkeeper.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-125&#34; title=&#34;head&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2013/02/head.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For this campaign, the puck shooting machine resides in a booth at the Oddset Hockey Games, together with a goal and a human goalkeeper. Users can come up to the booth and direct the machine from an iPad, or they can queue up on the web site and wait for their turn to control the machine over the internet. On the web site, users can spectate the shots from thee different angles using three live camera feeds. One user at a time controls the machine; users on location at the booth have a higher queue priority than users on the internet. Each user gets three shots; if they hit the last shot they can continue shooting as long as they hit.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-128&#34; title=&#34;pic1&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2013/02/pic1.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To control the machine, we use an embedded Arduino board connected to an on-site server via USB. The on-site server runs a Python/Tornado web server which listens to requests from the web application backend, which is hosted on Google App Engine. The on-site server also handles the cameras; the spectator live feeds are sent directly to &lt;a href=&#34;http://www.ustream.tv&#34;&gt;UStream&lt;/a&gt;, while a separate camera feed for the currently playing user is handled by a &lt;a href=&#34;http://www.wowza.com/&#34;&gt;Wowza&lt;/a&gt; server (this stream is separate for latency reasons).&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-129&#34; title=&#34;pic2&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2013/02/pic2.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since everything is &amp;#8220;live&amp;#8221;, the application makes extensive use of server-to-client pushes using Google App Engine&amp;#8217;s Channel API. This avoids a large amount of traditional polling. When the frontend JavaScript triggers a &amp;#8220;fire&amp;#8221; AJAX request, the backend passes the firing direction to the on-site server, which in turn passes it on to the Arduino, which controls the machine. Meanwhile, the backend also sends a WebSocket push event to all admins currently viewing administration interface, which gives them the choice to flag the shot as a goal or a miss. As soon as the shot status is set, the currently playing user gets a push notification that tells the frontend JavaScript to let them proceed to their next shot.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-131&#34; title=&#34;pic3&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2013/02/pic3.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To maneuver the puck shooting machine, the Arduino uses a pair of electrically powered hydraulic jacks. Since these don&amp;#8217;t support reporting their current position, the far ends of the travel range are bounded by limit switches. To figure out where the machine is aiming, the Arduino is first calibrated by running the machine to the far ends of the travel range and measuring how long time that takes, and then it simply has to keep track of how long it runs the hydraulics in order to figure out where it&amp;#8217;s aiming.&lt;/p&gt;
+
+&lt;p&gt;The complexity in this application primarily stems from its many layers: the frontend javascript talks to UStream, to the Wowza server and to the App Engine backend. The App Engine backend in turn talks to the on-site server, which talks to the Arduino, which talks to the puck shooting machine. We could have let the frontend JS talk directly to the on-site server, but then we&amp;#8217;d have to do user authentication etc there, so we decided to route the firing controls via the App Engine backend.&lt;/p&gt;
+
+&lt;p&gt;A secondary source of complexity are the latency issues: unsurprisingly it turned out that sending a fire control request from the frontend to the puck machine took a lot less time than it took a live camera feed to pass through UStream&amp;#8217;s CDN back to the frontend. Thus we had a problem where the on-site booth attendant could see a shot being fired and flag it as a goal, which would bring up a &amp;#8220;congratulations!&amp;#8221; notification in the user&amp;#8217;s browser, followed several seconds later by the user actually seeing his shot hit in the camera feed. It was clearly necessary to reduce the latency of the camera feed, and the simplest way of doing that was to remove the &amp;#8220;black box&amp;#8221; of UStream&amp;#8217;s CDN and take care of the stream ourselves. This involved editing very large amounts of XML (Wowza is a Java application, so what did you expect) and swearing a lot, but it ended up working well enough.&lt;/p&gt;
+
+&lt;p&gt;This has been a really interesting project in several ways. It uses all sorts of technologies from the very highest to the very lowest level: you rarely get to work with embedded systems, servos and hydraulics as a web developer. The latency issues and live streaming stuff has also been a challenge.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-135&#34; title=&#34;pic4&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2013/02/pic4.jpg&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Buick Encore: high scalability behind the Great Firewall of China</title>
+      <link>http://localhost:1313/blog/2012-11-30-buick-encore-high-scalability-behind-the-great-firewall-of-china</link>
+      <pubDate>Fri, 30 Nov 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://localhost:1313/blog/2012-11-30-buick-encore-high-scalability-behind-the-great-firewall-of-china</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Buick Encore is a mobile augmented reality game, created by us, &lt;a href=&#34;http://monterosa.se&#34;&gt;Monterosa&lt;/a&gt; and &lt;a href=&#34;http://www.ogilvy.com/&#34;&gt;Ogilvy Shanghai&lt;/a&gt;; we were responsible for the server-side backend part of the game, while Monterosa developed the iPhone and Android apps and Ogilvy was responsible for the game design and overall project management.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The game idea revolves around a virtual car which is placed somewhere in a big Chinese city. Using their smartphone, the players can see an approximate location of this car, as well as the positions of other players, on a standard map. When they get close enough to the car, its exact location appears, they rotate their phone to portrait mode and an augmented reality view which shows the car blended into the real world appears. They can now &amp;#8220;get in&amp;#8221; the car and &amp;#8220;drive it&amp;#8221; for up to three minutes; at any time while they&amp;#8217;re &amp;#8220;driving&amp;#8221; they can &amp;#8220;get out&amp;#8221; of the car and leave it at their current location. The purpose of the game is to find the car and then hide it; at the end of the gaming day, whoever managed to hide the car for the longest period of time wins.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://vimeo.com/49539651&#34;&gt;Hide &amp;amp; Seek presentation video&lt;/a&gt; from &lt;a href=&#34;http://vimeo.com/user8087696&#34;&gt;saschaengel_china works&lt;/a&gt; on &lt;a href=&#34;http://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;User login can be done either with &lt;a href=&#34;http://www.weibo.com/&#34;&gt;Sina Weibo&lt;/a&gt; (a Chinese social media platform) or just a regular email address, and the backend can send push notifications to users using &lt;a href=&#34;http://urbanairship.com/&#34;&gt;Urban Airship&amp;#8217;s&lt;/a&gt; excellent service.&lt;/p&gt;
+
+&lt;p&gt;On the server side, we had to keep track of a rather large amount of real-time data, since both the car&amp;#8217;s position and the position of each individual player are updated quite frequently and retained for a relatively long period of time. Each datapoint is rather small, but there are a lot of them per player and they accumulate quickly. Normally, this kind of application with frequent updates and frequent requests for updates from the clients would be very well suited to hosting on Google App Engine. In this case, however, we chose to not use App Engine, primarily because Google does not have a data center in China, and latencies to anything outside the Great Firewall are terrible. The customer was also worried about the potential for getting the application suddenly blocked. Hence, we rolled our own solution.&lt;/p&gt;
+
+&lt;p&gt;After some experiments with various technologies (such as REDIS, twisted.web and gevent), our server side backend ended up being written in Python, using:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Tornado&amp;#8217;s ioloop&lt;/li&gt;
+&lt;li&gt;MongoDB, using the asyncmongo Python API&lt;/li&gt;
+&lt;li&gt;memcache&lt;/li&gt;
+&lt;li&gt;nginx as a frontend&lt;/li&gt;
+&lt;li&gt;Stingray for load balancing&lt;/li&gt;
+&lt;li&gt;Twitter Bootstrap for the admin interface&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Since the customer was extremely worried about latency and scalability, we did quite extensive performance tests at an early stage to get a general idea of how much raw performance we could possibly squeeze out of a single server. Based on this we ended up ditching many of Tornado&amp;#8217;s conveniences and wrote our own simplistic request handling framework. For interacting with MongoDB, we chose the asyncmongo module in order to avoid blocking our Tornado threads on I/O.&lt;/p&gt;
+
+&lt;p&gt;The entire application is hosted on a set of virtual machines at &lt;a href=&#34;http://www.datapipe.com/&#34;&gt;Datapipe&amp;#8217;s&lt;/a&gt; Shanghai datacenter. We evaluated several hosting solutions before choosing Datapipe; the customer requirement that all machines must be hosted inside mainland China disqualified many options, and in the end Datapipe&amp;#8217;s convenient cloud solution and English-speaking customer service won out.&lt;/p&gt;
+
+&lt;p&gt;Since this technology stack (referred to by a certain hosting salesperson we spoke to as &amp;#8220;the hipster stack&amp;#8221;) was mostly unfamiliar to us before this project, we had a lot of interesting lessons to learn, the most important one being that creating web application backends using a completely callback-driven framework is sort of a pain and requires some careful design and planning in order to avoid a massive mess of spaghetti function calls. Most of us haven&amp;#8217;t done much serious functional programming since the university courses in it, so this provided a handy refresher course involving things like partials, closures and other such fun.&lt;/p&gt;
+
+&lt;div id=&#34;attachment_81&#34; class=&#34;wp-caption aligncenter&#34; style=&#34;width: 970px&#34;&gt;
+  &lt;a href=&#34;http://blog.agigen.se/wp-content/uploads/2012/11/buick1.jpg&#34;&gt;&lt;img class=&#34;size-full wp-image-81&#34; title=&#34;Buick Encore admin interface&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2012/11/buick1.jpg&#34; width=&#34;960&#34; height=&#34;360&#34; /&gt;&lt;/a&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    The Buick Encore admin interface
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Working with MongoDB in particular has been an interesting experience. It&amp;#8217;s certainly very fast and ended up working quite well for our purposes, but we don&amp;#8217;t think we&amp;#8217;d choose it again for the next project, since it&amp;#8217;s simply too tedious to work with. It&amp;#8217;s certainly not all bad, but there are a number of small grating issues that makes it feel very rough to handle, at least to someone used to the NDB API of Google&amp;#8217;s High Replication Datastore. A lot of this is related to the API we used to interact with the database: I feel a callback-driven async model is much harder to work with than the futures-based model the NDB API uses, but this also has to do with the fact that on App Engine it&amp;#8217;s not a problem to block a thread for a few hundred milliseconds since other threads can use the same instance while you&amp;#8217;re waiting. However, MongoDB itself also has quite a few minor irritations, particularly related to the generally hairy query syntax.&lt;/p&gt;
+
+&lt;p&gt;Tornado on the other hand has generally been pretty smooth to work with. It&amp;#8217;s quite easy to roll your own request handling stuff based on its powerful ioloop functionality, but even if you don&amp;#8217;t want to do that, the request handlers it ships with are well designed and polished. Our old friends nginx and memcache are nothing new, of course; there&amp;#8217;s a reason we keep using them everywhere.&lt;/p&gt;
+
+&lt;p&gt;More about the project:
+&lt;a href=&#34;http://monterosa.se/work/buick-hide-and-seek/&#34;&gt;Monterosa&amp;#8217;s case page&lt;/a&gt;
+&lt;a href=&#34;http://www.mynewsdesk.com/sg/pressroom/monterosa/pressrelease/view/buick-plays-hide-seek-in-china-800454&#34;&gt;Monterosa press release&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Build with Chrome behind the scenes</title>
+      <link>http://localhost:1313/blog/2012-06-26-build-with-chrome-behind-the-scenes</link>
+      <pubDate>Tue, 26 Jun 2012 00:00:00 UTC</pubDate>
+      
+      <guid>http://localhost:1313/blog/2012-06-26-build-with-chrome-behind-the-scenes</guid>
+      <description>
+
+&lt;p&gt;We helped build this cool WebGL LEGO®/Google Maps thing, so I (Karl Blomster) thought I&amp;#8217;d talk for a bit about it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&#34;alignnone size-full wp-image-50&#34; title=&#34;agigen-blog-header&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2012/06/agigen-blog-header1.png&#34; width=&#34;946&#34; height=&#34;157&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What some other sites had to say about our project: &lt;a title=&#34;Engadget&#34; href=&#34;http://www.engadget.com/2012/06/26/lego-and-google-chrome-build-australia/&#34; target=&#34;_blank&#34;&gt;Engadget&lt;/a&gt;, &lt;a title=&#34;The Verge&#34; href=&#34;http://www.theverge.com/2012/6/26/3117910/google-lego-simulator-build-with-chrome&#34; target=&#34;_blank&#34;&gt;The Verge&lt;/a&gt;, &lt;a title=&#34;Gizmodo&#34; href=&#34;http://gizmodo.com/5921316/you-can-now-build-virtual-lego-in-chrome&#34; target=&#34;_blank&#34;&gt;Gizmodo&lt;/a&gt;, &lt;a title=&#34;Wired.co.uk&#34; href=&#34;http://www.wired.co.uk/news/archive/2012-06/26/build-with-chrome-lego&#34; target=&#34;_blank&#34;&gt;Wired.co.uk&lt;/a&gt;, &lt;a title=&#34;Mashable&#34; href=&#34;http://mashable.com/2012/06/26/google-lego-build/&#34; target=&#34;_blank&#34;&gt;Mashable&lt;/a&gt;, &lt;a title=&#34;DailyTech&#34; href=&#34;http://www.dailytech.com/Google+Adds+8+Trillion+Virtual+Lego+Bricks+to+Chrome/article25029.htm&#34; target=&#34;_blank&#34;&gt;DailyTech&lt;/a&gt;, &lt;a title=&#34;The Next Web&#34; href=&#34;http://thenextweb.com/shareables/2012/06/26/kiss-goodbye-to-your-productivity-google-just-brought-8-trillion-lego-blocks-to-chrome/&#34; target=&#34;_blank&#34;&gt;The Next Web&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_0&#34;&gt;Background&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://buildwithchrome.com/&#34;&gt;Build with Chrome&lt;/a&gt; is basically a Google Chrome and WebGL tech demo. The basic premise is to let users build whatever LEGO structures they want in a full 3D environment, using a baseplate that occupies a Google Maps tile. If you haven&amp;#8217;t tried playing with it yet, go do so right now; at least for me, it turns out that playing with LEGO bricks is just as fun now as when I was 10 years old.&lt;/p&gt;
+
+&lt;p&gt;We got involved in the project as a subcontractor to &lt;a href=&#34;http://www.northkingdom.com/&#34;&gt;North Kingdom&lt;/a&gt;. We&amp;#8217;ve done some pretty cool stuff with them in the past; check out our cases.&lt;/p&gt;
+
+&lt;div id=&#34;attachment_54&#34; class=&#34;wp-caption alignnone&#34; style=&#34;width: 956px&#34;&gt;
+  &lt;img class=&#34;size-full wp-image-54&#34; title=&#34;Build with Chrome prototype&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2012/06/agigen-blog-prototype.png&#34; width=&#34;946&#34; height=&#34;588&#34; /&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Early prototype of the builder mode
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;toc_1&#34;&gt;The application&lt;/h2&gt;
+
+&lt;p&gt;We were responsible for the backend system, implementing North Kingdom&amp;#8217;s front end designs, and hooking up various components to each other, while North Kingdom and freelancer &lt;a href=&#34;https://github.com/empaempa&#34;&gt;Mikael Emtinger&lt;/a&gt; handled design work and WebGL programming (mostly done via &lt;a href=&#34;https://github.com/empaempa/GLOW&#34;&gt;GLOW.js&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The application structure is pretty simple: it consists of a handful of static HTML pages, a small RESTful API written in Python, and a humongous amount of JavaScript. There is no meaningful server-side generation of HTML templates going on; the entire thing is basically a JS application that uses AJAX requests to store and retrieve persistent data from the server. It&amp;#8217;s hosted on Google App Engine for two reasons; scalability and simplicity. It&amp;#8217;s really easy to build extremely scalable applications on the App Engine infrastructure, and it takes basically no effort at all to get going with a new project (which is very important when deadlines are looming). Pretty much the entire application was built in slightly over a month by about six full-time developers (three at Agigen, two at North Kingdom and one freelance).&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_2&#34;&gt;Lessons learned&lt;/h2&gt;
+
+&lt;p&gt;Since one of the requirements was to use Google Maps tiles as baseplates, one of the first problems we had to solve was how to LEGO-ify a Google Maps image. In an early stage of the project, the plan was to LEGO-ify the entire map, and much time was spent discussing and testing how to make a LEGO-ified map look good and load quickly enough to make the experience decent for the user. The plan was eventually mostly scrapped, and it was decided to only make the 3D exploration mode (which you get if you zoom in far enough) LEGO-ified. We ended up with a very simple implementation that scales down each 256&amp;#215;256 pixel Google Maps tile to 32&amp;#215;32 (using nearest-neighbor sampling) and then reduces the color depth to a fixed 13-color palette. Fortunately for us, you can use the &lt;a href=&#34;http://www.pythonware.com/products/pil/&#34;&gt;Python Imaging Library (PIL)&lt;/a&gt; on App Engine now, so this was pretty painless to do.&lt;/p&gt;
+
+&lt;p&gt;We also tossed around the idea of using topographical height data from the Google Maps API&amp;#8217;s in order to make the baseplates &amp;#8220;hilly&amp;#8221;, but that plan was also scrapped; mostly for timing reasons, but also because the height data wasn&amp;#8217;t really in a high enough resolution to make it interesting.&lt;/p&gt;
+
+&lt;div id=&#34;attachment_55&#34; class=&#34;wp-caption alignnone&#34; style=&#34;width: 956px&#34;&gt;
+  &lt;img class=&#34;size-full wp-image-55&#34; title=&#34;Builder with Chrome&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2012/06/agigen-blog-builder.png&#34; width=&#34;946&#34; height=&#34;600&#34; /&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Builder mode how it looks today
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The next problem was to find a decent way to automatically give users free plots to build on in some semi-predictable manner. Sounds easy enough, but it gets more complicated when you have many users who want to build in the same area. Checking if a plot is free or not in a race-condition-safe manner is a somewhat expensive operation (requiring a database read), so you can&amp;#8217;t do too many checks in a single request, or the user experience will be terrible. After some experimentation and poking around we found an old simple trick that suited us: each baseplate (map tile) is assigned an integer X/Y coordinate pair (counted from the northwestern corner of the map). The coordinate pair is bitwise interleaved to form a single number (called a Morton code), which is stored in memcache (with database backup), so it&amp;#8217;s easy to increment or decrement atomically, forming a &lt;a href=&#34;http://en.wikipedia.org/wiki/Z-order_curve&#34;&gt;Z-order curve&lt;/a&gt;. Using a single number as a coordinate made it much easier and faster to look for free plots while keeping the assignment transaction safe.&lt;/p&gt;
+
+&lt;p&gt;We have also learned more about Google Maps (and more importantly what you cannot do with Google Maps) than we ever wanted to know. Among other things, it turns out that Google Maps ground overlays are really interesting creatures when they get so big that the curvature of the earth starts to matter; most of us have worked as web developers for our entire careers, which meant our math knowledge was severely rusty and not really up to the task of projecting flat images from onto the surface of an ellipsoid or deprojecting spheroid surface segments to flat images. We ended up scrapping that code path for other reasons, though.&lt;/p&gt;
+
+&lt;h2 id=&#34;toc_3&#34;&gt;&amp;#8220;Interesting&amp;#8221; numbers&lt;/h2&gt;
+
+&lt;p&gt;• Number of different coordinate systems used internally: 5 (latitude/longitude in WGS84 datum, Google Maps tile coordinates, Google Maps tile coordinates with the Y axis inverted, Morton code coordinates, &amp;#8220;Spherical Mercator&amp;#8221; metric coordinates (EPSG:3857))
+• JS to Python code lines ratio: ~4.8:1 (~16550 lines of JS, 3400 lines of Python; both excluding third-party libraries other than GLOW)
+• Number of real LEGO kits built during the development process: 4 (including the Death Star, see photo below)
+• Number of dragons in the codebase: 3&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Google&amp;#8217;s official post about the project: &lt;a title=&#34;http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html&#34; href=&#34;http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html&amp;lt;/a&amp;gt;&#34;&gt;http://google-au.blogspot.se/2012/06/build-bringing-lego-bricks-to-chrome.html&amp;lt;/a&amp;gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id=&#34;attachment_63&#34; class=&#34;wp-caption alignnone&#34; style=&#34;width: 956px&#34;&gt;
+  &lt;img class=&#34;size-full wp-image-63&#34; title=&#34;Build with Chrome&#34; alt=&#34;&#34; src=&#34;http://blog.agigen.se/wp-content/uploads/2012/06/agigen-blog-lego-irl.png&#34; width=&#34;946&#34; height=&#34;584&#34; /&gt;&lt;p class=&#34;wp-caption-text&#34;&gt;
+    Research for the project (or just an excuse to build cool LEGO stuff)
+  &lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

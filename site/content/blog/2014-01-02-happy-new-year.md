@@ -6,6 +6,8 @@ list_image: "newyear2013_320.jpg"
 categories:
   - News
 ---
+<img src="/img/blog/posts/2014/01/agigen_a-year-in-review.png">
+
 We created a small site as a summary of 2013 at Agigen.
 
 [Agigen 2013 &#8211; a year in review][1]

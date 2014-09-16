@@ -20,11 +20,11 @@ Våra kunder och projekt innebär att arbetet är mycket varierat: ena dagen kan
 
 Vi arbetar i projekt, vilket innebär att ibland är det ett högt tempo med tighta deadlines och ibland finns det tid att sitta och leka med interna roliga projekt. Kvalitet är väldigt viktigt för oss och vi strävar hela tiden efter att bli ännu bättre. Vi vill alltid vara minst två personer på varje projekt, även om det är litet, för att kunna bolla idéer och ge feedback till varandra. Du har stor frihet (och därmed även stort ansvar) att själv planera och styra ditt arbete då vår organisation är extremt platt.
 
-<img class="alignnone size-full wp-image-231" alt="agigenpromo2" src="http://blog.agigen.se/wp-content/uploads/2013/09/agigenpromo2.png" width="960" height="480" />
+<img alt="agigenpromo2" src="/img/blog/posts/2013/09/agigenpromo2.png" />
 
 &nbsp;
 
-## **TJÄNSTEN**
+# **TJÄNSTEN**
 
 Du som söker är riktigt duktig på all sorts frontendutveckling och har stenkoll på;
 
@@ -34,7 +34,7 @@ Du som söker är riktigt duktig på all sorts frontendutveckling och har stenko
 
 Du bör även ha förståelse för backendbiten, även om vi inte kräver expertis där. MVC-struktur och vanliga frameworks ska alltså inte vara helt okända begrepp för dig.
 
-<img class="alignnone size-full wp-image-228" style="line-height: 1.5;" alt="agigenoffice1" src="http://blog.agigen.se/wp-content/uploads/2013/09/agigenoffice1.png" width="960" height="480" />
+<img alt="agigenoffice1" src="/img/blog/posts/2013/09/agigenoffice1.png" />
 
 Som anställd på Agigen får du en marknadsmässig lön, betald mobiltelefon och arbetsdator. Alla anställda erbjuds även massage en gång i veckan.
 

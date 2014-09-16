@@ -6,17 +6,19 @@ list_image: "handy_320.jpg"
 categories:
   - News
 ---
+<img src="/img/blog/posts/2013/10/kontorinprogress5.jpg" alt="kontorinprogress5" />
+
 We&#8217;re currently in the middle of getting everything ready for moving into our new office in the end of the month.
 <!--more-->
 
-<img src="http://blog.agigen.se/wp-content/uploads/2013/10/kontorinprogress1-960x720.jpg" alt="kontorinprogress1" width="604" height="453" class="alignnone size-large wp-image-271" />
+<img src="/img/blog/posts/2013/10/kontorinprogress1.jpg" alt="kontorinprogress1" />
 Where the magic will happen.
 
-<img src="http://blog.agigen.se/wp-content/uploads/2013/10/kontorinprogress3-960x720.jpg" alt="kontorinprogress3" width="604" height="453" class="alignnone size-large wp-image-269" />
+<img src="/img/blog/posts/2013/10/kontorinprogress3.jpg" alt="kontorinprogress3" />
 For relaxing times.
 
-<img src="http://blog.agigen.se/wp-content/uploads/2013/10/kontorinprogress2-960x1101.jpg" alt="kontorinprogress2" width="604" height="692" class="alignnone size-large wp-image-270" />
+<img src="/img/blog/posts/2013/10/kontorinprogress2.jpg" alt="kontorinprogress2" />
 Everything we need.
 
-<img src="http://blog.agigen.se/wp-content/uploads/2013/10/kontorinprogress4-960x1280.jpg" alt="kontorinprogress4" width="604" height="805" class="alignnone size-large wp-image-268" />
+<img src="/img/blog/posts/2013/10/kontorinprogress4.jpg" alt="kontorinprogress4" />
 Compiling.

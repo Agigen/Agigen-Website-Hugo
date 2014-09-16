@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title> Web Production &middot; Agigen </title>
+
+  
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/agigen.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Agigen" />
+
+  <link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+
+  <script type="text/javascript" src="//use.typekit.net/orr5jqv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body ng-app="agigenApp" ng-controller="menuCtrl" class="page--web-production">
+<!-- 
+
+                      `://.
+                    `+AAAAAo.
+                  `+AAAAAAAAAo.
+                `+AAAAAAAAAAAAAo.
+              `+AAAAAAAAAAAAAAAAAo.
+            `+AAAAAAAAAAAAAAAAAAAAAo.
+          `+AAAAAAAAAs/sAAAAAAAAAAAAAo.
+        `+AAAAAAAAAA+`  -oAAAAAAAAAAAAAo.
+      `+AAAAAAAAAAA+      .+AAAAAAAAAAAAAo.
+    `+AAAAAAAAAAAA/         .+AAAAAAAAAAAAAo.
+  `+AAAAAAAAAAAAA/            .+AAAAAAAAAAAAAo.
+ +AAAAAAAAAAAAAA/               -sAAAAAAAAAAAAAo`
+.AAAAAAAAAAAAAA+                 `+AAAAAAAAAAAAA/
+ /AAAAAAAAAAAAs`       `-/+agigen:`:AAAAAAAAAAAo`
+  `/AAAAAAAAAA.    .:+AAAAAAAAAAAAA+/AAAAAAAAo.
+    `/AAAAAAAo.-/oAAAAAAAAAAAAAAAAAAAAAAAAAo.
+      `/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo.
+        `/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAo.
+          `/AAAAAAAAAAAAAAAAAAAAAAAAAo.
+            `+AAAAAAAAAAAAAAAAAAAAAo.
+              `+AAAAAAAAAAAAAAAAAo.
+                `+AAAAAAAAAAAAAo.
+                  `+AAAAAAAAAo.
+                    `+AAAAAo.
+                      `-::`
+-->
+
+
+
+<nav class="main-menu" ng-class="{'main-menu--expanded': menuVisible}" ng-click="hideMenu($event)">
+    <section class="main-menu__grid">
+        <ul class="nav nav--stacked">
+            
+            
+                
+                <li>
+                    <a class="main-menu__link main-menu__link--main" href="/">Home</a>
+                
+                </li>
+            
+                
+                <li class="sub-menu">
+                    <span class="main-menu__section-name">Services</span>
+                    <ul class="sub">
+                    
+                        <li>
+                        <a href="/services/web-production" class="main-menu__link main-menu__link--sublink main-menu__link--webprod"> Web Production </a>
+                        </li>
+                    
+                        <li>
+                        <a href="/services/product-development" class="main-menu__link main-menu__link--sublink main-menu__link--proddev"> Product development </a>
+                        </li>
+                    
+                        <li>
+                        <a href="/services/labs" class="main-menu__link main-menu__link--sublink main-menu__link--labs"> Agigen Labs </a>
+                        </li>
+                    
+                    </ul>
+                
+                </li>
+            
+                
+                <li class="sub-menu">
+                    <span class="main-menu__section-name">Learn more</span>
+                    <ul class="sub">
+                    
+                        <li>
+                        <a href="/work/" class="main-menu__link main-menu__link--sublink main-menu__link--cases"> Previous Work </a>
+                        </li>
+                    
+                        <li>
+                        <a href="/about/" class="main-menu__link main-menu__link--sublink main-menu__link--aboutus"> About us </a>
+                        </li>
+                    
+                        <li>
+                        <a href="/blog/" class="main-menu__link main-menu__link--sublink main-menu__link--blog"> Our diary </a>
+                        </li>
+                    
+                    </ul>
+                
+                </li>
+            
+                
+                <li class="sub-menu">
+                    <span class="main-menu__section-name">Get in touch</span>
+                    <ul class="sub">
+                    
+                        <li>
+                        <a href="/contact/" class="main-menu__link main-menu__link--sublink main-menu__link--contactus"> Contact us </a>
+                        </li>
+                    
+                    </ul>
+                
+                </li>
+            
+        </ul>
+    </section>
+</nav>
+
+<div class="topbar" ng-class="{'menu-expanded': menuVisible}">
+    <div class="container">
+        <h1 class="topbar__title"><a href="/">
+
+            <svg class="color-animation" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 244.8 190.6" enable-background="new 0 0 244.8 190.6" xml:space="preserve">
+                <path  fill-rule="evenodd" clip-rule="evenodd" d="M92.1,3.8C105.7,15.2,219.5,105.1,240,185.9c-69.6-117.8-200.3,13.7-233.3,0
+                    C-9.8,181.3,80.7-1.3,92.1,3.8z"/>
+            </svg>
+
+        </a></h1>
+
+        <button class="topbar__menu-button" ng-click="menuVisible = !menuVisible"><i class="fa fa-align-justify"></i></button>
+    </div>
+</div>
+
+
+<header class="main-header">
+    <div class="main-header__content">
+        <div class="container text--light">
+            <h1 class="alpha">Web Production</h1>
+            
+                <h2 class="beta">We make the web a better place. Simple as that!</h2>
+            
+
+
+        </div>
+    </div>
+    
+    <video width="1440" height="700" autoplay="autoplay" loop="loop" class="main-header__video">
+      <source src="/video/video-test.mp4"  type="video/mp4">
+    </video>
+    
+</header>
+
+<div class="main-content">
+
+
+<div class="content">
+    <section class="section section--webprod-definition">
+    <div class="section__content">
+        <div class="container text--center">
+
+            <h2 class="gamma">Our definition</h2>
+            <p class="delta text-wrapper">
+                We create basically everything digital for you; websites, facebook apps and interactive experiences.<br><br>
+                During the last five years we've specialized in becoming the perfect fit for ad- and pr-angencies with a need for digital expertise.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="section section--webprod-offer">
+    <div class="section__content">
+        <div class="container text--light">
+            <div class="grid">
+                <div class="grid__item one-half">
+
+                    <h2 class="gamma">Our offer</h2>
+                    <p class="delta">
+                        We like it best when we're as involved as possible, but you can pick and chose where you want our help. We can either turn your psd:s into what you envisioned, or create a concept and design with you from scratch.
+                    </p>
+                    <p class="delta">
+                        Working by an agile approach we stay changeable and armed with our extensive knowledge of all things web we'll achieve your vision on time and within budget.
+                    </p>
+                </div><!--
+                --><div class="grid__item one-half illustration-wrapper">
+                    <img src="/img/webprod/webproduction-imac.png" class="section--webprod-offer__illustration">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section--webprod-tools">
+    <div class="section__content">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item one-half illustration-wrapper">
+                    <img src="/img/webprod/tools.png" class="section--webprod-tools__illustration">
+                </div><!--
+                --><div class="grid__item one-half">
+
+                    <h2 class="gamma">Our tools</h2>
+                    <p class="delta">
+                        We currently mostly work with Python and PHP, Amazon EC2 and Google App Engine. HTML5, CSS3, and advanced Javascript is in our blood and we push all our pixels around in Adobe Photoshop
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<a class="case case--thin case--thin--build" href="/work/build-with-chrome/" title="Case study: Build with Chrome">
+    <div class="container">
+        <img src="/img/webprod/case-build.png" class="case__image" width="320">
+        <p class="case__headline">Build with Chrome <strong>View case study &raquo;</strong></p>
+        <h1 class="case__title">Google &amp; LEGO</h1>
+    </div>
+
+    <img src="/img/webprod/spaceman.png" class="spaceman">
+</a>
+
+
+
+
+<section class="section section--webprod-process" ng-controller="webprodCtrl" scroll>
+    <div class="container text--center">
+        <h2 class="epsilon">Case A-Z</h2>
+        <h3 class="beta">Working with us explained</h3>
+
+        <figure>
+
+        <svg class="webprod-process__timeline" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200" xml:space="preserve">
+
+            <line x1="100" x2="100" y2="100" stroke="#00C6FF" stroke-width="0.5"/>
+
+            <g>
+                <circle fill="#FFFFFF" stroke="#00C6FF" stroke-width="0.375" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="5" cx="100" cy="2.7" r="2.5"/>
+                <circle fill="#00C6FF" cx="100" cy="2.7" r="1.25"/>
+            </g>
+
+            <g>
+                <circle fill="#FFFFFF" stroke="#00C6FF" stroke-width="0.375" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="5" cx="100" cy="22.7" r="2.5"/>
+                <circle fill="#00C6FF" cx="100" cy="22.7" r="1.25"/>
+            </g>
+
+            <g>
+                <circle fill="#FFFFFF" stroke="#00C6FF" stroke-width="0.375" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="5" cx="100" cy="42.7" r="2.5"/>
+                <circle fill="#00C6FF" cx="100" cy="42.7" r="1.25"/>
+            </g>
+
+            <g>
+                <circle fill="#FFFFFF" stroke="#00C6FF" stroke-width="0.375" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="5" cx="100" cy="62.7" r="2.5"/>
+                <circle fill="#00C6FF" cx="100" cy="62.7" r="1.25"/>
+            </g>
+
+            <g>
+                <circle fill="#FFFFFF" stroke="#00C6FF" stroke-width="0.375" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="5" cx="100" cy="82.7" r="2.5"/>
+                <circle fill="#00C6FF" cx="100" cy="82.7" r="1.25"/>
+            </g>
+
+            <g>
+                <circle fill="#FFFFFF" stroke="#00C6FF" stroke-width="0.375" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="5" cx="100" cy="102.7" r="2.5"/>
+                <circle fill="#00C6FF" cx="100" cy="102.7" r="1.25"/>
+            </g>
+        </svg>
+
+        <figcaption>
+
+            <p class="webprod-process__step webprod-process__step--1">
+                Do you have an idea but you're not sure if it's even possible to realize? These are the projects where we excel. We'll consider your idea; how to make it real and even better, then offer you a budget and a time plan.
+            </p>
+
+            <p class="webprod-process__step webprod-process__step--2">
+                If you want, we'll do UX and concept design together with you or if you'd rather we just produce, we'll turn your designs to code. Striving to make the best of everything we'll make suggestions on potential improvements.
+            </p>
+
+            <p class="webprod-process__step webprod-process__step--3">
+                During production, we keep in close contact with you; keeping everyone up to speed. When changes are requested we reconsider design and user experience, which makes design as much part of our production as coding is.
+            </p>
+
+            <p class="webprod-process__step webprod-process__step--4">
+                Tweaking and testing is a constant part of our process, but as the project nears the finish line we of course invest extra into those efforts.
+            </p>
+
+            <p class="webprod-process__step webprod-process__step--5">
+                We love it when we have some time left over to lavish affection on a product; fitting it with that extra polish and flair.
+            </p>
+
+            <p class="webprod-process__step webprod-process__step--6">
+                Last step: release. Bring out the champagne, kick off your shoes and enjoy the happy faces.
+            </p>
+        </figcaption>
+
+        </figure>
+
+    </div>
+</section>
+
+
+<section class="section section--webprod-contact">
+    <div class="container text--center">
+        <h2 class="gamma text-wrapper">We have helped companies like Google, Sony and Samsung during our years. We’d love to help you too.</h2>
+        <a href="/contact/" class="btn">Get in touch</a>
+    </div>
+</section>
+
+
+
+<section class="section section--webprod-case section--webprod-case--samsung">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item one-half">
+
+                    <h3 class="epsilon">Youneedtoseethisapp.com</h3>
+                    <h2 class="gamma">Samsung Tab S</h2>
+
+                    <p class="delta">Mindfulness in the cloud. Yogobe is a platform with professional yoga videos on demand. We built their MVP, created the UX and handled the integrations.</p>
+
+                    <a href="/work/samsung-youneedtoseethis/" class="btn btn--nomargin--left">View case</a>
+                    <a class="btn" href="https://www.youneedtoseethisapp.com">Visit website</a>
+
+                </div><!--
+                --><div class="grid__item one-half">
+
+                    <a href="/work/samsung-youneedtoseethis/"><img src="/img/webprod/webproduction-samsungcase.png" class="section--webprod-case--samsung__illustration"></a>
+
+                </div>
+            </div><!-- .grid -->
+        </div><!-- .container -->
+</section>
+
+<section class="section section--webprod-case section--webprod-case--sj">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item one-half">
+                    <img src="/img/webprod/webproduction-sjcase.jpg" class="section--webprod-case--sj__illustration">
+                </div><!--
+                --><div class="grid__item one-half">
+
+
+                    <h3 class="epsilon">Swedish railways</h3>
+                    <h2 class="gamma">Beta SJ.se</h2>
+
+                    <p class="delta">Mindfulness in the cloud. Yogobe is a platform with professional yoga videos on demand. We built their MVP, created the UX and handled the integrations.</p>
+
+                    <a href="/work/beta-sj-se" class="btn btn--nomargin--left">View case</a>
+
+                    <a class="btn" href="http://beta.sj.se/" target="_blank">Visit website</a>
+
+                </div>
+            </div><!-- .grid -->
+        </div><!-- .container -->
+</section>
+
+
+<section class="section section--webprod-case section--webprod-case--carlsberg">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item one-half">
+
+                    <h3 class="epsilon">Carlsberg</h3>
+                    <h2 class="gamma">Where is the Party</h2>
+
+                    <p class="delta">Uppsala University's student nations have a history from the 17th century. We helped them move into the digital world by moving their student housing queues online.</p>
+
+                    <a href="/work/carlsberg-where-is-the-party/" class="btn btn--nomargin--left">View case</a>
+
+                </div><!--
+                --><div class="grid__item one-half illustration-wrapper">
+                    <img src="/img/webprod/webproduction-carlsbergcase.jpg" class="section--webprod-case--carlsberg__illustration">
+                </div>
+            </div><!-- .grid -->
+        </div><!-- .container -->
+</section>
+
+
+
+<a href="/work/" class="blocklink blocklink--work">See all of our <strong>work &raquo;</strong></a>
+
+</div>
+
+</div>
+<footer class="main-footer">
+    <div class="container">
+        <h1 class="main-footer__title"><a href="/" title="Agigen">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 244.8 190.6" enable-background="new 0 0 244.8 190.6" xml:space="preserve">
+                <path  fill-rule="evenodd" clip-rule="evenodd" d="M92.1,3.8C105.7,15.2,219.5,105.1,240,185.9c-69.6-117.8-200.3,13.7-233.3,0
+                    C-9.8,181.3,80.7-1.3,92.1,3.8z"/>
+            </svg>
+        </a></h1>
+
+    <nav class="main-footer__links">
+        <a href="https://www.facebook.com/agigen" target="_blank" class="main-footer__link">Facebook</a>
+        <a href="https://www.linkedin.com/company/640656" target="_blank" class="main-footer__link">LinkedIn</a>
+        <a href="/contact" class="main-footer__link main-footer__link--bordered">Contact us</a>
+    </nav>
+</footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-2.1.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+    <script src="/js/agigen.jquery-in-view.js"></script>
+    <script src="/js/agigen.js"></script>
+    <script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+

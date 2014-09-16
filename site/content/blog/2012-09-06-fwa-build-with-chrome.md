@@ -6,6 +6,8 @@ list_image: "build_fwa_320.jpg"
 categories:
   - News
 ---
+<img src="/img/blog/posts/2013/09/fwa-build.png" >
+
 We&#8217;re on a roll! Yet another FWA Site of the Day award!
 
 <a href="http://www.thefwa.com/site/build-with-chrome" target="_blank">http://www.thefwa.com/site/build-with-chrome</a>

@@ -181,10 +181,10 @@ $color-category-officefun: #9549b2;
 }
 
 .blog-post {
+    padding-top: 100px;
     padding-bottom: 100px;
     &__title {
         @extend .beta;
-        padding-top: 100px;
     }
     &__footer {
         padding-bottom: 100px;
@@ -219,5 +219,13 @@ $color-category-officefun: #9549b2;
         margin-left: auto;
         margin-right: auto;
 
+    }
+
+    h1 {
+        @extend .container--tight;
+        @extend .beta;
+        margin-right: auto;
+        margin-left: auto;
+        text-transform: uppercase;
     }
 }
