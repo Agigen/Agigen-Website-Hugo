@@ -297,8 +297,13 @@
 
         &__ingress {
             padding: 0 0 100px;
+            font-size: 40px;
+            @media only screen and (max-width: 1220px) {
+                font-size: 32px;
+            }
             @include media-query(palm){
                 padding: 0 0 0 0;
+                font-size: 18px;
             }
         }
 

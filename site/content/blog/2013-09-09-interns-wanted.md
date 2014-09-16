@@ -12,7 +12,7 @@ Want to be a top-notch web developer? Are you burning with passion and feeling t
 
 **Är du en driven men oerfaren programmerare som vill utvecklas? Agigen startar i höst vårt internship-program och söker två engagerade utvecklare.**
 
-<img class="alignnone size-full wp-image-231" alt="agigenpromo2" src="http://blog.agigen.se/wp-content/uploads/2013/09/agigenpromo2.png" width="960" height="480" />
+<img alt="agigenpromo2" src="/img/blog/posts/2013/09/agigenpromo2.png" />
 
 Under tre till sex månader arbetar du med projekt som inte har för tight deadline, med en mer erfaren utvecklare som mentor. Hela tiden förväntas du ta initiativ, lösa problem, kunna redogöra för varför du angripit ett problem på ett visst sätt samt försöka tidsuppskatta ditt eget arbete. Iterativt under hela perioden utvärderar vi och ger feedback &#8211; allt för att du som programmerare ska utvecklas i att arbeta i team, lösa verkliga problem och lära dig planera.
 
@@ -22,7 +22,7 @@ Du kommer arbeta på vårt kontor på Kaptensgatan i centrala Stockholm (intill 
 
 Du arbetar 40 timmar i veckan och får lön motsvarande dina kunskaper. Om allt går bra finns det efter internship-periodens slut möjlighet till fast anställning med full marknadsmässig lön.
 
-<img class="alignnone size-full wp-image-228" alt="agigenoffice1" src="http://blog.agigen.se/wp-content/uploads/2013/09/agigenoffice1.png" width="960" height="480" />
+<img alt="agigenoffice1" src="/img/blog/posts/2013/09/agigenoffice1.png" />
 
 Du som söker har förmodligen programmerat en del på egen hand men insett att det inte ger speciellt roliga jobb utan arbetslivserfarenhet, eller kanske har de utbildningar du provat på varit för enkla eller inte passat dig. Agigen består till stor del av högskole-dropouts som velat lära sig snabbare än skolan erbjudit och ser en sådan drivkraft som något väldigt positivt! Vi är även öppna för självlärda sökande med rätt inställning, så känn inte att du måste ha en akademisk examen eller en pågående högre utbildning inom datorvetenskap för att söka.
 

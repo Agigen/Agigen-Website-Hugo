@@ -10,6 +10,8 @@ tags:
   - python
   - tornado
 ---
+<img src="/img/blog/posts/2012/11/BuickEncore.jpg" >
+
 **Buick Encore is a mobile augmented reality game, created by us, [Monterosa][1] and [Ogilvy Shanghai][2]; we were responsible for the server-side backend part of the game, while Monterosa developed the iPhone and Android apps and Ogilvy was responsible for the game design and overall project management.**
 
 <!--more-->
@@ -26,12 +28,12 @@ On the server side, we had to keep track of a rather large amount of real-time d
 
 After some experiments with various technologies (such as REDIS, twisted.web and gevent), our server side backend ended up being written in Python, using:
 
-*   Tornado&#8217;s ioloop
-*   MongoDB, using the asyncmongo Python API
-*   memcache
-*   nginx as a frontend
-*   Stingray for load balancing
-*   Twitter Bootstrap for the admin interface
+Tornado&#8217;s ioloop<br>
+MongoDB, using the asyncmongo Python API<br>
+memcache<br>
+nginx as a frontend<br>
+Stingray for load balancing<br>
+Twitter Bootstrap for the admin interface
 
 Since the customer was extremely worried about latency and scalability, we did quite extensive performance tests at an early stage to get a general idea of how much raw performance we could possibly squeeze out of a single server. Based on this we ended up ditching many of Tornado&#8217;s conveniences and wrote our own simplistic request handling framework. For interacting with MongoDB, we chose the asyncmongo module in order to avoid blocking our Tornado threads on I/O.
 
@@ -39,11 +41,7 @@ The entire application is hosted on a set of virtual machines at [Datapipe&#8217
 
 Since this technology stack (referred to by a certain hosting salesperson we spoke to as &#8220;the hipster stack&#8221;) was mostly unfamiliar to us before this project, we had a lot of interesting lessons to learn, the most important one being that creating web application backends using a completely callback-driven framework is sort of a pain and requires some careful design and planning in order to avoid a massive mess of spaghetti function calls. Most of us haven&#8217;t done much serious functional programming since the university courses in it, so this provided a handy refresher course involving things like partials, closures and other such fun.
 
-<div id="attachment_81" class="wp-caption aligncenter" style="width: 970px">
-  <a href="http://blog.agigen.se/wp-content/uploads/2012/11/buick1.jpg"><img class="size-full wp-image-81" title="Buick Encore admin interface" alt="" src="http://blog.agigen.se/wp-content/uploads/2012/11/buick1.jpg" width="960" height="360" /></a><p class="wp-caption-text">
-    The Buick Encore admin interface
-  </p>
-</div>
+<img title="Buick Encore admin interface" alt="" src="/img/blog/posts/2012/11/buick1.jpg" />The Buick encore admin interface
 
 Working with MongoDB in particular has been an interesting experience. It&#8217;s certainly very fast and ended up working quite well for our purposes, but we don&#8217;t think we&#8217;d choose it again for the next project, since it&#8217;s simply too tedious to work with. It&#8217;s certainly not all bad, but there are a number of small grating issues that makes it feel very rough to handle, at least to someone used to the NDB API of Google&#8217;s High Replication Datastore. A lot of this is related to the API we used to interact with the database: I feel a callback-driven async model is much harder to work with than the futures-based model the NDB API uses, but this also has to do with the fact that on App Engine it&#8217;s not a problem to block a thread for a few hundred milliseconds since other threads can use the same instance while you&#8217;re waiting. However, MongoDB itself also has quite a few minor irritations, particularly related to the generally hairy query syntax.
 

@@ -6,7 +6,9 @@ list_image: "mittvatten_320.jpg"
 categories:
   - Work
 ---
-For a while now we&#8217;ve been working with the frontend and backend of www.mittvatten.se &#8211; a site that is all about how to take care of Swedens perhaps greatest asset: it&#8217;s water!
+<img src="/img/blog/posts/2014/02/mittvatten1.jpg" >
+
+For a while now we&#8217;ve been working with the frontend and backend of www.mittvatten.se &#8211; a site that is all about how to take care of Swedens perhaps greatest asset: its water!
 
 <!--more-->
 
@@ -16,7 +18,7 @@ with one of their initiatives MittVatten (MyWater).
 For this project we used [Adobe Edge Animate][2] for the first time, one of the newest tools in the Adobe CC family.
 The tool makes building full HTML5 parallax on both vertical and horizontal a breeze. It&#8217;s basically Flash &#8211; but without Flash.
 
-<img src="http://blog.agigen.se/wp-content/uploads/2014/02/edge.png" alt="edge" width="800" height="460" class="alignnone size-full wp-image-354" />
+<img src="/img/blog/posts/2014/02/edge.png" alt="edge" />
 
 The site teaches young students about the circle of life in the world of water, and how to preserve our current state of being in the Top 10 of the world&#8217;s best water-caretakers.
 Read more and get educated at the same time over at [www.mittvatten.se][3] (Swedish only).

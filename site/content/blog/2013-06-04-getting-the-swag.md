@@ -7,3 +7,6 @@ categories:
   - Office fun
 format: image
 ---
+
+<img src="/img/blog/posts/2013/08/getting-the-swag.jpg" >
+The team in their new hoodies.

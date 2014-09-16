@@ -13,6 +13,11 @@
             position: relative;
             z-index: 5;
             display: block;
+            max-width: 500px;
+            @media only screen and (max-width: 1180px) {
+                max-width: 50%;
+                margin-top: -10%;
+            }
         }
         &__tldr {
             &__pretitle {
@@ -115,30 +120,36 @@
                 }
 
                 &--green {
-                    height: 450px;
+                    height: 400px;
                     @extend .text--light;
-                    background: #0ba05d url(/img/work/case/build/lego-bg-green.jpg) repeat center center;
+                    background: #2f9d60;
                 }
 
                 &--red {
-                    height: 450px;
+                    height: 400px;
                     @extend .text--light;
-                    background: #de4432 url(/img/work/case/build/lego-bg-red.jpg) repeat center center;
+                    background: #d63d3d url(/img/work/case/build/academy-bg.jpg) repeat center center;
                 }
 
                 &--explore {
                     @extend .text--light;
-                    height: 540px;
+                    height: 400px;
                     background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
                     background-size: cover;
                 }
 
+                &--black {
+                    height: 400px;
+                    background: #333;
+                    @extend .text--light;
+                }
+
                 &--grandfinale {
-                    height: 800px;
+                    height: 700px;
                     @extend .text--light;
                     @extend .text--center;
                     background: #222 url(/img/work/case/build/legomovie.jpg) no-repeat center center;
-                    background-size: 100%;
+                    background-size: cover;
                     &__header {
                         @extend .epsilon;
                     }

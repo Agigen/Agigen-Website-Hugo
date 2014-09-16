@@ -7,3 +7,6 @@ categories:
   - Office fun
 format: image
 ---
+<img src="/img/blog/posts/2013/09/office-workstorm.jpg" >
+
+Getting some help from MER to create the awesomest office: The Agigen Home.
