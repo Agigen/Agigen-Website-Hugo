@@ -51,7 +51,7 @@
         }
         &--billogram {
             .container {
-                margin-top: -300px;
+                margin-top: -240px;
                 @include media-query(palm){
                   margin-top: -180px;
                 }

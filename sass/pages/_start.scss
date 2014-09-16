@@ -115,17 +115,19 @@
     }
 
     &__title {
-        @extend .delta;
+        // @extend .delta;
         position: absolute;
-        width: 100%;
-        text-align: center;
-        top: 50%;
-        text-transform: uppercase;
-        margin-top: -15px;
+        width: 80%;
+        // text-align: center;
+        // top: 50%;
+        // text-transform: uppercase;
+        // margin-top: -15px;
         z-index: 30;
+        left: 10%;
+        top: 30%;
 
         @media only screen and (min-width: 640px) {
-            @include transition(opacity 400ms ease 2400ms);
+            @include transition(opacity 450ms ease 2400ms);
             opacity: 0;
         }
         .break {
@@ -255,12 +257,12 @@
         }
         &__copy {
             @extend .beta;
+            font-size: 30px;
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
-            @media only screen and (max-width: 1300px) {
-                max-width: 70%;
-                font-size: 30px;
+            @media only screen and (max-width: 1180px) {
+                font-size: 24px;
             }
             @include media-query(palm){
                 max-width: 80%;
