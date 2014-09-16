@@ -185,7 +185,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                 var _updateScroll = function(event) {
                     scope.scrollTop = $window.scrollTop();
-                    console.log(scope.scrollTop);
                     scope.$apply();
                 };
 
