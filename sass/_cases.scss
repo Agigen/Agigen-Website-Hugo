@@ -68,6 +68,12 @@
             }
         }
         &--samsung {
+            // Fix for firefox which does not seem to respect overflow: hidden.
+            // Make this divider have white bg and position it above other content
+            background: #fff;
+            z-index: 10;
+            position: relative;
+
             .case__image {
                 width: 380px;
                 max-width: 80%;

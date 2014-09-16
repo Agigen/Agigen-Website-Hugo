@@ -13,6 +13,10 @@
     color: #fff;
     overflow: hidden;
     position: relative;
+
+    //fixes overflow-hidden issue in firefox
+    @include transform(translate3d(0,0,0));
+
     &__content {
         display: table-cell;
         vertical-align: middle;

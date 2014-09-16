@@ -298,6 +298,10 @@
         @extend .text--light;
         @include vhFejk(90);
         overflow: hidden;
+
+        //fixes overflow-hidden issue in firefox
+        @include transform(translate3d(0,0,0));
+
         position: relative;
         @include media-query(palm){
             background-image: url(/img/start/webprod/mobile-bg.jpg);
@@ -309,6 +313,9 @@
         }
     }
     &--start-webprod {
+        // position above proddev to fix overflow issue in firefox
+        z-index: 9;
+
         @include media-query(palm){
             padding-top: 100px;
             padding-bottom: 150px;
