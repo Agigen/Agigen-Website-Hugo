@@ -119,11 +119,20 @@ $time_between_points: 800ms;
         background-size: cover;
         @extend .text--light;
         @include sneddis(-4, 180px, white);
+
         &__illustration {
             position: static;
             &-wrapper {
                 position: absolute;
                 top: -225px;
+                @include media-query(palm) {
+                    position: absolute;
+                    top: auto;
+                    max-width: 80%;
+                    bottom: -380px;
+                    left: 10%;
+
+                }
             }
             &__animation {
                 position: absolute;
@@ -141,7 +150,7 @@ $time_between_points: 800ms;
         }
         @include media-query(palm){
             min-height: 0;
-            padding-bottom: 100px;
+            padding-bottom: 380px;
             .section--proddev__text {
                 max-width: 100%;
             }
