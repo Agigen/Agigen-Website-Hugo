@@ -26,15 +26,15 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.$watch('scrollTop', function(v) {
             if (typeof v !== 'undefined') {
                 $cloud1.css({
-                    transform: 'translateY(' + -v/5 + 'px)'
+                    transform: 'translateY(' + -v/12 + 'px)'
                 });
 
                 $cloud2.css({
-                    transform: 'translateY(' + -v/3 + 'px)'
+                    transform: 'translateY(' + -v/9 + 'px)'
                 });
 
                 $container.css({
-                    backgroundPosition: 'center ' + v/6 + 'px',
+                    backgroundPosition: 'center ' + -v/6 + 'px',
                 })
             }
         });
@@ -185,7 +185,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                 var _updateScroll = function(event) {
                     scope.scrollTop = $window.scrollTop();
-                    console.log(scope.scrollTop);
                     scope.$apply();
                 };
 
@@ -194,6 +193,46 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                 $timeout(function() { updateScroll(); }, 0);
             }
+        };
+    }])
+    .directive('screenCarousel', ['$interval', function($interval) {
+        return {
+            restrict: 'A',
+            template: '\
+<ul class="screen-carousel">\
+    <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
+        ng-class="{\
+            \'screen-carousel__item--current\': $index == index,\
+            \'screen-carousel__item--prev\': $index == (index - 1),\
+            \'screen-carousel__item--next\': $index == (index + 1),\
+            \'screen-carousel__item--below\': $index < index,\
+            \'screen-carousel__item--over\': $index > index,\
+        }"\
+    >\
+        <img ng-src="{{src}}" ng-click="setSlide($index)">\
+    </li>\
+</ul>\
+<nav>\
+    <ul class="screen-carousel-nav">\
+        <li ng-repeat="src in srcs track by $index" class="screen-carousel-nav__item"\
+            ng-class="{\
+                \'screen-carousel-nav__item--current\': $index == index,\
+            }"\
+        >\
+            <a ng-click="setSlide($index)">Item {{$index}}</a>\
+        </li>\
+    </ul>\
+</nav>\
+            ',
+            link: function(scope, element, attrs) {
+                element.addClass('screen-carousel-wrapper');
+                scope.srcs = attrs.screenCarousel.split(',');
+                scope.index = scope.srcs.length > 2 ? 1 : 0;
+
+                scope.setSlide = function(index) {
+                    scope.index = index;
+                };
+            },
         };
     }]);
 
@@ -251,6 +290,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     };
     animateSvgs();
 
+    $(document).one('touchstart.touchdetect', function() {
+        $('html').addClass('touch-device');
+    });
 
     if ($('#map-canvas').length > 0) {
         window.initializeGoogleMaps = function() {

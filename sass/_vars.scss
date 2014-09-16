@@ -44,6 +44,10 @@ $lap-and-up-push: true;
 /**
  * Place any variables that should override inuit.css’ defaults here.
  */
+
+ $lap-start:         601px!default;
+
+
  $giga-size:         96px!default;
  $mega-size:         72px!default;
  $kilo-size:         48px!default;

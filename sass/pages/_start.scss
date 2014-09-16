@@ -14,7 +14,6 @@
         &--1 {
             height: 720px;
             background-image: url(/img/start/splash/cloud_1920_720.png);
-            z-index: 15;
             bottom: -360px;
             right: 50%;
             // border: 1px blue solid;
@@ -23,7 +22,6 @@
         &--2 {
             height: 1000px;
             background-image: url(/img/start/splash/cloud_1920_1000.png);
-            z-index: 5;
             bottom: -500px;
             // border: 1px yellow solid;
             left: 50%;
@@ -48,6 +46,11 @@
     height: 100%;
     top: 0;
     left: 0;
+    &--1 {
+        z-index: 15;
+    }
+    &--2 {
+    }
 }
 
 @include keyframes(cloudsLeft) {
@@ -76,9 +79,39 @@
     width: 600px;
     height: 600px;
 
+    @include media-query(lap) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media only screen and (max-height: 900px) {
+        width: 550px;
+        height: 550px;
+    }
+
+    @media only screen and (max-height: 800px) {
+        width: 500px;
+        height: 500px;
+    }
+
+    @media only screen and (max-height: 700px) {
+        width: 450px;
+        height: 450px;
+    }
+
+    @media only screen and (max-height: 600px) {
+        width: 400px;
+        height: 400px;
+    }
+
+    @media only screen and (max-height: 500px) {
+        width: 350px;
+        height: 350px;
+    }
+
     @media only screen and (max-width: 640px) {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
 
     &__title {
@@ -96,7 +129,7 @@
             opacity: 0;
         }
         .break {
-            @media only screen and (min-width: 640px) {
+            @media only screen and (min-width: 640px) and (min-height: 500px) {
                 display: none;
             }
         }
@@ -123,7 +156,8 @@
         bottom: -5px;
         width: 40px;
         height: 40px;
-        left: 47%;
+        left: 50%;
+        margin-left: -20px;
         z-index: 30;
 
         @media only screen and (min-width: 640px) {
@@ -131,7 +165,7 @@
             opacity: 0;
         }
         @media only screen and (max-width: 640px) {
-            left: 125px;
+            margin-left: -15px;
             width: 30px;
             height: 30px;
         }

@@ -67,6 +67,8 @@
     }
 
     &--samsung {
+
+
         background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
         padding-top: 190px;
         min-height: 660px;
@@ -139,21 +141,50 @@
 }
 
 
-
-.case--list__illustration.in-view--partial {
-    @include animation(popin 300ms ease 200ms);
-    opacity: 1;
+.fade-in-container {
+    .container {
+        opacity: 0;
+        @include transition(opacity 500ms ease 200ms);
+    }
+    &.in-view--partial .container {
+        opacity: 1;
+    }
 }
 
-@include keyframes(popin){
+.case--list__illustration {
+    &.in-view--partial {
+        @include animation(fade-in-from-left 500ms $ease-in-out-quint 200ms);
+        opacity: 1;
+    }
+    &--from-right {
+        &.in-view--partial {
+            @include animation(fade-in-from-right 500ms $ease-in-out-quint 200ms);
+            opacity: 1;
+        }
+    }
+}
+
+
+@include keyframes(fade-in-from-left) {
     0% {
-      @include transform(scale(0));
+        @include transform(translateX(-100%));
+        opacity: 0;
     }
-    80% {
-      @include transform(scale(1.2));
-    }
+
     100% {
-      @include transform(scale(1));
+        @include transform(translateX(0%));
+        opacity: 1;
+    }
+}
+@include keyframes(fade-in-from-right) {
+    0% {
+        @include transform(translateX(100%));
+        opacity: 0;
+    }
+
+    100% {
+        @include transform(translateX(0%));
+        opacity: 1;
     }
 }
 

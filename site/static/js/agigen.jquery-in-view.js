@@ -46,7 +46,6 @@
         options = $.extend({
             style: 'toggle'
         }, options);
-        console.log(options);
 
         var callback = function() {
             this.each(function() {
