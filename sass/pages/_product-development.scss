@@ -201,6 +201,9 @@ $time_between_points: 800ms;
     }
 
     &--proddev-case {
+        @include media-query(palm) {
+            text-align: center;
+        }
         &__title {
             @extend .gamma;
         }
@@ -217,17 +220,32 @@ $time_between_points: 800ms;
         }
 
         &--billogram {
-            @extend .text--dark;
+            * {
+                color: #252525 !important;
+            }
             @include sneddis(-9, 380px, white);
             padding-bottom: 0;
             height: 300px;
             &__illustration {
                 position: absolute;
+                @include media-query(palm) {
+                    position: absolute;
+                    top: 100%;
+                    left: 10%;
+                    width: 80%;
+
+                }
             }
         }
         &--yogobe {
             background: #f0f0f0;
             padding-top: 300px;
+            @include media-query(palm){
+                padding-bottom: 240px;
+                .grid__item {
+                    text-align: center;
+                }
+            }
             .container {
                 z-index: 5;
             }
@@ -236,12 +254,30 @@ $time_between_points: 800ms;
                 right:0;
                 bottom: -450px;
                 max-width: none;
+                @include media-query(palm){
+                    right: auto;
+                    bottom: auto;
+                    left: 10%;
+                    width: 90%;
+                    top: 40px;
+                }
+
             }
             &__illustration-container {
                 position: relative;
             }
         }
         &--uppsalastudent {
+            &__illustration {
+                position: static;
+                float: right;
+                @include media-query(palm) {
+                    float: none;
+                    margin: 30px auto;
+                    width: 80%;
+                    display: block;
+                }
+            }
         }
 
     }

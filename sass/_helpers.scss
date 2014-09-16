@@ -25,6 +25,21 @@
     @include helper-setup("desk-");
 }
 
+
+/**
+ * Reversed grids
+ */
+.grid--rev{
+    @extend .grid;
+    direction:rtl;
+    text-align:right;
+
+    > .grid__item{
+        direction:ltr;
+        text-align:left;
+    }
+}
+
 .container {
     width: 90%;
     max-width: 1170px;
