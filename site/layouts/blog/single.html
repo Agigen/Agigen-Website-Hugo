@@ -1,11 +1,72 @@
 {{ template "partials/head.html" . }}
-{{ template "partials/header.html" . }}
+{{ template "partials/menu.html" . }}
+{{ template "partials/topbar.html" . }}
 
-<div class="content">
+<header class="main-header blog-post__header
+{{ range .Params.categories }}
+    blog-post__header--category--{{ . | urlize | lower }}
+{{ end }}">
+    <div class="main-header__content">
+        <div class="container text--light">
+
+            <h2 class="epsilon">Blog post</h2>
+            <h1 class="main-header__title">{{ .Title }}</h1>
+            <p>
+                Posted {{ .Date.Format "Mon, Jan 2, 2006" }} in {{ range .Params.categories }} {{ . }} {{ end }}
+            </p>
+        </div>
+    </div>
+</header>
+<div class="main-content">
+
+
+
+
+<div class="content container">
+    <h2 class="blog-post__title container container--tight">{{ .Title }}</h2>
+
     <article class="blog-post">
         {{ .Content }}
     </article>
+
+    <footer class="blog-post__footer ">
+
+        <div class="grid">
+            <div class="grid__item one-half">
+                {{if .Prev}}
+                    <a class="blog-post__nav blog-post__nav--prev" href="{{.Prev.Permalink}}">
+                        <div class="epsilon">Newer post</div>
+
+                        <h4>{{.Prev.Title}}</h4>
+                        <div class="blog-post__nav__imgwrapper">
+                            {{ if isset .Prev.Params "list_image" }}
+                                <img src="/img/blog/{{ .Prev.Params.list_image }}" class="post__image">
+                            {{ else }}
+                                <img src="/img/blog/general_320.jpg" class="post__image">
+                            {{ end }}
+                        </div>
+                    </a>
+                {{end}}
+            </div><!--
+            --><div class="grid__item one-half">
+                {{if .Next}}
+                    <a class="blog-post__nav blog-post__nav--next" href="{{.Next.Permalink}}">
+                        <div class="epsilon">Older post</div>
+
+                        <h4>{{.Next.Title}}</h4>
+                        <div class="blog-post__nav__imgwrapper">
+                            {{ if isset .Next.Params "list_image" }}
+                                <img src="/img/blog/{{ .Next.Params.list_image }}" class="post__image">
+                            {{ else }}
+                                <img src="/img/blog/general_320.jpg" class="post__image">
+                            {{ end }}
+                        </div>
+                    </a>
+                {{end}}
+            </div>
+        </div>
+    </footer>
 </div>
 
-{{ template "partials/footer.html" . }}
-{{ template "partials/foot.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
