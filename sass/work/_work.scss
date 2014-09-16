@@ -27,6 +27,9 @@
             text-align: center;
             h2 {
                 @extend .gamma;
+                @include media-query(palm) {
+                    font-size: 18px;
+                }
             }
             .btn {
                 @include btnColors(#333, white);
@@ -37,15 +40,27 @@
             height: 400px;
             @extend .text--light;
             background-size: cover;
+            @include media-query(palm) {
+                height: auto;
+            }
+            &__pretitle {
+                @extend .epsilon;
+            }
             &__title {
                 @extend .kilo;
                 margin-bottom: 0;
+                @include media-query(palm) {
+                    font-size: 24px;
+                }
             }
         }
 
         &__section {
             background: white;
             padding: 100px 0;
+            @include media-query(palm) {
+                padding: 50px 0;
+            }
 
             &--tilted {
                 &--top {
@@ -65,6 +80,12 @@
                 text-align: center;
                 @extend .delta;
                 font-weight: 300;
+                @include media-query(palm) {
+                    .grid__item {
+                        padding-bottom: 30px;
+                    }
+                    padding-bottom: 70px;
+                }
                 strong {
                     text-transform: uppercase;
                     font-size: 16px;
@@ -89,14 +110,31 @@
                 margin: 0 auto 25%;
             }
 
+            &--grandfinale {
+                height: 700px;
+                @extend .text--light;
+                @extend .text--center;
+                background-size: cover;
+                @include media-query(palm){
+                    height: auto;
+                    padding: 100px 0;
+                }
+                &__header {
+                    @extend .epsilon;
+                }
+                &__copy {
+                    @extend .kilo;
+                    @include media-query(palm){
+                        font-size: 18px;
+                    }
+                }
+            }
+
             &--carlsberg {
                 &--video {
                     background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
                 }
                 &--trivia {
-                    @extend .text--light;
-                    @extend .text--center;
-                    height: 700px;
                     background: #321651 url(/img/work/case/carlsberg/party-bg.jpg) no-repeat top center;
                 }
                 &--three-points {
@@ -154,23 +192,11 @@
                 }
 
                 &--black {
-                    height: 400px;
                     background: #333;
-                    @extend .text--light;
                 }
 
                 &--grandfinale {
-                    height: 700px;
-                    @extend .text--light;
-                    @extend .text--center;
                     background: #222 url(/img/work/case/build/legomovie.jpg) no-repeat center center;
-                    background-size: cover;
-                    &__header {
-                        @extend .epsilon;
-                    }
-                    &__copy {
-                        @extend .alpha;
-                    }
                 }
             }
         }
