@@ -102,6 +102,15 @@
                 .border--left {
                     border-left: 1px #dbdbdb solid;
                 }
+                @include media-query(palm) {
+                    .grid__item {
+                        padding-bottom: 30px;
+                    }
+                    padding-bottom: 70px;
+                    .border--left {
+                        border: none;
+                    }
+                }
             }
 
             &__tech-img {
@@ -114,7 +123,7 @@
                 height: 700px;
                 @extend .text--light;
                 @extend .text--center;
-                background-size: cover;
+                background-size: cover !important;
                 @include media-query(palm){
                     height: auto;
                     padding: 100px 0;
@@ -130,6 +139,26 @@
                 }
             }
 
+            &--sj {
+                &--three-points {
+                    background: #e5e5e5;
+                    color: #000;
+                }
+                &__divider {
+                    margin-top: 120px;
+                    background: #E33086;
+                    height: 260px;
+                    margin-bottom: 100px;
+                    &__image {
+                        position: relative;
+                        z-index: 5;
+                        top: -100px;
+                        width: 560px;
+                        max-width: 50%;
+                        margin: 0 auto;
+                    }
+                }
+            }
             &--carlsberg {
                 &--video {
                     background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
@@ -214,21 +243,38 @@
 
 .page--work .main-header {
     @include vhFejk(80);
-    background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
-    background-size: cover;
+    background: #0A0F23 url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
+    background-size: cover !important;
 }
 
 .page--work {
+    &--build-with-chrome {
+        .main-header {
+            background: #2466bd url(/img/work/case/build/buildwithchrome-bg.jpg) no-repeat bottom center;
+
+        }
+    }
     &--samsung {
         .main-header {
             background-color: #333;
             background-image: url(/img/work/case/samsung/header.jpg);
         }
     }
-    &--where-is-the-party {
+    &--wheres-the-party {
         .main-header {
             background-color: #333;
             background-image: url(/img/work/case/carlsberg/carlsberg-bg.jpg);
+        }
+    }
+    &--billogram {
+        .main-header {
+            background: #6ABBB8;
+        }
+    }
+    &--sj\.se {
+        .main-header {
+            background-color: #3094C3;
+            background-image: url(/img/work/case/sj/asset_headerbg.jpg);
         }
     }
 }
