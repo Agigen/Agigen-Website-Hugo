@@ -235,6 +235,54 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
         };
     }])
+    .directive('workVideo', [function() {
+        return {
+            restrict: 'A',
+            transclude: true,
+            template: '\
+<div class="work-video__video">\
+    <div class="inline-block two-thirds lap-four-fifths palm-one-whole">\
+        <div class="media media--16-9"></div>\
+    </div>\
+</div>\
+<div class="work-video__content" ng-transclude></div>\
+',
+            link: function(scope, element, attrs) {
+                var content = element.find('.work-video__content'),
+                    video = element.find('.work-video__video'),
+                    embed = element.find('.media');
+
+                element.addClass('work-video');
+
+                if (attrs.workVideo) {
+                    element.addClass('work-video--' + attrs.workVideo);
+                }
+
+                scope.play = function() {
+                    var contentHeight = content.outerHeight(), videoHeight = embed.outerHeight();
+                    element.height(contentHeight);
+                    content.fadeOut(800, function() {
+                        $('body, html').animate({scrollTop: $(window).scrollTop() + (videoHeight - contentHeight) / 2});
+                        element.animate({height: videoHeight}, function() {
+                            video.fadeTo(800, 1);
+
+                            if (attrs.embedYoutube) {
+                                var div = $('<div>');
+                                embed.append(div);
+
+                                scope.player = new YT.Player(div.get(0), {
+                                    height: '',
+                                    width: '',
+                                    videoId: attrs.embedYoutube,
+                                    playerVars: { 'autoplay': 1, 'controls': 0 },
+                                });
+                            }
+                        });
+                    });
+                };
+            }
+        };
+    }])
     .directive('screenCarousel', ['$interval', function($interval) {
         return {
             restrict: 'A',

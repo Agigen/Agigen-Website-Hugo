@@ -240,6 +240,68 @@
 
 }
 
+.work-video {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+
+    &__video {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        text-align: center;
+        opacity: 0;
+        line-height: 1;
+
+        .media {
+            margin: 0 !important;
+            display: block;
+        }
+
+    }
+
+    &__content {
+
+        padding: 100px 0;
+
+        .work-video--carlsberg & {
+            background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
+        }
+    }
+}
+
+.media {
+    width: 100%;
+    height: 0;
+    box-sizing: content-box;
+    padding-bottom: 100%;
+    position: relative;
+    display: inline-block;
+
+    &--16-9 {
+        padding-bottom: 56.25%;
+    }
+
+    &--4-3 {
+        padding-bottom: 75%;
+    }
+
+    iframe, video, img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.inline-block {
+    display: inline-block;
+}
+
 
 .page--work .main-header {
     @include vhFejk(80);
