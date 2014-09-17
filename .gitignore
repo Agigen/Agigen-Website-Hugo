@@ -2,3 +2,5 @@
 site/public/*
 sass/bower_components/*
 site/static/css/*
+public/*
+static/*
