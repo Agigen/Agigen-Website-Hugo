@@ -263,9 +263,8 @@ $time_between_points: 800ms;
         }
 
         &--billogram {
-            * {
-                color: #252525 !important;
-            }
+            min-height: 450px; // dunno
+
             @include sneddis(-9, 380px, white);
             padding-bottom: 0;
             height: 300px;
