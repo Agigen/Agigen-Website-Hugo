@@ -1,0 +1,28 @@
+.content--page-work {
+    .work {
+        &__section {
+            &--yogobe {
+                &--three-points {
+                    background: #f2f1f1;
+                    color: black;
+                }
+                &--grandfinale {
+                    background: #60a5cc url(/img/work/case/yogobe/trivia-bg.jpg) no-repeat top center;
+                }
+            }
+        }
+    }
+
+}
+
+.work-video--yogobe {
+    background-image: url(/img/work/case/yogobe/video-bg.jpg);
+}
+
+.page--work {
+    &--yogobe {
+        .main-header {
+            background: #9dd3ed url(/img/work/case/yogobe/yogobe-bg.jpg) no-repeat bottom center;
+        }
+    }
+}
