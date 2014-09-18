@@ -18,15 +18,22 @@ $color-labs-orange: #ff9900;
 @import "sections";
 @import "cases";
 
-@import "misc";
 @import "topbar";
 @import "header";
 @import "footer";
 @import "menu";
-@import "screen-carousel";
+
+@import "general/misc";
+@import "general/media";
+@import "general/screen-carousel";
+
 @import "sections/contact";
+
 @import "pages/pages";
+
 @import "work/work";
+@import "work/video";
+@import "work/yogobe";
 
 
 @import "keyframes";
