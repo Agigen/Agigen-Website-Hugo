@@ -120,6 +120,14 @@ $time_between_points: 800ms;
         @extend .text--light;
         @include sneddis(-4, 180px, white);
 
+        & + .section {
+            position: relative;
+        }
+
+        &:after, & + .section {
+            z-index: 15;
+        }
+
         &__illustration {
             position: static;
             &-wrapper {
