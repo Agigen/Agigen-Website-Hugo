@@ -14,7 +14,7 @@ $topbar-color: #fff;
     box-sizing: content-box;
     background: transparent;
 
-    @include transition(all 300ms $ease-in-out-cubic);
+    @include transition(background 300ms $ease-in-out-cubic);
 
     @include media-query(palm){
         opacity: 0.9;
@@ -175,10 +175,6 @@ $topbar-color: #fff;
         path {
             fill: inherit;
         }
-    }
-
-    &--scrolled {
-        padding-top: 20px;
     }
 
     &--filled {

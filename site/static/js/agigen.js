@@ -21,11 +21,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             checkTopbarScroll;
 
         checkTopbarScroll = function(v) {
-            $topbar.toggleClass('topbar--scrolled', v > 40);
+            $topbar.css({
+                paddingTop: Math.max(20, Math.min(60, 60 - v / 6))
+            });
+
             $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (60 + 10)));
         };
 
-        $scope.$watch('scrollTop', _.throttle(checkTopbarScroll, 100));
+        $scope.$watch('scrollTop', checkTopbarScroll);
 
         $scope.menuVisible = false;
     }])
