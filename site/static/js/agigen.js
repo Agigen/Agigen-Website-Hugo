@@ -16,6 +16,17 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
     var app = angular.module('agigenApp', []);
     app.controller('menuCtrl', ['$scope', function($scope){
+        var $container = $('.main-header'),
+            $topbar = $('.topbar'),
+            checkTopbarScroll;
+
+        checkTopbarScroll = function(v) {
+            $topbar.toggleClass('topbar--scrolled', v > 40);
+            $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (60 + 10)));
+        };
+
+        $scope.$watch('scrollTop', _.throttle(checkTopbarScroll, 100));
+
         $scope.menuVisible = false;
     }])
     .controller('introCtrl', ['$scope', function($scope) {
@@ -35,7 +46,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                 $container.css({
                     backgroundPosition: 'center ' + -v/6 + 'px',
-                })
+                });
             }
         });
     }])
