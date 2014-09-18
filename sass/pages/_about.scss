@@ -14,27 +14,49 @@
         // opacity: 1;
     }
 
+    &__photoframe-wrapper {
+        max-width: 278px;
+        margin: 0 auto;
+    }
 
     &__photoframe {
-        width: 276px;
-        height: 276px;
-        border-radius: 138px;
+        width: 100%;
+        padding-bottom: 100%;
+        box-sizing: content-box;
+        height: 0;
+        border-radius: 50%;
         overflow: hidden;
         display: block;
         margin: 0 auto;
+
+        margin-bottom: $base-spacing-unit;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
-    &__photo {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
+
     &__name {
-        padding-top: 20px;
+        text-align: center;
+        height: 0;
+        box-sizing: content-box;
+        padding-bottom: 25%;
+
         span {
             display: none;
         }
+
         img {
-            width: 280px;
+            height: 100%;
+            display: inline-block;
+
+            // compensate for jonas long schlong
+            .team-member--jonas & {
+                height: 200%;
+                margin-left: -20%;
+            }
         }
     }
     &__title {
