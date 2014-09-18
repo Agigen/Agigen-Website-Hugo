@@ -21,11 +21,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             checkTopbarScroll;
 
         checkTopbarScroll = function(v) {
-            $topbar.toggleClass('topbar--scrolled', v > 40);
+            $topbar.css({
+                paddingTop: Math.max(20, Math.min(60, 60 - v / 6))
+            });
+
             $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (60 + 10)));
         };
 
-        $scope.$watch('scrollTop', _.throttle(checkTopbarScroll, 100));
+        $scope.$watch('scrollTop', checkTopbarScroll);
 
         $scope.menuVisible = false;
     }])
@@ -261,7 +264,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             link: function(scope, element, attrs) {
                 var content = element.find('.work-video__content'),
                     video = element.find('.work-video__video'),
-                    embed = element.find('.media');
+                    embed = element.find('.media'),
+                    contentHeight, videoHeight;
 
                 element.addClass('work-video');
 
@@ -269,8 +273,18 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     element.addClass('work-video--' + attrs.workVideo);
                 }
 
+                scope.playing = false;
+
                 scope.play = function() {
-                    var contentHeight = content.outerHeight(), videoHeight = embed.outerHeight();
+                    if (scope.playing) {
+                        return;
+                    }
+
+                    scope.playing = true;
+
+                    contentHeight = content.outerHeight();
+                    videoHeight = embed.outerHeight();
+
                     element.height(contentHeight);
                     content.fadeOut(800, function() {
                         $('body, html').animate({scrollTop: $(window).scrollTop() + (videoHeight - contentHeight) / 2});
@@ -285,7 +299,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                                     height: '',
                                     width: '',
                                     videoId: attrs.embedYoutube,
-                                    playerVars: { 'autoplay': 1, 'controls': 0 },
+                                    playerVars: { 'autoplay': 1 },
                                 });
                             }
                         });
