@@ -9,7 +9,7 @@
 
     padding: 0;
     background-size: cover;
-    display: table;
+    display: block;
     color: #fff;
     overflow: hidden;
     position: relative;
@@ -17,8 +17,15 @@
     //fixes overflow-hidden issue in firefox
     @include transform(translate3d(0,0,0));
 
+    &:before {
+        content: "";
+        height: 100%;
+        vertical-align: middle;
+        display: inline-block;
+    }
+
     &__content {
-        display: table-cell;
+        display: inline-block;
         vertical-align: middle;
         position: relative;
         z-index: 10;
@@ -49,6 +56,7 @@
         left: 0;
         opacity: 0;
         @include transition(opacity 100ms ease);
+        @include transform(translate3d(0,0,0));
 
         &--loaded {
             opacity: 1;

@@ -18,9 +18,10 @@
         </div>
     </div>
     {{ if isset .Params "video" }}
-    <video width="1440" height="700" autoplay="autoplay" loop="loop" class="main-header__video">
+        <video width="1440" height="700" autoplay="autoplay" loop="loop" class="main-header__video">
+            <source src="/video/{{ .Params.video }}video.webm"  type="video/webm">
             <source src="/video/{{ .Params.video }}video.mp4"  type="video/mp4">
-    </video>
+        </video>
     {{ end }}
 </header>
 
