@@ -51,7 +51,7 @@ pluralizeListTitles = false
     url = "#"
 
 [[menu.main]]
-    name = "Previous work"
+    name = "Showcase"
     weight = 200
     url = "/work/"
     parent = "about"
