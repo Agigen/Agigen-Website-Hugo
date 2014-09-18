@@ -6,11 +6,12 @@ list_image: "mittvatten_320.jpg"
 categories:
   - Work
 ---
-<img src="/img/blog/posts/2014/02/mittvatten1.jpg" >
 
 For a while now we&#8217;ve been working with the frontend and backend of www.mittvatten.se &#8211; a site that is all about how to take care of Swedens perhaps greatest asset: its water!
 
 <!--more-->
+
+<img src="/img/blog/posts/2014/02/mittvatten1.jpg" >
 
 The site was designed mostly by [Hilanders][1], a Stockholm-based agency. They were put on the job by the semi-state funded organisation Svenskt Vatten (Swedish Water) in conjunction
 with one of their initiatives MittVatten (MyWater).

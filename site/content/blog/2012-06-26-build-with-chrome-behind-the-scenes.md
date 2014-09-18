@@ -5,13 +5,13 @@ date: "2012-06-26"
 list_image: "bwc_backstage_320.jpg"
 categories:
   - Backstage
-  - Case studies
 ---
-<img src="/img/blog/posts/2012/06/build.png" >
 
 We helped build this cool WebGL LEGO®/Google Maps thing, so I (Karl Blomster) thought I&#8217;d talk for a bit about it.
 
 <!--more-->
+
+<img src="/img/blog/posts/2012/06/build.png" >
 
 <img title="agigen-blog-header" alt="" src="/img/blog/posts/2012/06/agigen-blog-header1.png" />
 

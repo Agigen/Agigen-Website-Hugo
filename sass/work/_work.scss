@@ -289,11 +289,6 @@
             background-image: url(/img/work/case/carlsberg/carlsberg-bg.jpg);
         }
     }
-    &--billogram {
-        .main-header {
-            background: #6ABBB8;
-        }
-    }
     &--sj\.se {
         .main-header {
             background-color: #3094C3;
@@ -307,3 +302,6 @@
         }
     }
 }
+
+@import "work/billogram";
+@import "work/yogobe";

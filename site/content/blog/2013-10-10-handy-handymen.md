@@ -6,10 +6,11 @@ list_image: "handy_320.jpg"
 categories:
   - News
 ---
-<img src="/img/blog/posts/2013/10/kontorinprogress5.jpg" alt="kontorinprogress5" />
 
 We&#8217;re currently in the middle of getting everything ready for moving into our new office in the end of the month.
 <!--more-->
+
+<img src="/img/blog/posts/2013/10/kontorinprogress5.jpg" alt="kontorinprogress5" />
 
 <img src="/img/blog/posts/2013/10/kontorinprogress1.jpg" alt="kontorinprogress1" />
 Where the magic will happen.

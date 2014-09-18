@@ -10,11 +10,13 @@ tags:
   - python
   - tornado
 ---
-<img src="/img/blog/posts/2012/11/BuickEncore.jpg" >
 
 **Buick Encore is a mobile augmented reality game, created by us, [Monterosa][1] and [Ogilvy Shanghai][2]; we were responsible for the server-side backend part of the game, while Monterosa developed the iPhone and Android apps and Ogilvy was responsible for the game design and overall project management.**
 
 <!--more-->
+
+<img src="/img/blog/posts/2012/11/BuickEncore.jpg" >
+
 
 The game idea revolves around a virtual car which is placed somewhere in a big Chinese city. Using their smartphone, the players can see an approximate location of this car, as well as the positions of other players, on a standard map. When they get close enough to the car, its exact location appears, they rotate their phone to portrait mode and an augmented reality view which shows the car blended into the real world appears. They can now &#8220;get in&#8221; the car and &#8220;drive it&#8221; for up to three minutes; at any time while they&#8217;re &#8220;driving&#8221; they can &#8220;get out&#8221; of the car and leave it at their current location. The purpose of the game is to find the car and then hide it; at the end of the gaming day, whoever managed to hide the car for the longest period of time wins.
 
