@@ -1,0 +1,36 @@
+.work-video {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+
+    &__video {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        text-align: center;
+        opacity: 0;
+        line-height: 1;
+
+        .media {
+            margin: 0 !important;
+            display: block;
+        }
+
+    }
+
+    &__content {
+
+        padding: 100px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:  top center;
+
+        .work-video--carlsberg & {
+            background-color: #321651;
+            background-image: url(/img/work/case/carlsberg/video-bg.jpg);
+        }
+    }
+}
