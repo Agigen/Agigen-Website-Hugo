@@ -124,7 +124,7 @@ $time_between_points: 800ms;
             position: static;
             &-wrapper {
                 position: absolute;
-                top: -225px;
+                top: -260px;
                 @include media-query(palm) {
                     position: absolute;
                     top: auto;
@@ -136,10 +136,10 @@ $time_between_points: 800ms;
             }
             &__animation {
                 position: absolute;
-                top: 9.3%;
-                left: 11.1%;
-                right: 9.3%;
-                bottom: 17.8%;
+                top: 11%;
+                left: 14.6%;
+                right: 11.3%;
+                bottom: 12.7%;
                 background: transparent url(/img/proddev/productdevelopment-animation.gif) no-repeat 0px 0px;
                 background-size:cover;
 
@@ -164,10 +164,53 @@ $time_between_points: 800ms;
             z-index: 5;
         }
         &__illustration {
-            position: absolute;
-            left: -55px;
-            bottom: -120px;
+            position: static;
+            max-width: 100%;
+            z-index: 3;
+            height: auto;
+            &-wrapper {
+                position: absolute;
+                @media only screen and (max-width: 1100px) {
+                    position: relative;
+                    max-width: 100%;
+                    height: auto;
+                    bottom: auto;
+                }
+                left: -55px;
+                bottom: -120px;
+                @include media-query(palm) {
+                    position: absolute;
+                    top: auto;
+                    max-width: 80%;
+                    bottom: -390px;
+                    left: 10%;
+
+                }
+            }
+            &__animation {
+                position: absolute;
+                z-index: 2;
+                background: transparent url() no-repeat 0px 0px;
+                background-size: contain;
+                &--phone {
+                    z-index: -1;
+                    top: 26.9%;
+                    left: 5.6%;
+                    right: 41%;
+                    bottom: 10.7%;
+                    background-image: url(/img/proddev/iphonealert.gif);
+                }
+                &--coffee {
+                    background-image: url(/img/proddev/coffee.gif);
+
+                    top: 10.5%;
+                    left: 63.6%;
+                    right: 11%;
+                    bottom: 64%;
+                }
+            }
         }
+
         @include media-query(palm){
             padding-top: 0px;
         }
