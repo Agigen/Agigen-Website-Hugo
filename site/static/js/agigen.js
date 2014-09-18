@@ -14,6 +14,12 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
               };
     })();
 
+    var breakpoints = {
+        lapStart: 601,
+        deskStart: 1024,
+        deskWideStart: 1200,
+    };
+
     var app = angular.module('agigenApp', []);
     app.controller('menuCtrl', ['$scope', function($scope){
         var $container = $('.main-header'),
@@ -21,11 +27,18 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             checkTopbarScroll;
 
         checkTopbarScroll = function(v) {
-            $topbar.css({
-                paddingTop: Math.max(20, Math.min(60, 60 - v / 6))
-            });
+            if (window.innerWidth >= breakpoints.lapStart) {
+                $topbar.css({
+                    paddingTop: Math.max(20, Math.min(60, 60 - v / 6))
+                });
 
-            $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (60 + 10)));
+                $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (70)));
+            } else {
+                $topbar.css({
+                    paddingTop: 20
+                });
+                $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (60)));
+            }
         };
 
         $scope.$watch('scrollTop', checkTopbarScroll);

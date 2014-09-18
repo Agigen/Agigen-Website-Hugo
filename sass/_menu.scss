@@ -40,7 +40,7 @@ html.menu-open {
     opacity: 1;
     display: block;
 
-    @include transition(background 200ms ease, transform 400ms ease, z-index 10ms linear 0ms);
+    @include transition(background 200ms ease, transform 400ms ease, z-index 10ms linear 400ms);
 
 
     @include transform-origin(right top);
@@ -56,7 +56,11 @@ html.menu-open {
         max-width: 1000px;
         width: 80%;
         opacity: 0;
-        @include transition(opacity 300ms linear 400ms);
+        overflow: hidden;
+        @include transform-origin(right top);
+        @include transform(skew(90deg));
+        @include transition(transform 400ms ease, overflow 10ms linear 400ms);
+        //@include transition(opacity 300ms linear 400ms);
     }
 
     &--expanded {
@@ -69,11 +73,15 @@ html.menu-open {
         opacity: 1;
         height: 100%;
 
+        @include transition(background 200ms ease, transform 400ms ease, z-index 10ms linear 0ms);
+
         @include transform(skew(0deg));
         .main-menu__grid {
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             opacity: 1;
+
+            @include transform(skew(0deg));
 
             padding-bottom: 120px;
             @include media-query(palm){

@@ -18,7 +18,7 @@ $topbar-color: #fff;
 
     @include media-query(palm){
         opacity: 0.9;
-        top: 20px;
+        padding-top: 20px;
         .container {
             width: 90%;
         }
