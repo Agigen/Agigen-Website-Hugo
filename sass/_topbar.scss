@@ -18,7 +18,7 @@ $topbar-color: #fff;
 
     @include media-query(palm){
         opacity: 0.9;
-        padding: 20px 0 0;
+        padding-top: 10px;
         .container {
             width: 90%;
         }
@@ -102,11 +102,9 @@ $topbar-color: #fff;
             line-height: 24px;
         }
 
-
         &__inner {
             position: relative;
             display: inline-block;
-
 
             &, &:before, &:after {
                 width: 1em;
