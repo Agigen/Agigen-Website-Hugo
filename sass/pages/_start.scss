@@ -256,10 +256,10 @@
     @media only screen and (max-width: 700px) {
         max-width: 49px;
         max-height: 40px;
-        margin: 10px;
+        margin: 15px 10px;
     }
     @include media-query(palm) {
-        margin: 0 3px;
+        margin: 12px 0;
         max-width: 30px;
         max-height: 18px;
 
