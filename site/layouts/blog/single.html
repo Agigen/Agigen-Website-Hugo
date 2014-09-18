@@ -34,7 +34,7 @@
         <div class="grid">
             <div class="grid__item one-half">
                 {{if .Prev}}
-                    <a class="blog-post__nav blog-post__nav--prev" href="{{.Prev.Permalink}}">
+                    <a class="blog-post__nav blog-post__nav--prev" href="{{.Prev.RelPermalink}}">
                         <div class="epsilon">Newer post</div>
 
                         <h4>{{.Prev.Title}}</h4>
@@ -50,7 +50,7 @@
             </div><!--
             --><div class="grid__item one-half">
                 {{if .Next}}
-                    <a class="blog-post__nav blog-post__nav--next" href="{{.Next.Permalink}}">
+                    <a class="blog-post__nav blog-post__nav--next" href="{{.Next.RelPermalink}}">
                         <div class="epsilon">Older post</div>
 
                         <h4>{{.Next.Title}}</h4>
