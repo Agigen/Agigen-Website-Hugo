@@ -37,6 +37,7 @@ $topbar-color: #fff;
         svg {
             width: 39px;
             height: 30px;
+            fill: white;
             @include transition(all 300ms $ease-in-out-cubic);
 
             .topbar--filled & {
@@ -51,8 +52,8 @@ $topbar-color: #fff;
                 }
             }
 
-            &, .menu-expanded & {
-                fill: white;
+            .menu-expanded & {
+                fill: white !important;
             }
         }
         &:hover {
@@ -97,6 +98,7 @@ $topbar-color: #fff;
             &, &:before, &:after {
                 width: 1em;
                 height: 0.125em;
+                background-color: white;
 
                 .topbar--filled & {
                     background-color: #ff0066;
@@ -110,8 +112,8 @@ $topbar-color: #fff;
                     }
                 }
 
-                &, .menu-expanded & {
-                    background-color: white;
+                .menu-expanded & {
+                    background-color: white !important;
                 }
                 // .transition-smooth(transform, background-color, top);
                 @include transition(all 300ms $ease-in-out-cubic);
@@ -149,7 +151,8 @@ $topbar-color: #fff;
 
         &--active {
             .topbar__menu-button__inner {
-                background: transparent;
+                background: transparent !important;
+
                 &:before {
                     width: 100% !important;
                     @include transform(rotate3d(0,0,1,45deg));
