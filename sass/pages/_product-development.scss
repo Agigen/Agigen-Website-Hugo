@@ -278,6 +278,8 @@ $time_between_points: 800ms;
             height: 300px;
             &__illustration {
                 position: absolute;
+                max-width: 589px;
+                height: auto;
                 @include media-query(palm) {
                     position: absolute;
                     top: 100%;
