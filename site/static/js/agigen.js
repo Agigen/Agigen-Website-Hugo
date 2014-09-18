@@ -92,8 +92,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         requestAnimFrame(updateParallax);
     }])
     .controller('chatCtrl', ['$scope', '$timeout', function($scope, $timeout){
-        var msgAudio = new Audio('/audio/icq.mp3'),
-            typeAudio = new Audio('/audio/type.mp3');
+
+        var msgAudio, typeAudio;
+
         $scope.messages = [
             "Hello, what's your name?"
         ];
@@ -101,6 +102,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.username = "";
         $scope.message = "";
 
+        if (typeof Audio === 'function') {
+            msgAudio = new Audio('/audio/icq.mp3');
+            msgAudio.preload = 'auto';
+            msgAudio.load();
+            typeAudio = new Audio('/audio/type.mp3');
+            typeAudio.preload = 'auto';
+            typeAudio.load();
+        }
 
         var chat = new agigen.SlackChat("http://agigen-slack-chat.appspot.com");
 
@@ -108,24 +117,45 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
         chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
 
-        $scope.keyDown = function(){
-            typeAudio.pause();
-            typeAudio.currentTime = 0;
-            typeAudio.play();
+        $scope.keyDown = function($event){
+            var ignoreKeys = [
+                8,
+                9,
+                13,
+                16,
+                17,
+                17,
+                18,
+                18,
+                27,
+                91,
+                93,
+            ];
+
+            var click;
+            if (typeAudio && ignoreKeys.indexOf($event.which) === -1) {
+                click = typeAudio.cloneNode();
+                click.play();
+            }
         };
+
         $scope.onConnected = function(){
             $scope.connected = true;
             $scope.messages.push("Connected!");
         };
+
         $scope.onCloseed = function(){
             $scope.connected = false;
             $scope.messages.push("Connection lost! :(");
         };
+
         $scope.onIncomingMessage = function(msg) {
             $scope.messages.push(msg.username + ": " + msg.text);
             $scope.messages = $scope.messages.slice(-15);
             $scope.$digest();
-            msgAudio.play();
+            if (msgAudio && msg.username !== $scope.username) {
+                msgAudio.play();
+            }
         };
 
         $scope.send = function(){
