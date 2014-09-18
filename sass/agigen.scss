@@ -8,10 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
-}
-
 $light_gray: #f0f0f0;
 $color-proddev-pink: #ff0066;
 $color-webprod-blue: #00ccff;
@@ -22,6 +18,7 @@ $color-labs-orange: #ff9900;
 @import "sections";
 @import "cases";
 
+@import "misc";
 @import "topbar";
 @import "header";
 @import "footer";

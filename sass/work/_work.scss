@@ -290,9 +290,13 @@
     &__content {
 
         padding: 100px 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:  top center;
 
         .work-video--carlsberg & {
-            background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
+            background-color: #321651;
+            background-image: url(/img/work/case/carlsberg/video-bg.jpg);
         }
     }
 }
