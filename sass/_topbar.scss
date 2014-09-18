@@ -3,23 +3,22 @@ $topbar-color: #fff;
 
 .topbar {
     @include user-select(none);
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    padding-top: 60px;
+    top: 0;
     left: 0;
     width: 100%;
-    background: transparent;
     z-index: 1000;
     height: $topbar-height;
     line-height: $topbar-height;
+    box-sizing: content-box;
+    background: transparent;
 
-    .menu-open & {
-        position: fixed;
-    }
+    @include transition(all 300ms $ease-in-out-cubic);
 
     @include media-query(palm){
         opacity: 0.9;
         top: 20px;
-        position: fixed;
         .container {
             width: 90%;
         }
@@ -39,6 +38,23 @@ $topbar-color: #fff;
             width: 39px;
             height: 30px;
             fill: white;
+            @include transition(all 300ms $ease-in-out-cubic);
+
+            .topbar--filled & {
+                fill: #ff0066;
+
+                .page--services--web-production & {
+                    fill: #00ccff;
+                }
+
+                .page--services--labs & {
+                    fill: #ff9900;
+                }
+            }
+
+            .menu-expanded & {
+                fill: white !important;
+            }
         }
         &:hover {
             svg {
@@ -83,6 +99,22 @@ $topbar-color: #fff;
                 width: 1em;
                 height: 0.125em;
                 background-color: white;
+
+                .topbar--filled & {
+                    background-color: #ff0066;
+
+                    .page--services--web-production & {
+                        background-color: #00ccff;
+                    }
+
+                    .page--services--labs & {
+                        background-color: #ff9900;
+                    }
+                }
+
+                .menu-expanded & {
+                    background-color: white !important;
+                }
                 // .transition-smooth(transform, background-color, top);
                 @include transition(all 300ms $ease-in-out-cubic);
             }
@@ -119,7 +151,8 @@ $topbar-color: #fff;
 
         &--active {
             .topbar__menu-button__inner {
-                background: transparent;
+                background: transparent !important;
+
                 &:before {
                     width: 100% !important;
                     @include transform(rotate3d(0,0,1,45deg));
@@ -142,6 +175,18 @@ $topbar-color: #fff;
         path {
             fill: inherit;
         }
+    }
+
+    &--scrolled {
+        padding-top: 20px;
+    }
+
+    &--filled {
+        background: #fff;
+    }
+
+    &.menu-expanded {
+        background: transparent;
     }
 }
 
