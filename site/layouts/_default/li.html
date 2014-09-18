@@ -1,6 +1,6 @@
 <li>
     <article class="post animate--in-view">
-        <a class="post__imagewrapper" href="{{ .Permalink }}">
+        <a class="post__imagewrapper" href="{{ .RelPermalink }}">
             {{ if isset .Params "list_image" }}
                 <img src="/img/blog/{{ .Params.list_image }}" class="post__image">
             {{ else }}
@@ -16,11 +16,11 @@
                 </span>
                 <time class="post__time">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
             </header>
-            <h2 class="post__title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+            <h2 class="post__title"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
             <div class="post__summary">
                 {{ .Summary }}
             </div>
-            <a href="{{ .Permalink }}" class="post__link">Read full post</a>
+            <a href="{{ .RelPermalink }}" class="post__link">Read full post</a>
 
         </div>
 
