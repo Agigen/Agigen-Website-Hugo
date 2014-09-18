@@ -23,18 +23,18 @@
     0% {
       stroke-dashoffset: 1221;
     }
-    20% {
-        stroke-dashoffset: 977;
-    }
-    40% {
-        stroke-dashoffset: 733;
-    }
-    60% {
-        stroke-dashoffset: 489;
-    }
-    80% {
-        stroke-dashoffset: 245;
-    }
+    // 20% {
+    //     stroke-dashoffset: 977;
+    // }
+    // 40% {
+    //     stroke-dashoffset: 733;
+    // }
+    // 60% {
+    //     stroke-dashoffset: 489;
+    // }
+    // 80% {
+    //     stroke-dashoffset: 245;
+    // }
     100% {
       stroke-dashoffset: 0;
     }
@@ -42,13 +42,22 @@
 
 @include keyframes(processpoint) {
     0% {
-        @include transform(scale(0.2));
+        @include transform(scale(0));
     }
     80% {
         @include transform(scale(1.5));
     }
     100% {
         @include transform(scale(1));
+    }
+}
+
+@include keyframes(processtep) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 

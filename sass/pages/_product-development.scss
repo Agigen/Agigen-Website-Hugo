@@ -8,7 +8,7 @@
 }
 
 
-$time_between_points: 800ms;
+$time_between_points: 1000ms;
 .proddev-process {
     position: relative;
     padding-top: 100px;
@@ -24,7 +24,7 @@ $time_between_points: 800ms;
         .path {
             stroke-dasharray: 1221;
             stroke-dashoffset: 1221;
-            @include animation(proddevprocess $time_between_points*6 ease-in forwards);
+            @include animation(proddevprocess $time_between_points $ease-in-out-quint 800ms forwards);
         }
         width: 574px;
         height: 574px;
@@ -32,14 +32,15 @@ $time_between_points: 800ms;
     &__point {
 
         @include transform-origin(center center);
-        @include animation(processpoint 300ms linear);
+        @include transform(scale(0));
+        @include animation(processpoint 300ms linear forwards);
 
-        &--1 { @include animation-delay(0); }
-        &--2 { @include animation-delay($time_between_points*1+200); }
-        &--3 { @include animation-delay($time_between_points*2+300); }
-        &--4 { @include animation-delay($time_between_points*3+400); }
-        &--5 { @include animation-delay($time_between_points*4+630); }
-        &--6 { @include animation-delay($time_between_points*5+780); }
+        &--1 { @include animation-delay(800); }
+        &--2 { @include animation-delay($time_between_points * 1 + 800); }
+        &--3 { @include animation-delay($time_between_points * 2 + 800); }
+        &--4 { @include animation-delay($time_between_points * 3 + 800); }
+        &--5 { @include animation-delay($time_between_points * 4 + 800); }
+        &--6 { @include animation-delay($time_between_points * 5 + 800); }
     }
 
     &__steps {
@@ -59,6 +60,16 @@ $time_between_points: 800ms;
             display: block;
             @extend .gamma
         }
+
+        opacity: 0;
+        @include animation(processtep 300ms linear forwards);
+
+        &--1 { @include animation-delay(800); }
+        &--2 { @include animation-delay($time_between_points * 1 + 800); }
+        &--3 { @include animation-delay($time_between_points * 2 + 800); }
+        &--4 { @include animation-delay($time_between_points * 3 + 800); }
+        &--5 { @include animation-delay($time_between_points * 4 + 800); }
+        &--6 { @include animation-delay($time_between_points * 5 + 800); }
 
         &--1 {
             text-align: center;
