@@ -1,0 +1,17 @@
+.page--work {
+    &--billogram {
+        .main-header {
+            background: #6ABBB8;
+        }
+    }
+}
+
+.content--page-work  {
+    .work-video--billogram {
+        background-color: #6ABBB8;
+        background-image: url(/img/work/case/billogram/video-bg.jpg);
+    }
+    .work__section--billogram--grandfinale {
+        background: #6ABBB8 url(/img/work/case/billogram/billogramteam-bg.jpg) no-repeat top center;
+    }
+}
