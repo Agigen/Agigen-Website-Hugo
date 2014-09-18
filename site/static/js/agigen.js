@@ -132,10 +132,10 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 93,
             ];
 
-            var click;
+            var type;
             if (typeAudio && ignoreKeys.indexOf($event.which) === -1) {
-                click = typeAudio.cloneNode();
-                click.play();
+                type = typeAudio.cloneNode();
+                type.play();
             }
         };
 
@@ -150,11 +150,13 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.onIncomingMessage = function(msg) {
+            var uhoh;
             $scope.messages.push(msg.username + ": " + msg.text);
             $scope.messages = $scope.messages.slice(-15);
             $scope.$digest();
             if (msgAudio && msg.username !== $scope.username) {
-                msgAudio.play();
+                uhoh = msgAudio.cloneNode();
+                uhoh.play();
             }
         };
 
