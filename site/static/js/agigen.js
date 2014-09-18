@@ -165,7 +165,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.onIncomingMessage = function(msg) {
             var uhoh;
             $scope.messages.push(msg.username + ": " + msg.text);
-            $scope.messages = $scope.messages.slice(-15);
+            $scope.messages = $scope.messages.slice(-13);
             $scope.$digest();
             if (msgAudio && msg.username !== $scope.username) {
                 uhoh = msgAudio.cloneNode();
