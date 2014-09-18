@@ -288,7 +288,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 };
 
                 var updateScroll = _updateScroll;
-                $window.on('scroll', updateScroll);
+                $window.on('scroll.scroll-spy', updateScroll);
 
                 $timeout(function() { updateScroll(); }, 0);
             }
