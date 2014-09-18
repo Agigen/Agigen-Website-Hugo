@@ -7,13 +7,13 @@ categories:
   - News
 ---
 
-<img src="/img/blog/posts/2014/05/william_1.jpg" >
-
 This is a guest blog post by our 14year old trainee William! Unfortunately available in Swedish only.
 
 <!--more-->
 
 **The following entry is in swedish only.**
+
+<img src="/img/blog/posts/2014/05/william_1.jpg" >
 
 Den senaste tiden har vi haft förstärkning av William, i normala fall åttondeklassare på Internationella Engelska Skolan.
 

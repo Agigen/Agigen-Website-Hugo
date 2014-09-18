@@ -7,12 +7,13 @@ list_image: "bufferbusters_fwa_320.jpg"
 categories:
   - News
 ---
-<img src="/img/blog/posts/2013/09/fwa-bufferbusters.png" >
 
 We got awarded a Mobile of the Day award from Favourite Website Awards!
 
 <a href="http://www.thefwa.com/mobile/vodafone-bufferbusters" target="_blank">http://www.thefwa.com/mobile/vodafone-bufferbusters</a>
 
 <!--more-->
+<img src="/img/blog/posts/2013/09/fwa-bufferbusters.png" >
+
 
 Concept and design by North Kingdom, sounds by DinahMoe, the app by Monterosa and the backend by Agigen! Such a great team.

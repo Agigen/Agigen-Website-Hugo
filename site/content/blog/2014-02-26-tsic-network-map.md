@@ -6,10 +6,11 @@ list_image: "tsic_320.jpg"
 categories:
   - Work
 ---
-<img src="/img/blog/posts/2014/02/tsic2.jpg" >
-
 Through the agency Hilanders we were put on the job to build the backend and frontend of TeliaSoneras Network Map &#8211; a whirlpool of connections, IPX landlines and to show the strength and capabailites of the TeliaSonera IC network.
 <!--more-->
+
+<img src="/img/blog/posts/2014/02/tsic2.jpg" >
+
 
 For eons in the past, TeliaSonera showed their gigantic network on nothing other than an old Flash-based animated map. Simple drag & drop and no admin but a huge, un-organized XML file. That had to change. The best approach would be to implement a solid, all-device-friendly map with a strong API &#8211; so that&#8217;s what we did, and of course we did it with Google Maps. By changing colours and style of the inherited Google Maps stylesheet through JSON we could replicate the TeliaSonera brand into Google Maps, all while building a fancy UI to also go seamlessly with the map in the background.
 

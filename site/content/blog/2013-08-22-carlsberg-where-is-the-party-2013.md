@@ -6,11 +6,13 @@ list_image: "wtp_320.jpg"
 categories:
   - Case studies
 ---
-<img src="/img/blog/posts/2013/08/carlsberg-1960x1040.png" >
 
 Together with our friends and longtime partners at North Kingdom, we created Carlsberg’s Where’s the Party 2013 campaign, featuring Axwell of Swedish House Mafia fame. The site takes users on a tour through an interactive video to find one of 2013′s best parties.
 
 <!--more-->
+
+<img src="/img/blog/posts/2013/08/carlsberg-1960x1040.png" >
+
 
 # We used
 
