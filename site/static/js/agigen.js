@@ -53,6 +53,11 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
         };
 
+        $scope.toggleMenu = function() {
+            //pushState
+            $scope.menuVisible = !$scope.menuVisible;
+        }
+
         $scope.$watch('menuVisible', function(menuVisible) {
             if (menuVisible) {
                 $scope.menuVisibleTimeout = $timeout(function() {
@@ -399,6 +404,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     .directive('screenCarousel', ['$interval', function($interval) {
         return {
             restrict: 'A',
+            scope: true,
             template: '\
 <ul class="screen-carousel">\
     <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
