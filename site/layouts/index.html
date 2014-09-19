@@ -1,5 +1,5 @@
-{{ template "partials/head.html" . }}
-{{ template "partials/header-start.html" . }}
+{{ partial "head.html" . }}
+{{ partial "header-start.html" . }}
 
 <section class="section section--start section--start-intro">
     <h1 class="accessibility">Agigen - Agile Generation AB</h1>
@@ -145,11 +145,11 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
         <p class="section--start__ingress section--start-contact__ingress ">Let's hear your idea</p>
         <h2 class="alpha">Get in touch</h2>
 
-        {{ template "partials/contact-grid.html" . }}
+        {{ partial "contact-grid.html" . }}
 
     </div>
 </section>
 
 
-{{ template "partials/footer.html" . }}
-{{ template "partials/foot.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}

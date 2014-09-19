@@ -1,5 +1,5 @@
-{{ template "partials/head.html" . }}
-{{ template "partials/header.html" . }}
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
 
 <div class="content content--page-work">
     {{ .Content }}
@@ -9,7 +9,7 @@
             <p class="section--start__ingress section--start-contact__ingress ">Want to make something like this?</p>
             <h3 class="alpha">Get in touch</h3>
 
-            {{ template "partials/contact-grid.html" . }}
+            {{ partial "contact-grid.html" . }}
 
         </div>
     </section>
@@ -18,5 +18,5 @@
 
 
 
-{{ template "partials/footer.html" . }}
-{{ template "partials/foot.html" . }}
+{{ partial "footer.html" . }}
+{{ partial "foot.html" . }}
