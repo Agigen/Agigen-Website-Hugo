@@ -176,7 +176,9 @@ $color-category-officefun: #9549b2;
     &__link {
         @extend .delta;
         text-decoration: underline;
-
+        &:hover {
+            color: black;
+        }
     }
 }
 
