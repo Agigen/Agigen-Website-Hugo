@@ -58,6 +58,9 @@
     }
 
     &__illustration {
+        img {
+            max-width: 100%;
+        }
         @include media-query(lap-and-up){
             position: absolute;
             z-index:100;
