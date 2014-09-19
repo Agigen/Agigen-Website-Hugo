@@ -11,9 +11,12 @@ tags:
   - tornado
 ---
 
-**Buick Encore is a mobile augmented reality game, created by us, [Monterosa][1] and [Ogilvy Shanghai][2]; we were responsible for the server-side backend part of the game, while Monterosa developed the iPhone and Android apps and Ogilvy was responsible for the game design and overall project management.**
+Buick Encore is a mobile augmented reality game, and we created the serverside part running on a Python stack behind the Great Firewall of China.
 
 <!--more-->
+
+
+Buick Encore is a mobile augmented reality game, created by us, Monterosa and Ogilvy Shanghai; we were responsible for the server-side backend part of the game, while Monterosa developed the iPhone and Android apps and Ogilvy was responsible for the game design and overall project management.
 
 <img src="/img/blog/posts/2012/11/BuickEncore.jpg" >
 

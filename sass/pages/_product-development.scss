@@ -135,13 +135,18 @@
         background-size: cover;
         @extend .text--light;
         @include sneddis(-4, 180px, white);
-
+        .container {
+            z-index: 16;
+        }
         & + .section {
             position: relative;
         }
 
         &:after, & + .section {
             z-index: 15;
+            @include media-query(lap-and-up) {
+                padding-top: 240px;
+            }
         }
 
         &__illustration {
