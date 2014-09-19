@@ -9,7 +9,7 @@
 
     .work {
         &__header-image {
-            margin: -10% auto 0;
+            margin: -150px auto 0;
             position: relative;
             z-index: 5;
             display: block;
@@ -232,10 +232,16 @@
 
 }
 
-.page--work .main-header {
-    @include vhFejk(50);
-    background: #0A0F23 url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
-    background-size: cover !important;
+.page--work {
+    .main-header {
+        @include vhFejk(50);
+        background: #0A0F23 url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
+        background-size: cover !important;
+        &__title {
+            font-size: 100px;
+            line-height: 100%;
+        }
+    }
 }
 
 .page--work {
