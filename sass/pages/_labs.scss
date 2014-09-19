@@ -2,6 +2,7 @@
     &--labs {
         .main-header {
             background: $color-labs-orange;
+            @include vhFejk(50);
         }
     }
 }
