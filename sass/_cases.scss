@@ -52,8 +52,21 @@
         &--billogram {
             .container {
                 margin-top: -240px;
-                @include media-query(palm){
-                  margin-top: -180px;
+
+                @media screen and ( max-height: 900px ){
+                    margin-top: -200px;
+                }
+
+                @media screen and ( max-height: 800px ){
+                    margin-top: -155px;
+                }
+
+                @media screen and ( max-height: 700px ){
+                    margin-top: -130px;
+                }
+
+                @media screen and ( max-height: 500px ){
+                    margin-top: -105px;
                 }
             }
         }
