@@ -105,6 +105,7 @@ $topbar-color: #fff;
         &__inner {
             position: relative;
             display: inline-block;
+            vertical-align: middle;
 
             &, &:before, &:after {
                 width: 1em;
