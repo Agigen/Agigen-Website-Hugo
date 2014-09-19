@@ -108,9 +108,14 @@ $topbar-color: #fff;
             vertical-align: middle;
 
             &, &:before, &:after {
-                width: 1em;
-                height: 0.125em;
+                width: 26px;
+                height: 3px;
                 background-color: white;
+
+                @include media-query(palm) {
+                    width: 24px;
+                    height: 2px;
+                }
 
                 .topbar--filled & {
                     background-color: #ff0066;
