@@ -119,8 +119,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             $scope.x2 = $scope.x*2*-1;
             $scope.x3 = $scope.x*8*-1;
 
-            console.log($scope.x);
-
             $scope.y = _y + (scrollOffset * 2 - 1);
             $scope.y2 = $scope.y*2*-1;
             $scope.y3 = $scope.y*8*-1;
