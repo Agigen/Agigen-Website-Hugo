@@ -6,7 +6,7 @@ list_image: "fwa_wtp_320.jpg"
 categories:
   - News
 ---
-We won another FWA Site of the day for Carlsberg&#8217;s Where is the Party!
+We won another FWA Site of the day for Carlsberg&#8217;s Where's the Party!
 
 <a href="http://www.thefwa.com/site/where-s-the-party-by-carlsberg" target="_blank">http://www.thefwa.com/site/where-s-the-party-by-carlsberg</a>
 
