@@ -1,0 +1,25 @@
+.page--work {
+    &--the-big-blog-exchange {
+        .main-header {
+            background: #3d2550;
+            background-image: url(/img/work/case/bigblog/asset_header.jpg);
+        }
+    }
+}
+
+.content--page-work  {
+
+    .work__section--bigblog--three-points {
+        background: #ff6c00;
+    }
+    .work__section--bigblog--the-exchange {
+        background: #e02560;
+    }
+    // .work-video--billogram {
+    //     background-color: #6abbb8;
+    //     background-image: url(/img/work/case/billogram/video-bg.jpg);
+    // }
+    // .work__section--billogram--grandfinale {
+    //     background: #6abbb8 url(/img/work/case/billogram/billogramteam-bg.jpg) no-repeat top center;
+    // }
+}
