@@ -21,7 +21,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     };
 
     var app = angular.module('agigenApp', []);
-    app.controller('menuCtrl', ['$scope', function($scope){
+    app.controller('menuCtrl', ['$scope', '$timeout', function($scope, $timeout){
         var $container = $('.main-header'),
             $topbar = $('.topbar'),
             checkTopbarScroll;
@@ -44,12 +44,25 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.$watch('scrollTop', checkTopbarScroll);
 
         $scope.menuVisible = false;
+        $scope.menuVisible2 = false;
+        $scope.menuVisibleTimeout = false;
 
         $scope.menuKeyup = function($event) {
             if ($event.which === 27) {
                 $scope.menuVisible = false;
             }
         };
+
+        $scope.$watch('menuVisible', function(menuVisible) {
+            if (menuVisible) {
+                $scope.menuVisibleTimeout = $timeout(function() {
+                    $scope.menuVisible2 = true;
+                }, 370);
+            } else {
+                $timeout.cancel($scope.menuVisibleTimeout);
+                $scope.menuVisible2 = false;
+            }
+        });
     }])
     .controller('introCtrl', ['$scope', function($scope) {
         var $cloud1 = $('.could-wrapper--1'),
