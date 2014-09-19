@@ -14,6 +14,10 @@ $topbar-color: #fff;
     box-sizing: content-box;
     background: transparent;
 
+    .menu-open & {
+        overflow-y: scroll;
+    }
+
     @include transition(background 300ms $ease-in-out-cubic);
 
     @include media-query(palm){
