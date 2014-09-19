@@ -85,34 +85,60 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
         });
     }])
-    .controller('parallaxCtrl', ['$scope', function($scope){
+    .controller('parallaxCtrl', ['$scope', '$element', function($scope, $element){
         var isIe = $('html').hasClass('browser-ie');
-        $scope.width = $(window).innerWidth()
+        $scope.width = window.innerWidth;
 
         var targetX, targetY, damping = 150 /* higher value = slower damping */;
 
-        $scope.x = $scope.x2 = $scope.x3 = targetX = 0;
-        $scope.y = $scope.y2 = $scope.y3 = targetY = 0;
+        $scope._x = $scope.x = $scope.x2 = $scope.x3 = targetX = 0;
+        $scope._y = $scope.y = $scope.y2 = $scope.y3 = targetY = 0;
+        $scope.scrollOffset = 0;
 
+        $scope.$watch('scrollTop', function(scrollTop) {
+            var h;
+            if (typeof scrollTop !== 'undefined') {
+                h = Math.min(Math.max(0, (scrollTop + window.innerHeight) - $element.offset().top), $element.offset().top + $element.height());
+
+                $scope.scrollOffset = h / ($element.offset().top + $element.height());
+            }
+        });
+
+        $scope.$watch('_x', function(_x) {
+            $scope.x = _x;
+            $scope.x2 = $scope.x*2*-1;
+            $scope.x3 = $scope.x*8*-1;
+        });
+
+        $scope.$watchGroup(['_x', '_y', 'scrollOffset'], function(values) {
+            var _x = values[0],
+                _y = values[1],
+                scrollOffset = values[2];
+
+            $scope.x = _x;
+            $scope.x2 = $scope.x*2*-1;
+            $scope.x3 = $scope.x*8*-1;
+
+            console.log($scope.x);
+
+            $scope.y = _y + (scrollOffset * 2 - 1);
+            $scope.y2 = $scope.y*2*-1;
+            $scope.y3 = $scope.y*8*-1;
+        });
 
         $scope.updateParallax = function($event) {
             if (isIe) {return;}
 
             // console.log($event.clientX, $event.clientY);
-            targetX = ($event.clientX / $scope.width) * 2;
-            targetY = ($event.clientY / $scope.width) * 2;
+            targetX = ($event.clientX / $scope.width) * 2 - 1;
+            targetY = ($event.clientY / $scope.width) * 2 - 1;
         };
 
         var updateParallax = function() {
             // console.log($event.clientX, $event.clientY);
-            if (Math.abs(targetX - $scope.x) > 0.005 || Math.abs(targetY - $scope.y) > 0.005) {
-                $scope.x = $scope.x + (targetX - $scope.x) / damping;
-                $scope.y = $scope.y + (targetY - $scope.y) / damping;
-
-                $scope.x2 = $scope.x*2*-1;
-                $scope.y2 = $scope.y*1*-1;
-                $scope.x3 = $scope.x*8*-1;
-                $scope.y3 = $scope.y*3*-1;
+            if (Math.abs(targetX - $scope._x) > 0.005 || Math.abs(targetY - $scope._y) > 0.005) {
+                $scope._x = $scope._x + (targetX - $scope._x) / damping;
+                $scope._y = $scope._y + (targetY - $scope._y) / damping;
 
                 $scope.$digest();
 
