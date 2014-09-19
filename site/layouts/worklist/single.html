@@ -141,7 +141,7 @@
             {{ else }}
             --><div class="grid__item lap-and-up-one-half">
 
-                <article class="archive-case">
+                <article class="archive-case archive-case--{{ .Page.Title | lower | urlize }}">
 
                     <div class="archive-case__content">
                         <h3 class="archive-case__tagline">
@@ -168,6 +168,11 @@
                     <div class="archive-case__hilight" style="background-color: {{ .Page.Params.color }}"></div>
                     <img src="/img/work/small/{{ .Page.Params.small_image }}" class="archive-case__image">
                 </article>
+                <style>
+                .archive-case--{{ .Page.Title | lower | urlize }} .btn:hover {
+                    color: {{ .Page.Params.color }} !important;
+                }
+                </style>
             </div><!--
             {{ end }}
         {{ end }}
