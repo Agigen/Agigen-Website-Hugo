@@ -44,6 +44,12 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.$watch('scrollTop', checkTopbarScroll);
 
         $scope.menuVisible = false;
+
+        $scope.menuKeyup = function($event) {
+            if ($event.which === 27) {
+                $scope.menuVisible = false;
+            }
+        };
     }])
     .controller('introCtrl', ['$scope', function($scope) {
         var $cloud1 = $('.could-wrapper--1'),
