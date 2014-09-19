@@ -484,8 +484,38 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
            ];
 
 
+            var zoomLevelSthlm = 13,
+               zoomLevelSweden = 7,
+               zoomLevelEurope = 5,
+               zoomLevelWorld = 4,
+               zoom = zoomLevelEurope;
+
+            function setZoom(z) {
+                zoom = z;
+                if (map){
+                    map.setZoom(z);
+                }
+            };
+
+            $.get("http://ipinfo.io", function(response) {
+                console.log(response);
+                if (response.country == "SE") {
+                    setZoom(zoomLevelSweden)
+                    var loc = response.loc.split(","),
+                        sthlmBounds_ish = [59.724,59.763,20.141,20.204],
+                        lat = parseFloat(loc[0]),
+                        lon = parseFloat(loc[1]);
+                    if (
+                        (lat >= sthlmBounds_ish[0] && lat <= sthlmBounds_ish[1]) &&
+                        (lon >= sthlmBounds_ish[2] && lon <= sthlmBounds_ish[3])
+                    ) {
+                        setZoom(zoomLevelSthlm);
+                    };
+                }
+            }, "jsonp");
+
             var mapOptions = {
-                zoom: 15,
+                zoom: zoom,
                 center: new google.maps.LatLng(59.332779, 18.081026),
                 styles: mapStyles,
                 disableDefaultUI: true,
