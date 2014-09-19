@@ -121,6 +121,12 @@
         .btn {
             @include btnColors(white, #222);
         }
+
+        .text-wrapper {
+            @include media-query(portable) {
+                max-width: 100%;
+            }
+        }
     }
     &--billogram {
         @include sneddisTop(-4, 180px, #6abbb8);

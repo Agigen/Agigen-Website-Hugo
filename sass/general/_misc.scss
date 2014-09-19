@@ -13,3 +13,29 @@
 .relative {
     position: relative;
 }
+
+@mixin misc-setup($namespace: "") {
+    .#{$namespace}text--right           { text-align: right !important; }
+    .#{$namespace}text--left            { text-align: left !important; }
+    .#{$namespace}text--center          { text-align: center !important; }
+}
+
+@include media-query(palm){
+    @include misc-setup("palm-");
+}
+
+@include media-query(lap){
+    @include misc-setup("lap-");
+}
+
+@include media-query(lap-and-up){
+    @include misc-setup("lap-and-up-");
+}
+
+@include media-query(portable){
+    @include misc-setup("portable-");
+}
+
+@include media-query(desk){
+    @include misc-setup("desk-");
+}
