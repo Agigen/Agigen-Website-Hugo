@@ -28,6 +28,10 @@ $standard_delay: 350ms;
         &--1 {
             height: 420px;
             margin-bottom: 35px;
+            .webprod-process__illustration__dot {
+                position: relative;
+                top: 8px;
+            }
             .webprod-process__illustration__line--1 {
                 margin: 0 auto;
                 height: 0%;
@@ -175,10 +179,11 @@ $standard_delay: 350ms;
                 background: #00c6ff;
             }
             &:after {
+                top: -2px;
                 left: -22px;
                 width: 44px;
                 height: 44px;
-                background: transparent url(/img/webprod/dot.png) no-repeat top left;
+                background: transparent url(/img/webprod/dot.svg) no-repeat top left;
                 opacity: 0;
                 @include transform(scale(0.2));
             }
