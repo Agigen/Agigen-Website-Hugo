@@ -180,19 +180,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         $scope.updateCursorPosition = function(){
             var n = parseInt($('#screen-input')[0].selectionStart, 10),
-                start = 136,
-                step_width = 7.5;
-            $scope.cursorPositionLeft = start + step_width*n;
-
-            start = 169;
-            step_width = 19;
-            n = $scope.messages.length - 1;
-
-            $scope.cursorPositionTop = start + step_width*n;
+                step_width = 8.4;
+            $scope.cursorPositionLeft = step_width*(n + 2) + 1;
         };
+
         $scope.keyUp = function(){
             $scope.updateCursorPosition();
         };
+
         $scope.keyDown = function($event){
             var ignoreKeys = [
                 8,
@@ -231,7 +226,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.onIncomingMessage = function(msg) {
             var uhoh;
             $scope.messages.push(msg.username + ": " + msg.text);
-            $scope.messages = $scope.messages.slice(-13);
             $scope.updateCursorPosition();
             $scope.$digest();
             if (msgAudio && msg.username !== $scope.username) {
