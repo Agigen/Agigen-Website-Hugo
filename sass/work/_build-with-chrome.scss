@@ -1,0 +1,40 @@
+.page--work--build-with-chrome {
+    .main-header {
+        background: #2466bd url(/img/work/case/build/buildwithchrome-bg.jpg) no-repeat bottom center;
+    }
+}
+.content--page-work {
+    .work__image--chrome-academy {
+        max-height: 300px;
+        max-width: 100%;
+    }
+
+    .work__section {
+        &--build {
+            &--three-points {
+                background: #226ABB;
+            }
+
+            &--green {
+                background: #2f9d60;
+            }
+
+            &--red {
+                background: #d63d3d url(/img/work/case/build/academy-bg.jpg) repeat center center;
+            }
+
+            &--explore {
+                background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
+            }
+
+            &--black {
+                background: #333;
+            }
+
+            &--grandfinale {
+                background: #222 url(/img/work/case/build/legomovie.jpg) no-repeat center center;
+            }
+        }
+    }
+
+}
