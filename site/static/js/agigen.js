@@ -173,6 +173,21 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
         chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
 
+        $scope.updateCursorPosition = function(){
+            var n = parseInt($('#screen-input')[0].selectionStart, 10),
+                start = 136,
+                step_width = 7.5;
+            $scope.cursorPositionLeft = start + step_width*n;
+
+            start = 169;
+            step_width = 19;
+            n = $scope.messages.length - 1;
+
+            $scope.cursorPositionTop = start + step_width*n;
+        };
+        $scope.keyUp = function(){
+            $scope.updateCursorPosition();
+        };
         $scope.keyDown = function($event){
             var ignoreKeys = [
                 8,
@@ -193,22 +208,26 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 type = typeAudio.cloneNode();
                 type.play();
             }
+            $scope.updateCursorPosition();
         };
 
         $scope.onConnected = function(){
             $scope.connected = true;
             $scope.messages.push("Connected!");
+            $scope.updateCursorPosition();
         };
 
         $scope.onCloseed = function(){
             $scope.connected = false;
             $scope.messages.push("Connection lost! :(");
+            $scope.updateCursorPosition();
         };
 
         $scope.onIncomingMessage = function(msg) {
             var uhoh;
             $scope.messages.push(msg.username + ": " + msg.text);
             $scope.messages = $scope.messages.slice(-13);
+            $scope.updateCursorPosition();
             $scope.$digest();
             if (msgAudio && msg.username !== $scope.username) {
                 uhoh = msgAudio.cloneNode();
@@ -522,7 +541,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             };
 
             $.get("http://ipinfo.io", function(response) {
-                console.log(response);
                 if (response.country == "SE") {
                     setZoom(zoomLevelSweden)
                     var loc = response.loc.split(","),
