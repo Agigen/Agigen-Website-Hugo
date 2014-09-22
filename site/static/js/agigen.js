@@ -177,13 +177,12 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             var n = parseInt($('#screen-input')[0].selectionStart, 10),
                 start = 136,
                 step_width = 7.5;
-            console.log(n);
             $scope.cursorPositionLeft = start + step_width*n;
 
             start = 169;
             step_width = 19;
             n = $scope.messages.length - 1;
-            console.log($scope.messages, $scope.messages.length)
+
             $scope.cursorPositionTop = start + step_width*n;
         };
         $scope.keyUp = function(){
@@ -542,7 +541,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             };
 
             $.get("http://ipinfo.io", function(response) {
-                console.log(response);
                 if (response.country == "SE") {
                     setZoom(zoomLevelSweden)
                     var loc = response.loc.split(","),
