@@ -30,7 +30,9 @@
             @extend .beta;
             text-align: center;
             h2 {
-                @extend .gamma;
+                @extend .beta;
+                font-weight: 100;
+                line-height: 125%;
                 @include media-query(palm) {
                     font-size: 18px;
                 }
