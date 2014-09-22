@@ -122,10 +122,20 @@
         }
     }
     @include transition(all 250ms ease);
+
     &:hover {
         background-color: white;
         color: black;
     }
+
+    &--on-white {
+        border-color: #222;
+        &:hover {
+            background-color: #222;
+            color: white;
+        }
+    }
+
     @include transform-origin(center center);
     &:active {
         @include transform(scale(0.95));
