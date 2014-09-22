@@ -172,28 +172,6 @@
     }
 }
 
-
-.blocklink {
-    @extend .gamma;
-    height: 300px;
-    line-height: 300px;
-    @include media-query(palm){
-        height: 140px;
-        line-height: 140px;
-        font-size: 24px;
-    }
-    color: #fff;
-    background: #252525;
-    text-align: center;
-    width: 100%;
-    display: block;
-    margin-bottom: 0;
-    &--work {
-        background: #252525 url(/img/work-texture.jpg) no-repeat center center;
-        background-size: cover;
-    }
-}
-
 .text-wrapper {
     max-width: 80%;
     @include media-query(palm){
@@ -202,9 +180,3 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
-
-
-

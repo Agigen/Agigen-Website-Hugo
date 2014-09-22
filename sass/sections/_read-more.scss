@@ -1,0 +1,46 @@
+.read-more {
+    margin-top: 80px;
+    @include sneddisTop(-4,180px,#252525);
+    @extend .text--center;
+    background: #252525;
+    padding-top: 80px;
+    @include media-query(palm) {
+        padding: 30px;
+        margin-top: 50px;
+    }
+    &__title {
+        @extend .epsilon;
+        color: #676767;
+        margin-bottom: 40px;
+        @include media-query(palm) {
+            margin-bottom: 20px;
+        }
+    }
+    &:after {
+        @include media-query(palm) {
+            height: 50px;
+            top: -25px;
+        }
+    }
+    &__content {
+        @extend .alpha;
+        line-height: 125%;
+
+        color: #999999;
+        @include media-query(palm) {
+            font-size: 18px;
+        }
+    }
+    a {
+        color: #ffffff;
+        @include transition(color 250ms ease-in);
+        &:hover {
+            color: $color-proddev-pink;
+        }
+    }
+    br {
+        @include media-query(palm) {
+            display: none;
+        }
+    }
+}
