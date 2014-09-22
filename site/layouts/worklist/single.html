@@ -148,7 +148,11 @@
                             {{ if isset .Page.Params "subtitle" }}
                                 {{ .Page.Params.subtitle }}
                             {{ else }}
-                                Case
+                                {{ if isset .Page.Params "pretitle" }}
+                                    {{ .Page.Params.pretitle }}
+                                {{ else }}
+                                    Case
+                                {{ end }}
                             {{ end }}
                         </h3>
                         <h2 class="archive-case__title">{{ .Page.Title }}</h2>
