@@ -239,9 +239,17 @@
     opacity: 0.4;
     max-width: 120px;
     max-height: 41px;
-    margin: 40px auto;
+    margin: 0 auto 80px;
 
     max-width: 75%;
+
+    @include media-query(lap) {
+        margin: 0 auto 40px;
+    }
+
+    @include media-query(palm) {
+        margin: 0 auto 20px;
+    }
 
 
     // &--mcdonalds {}
@@ -257,27 +265,6 @@
     // &--carlsberg {}
     // &--netflix {}
     // &--mini {}
-
-    @media only screen and (max-width: 1180px) {
-        max-width: 120px;
-    }
-    @media only screen and (max-width: 1080px) {
-        max-width: 100px;
-    }
-    @media only screen and (max-width: 1080px) {
-        max-width: 90px;
-    }
-    @media only screen and (max-width: 700px) {
-        max-width: 49px;
-        max-height: 40px;
-        margin: 15px 10px;
-    }
-    @include media-query(palm) {
-        margin: 12px 0;
-        max-width: 30px;
-        max-height: 18px;
-
-    }
 
 
 }
