@@ -1,0 +1,30 @@
+.page--work {
+    &--goget {
+        .main-header {
+            background-color: #f0c70d;
+            background-image: url(/img/work/case/mcdonalds/top-bg.jpg);
+        }
+    }
+}
+
+.content--page-work  {
+    .work__section--mcdonalds--three-points {
+        background: #1a7944;
+    }
+    .work__section--mcdonalds--awards {
+        background: #f0f0f0;
+    }
+    .work-video--mcdonalds {
+        background-color: #4ebaa0;
+        .work_video__content {
+            padding: 140px 0;
+        }
+        background-image: url(/img/work/case/mcdonalds/video-bg.jpg);
+    }
+    .work__section--mcdonalds--grandfinale {
+        background-color: #f5c018;
+        background-image: url(/img/work/case/mcdonalds/trivia-bg.jpg);
+
+    }
+
+}
