@@ -116,17 +116,22 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
     </div>
 
     <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}" ng-cloak title="Chat with us - Powered by Slack.com">
-        <label class="screen" for="screen-input">
-            <ul class="screen__lines">
-                <li class="screen__line" ng-repeat="message in messages track by $index">
-                    {{"{{"}} message {{"}}"}}
-                </li>
-            </ul>
-            <form ng-submit="send()">
-                $ <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown($event)" ng-keyup="keyUp($event)" autocomplete="off">
-            </form>
-            <div class="screen__cursor" ng-style="{'left': cursorPositionLeft+'px', 'top': cursorPositionTop + 'px'}"></div>
-        </label>
+        <form ng-submit="send()">
+            <label class="screen" for="screen-input">
+                <div class="computer__terminal">
+                    <ul class="screen__lines">
+                        <li class="screen__line" ng-repeat="message in messages track by $index">
+                            {{"{{"}} message {{"}}"}}
+                        </li>
+                        <li class="screen__prompt">
+                            <span>$</span>
+                            <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown($event)" ng-keyup="keyUp($event)" autocomplete="off">
+                            <div class="screen__cursor" ng-style="{'left': cursorPositionLeft+'px', 'top': cursorPositionTop + 'px'}"></div>
+                        </li>
+                    </ul>
+                </div>
+            </label>
+        </form>
     </div>
 </section>
 
