@@ -37,6 +37,26 @@ $samsung-case-color: #F6C365;
                     &__image {
                         top: -30px;
                     }
+
+                    @media screen and (max-width: 767px) {
+                        height: 255px;
+
+                        &__image {
+                            top: -25px;
+                            height: 300px;
+                            width: 435px;
+                        }
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        height: 170px;
+
+                        &__image {
+                            top: -15px;
+                            height: 200px;
+                            width: 290px;
+                        }
+                    }
                 }
             }
         }
