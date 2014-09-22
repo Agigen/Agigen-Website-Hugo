@@ -235,10 +235,13 @@
     vertical-align: middle;
     display: inline-block;
     max-height: 61px;
-    margin: 20px 20px;
     max-width: 160px;
     opacity: 0.4;
+    max-width: 120px;
+    max-height: 41px;
+    margin: 40px auto;
 
+    max-width: 75%;
 
 
     // &--mcdonalds {}
@@ -326,6 +329,9 @@
         &__logos {
             text-align: center;
             vertical-align: middle;
+            .grid__item {
+                // background: pink;
+            }
         }
 
         &__logos-header {

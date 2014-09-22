@@ -1,6 +1,7 @@
 .page {
     &--web-production {
         .main-header {
+            @include vhFejk(50);
             background: $color-webprod-blue url(/video/bluevideo.jpg) no-repeat center center;
             background-size: cover;
         }

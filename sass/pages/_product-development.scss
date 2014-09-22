@@ -1,6 +1,7 @@
 .page {
     &--product-development {
         .main-header {
+            @include vhFejk(50);
             background: $color-proddev-pink url(/video/pinkvideo.jpg) no-repeat center center;
             background-size: cover;
         }

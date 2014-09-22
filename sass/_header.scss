@@ -34,6 +34,8 @@
     }
     &__title {
         @extend .alpha;
+        font-size: 100px;
+        line-height: 100%;
     }
     &__pretitle {
         @extend .epsilon;
