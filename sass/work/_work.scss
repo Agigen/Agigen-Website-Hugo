@@ -43,7 +43,6 @@
         }
 
         &__divider {
-            height: 400px;
             @extend .text--light;
             background-size: cover;
             @include media-query(palm) {
