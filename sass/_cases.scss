@@ -110,10 +110,6 @@
             position: relative;
             padding: 35px 0;
             z-index: 20;
-
-            *:last-child {
-                margin-bottom: 0;
-            }
         }
 
         .case__title {
@@ -125,6 +121,7 @@
         .case__headline {
             @extend .gamma;
             color: inherit;
+            margin-bottom: 0;
         }
 
 
@@ -180,6 +177,15 @@
 
             &:hover {
                 background: #60b3b0;
+            }
+        }
+
+        @include media-query(portable) {
+            text-align: center;
+
+            .case__image-wrapper {
+                position: relative;
+                bottom: -35px;
             }
         }
 
