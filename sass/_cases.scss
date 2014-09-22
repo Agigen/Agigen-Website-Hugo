@@ -55,15 +55,12 @@
         color: #333;
 
         .container {
-            margin-top: -170px;
-            @include media-query(palm){
-                margin-top: -140px;
-            }
+            margin-top: -140px;
         }
 
         &--billogram {
             .container {
-                margin-top: -240px;
+                margin-top: -210px;
 
                 @media screen and ( max-height: 900px ){
                     margin-top: -200px;
