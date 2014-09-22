@@ -102,7 +102,8 @@
         top: 2px;
         left: 9px*2;
         opacity: 0.75;
-        @include animation(cursorblink 800ms steps(5, start) infinite);
+        @include animation(cursorblink 1200ms steps(5, start) infinite);
+        @include animation-timing-function($ease-out-cubic);
 
         input:focus + & {
             display: inline-block;
@@ -112,12 +113,15 @@
 
 @include keyframes(cursorblink) {
     0% {
+        opacity: 0;
+    }
+    5% {
         opacity: 0.75;
     }
     50% {
         opacity: 0.75;
     }
-    60% {
+    85% {
         opacity: 0;
     }
     100% {

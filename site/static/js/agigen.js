@@ -208,6 +208,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 type = typeAudio.cloneNode();
                 type.play();
             }
+
             $scope.updateCursorPosition();
         };
 
