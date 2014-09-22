@@ -36,6 +36,14 @@
         @extend .alpha;
         font-size: 100px;
         line-height: 100%;
+
+        @include media-query(lap) {
+            font-size: 64px;
+        }
+
+        @include media-query(palm) {
+            font-size: 36px;
+        }
     }
     &__pretitle {
         @extend .epsilon;
