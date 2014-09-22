@@ -115,7 +115,7 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
         <a href="/services/labs" class="btn btn--large">Get inspired</a>
     </div>
 
-    <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}" ng-cloak>
+    <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}" ng-cloak title="Chat with us - Powered by Slack.com">
         <label class="screen" for="screen-input">
             <ul class="screen__lines">
                 <li class="screen__line" ng-repeat="message in messages track by $index">{{"{{"}} message {{"}}"}}</li>
