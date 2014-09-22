@@ -5,6 +5,7 @@
     padding: 15px 0 0;
     line-height: 40px;
     color: #fff;
+    margin: 0;
 
     @extend .epsilon;
     @include media-query(palm){

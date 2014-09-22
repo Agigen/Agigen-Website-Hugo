@@ -4,37 +4,46 @@
 
     &__image {
         display: block;
-        margin: 30px auto 0;
+        margin: 30px auto $base-spacing-unit;
+    }
+
+    &__title {
+        @extend .gamma;
+        margin-bottom: 10px;
+        color: inherit;
     }
 
     &__headline  {
-        font-size: 20px;
-        padding: 20px 0 10px;
-        margin: 0;
-        text-transform: uppercase;
-        @include media-query(palm){
-          font-size: 12px;
-        }
+        @extend .delta;
+        margin-bottom: 35px;
+        color: inherit;
     }
-    &__title {
-        font-size: 18px;
-        padding: 0;
-        margin: 0;
-        @extend .epsilon;
-        color: #ffffff;
-        @include media-query(palm){
-          font-size: 14px;
-        }
-    }
+
     &__ingress {
         color: #ffffff;
         padding: 0 0 10px;
-        @include arrow(bottom, center, #ffffff)
+        @include arrow(bottom, center, #ffffff);
+        color: inherit;
     }
 
     &__cta {
-        margin: 20px 0 0;
-        @include btnColors(#333333, white);
+        @extend .epsilon;
+    }
+
+    &--webprod &__cta {
+        color: $color-webprod-blue;
+
+        &:hover {
+            color: darken($color-webprod-blue, 10%);
+        }
+    }
+
+    &--proddev &__cta {
+        color: $color-proddev-pink;
+
+        &:hover {
+            color: darken($color-proddev-pink, 10%);
+        }
     }
 
     .btn {
@@ -43,12 +52,15 @@
 
     &--fullwidth {
         text-align: center;
+        color: #333;
+
         .container {
             margin-top: -170px;
             @include media-query(palm){
-              margin-top: -140px;
+                margin-top: -140px;
             }
         }
+
         &--billogram {
             .container {
                 margin-top: -240px;
@@ -69,17 +81,13 @@
                     margin-top: -105px;
                 }
             }
-        }
-        .case__title {
-          color: #333;
-        }
 
-        &--billogram {
             .case__image {
                 width: 320px;
                 max-width: 70%;
             }
         }
+
         &--samsung {
             // Fix for firefox which does not seem to respect overflow: hidden.
             // Make this divider have white bg and position it above other content
@@ -94,87 +102,88 @@
         }
 
     }
+
     &--thin {
-        padding: 0;
-        position: relative;
-        padding: 0;
         text-align: left;
         border-bottom: 5px #d8d8d8 solid;
+        padding: 0;
+        position: relative;
 
-        @include media-query(palm) {
-            text-align: center;
-        }
         .container {
-            margin-top: 0;
-            height: 153px;
-            z-index: 10;
+            position: relative;
+            padding: 35px 0;
+            z-index: 20;
 
-            @include media-query(palm) {
-                height: auto;
+            *:last-child {
+                margin-bottom: 0;
             }
+        }
+
+        .case__title {
+            @extend .epsilon;
+            color: inherit;
+            margin-bottom: 0;
         }
 
         .case__headline {
             @extend .gamma;
             color: inherit;
-            padding: 40px 0 0;
-            margin: 0;
-            @include media-query(palm) {
-                font-size: 20px;
-                padding: 0;
-                margin-top: -30px;
-                strong {
-                    font-size: 16px;
-                    display: block;
-                }
-            }
         }
 
-        .case__title {
-            @include media-query(palm) {
-                font-size: 14px;
-                padding: 10px 0 30px;
-            }
-        }
+
         .case__image {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            @include media-query(palm) {
-                position: relative;
-                margin: 0 auto 0;
-                top: -60px;
-                width: auto;
-                height: 160px;
+            position: relative;
+            bottom: -10px;
+            margin: 0 auto;
+            @include transition (bottom 200ms $ease-in-out-cubic);
+
+            &-wrapper {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                overflow: hidden;
             }
         }
 
         &:hover {
-            color: white !important;
-            background-color: #000;
+            .case__image {
+                bottom: 0;
+            }
         }
 
         &--build {
             background: #2466bd;
             color:#fff;
             border-bottom:0;
-            @include transition (background-color 1000ms ease-in 300ms);
+
             .spaceman {
                 top: 40px;
                 height: 80px;
                 position: absolute;
-                z-index: 5;
                 right: -120px;
             }
-            &:hover .spaceman {
-                @include animation(spaceman 12s linear 1000ms infinite);
+
+            &:hover {
+                background: #1f58a3;
+
+                @include animation(outer-space 6s linear);
+                @include animation-fill-mode(forwards);
+
+                .spaceman {
+                    @include animation(spaceman 12s linear 5000ms infinite);
+                }
             }
+
         } // &--build
 
         &--billogram {
             background: #6abbb8;
-            color: white;
+            color: #fff;
             border-bottom: 0;
+
+            &:hover {
+                background: #60b3b0;
+            }
         }
 
     } // &--thin

@@ -143,7 +143,7 @@
 }
 .epsilon {
     color: #999;
-    padding: 10px 0;
+    margin: 10px 0;
     letter-spacing: 2px;
 }
 .delta {
@@ -187,6 +187,7 @@
     text-align: center;
     width: 100%;
     display: block;
+    margin-bottom: 0;
     &--work {
         background: #252525 url(/img/work-texture.jpg) no-repeat center center;
         background-size: cover;

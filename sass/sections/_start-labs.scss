@@ -62,9 +62,6 @@
     &__line {
         padding: 0;
         margin: 0;
-        &:before {
-            content: "> ";
-        }
     }
     &__input {
         width: 90%;

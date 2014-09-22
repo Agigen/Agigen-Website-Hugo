@@ -53,7 +53,7 @@ $topbar-color: #fff;
                 fill: #ff0066;
 
                 .page--services--web-production & {
-                    fill: #00ccff;
+                    fill: $color-webprod-blue;
                 }
 
                 .page--services--labs & {
@@ -125,7 +125,7 @@ $topbar-color: #fff;
                     background-color: #ff0066;
 
                     .page--services--web-production & {
-                        background-color: #00ccff;
+                        background-color: $color-webprod-blue;
                     }
 
                     .page--services--labs & {

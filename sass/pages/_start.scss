@@ -11,6 +11,7 @@
         background-repeat: no-repeat;
         position: absolute;
         width: 1920px;
+        opacity: 0;
         @include transform(translate3d(0,0,0));
 
         &--1 {
@@ -19,6 +20,7 @@
             bottom: -360px;
             right: 50%;
             // border: 1px blue solid;
+            @include transform(translate3d(-40%,0,0));
             @include animation(cloudsRight 120s linear 200ms);
         }
         &--2 {
@@ -27,6 +29,7 @@
             bottom: -500px;
             // border: 1px yellow solid;
             left: 50%;
+            @include transform(translate3d(-30%,0,0));
             @include animation(cloudsLeft 300s linear 200ms);
         }
     }
@@ -61,18 +64,26 @@
 
 @include keyframes(cloudsLeft) {
     from {
-        @include transform(translate3d(0%,0,0))
+        @include transform(translate3d(-30%,0,0));
+        opacity: 0;
+    }
+    0.25% {
+        opacity: 1;
     }
     to {
-        @include transform(translate3d(-150%,0,0))
+        @include transform(translate3d(-120%,0,0));
     }
 }
 @include keyframes(cloudsRight) {
     from {
-        @include transform(translate3d(0%,0,0))
+        @include transform(translate3d(40%,0,0));
+        opacity: 0;
+    }
+    0.25% {
+        opacity: 1;
     }
     to {
-        @include transform(translate3d(200%,0,0))
+        @include transform(translate3d(250%,0,0));
     }
 }
 
