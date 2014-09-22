@@ -197,31 +197,6 @@
                 }
             }
 
-            &--build {
-                &--three-points {
-                    background: #226ABB;
-                }
-
-                &--green {
-                    background: #2f9d60;
-                }
-
-                &--red {
-                    background: #d63d3d url(/img/work/case/build/academy-bg.jpg) repeat center center;
-                }
-
-                &--explore {
-                    background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
-                }
-
-                &--black {
-                    background: #333;
-                }
-
-                &--grandfinale {
-                    background: #222 url(/img/work/case/build/legomovie.jpg) no-repeat center center;
-                }
-            }
         }
 
         &__image {
@@ -247,12 +222,6 @@
 }
 
 .page--work {
-    &--build-with-chrome {
-        .main-header {
-            background: #2466bd url(/img/work/case/build/buildwithchrome-bg.jpg) no-repeat bottom center;
-
-        }
-    }
     &--wheres-the-party {
         .main-header {
             background-color: #333;
@@ -273,6 +242,7 @@
     }
 }
 
+@import "work/build-with-chrome";
 @import "work/billogram";
 @import "work/yogobe";
 @import "work/bigblog";
