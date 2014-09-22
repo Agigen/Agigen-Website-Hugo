@@ -20,7 +20,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         deskWideStart: 1200,
     };
 
-    var app = angular.module('agigenApp', []);
+    var app = angular.module('agigenApp', ['ngTouch']);
     app.controller('menuCtrl', ['$scope', '$timeout', function($scope, $timeout){
         var $container = $('.main-header'),
             $topbar = $('.topbar'),
@@ -347,8 +347,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             scope: true,
             template: '\
 <div class="screen-carousel-bevel screen-carousel-bevel--{{screenType}}">\
-    <ul class="screen-carousel">\
+    <ul class="screen-carousel" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">\
         <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
+            ng-click="setSlide($index)"\
             ng-class="{\
                 \'screen-carousel__item--current\': $index == index,\
                 \'screen-carousel__item--prev\': $index == (index - 1),\
@@ -357,7 +358,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 \'screen-carousel__item--over\': $index > index,\
             }"\
         >\
-            <img ng-src="{{src}}" ng-click="setSlide($index)">\
+            <img ng-src="{{src}}">\
+            <div class="raster"></div>\
         </li>\
     </ul>\
 </div>\
@@ -381,6 +383,18 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                 scope.setSlide = function(index) {
                     scope.index = index;
+                };
+
+                scope.swipeLeft = function() {
+                    if (scope.index < scope.srcs.length - 1) {
+                        scope.index++;
+                    }
+                };
+
+                scope.swipeRight = function() {
+                    if (scope.index > 0) {
+                        scope.index--;
+                    }
                 };
             },
         };

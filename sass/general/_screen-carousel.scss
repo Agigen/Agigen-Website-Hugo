@@ -63,12 +63,35 @@
         cursor: pointer;
     }
 
+    .raster {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent !important;
+        opacity: 0;
+        @include transition(opacity 400ms);
+    }
+
     &--below {
         @include transform(translateX(-105%) scale(0.95));
+
+        .raster {
+            opacity: 1;
+            @include linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%);
+        }
     }
 
     &--over {
         @include transform(translateX(105%) scale(0.95));
+
+        .raster {
+            opacity: 1;
+            @include linear-gradient(right,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%);
+        }
     }
 
     .screen-carousel-bevel--mobile & {
