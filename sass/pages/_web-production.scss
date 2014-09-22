@@ -73,51 +73,35 @@
             @include btnColors(#333, white);
         }
         &--samsung {
-            @include sneddis(-9, 380px, white);
-            padding-bottom: 0;
-            height: auto;
-            min-height: 300px;
-            display: block;
-            &__illustration {
-                position: absolute;
-                right: 0;
-                bottom: -150px;
-                @include media-query(palm) {
-                    position: static;
-                    padding: 30px 0;
-                    max-width: 80%;
-                }
+            padding: 10px 0 60px;
+            .container {
+                z-index: 3;
             }
-            &:after {
-                @include media-query(palm) {
-                    bottom: -50px;
-                }
+            &__illustration {
+                padding-top: 140px;
+                max-width: 90%;
             }
         }
         &--sj {
-            padding-top: 300px;
-            @include media-query(palm) {
-                padding-top: 50px;
-            }
+            @include sneddisTop(-3.5, 150px);
+            padding-top: 0;
+            padding-bottom: 0;
             background: #f0f0f0;
             .container {
-                position: relative;
-                z-index: 5;
+                top: -60px;
+                z-index: 3;
+            }
+            &__illustration {
+                padding-bottom: 20px;
+                max-width: 86%;
             }
         }
         &--carlsberg {
 
             &__illustration {
-                position: absolute;
-                top: -100px;
-                left: -100px;
-
-                @include media-query(palm) {
-                    left: auto;
-                    top: -90px;
-                    right: -90px;
-                    max-width: 320px !important;
-                }
+                position: relative;
+                right: 16%;
+                max-width: 113%;
             }
         }
     }
