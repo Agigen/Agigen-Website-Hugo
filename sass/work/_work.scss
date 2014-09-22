@@ -14,10 +14,6 @@
             z-index: 5;
             display: block;
             max-width: 500px;
-            &--hobbit {
-                margin-top: -225px;
-            }
-
             @media only screen and (max-width: 1180px) {
                 max-width: 50%;
             }
@@ -144,26 +140,6 @@
                 }
             }
 
-            &--hobbit {
-                &--three-points {
-                    background: #454e58;
-                }
-                &--grandfinale {
-                    background: #151d23 url(/img/work/case/hobbit/asset_grandfinale.jpg) no-repeat top center;
-                }
-                &__divider {
-                    height: 250px;
-                    background: #3E4E4D url(/img/work/case/hobbit/asset_divider.jpg) no-repeat top center;
-                    background-size: cover;
-                    margin-bottom: 120px;
-                    &__image {
-                        margin: 0 auto;
-                        position: relative;
-                        top: -70px;
-                    }
-                }
-            }
-
             &--sj {
                 &--three-points {
                     background: #e5e5e5;
@@ -233,15 +209,10 @@
             background-image: url(/img/work/case/sj/asset_headerbg.jpg);
         }
     }
-    &--the-hobbit-2 {
-        .main-header {
-            background-color: #2d3339;
-            background-image: url(/img/work/case/hobbit/asset_headerbg.jpg);
-        }
-    }
 }
 
 @import "work/build-with-chrome";
+@import "work/hobbit";
 @import "work/billogram";
 @import "work/yogobe";
 @import "work/bigblog";
