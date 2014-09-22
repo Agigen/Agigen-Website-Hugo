@@ -8,10 +8,7 @@ $samsung-case-color: #F6C365;
 .content--page-work {
 
     .work__header-image--samsung {
-        margin-top: -120px;
-        @media only screen and (max-width: 960px) {
-            margin-top: -50px;
-        }
+        margin-top: -10%;
     }
     .work__section {
         &--samsung {
