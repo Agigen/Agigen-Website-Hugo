@@ -45,6 +45,7 @@ $samsung-rotate: 0deg;
     height: 100%;
     //@include transform(scale($middle-scale));
     @include transform(scale(0));
+    opacity: 0;
 
     .browser-ie & {
         display: none;
@@ -169,18 +170,22 @@ $samsung-rotate: 0deg;
 @include keyframes(laxIn) {
     from {
         @include transform(scale(0));
+        opacity: 0;
     }
     to {
         @include transform(scale($middle-scale));
+        opacity: 1;
     }
 }
 
 @include keyframes(laxInFront) {
     from {
         @include transform(scale(0));
+        opacity: 0;
     }
     to {
         @include transform(scale($front-scale));
+        opacity: 1;
     }
 }
 @include keyframes(pulsateSamsung){
