@@ -24,10 +24,10 @@ $samsung-case-color: #F6C365;
                 margin-top: 120px;
                 margin-bottom: 280px;
                 &__image {
-
+                    max-width: 90%;
                     display: inline-block;
                     position: relative;
-                    top: -180px;
+                    @include transform(translateY(-30%));
                 }
                 &--city {
                     height: 340px;
@@ -35,7 +35,28 @@ $samsung-case-color: #F6C365;
                     background: #fcfcfc url(/img/work/case/samsung/asset_stockholm_long.jpg) no-repeat top center;
                     background-size: cover;
                     &__image {
+                        @include transform(translateY(0));
                         top: -30px;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        height: 255px;
+
+                        &__image {
+                            top: -25px;
+                            height: 300px;
+                            width: 435px;
+                        }
+                    }
+
+                    @media screen and (max-width: 480px) {
+                        height: 170px;
+
+                        &__image {
+                            top: -15px;
+                            height: 200px;
+                            width: 290px;
+                        }
                     }
                 }
             }
