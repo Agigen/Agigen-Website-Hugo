@@ -51,13 +51,13 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
 
 </section>
 
-<article class="case case--fullwidth case--fullwidth--samsung">
+<article class="case case--fullwidth case--fullwidth--samsung case--webprod">
     <div class="container">
         <p class="case__ingress epsilon">Recent case</p>
         <img src="/img/start/webprod/samsung-tab-s.png" class="case__image">
-        <p class="case__headline">Displaying <strong>4954406991</strong> pixels on a 320x568px screen.</p>
         <h1 class="case__title">Samsung - You need to see this app</h1>
-        <a href="/work/samsung-youneedtoseethis/" class="case__cta btn btn--large">View case</a>
+        <p class="case__headline">Displaying <strong>4954406991</strong> pixels on a 320x568px screen.</p>
+        <a href="/work/samsung-youneedtoseethis/" class="case__cta">View case</a>
     </div>
 </article>
 
@@ -98,13 +98,13 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
 
 </section>
 
-<article class="case case--fullwidth case--fullwidth--billogram">
+<article class="case case--fullwidth case--fullwidth--billogram case--proddev">
     <div class="container">
         <p class="case__ingress epsilon">Recent case</p>
         <img src="/img/start/proddev/billogram_screens.png" class="case__image">
-        <p class="case__headline">Invoicing on the fly - in the cloud.</p>
         <h1 class="case__title">Billogram</h1>
-        <a href="/work/billogram" class="case__cta btn btn--large">View case</a>
+        <p class="case__headline">Invoicing on the fly - in the cloud.</p>
+        <a href="/work/billogram" class="case__cta">View case</a>
     </div>
 </article>
 
@@ -118,10 +118,12 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
     <div class="computer" ng-controller="chatCtrl" ng-class="{'computer--connected': connected}" ng-cloak>
         <label class="screen" for="screen-input">
             <ul class="screen__lines">
-                <li class="screen__line" ng-repeat="message in messages track by $index">{{"{{"}} message {{"}}"}}</li>
+                <li class="screen__line" ng-repeat="message in messages track by $index">
+                    {{"{{"}} message {{"}}"}}
+                </li>
             </ul>
             <form ng-submit="send()">
-                > <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown($event)" autocomplete="off">
+                $ <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown($event)" autocomplete="off">
             </form>
         </label>
     </div>

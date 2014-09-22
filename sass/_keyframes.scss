@@ -19,6 +19,15 @@
   }
 }
 
+@include keyframes(outer-space) {
+  80% {
+    background: #1f58a3;
+  }
+  100% {
+    background: #000;
+  }
+}
+
 @include keyframes(proddevprocess) {
     0% {
       stroke-dashoffset: 1221;
