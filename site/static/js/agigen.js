@@ -346,19 +346,21 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             restrict: 'A',
             scope: true,
             template: '\
-<ul class="screen-carousel">\
-    <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
-        ng-class="{\
-            \'screen-carousel__item--current\': $index == index,\
-            \'screen-carousel__item--prev\': $index == (index - 1),\
-            \'screen-carousel__item--next\': $index == (index + 1),\
-            \'screen-carousel__item--below\': $index < index,\
-            \'screen-carousel__item--over\': $index > index,\
-        }"\
-    >\
-        <img ng-src="{{src}}" ng-click="setSlide($index)">\
-    </li>\
-</ul>\
+<div class="screen-carousel-bevel screen-carousel-bevel--{{screenType}}">\
+    <ul class="screen-carousel">\
+        <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
+            ng-class="{\
+                \'screen-carousel__item--current\': $index == index,\
+                \'screen-carousel__item--prev\': $index == (index - 1),\
+                \'screen-carousel__item--next\': $index == (index + 1),\
+                \'screen-carousel__item--below\': $index < index,\
+                \'screen-carousel__item--over\': $index > index,\
+            }"\
+        >\
+            <img ng-src="{{src}}" ng-click="setSlide($index)">\
+        </li>\
+    </ul>\
+</div>\
 <nav>\
     <ul class="screen-carousel-nav">\
         <li ng-repeat="src in srcs track by $index" class="screen-carousel-nav__item"\
@@ -372,6 +374,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 </nav>\
             ',
             link: function(scope, element, attrs) {
+                scope.screenType = (attrs.screenType == 'mobile' ? 'mobile' : 'desktop');
                 element.addClass('screen-carousel-wrapper');
                 scope.srcs = attrs.screenCarousel.split(',');
                 scope.index = scope.srcs.length > 2 ? 1 : 0;
