@@ -1,0 +1,24 @@
+.page--work {
+    &--mini-getaway {
+        .main-header {
+            background: #404C5A;
+            background-image: url(/img/work/case/minicooper/asset_headerbg.jpg);
+        }
+    }
+}
+
+.content--page-work  {
+    .work__header-image--mini {
+        margin-top: -350px;
+    }
+    .work__section--mini--three-points {
+        background: #2C333D;
+    }
+    .work__section--mini--awards {
+        background: #f0f0f0;
+    }
+
+    .work-video--mini {
+        background-image: url(/img/work/case/minicooper/asset_moviebg.jpg);
+    }
+}
