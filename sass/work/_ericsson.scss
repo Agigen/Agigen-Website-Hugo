@@ -5,3 +5,11 @@
         }
     }
 }
+.content--page-work {
+    .work__section--ericsson--three-points {
+        @include linear-gradient(left, #493b83 0%, #35539b 50%, #2569ad 100%);
+    }
+    .work__section--ericsson--grandfinale {
+        @include linear-gradient(left, #493b83 0%, #35539b 50%, #2569ad 100%);
+    }
+}

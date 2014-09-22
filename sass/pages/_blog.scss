@@ -230,4 +230,11 @@ $color-category-officefun: #9549b2;
         margin-left: auto;
         text-transform: uppercase;
     }
+    a {
+        color: #222;
+        &:hover {
+            color: black;
+            text-decoration: underline;
+        }
+    }
 }
