@@ -65,7 +65,13 @@
 
 
   <link rel="dns-prefetch" href="//ajax.googleapis.com">
+  <link rel="dns-prefetch" href="//agigen-slack-chat.appspot.com">
 
+  <script type="text/javascript" charset="utf-8">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-7546376-1']);
+      _gaq.push(['_trackPageview']);
+  </script>
 
   <script type="text/javascript" src="//use.typekit.net/orr5jqv.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -81,6 +87,13 @@ page--{{ .Title | lower | urlize }}
   page--{{ .Type }}--{{ .Title | lower | urlize }}
 {{ end }}
 ">
+<script type="text/javascript">
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 {{ "<!-- " | safeHtml }}
 
                       `://.
