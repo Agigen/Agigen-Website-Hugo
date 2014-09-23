@@ -35,6 +35,15 @@
         text-align: center;
         color: #333;
 
+        .case__cta {
+            @extend .btn;
+            @include btnColors(#fff, #fff);
+            color: #444;
+            &:hover {
+                background-color: #222;
+                border-color: #222;
+            }
+        }
         .container {
             margin-top: -140px;
         }
