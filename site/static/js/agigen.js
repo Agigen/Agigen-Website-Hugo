@@ -154,23 +154,38 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     }])
     .controller('chatCtrl', ['$scope', '$timeout', function($scope, $timeout){
 
-        var msgAudio, typeAudio, commands, chat, chatRunning, promptUsername, ctrlKey, keys;
+        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback;
+
+        setPrompt = function(prompt) {
+            $scope.prompt = prompt;
+            $scope.updateCursorPosition();
+
+            $timeout(function() {
+                $('.screen__input').width($('.screen__prompt-wrapper').width() - $('.screen__prompt').width() - 2 /* random wtf */);
+            }, 0);
+        };
+
+        pushCommandScrollback = function() {
+            $scope.scrollback.push($scope.prompt + ' ' + $scope.promptInput);
+            $scope.promptInput = "";
+        };
 
         $scope.kill = function() {
             $scope.scrollback.push("^C");
-            $scope.prompt = "";
+            $scope.promptInput = "";
 
             if (chat) {
-                $scope.promptChar = "$";
+                setPrompt("$");
                 chat.disconnect();
                 chat = null;
+                $scope.username = "";
             }
         }
 
         $scope.updateCursorPosition = function(){
             var n = parseInt($('#screen-input')[0].selectionStart, 10),
                 step_width = 8.4;
-            $scope.cursorPositionLeft = step_width*(n + 2) + 1;
+            $scope.cursorPositionLeft = step_width*(n) + 1 + $('.screen__prompt').width();
         };
 
         $scope.keyUp = function($event){
@@ -239,37 +254,42 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.send = function(){
-            if($scope.prompt == '') {
+            var command;
+
+            if($scope.promptInput == '') {
                 return;
             }
 
             $scope.connected = true;
 
             if (chat) {
-                if (promptUsername && !$scope.username) {
+                if (!$scope.username) {
                     // Connect user
-                    $scope.username = $scope.prompt;
-                    $scope.prompt = "";
+                    $scope.username = $scope.promptInput;
+
+                    pushCommandScrollback();
+
                     $scope.scrollback.push("Hi " + $scope.username + ". We're connecting you...");
                     chat.connect($scope.username);
+
+                    setPrompt(">");
                 } else {
                     // Send message
-                    chat.send($scope.prompt);
-                    $scope.prompt = "";
+                    chat.send($scope.promptInput);
+                    $scope.promptInput = "";
                 }
             } else {
-                $scope.scrollback.push("$ " + $scope.prompt);
+                command = $scope.promptInput;
+                pushCommandScrollback();
 
-                if ($scope.prompt.indexOf('sudo') === 0) {
+                if (command.indexOf('sudo') === 0) {
                     $scope.scrollback.push("Oh come on man ;)");
-                    $scope.prompt = "";
                     return;
-                } else if (typeof commands[$scope.prompt] === 'function') {
-                    commands[$scope.prompt]();
-                    $scope.prompt = "";
+                } else if (typeof commands[command] === 'function') {
+                    commands[command]();
+
                 } else {
-                    $scope.scrollback.push($scope.prompt + ": command not found");
-                    $scope.prompt = "";
+                    $scope.scrollback.push(command + ": command not found");
                 }
             }
         };
@@ -278,8 +298,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.scrollback = [];
         $scope.connected = false;
         $scope.username = "";
-        $scope.prompt = "./start-chat";
-        $scope.promptChar = "$";
+        $scope.promptInput = "./start-chat";
+
+        setPrompt("$");
 
         if (typeof Audio === 'function') {
             msgAudio = new Audio('/audio/icq.mp3');
@@ -291,12 +312,10 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         }
 
         ctrlKey = false;
-        promptUsername = false;
         commands = {
             './start-chat': function() {
-                    $scope.promptChar = ">";
                     $scope.scrollback.push("Hello, what's your name?");
-                    promptUsername = true;
+                    setPrompt("username:");
 
                     chat = new agigen.SlackChat("http://agigen-slack-chat.appspot.com");
 
