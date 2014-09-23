@@ -29,13 +29,54 @@
             }
         }
         &__work {
-            padding: 200px 0 300px;
+            @extend .text--light;
+            background: #00ccff;
+            padding: 120px 0 140px;
             @include media-query(palm) {
                 padding: 30px 0;
             }
-
-            background: white url(/img/contact/sthlm-skyline.jpg) no-repeat bottom center;
-            background-size: 100%;
+            &__copy {
+                padding: 30px 0 80px;
+            }
         }
+    }
+}
+
+.fearless-panda {
+    position: relative;
+    background: #05bcea;
+    padding: 80px 0;
+    border-radius: 130px;
+
+    &__copy {
+        @extend .gamma;
+        display: block;
+        margin: 0 auto;
+        max-width: 460px;
+        padding: 0;
+    }
+    &__btn {
+        border-color: #fff;
+        color: #00ccff;
+        background: white;
+        position: absolute;
+        bottom: -25px;
+        width: 220px;
+        left: 50%;
+        margin-left: -110px;
+        &:hover {
+            background: #05bcea;
+            color: #fff;
+            border-color: #fff;
+        }
+
+
+    }
+    &__panda {
+        position: absolute;
+        bottom: -50px;
+        left: 130px;
+        width: 162px;
+        height: auto;
     }
 }
