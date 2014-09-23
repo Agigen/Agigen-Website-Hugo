@@ -294,6 +294,11 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 keys.rcmd,
             ];
 
+            if ([keys.tab].indexOf($event.which) !== -1) {
+                $event.preventDefault();
+                return false;
+            }
+
             if ($event.which === keys.ctrl) {
                 ctrlKey = true;
                 return;
@@ -484,10 +489,35 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 },
             'ls': function() {
                     $scope.scrollback.push('-r-xr-xr-x   do-dragon');
+                    $scope.scrollback.push('-r--r--r--   readme.txt');
                     $scope.scrollback.push('-r-xr-xr-x   start-chat');
                 },
             'help': function() {
                     $scope.scrollback.push("Sorry bro, you're on your own...");
+                },
+            'cat readme.txt': function() {
+                    $scope.scrollback.push("README CONTENT");
+                },
+            'shutdown -h now': function() {
+                    $scope.scrollback.push("the system will shut down NOW!");
+                    $timeout(function() {
+                        $('<div>').css({
+                            position: 'fixed',
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0,
+                            background: '#000',
+                            display: 'none',
+                            zIndex: 9001,
+                        }).appendTo('body').fadeIn();
+                    }, 1000);
+                },
+            'shutdown -h': function() {
+                    $scope.scrollback.push("the system will shut down in 30 seconds");
+                    $timeout(function() {
+                        commands['shutdown -h now']();
+                    }, 30000);
                 },
         };
         keys = {
