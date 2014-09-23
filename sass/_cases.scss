@@ -28,21 +28,9 @@
 
     &__cta {
         @extend .epsilon;
-    }
-
-    &--webprod &__cta {
-        color: $color-webprod-blue;
-
+        color: #333;
         &:hover {
-            color: darken($color-webprod-blue, 10%);
-        }
-    }
-
-    &--proddev &__cta {
-        color: $color-proddev-pink;
-
-        &:hover {
-            color: darken($color-proddev-pink, 10%);
+            color:#000;
         }
     }
 
@@ -56,6 +44,12 @@
 
         .container {
             margin-top: -140px;
+        }
+
+        &:hover {
+            .case__image {
+                @include transform(translateY(-10px));
+            }
         }
 
         &--billogram {
@@ -82,6 +76,7 @@
             .case__image {
                 width: 320px;
                 max-width: 70%;
+                @include transition(transform 300ms ease);
             }
         }
 
