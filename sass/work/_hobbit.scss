@@ -8,11 +8,14 @@
 }
 .content--page-work {
     .work__header-image--hobbit {
-        margin-top: -225px;
+        margin-top: -135px;
     }
 
 
     .work__section--hobbit {
+        &--awards {
+
+        }
         &--three-points {
             background: #454e58;
         }
