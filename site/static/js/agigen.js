@@ -294,6 +294,11 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 keys.rcmd,
             ];
 
+            if ([keys.tab].indexOf($event.which) !== -1) {
+                $event.preventDefault();
+                return false;
+            }
+
             if ($event.which === keys.ctrl) {
                 ctrlKey = true;
                 return;
@@ -414,10 +419,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 if (command.indexOf('sudo') === 0) {
                     $scope.scrollback.push("Oh come on man ;)");
                     return;
-                } else if (typeof commands[command] === 'function') {
-                    commands[command]();
-
                 } else {
+                    for (var key in commands) {
+                        if ((new RegExp(key)).test(command)) {
+                            commands[key]();
+                            return;
+                        };
+                    }
+
                     $scope.scrollback.push(command + ": command not found");
                 }
             }
@@ -450,7 +459,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         ctrlKey = false;
         commands = {
-            './start-chat': function() {
+            "^\\.\\/start-chat$": function() {
                     $scope.scrollback.push("Hello, what's your name?");
                     setPrompt("username:");
 
@@ -460,7 +469,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
                     chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
                 },
-            './do-dragon': function() {
+            "^\\.\\/do-dragon$": function() {
                     var interval;
 
                     $scope.showPrompt = false;
@@ -482,12 +491,37 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                             }, 3000);
                         });
                 },
-            'ls': function() {
+            "^ls$": function() {
                     $scope.scrollback.push('-r-xr-xr-x   do-dragon');
+                    $scope.scrollback.push('-r--r--r--   readme.txt');
                     $scope.scrollback.push('-r-xr-xr-x   start-chat');
                 },
-            'help': function() {
+            "^help$": function() {
                     $scope.scrollback.push("Sorry bro, you're on your own...");
+                },
+            "^cat(\\s+)readme.txt$": function() {
+                    $scope.scrollback.push("README CONTENT");
+                },
+            "^shutdown(\\s+)-h(\\s+)now$": function() {
+                    $scope.scrollback.push("the system will shut down NOW!");
+                    $timeout(function() {
+                        $('<div>').css({
+                            position: 'fixed',
+                            top: 0,
+                            right: 0,
+                            bottom: 0,
+                            left: 0,
+                            background: '#000',
+                            display: 'none',
+                            zIndex: 9001,
+                        }).appendTo('body').fadeIn();
+                    }, 1000);
+                },
+            "^shutdown(\\s+)-h$": function() {
+                    $scope.scrollback.push("the system will shut down in 30 seconds");
+                    $timeout(function() {
+                        commands['shutdown -h now']();
+                    }, 30000);
                 },
         };
         keys = {
