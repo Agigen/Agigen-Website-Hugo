@@ -217,7 +217,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     }])
     .controller('chatCtrl', ['$scope', '$timeout', '$http', '$interval', function($scope, $timeout, $http, $interval){
 
-        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, historyBuffer, setCursorLast,
+        var msgAudio, typeAudio, commands, run, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, historyBuffer, setCursorLast,
             $computer, $screen, $prompt, $promptInput;
 
         setPrompt = function(prompt) {
@@ -376,7 +376,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.send = function(){
-            var command, r;
+            var command;
 
             if($scope.promptInput == '') {
                 return;
@@ -420,15 +420,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     $scope.scrollback.push("Oh come on man ;)");
                     return;
                 } else {
-                    for (var key in commands) {
-                        r = new RegExp(key);
-                        if (r.test(command)) {
-                            commands[key](command.match(r));
-                            return;
-                        };
+                    if (!run(command)) {
+                        $scope.scrollback.push(command + ": command not found");
                     }
-
-                    $scope.scrollback.push(command + ": command not found");
                 }
             }
         };
@@ -544,10 +538,24 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             "^shutdown(\\s+)-h$": function() {
                     $scope.scrollback.push("the system will shut down in 30 seconds");
                     $timeout(function() {
-                        commands['shutdown -h now']();
+                        run('shutdown -h now');
                     }, 30000);
                 },
         };
+
+        run = function(command) {
+            var r;
+            for (var key in commands) {
+                r = new RegExp(key);
+                if (r.test(command)) {
+                    commands[key](command.match(r));
+                    return true;
+                };
+            }
+
+            return false;
+        };
+
         keys = {
             'delete':   8,
             'tab':      9,
@@ -563,7 +571,7 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             'c':       67,
             'lcmd':    91,
             'rcmd':    93,
-        }
+        };
 
     }])
     .directive('scrollSpy', ['$timeout', function($timeout) {
