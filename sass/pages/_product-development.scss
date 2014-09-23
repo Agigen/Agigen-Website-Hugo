@@ -11,6 +11,8 @@
 .proddev-process {
     position: relative;
     padding-top: 100px;
+    padding-bottom: 100px;
+    margin: 0;
     font-size: 20px;
     color: #676767;
 
@@ -98,24 +100,24 @@
             width: 100%;
         }
         &--2 {
-            top: 37.5%;
+            top: 32.5%;
             left: 75%;
         }
         &--3 {
-            top: 72.5%;
+            top: 62.5%;
             left: 74%;
         }
         &--4 {
             @extend .proddev-process__step--1;
-            top: 98%;
+            top: 87%;
         }
         &--5 {
-            top: 72.5%;
+            top: 62.5%;
             left: 1%;
             text-align: right;
         }
         &--6 {
-            top: 37.5%;
+            top: 32.5%;
             left: 1%;
             text-align: right;
         }
