@@ -27,7 +27,7 @@ The game idea revolves around a virtual car which is placed somewhere in a big C
 
 [Hide & Seek presentation video][3] from [saschaengel_china works][4] on [Vimeo][5].
 
-User login can be done either with [Sina Weibo][6] (a Chinese social media platform) or just a regular email address, and the backend can send push notifications to users using [Urban Airship&#8217;s][7] excellent service.
+User login can be done either with [Sina Weibo][6] (a Chinese social media platform) or just a regular e-mail address, and the backend can send push notifications to users using [Urban Airship&#8217;s][7] excellent service.
 
 On the server side, we had to keep track of a rather large amount of real-time data, since both the car&#8217;s position and the position of each individual player are updated quite frequently and retained for a relatively long period of time. Each datapoint is rather small, but there are a lot of them per player and they accumulate quickly. Normally, this kind of application with frequent updates and frequent requests for updates from the clients would be very well suited to hosting on Google App Engine. In this case, however, we chose to not use App Engine, primarily because Google does not have a data center in China, and latencies to anything outside the Great Firewall are terrible. The customer was also worried about the potential for getting the application suddenly blocked. Hence, we rolled our own solution.
 
