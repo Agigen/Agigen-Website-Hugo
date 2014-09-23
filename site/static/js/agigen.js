@@ -214,7 +214,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         $scope.onConnected = function(){
             $scope.connected = true;
-            $scope.messages.push("Connected!");
+            $scope.messages.push("Connected! Chat away with us!");
             $scope.updateCursorPosition();
         };
 

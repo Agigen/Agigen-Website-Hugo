@@ -28,7 +28,7 @@
 
     &__cta {
         @extend .epsilon;
-        color: #333;
+        color: #444;
         &:hover {
             color:#000;
         }
@@ -50,6 +50,9 @@
             .case__image {
                 @include transform(translateY(-10px));
             }
+        }
+        .case_image {
+            @include transition(all 200ms ease);
         }
 
         &--billogram {
@@ -76,7 +79,7 @@
             .case__image {
                 width: 320px;
                 max-width: 70%;
-                @include transition(transform 300ms ease);
+                @include transition(all 200ms ease);
             }
         }
 
@@ -90,6 +93,7 @@
             .case__image {
                 width: 380px;
                 max-width: 80%;
+                @include transition(all 200ms ease);
             }
         }
 
