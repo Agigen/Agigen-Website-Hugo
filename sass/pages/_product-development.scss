@@ -14,15 +14,15 @@
     font-size: 20px;
     color: #676767;
 
-    @media only screen and (max-width: 960px) {
+    @include media-query(portable) {
         padding: 0;
         font-size: 14px;
     }
 
     &__circle {
         .path--animated {
-            stroke-dasharray: 1630;
-            stroke-dashoffset: 1630;
+            stroke-dasharray: 1635;
+            stroke-dashoffset: 1635;
 
             .proddev-process.in-view--whole & {
                 @include animation(proddevprocess 1100ms $ease-out-expo 300ms forwards);
@@ -31,8 +31,8 @@
         .path--faded {
             stroke-opacity: 0.25;
 
-            stroke-dasharray: 1630;
-            stroke-dashoffset: 1630;
+            stroke-dasharray: 1635;
+            stroke-dashoffset: 1635;
 
             .proddev-process.in-view--whole & {
                 @include animation(proddevprocess 3600ms $ease-out-expo 900ms forwards);
@@ -40,7 +40,7 @@
         }
         width: 65%;
 
-        @media only screen and (max-width: 960px) {
+        @include media-query(portable) {
             display: none;
         }
     }
@@ -75,7 +75,9 @@
         strong {
             color: #ff0065;
             display: block;
-            @extend .gamma
+            @extend .gamma;
+            line-height: 1.2;
+            margin-bottom: 10px;
         }
 
         opacity: 0;
@@ -100,7 +102,7 @@
             left: 75%;
         }
         &--3 {
-            top: 70%;
+            top: 72.5%;
             left: 74%;
         }
         &--4 {
@@ -108,20 +110,20 @@
             top: 98%;
         }
         &--5 {
-            top: 70%;
+            top: 72.5%;
             left: 5%;
         }
         &--6 {
             top: 37.5%;
-            left: 7.5%;
+            left: 5%;
         }
 
-        @media only screen and (max-width: 960px) {
+        @include media-query(portable) {
             width: 80%;
             display: block;
             margin: 0 auto 20px !important;
             position: static;
-            text-align: left;
+            text-align: center;
             strong {
                 font-size: 24px;
                 padding: 0;
