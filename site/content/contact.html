@@ -2,13 +2,14 @@
    "title": "Contact"
 }
 
-<section class="section section--contact__header">
-    <div class="section__content">
+<section class="contact-header" ng-controller="contactmapCtrl">
+    <div class="contact-header__overlay" ng-class="{'contact-header__overlay--hidden': showMap}">
+
+        <div class="contact-header__overlay__content">
         <div class="container text--center">
 
             <h2 class="epsilon">We'd love to hear from you</h2>
             <h1 class="alpha">Get in touch</h1>
-
             <div class="grid">
                 <div class="grid__item lap-and-up-one-half">
                     <dl class="contactways">
@@ -30,11 +31,13 @@
                 </div>
             </div>
 
-
+        </div><!-- .container -->
         </div>
-    </div>
+    </div><!-- .contact-header__overlay -->
     <div id="map-canvas" class="palm-hidden"></div>
+    <button class="contact-header__togglemap" ng-click="showMap = !showMap">{{ showMapLabel() }}</button>
 </section>
+
 <section class="section section--contact__work">
     <div class="section__content">
         <div class="container text--center">
