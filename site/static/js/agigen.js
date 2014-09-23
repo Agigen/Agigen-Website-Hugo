@@ -215,7 +215,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initializeGoogleMaps';
         document.body.appendChild(script);
     }])
-    .controller('chatCtrl', ['$scope', '$timeout', function($scope, $timeout){
+    .controller('chatCtrl', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
 
         var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback;
 
@@ -386,8 +386,15 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
                     chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
                 },
+            './do-dragon': function() {
+                    $http.get('http://dev.agigen.se/dragon/')
+                        .success(function(response) {
+                            $scope.scrollback.push(response);
+                        });
+                },
             'ls': function() {
-                    $scope.scrollback.push('start-chat');
+                    $scope.scrollback.push('-r-xr--r--   do-dragon');
+                    $scope.scrollback.push('-r-xr--r--   start-chat');
                 },
             'help': function() {
                     $scope.scrollback.push("Sorry bro, you're on your own...");
