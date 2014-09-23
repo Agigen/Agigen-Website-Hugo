@@ -1,7 +1,7 @@
 .page--work .main-header--work {
-    background: #2466bd url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
-    background-size: cover;
     @extend .text--light;
+    @include vhFejk(50);
+    background: #252525;
     .text-wrapper {
         max-width: 60%;
     }
@@ -57,63 +57,95 @@
         @extend .delta;
     }
 
+    &__award-icon {
+        display: inline-block;
+        width: 71px;
+        height: 61px;
+    }
+
     &__illustration {
         img {
             max-width: 100%;
         }
         @include media-query(lap-and-up){
-            position: absolute;
             z-index:100;
             opacity: 0;
             @include transition(opacity 500ms ease 200ms);
         }
     }
 
-    &--samsung {
-
-
-        background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
-        padding-top: 190px;
-        min-height: 660px;
-
-        &__illustration {
-            right: -650px;
-            bottom: -155px;
+    &__contentwrapper {
+        position: relative;
+        @include media-query(lap-and-up){
+            padding-left: 50px;
         }
-        @include media-query(palm) {
-            padding-top: 30px;
-            min-height: 0;
+        &--left {
+            @include media-query(lap-and-up){
+                padding-left: 0;
+                padding-right: 50px;
+            }
         }
+    }
 
+    &--build {
+        background-color: #1d55ac;
+        background-image: url(/img/work/google-bg.jpg);
+        padding: 150px 0 240px;
+        .btn {
+            @include btnColors(white, #1d55ac);
+        }
     }
     &--sj {
-        background: #1d93c0 url(/img/work/sj-bg.jpg) no-repeat bottom center;
-        background-size: auto;
-        padding-top: 120px;
-        padding-bottom: 100px;
-        position: relative;
+        background-color: #2e92c4;
+        background-image: url(/img/work/sj-bg.jpg);
+        background-size: cover;
+        padding: 0 0 30px;
+
         @include media-query(lap-and-up){
             @include sneddisTop(-4, 175px, #2e92c4);
         }
-
         &:after {
             background: #2e92c4 url(/img/work/sj-blue.jpg);
         }
-
         &__illustration {
-            left: 0;
-            top: -200px;
+            max-width: 86.5%;
         }
         .btn {
             @include btnColors(white, #2e92c4);
         }
-        @include media-query(palm){
-            &__illustration {
-                width: 80%;
-
-            }
+        .case--list__contentwrapper {
+            top: 20px;
+        }
+        .container {
+            top: -80px;
         }
     }
+
+
+
+    &--samsung {
+        background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
+        padding: 140px 0 220px;
+        .case--list__contentwrapper {
+            top: -40px;
+        }
+    }
+
+    &--billogram {
+        background: #6abbb8;
+        @include sneddisTop(-4, 180px);
+        padding: 0 0 60px;
+        &__illustration {
+            max-width: 88.5%;
+        }
+        .case--list__contentwrapper {
+            top: -20px;
+        }
+        .btn {
+            @include btnColors(white, #6abbb8);
+        }
+    }
+
     &--carlsberg {
         padding: 180px 0 250px;
         background: #1c110f url(/img/work/carlsberg-bg.jpg) no-repeat center center;
@@ -128,25 +160,9 @@
             }
         }
     }
-    &--billogram {
-        @include sneddisTop(-4, 180px, #6abbb8);
 
-        background: #6abbb8;
-        min-height: 400px;
-        &__illustration {
-            right: 30px;
-            bottom: -350px;
 
-        }
-        .btn {
-            @include btnColors(white, #6abbb8);
-        }
-        @include media-query(palm){
-            &__illustration {
-                width: 100%;
-            }
-        }
-    }
+
 }
 
 

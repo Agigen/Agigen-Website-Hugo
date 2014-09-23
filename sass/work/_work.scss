@@ -1,3 +1,7 @@
+.page--work .main-header {
+    @include vhFejk(50);
+}
+
 .content--page-work {
     p {
         @extend .delta;
@@ -203,14 +207,6 @@
         }
     }
 
-}
-
-.page--work {
-    .main-header {
-        @include vhFejk(50);
-        background: #0A0F23 url(/img/work/featured-bg-build.jpg) no-repeat bottom center;
-        background-size: cover !important;
-    }
 }
 
 .page--work {
