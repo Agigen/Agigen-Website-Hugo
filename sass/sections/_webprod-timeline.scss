@@ -7,7 +7,8 @@ $standard_delay: 350ms;
     font-size: 20px;
     color: #878787;
     &__timeline {
-        width: 80%;
+        width: 90%;
+        max-width: 730px;
         margin: 100px auto;
     }
     &__illustration {
