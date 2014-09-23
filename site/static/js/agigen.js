@@ -215,7 +215,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initializeGoogleMaps';
         document.body.appendChild(script);
     }])
-    .controller('chatCtrl', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
+    .controller('chatCtrl', ['$scope', '$timeout', '$http', '$interval', function($scope, $timeout, $http, $interval){
 
         var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, historyBuffer, setCursorLast,
             $computer, $screen, $prompt, $promptInput;
@@ -434,6 +434,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         $scope.scrollback = [];
         $scope.username = "";
+        $scope.showPrompt = true;
         $scope.promptInput = "./start-chat";
 
         setPrompt("$");
@@ -460,9 +461,25 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
                 },
             './do-dragon': function() {
+                    var interval;
+
+                    $scope.showPrompt = false;
+                    $scope.scrollback.push('.');
+                    interval = $interval(function() {
+                        $scope.scrollback[$scope.scrollback.length - 1] += '.';
+                    }, 250);
+
                     $http.get('http://dev.agigen.se/dragon/')
                         .success(function(response) {
-                            $scope.scrollback.push(response);
+                            $timeout(function() {
+                                $interval.cancel(interval);
+                                $scope.showPrompt = true;
+                                $scope.scrollback.push(response);
+                                $timeout(function() {
+                                    $promptInput.focus();
+                                    $scope.updateCursorPosition();
+                                });
+                            }, 3000);
                         });
                 },
             'ls': function() {
@@ -474,20 +491,20 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 },
         };
         keys = {
-            delete:   8,
-            tab:      9,
-            enter:   13,
-            shift:   16,
-            ctrl:    17,
-            alt:     18,
-            esc:     27,
-            left:    37,
-            up:      38,
-            right:   39,
-            down:    40,
-            c:       67,
-            lcmd:    91,
-            rcmd:    93,
+            'delete':   8,
+            'tab':      9,
+            'enter':   13,
+            'shift':   16,
+            'ctrl':    17,
+            'alt':     18,
+            'esc':     27,
+            'left':    37,
+            'up':      38,
+            'right':   39,
+            'down':    40,
+            'c':       67,
+            'lcmd':    91,
+            'rcmd':    93,
         }
 
     }])
