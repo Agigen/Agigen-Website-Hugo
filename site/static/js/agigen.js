@@ -217,7 +217,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     }])
     .controller('chatCtrl', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
 
-        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, setCursorLast,
+        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, historyBuffer, setCursorLast,
             $computer, $screen, $prompt, $promptInput;
 
         setPrompt = function(prompt) {
@@ -305,6 +305,10 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
 
             if (!chat && $event.which === keys.up) {
+                if (historyIndex === -1) {
+                    historyBuffer = $scope.promptInput;
+                }
+
                 if (historyIndex < history.length) {
                     historyIndex++;
                 }
@@ -317,12 +321,18 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
 
             if (!chat && $event.which === keys.down) {
+                if (historyIndex === -1) {
+                    historyBuffer = $scope.promptInput;
+                }
+
                 if (historyIndex > -1) {
                     historyIndex--;
                 }
 
                 if (historyIndex > -1) {
                     $scope.promptInput = history[historyIndex];
+                } else {
+                    $scope.promptInput = historyBuffer;
                 }
 
                 setCursorLast();
