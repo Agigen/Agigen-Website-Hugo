@@ -376,7 +376,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.send = function(){
-            var command;
+            var command, r;
 
             if($scope.promptInput == '') {
                 return;
@@ -413,7 +413,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     $scope.promptInput = "";
                 }
             } else {
-                command = $scope.promptInput;
+                command = $scope.promptInput.trim();
                 pushCommandScrollback();
 
                 if (command.indexOf('sudo') === 0) {
@@ -421,8 +421,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     return;
                 } else {
                     for (var key in commands) {
-                        if ((new RegExp(key)).test(command)) {
-                            commands[key]();
+                        r = new RegExp(key);
+                        if (r.test(command)) {
+                            commands[key](command.match(r));
                             return;
                         };
                     }
@@ -499,8 +500,15 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             "^help$": function() {
                     $scope.scrollback.push("Sorry bro, you're on your own...");
                 },
-            "^cat(\\s+)readme.txt$": function() {
-                    $scope.scrollback.push("README CONTENT");
+            "^cat(\\s+([\\w._\\-\\:]+)$)?": function(matches) {
+                    console.log(matches[2]);
+                    if (matches[2] === 'readme.txt') {
+                        $scope.scrollback.push("README CONTENT");
+
+                    } else {
+                        $scope.scrollback.push("cat: " + matches[2] + ": No such file or directory");
+                    }
+
                 },
             "^shutdown(\\s+)-h(\\s+)now$": function() {
                     $scope.scrollback.push("the system will shut down NOW!");
