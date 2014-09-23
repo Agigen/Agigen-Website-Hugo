@@ -215,17 +215,17 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initializeGoogleMaps';
         document.body.appendChild(script);
     }])
-    .controller('chatCtrl', ['$scope', '$timeout', '$http', '$interval', function($scope, $timeout, $http, $interval){
+    .controller('chatCtrl', ['$element', '$scope', '$timeout', '$http', '$interval', function($element, $scope, $timeout, $http, $interval){
 
-        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, historyBuffer, setCursorLast,
-            $computer, $screen, $prompt, $promptInput;
+        var msgAudio, typeAudio, commands, run, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, historyBuffer, setCursorLast,
+            $computer, $screen, $prompt, $promptInput, $promptWrapper;
 
         setPrompt = function(prompt) {
             $scope.prompt = prompt;
             $scope.updateCursorPosition();
 
             $timeout(function() {
-                $('.screen__input').width($('.screen__prompt-wrapper').width() - $('.screen__prompt').width() - 2 /* random wtf */);
+                $promptInput.width($promptWrapper.width() - $prompt.width() - 2 /* random wtf */);
             }, 0);
         };
 
@@ -261,7 +261,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.updateCursorPosition = function(){
             var n = parseInt($promptInput.get(0).selectionStart, 10),
                 step_width = 8.4;
-            $scope.cursorPositionLeft = step_width*(n) + 1 + $('.screen__prompt').width();
+            $scope.cursorPositionLeft = step_width*(n) + 1 + $prompt.width();
         };
 
         $scope.keyUp = function($event){
@@ -376,7 +376,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.send = function(){
-            var command, r;
+            var command;
 
             if($scope.promptInput == '') {
                 return;
@@ -420,24 +420,19 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     $scope.scrollback.push("Oh come on man ;)");
                     return;
                 } else {
-                    for (var key in commands) {
-                        r = new RegExp(key);
-                        if (r.test(command)) {
-                            commands[key](command.match(r));
-                            return;
-                        };
+                    if (!run(command)) {
+                        $scope.scrollback.push(command + ": command not found");
                     }
-
-                    $scope.scrollback.push(command + ": command not found");
                 }
             }
         };
 
         // init values
-        $computer = $('.computer');
-        $screen = $('.screen');
-        $prompt = $('.screen__prompt');
-        $promptInput = $('.screen__input');
+        $computer = $element;
+        $screen = $element.find('.screen');
+        $prompt = $element.find('.screen__prompt');
+        $promptWrapper = $element.find('.screen__prompt-wrapper');
+        $promptInput = $element.find('.screen__input');
 
         history = [];
         historyIndex = -1;
@@ -544,10 +539,24 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             "^shutdown(\\s+)-h$": function() {
                     $scope.scrollback.push("the system will shut down in 30 seconds");
                     $timeout(function() {
-                        commands['shutdown -h now']();
+                        run('shutdown -h now');
                     }, 30000);
                 },
         };
+
+        run = function(command) {
+            var r;
+            for (var key in commands) {
+                r = new RegExp(key);
+                if (r.test(command)) {
+                    commands[key](command.match(r));
+                    return true;
+                };
+            }
+
+            return false;
+        };
+
         keys = {
             'delete':   8,
             'tab':      9,
@@ -563,7 +572,7 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             'c':       67,
             'lcmd':    91,
             'rcmd':    93,
-        }
+        };
 
     }])
     .directive('scrollSpy', ['$timeout', function($timeout) {

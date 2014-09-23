@@ -163,9 +163,13 @@ $samsung-rotate: 0deg;
     .lax {
         @include transform-origin(center center);
 
-        &--front  { @include animation(laxInFront 1500ms $ease-in-out-quint forwards);}
-        &--middle { @include animation(laxIn 1500ms $ease-in-out-quint 250ms forwards);}
-        &--back   { @include animation(laxIn 1500ms $ease-in-out-quint 500ms forwards);}
+        // &--front  { @include animation(laxInFront 1500ms $ease-in-out-quint forwards);}
+        // &--middle { @include animation(laxIn 1500ms $ease-in-out-quint 250ms forwards);}
+        // &--back   { @include animation(laxIn 1500ms $ease-in-out-quint 500ms forwards);}
+
+        &--front  { @include animation(laxInFront 1500ms linear forwards);}
+        &--middle { @include animation(laxIn 1500ms linear 250ms forwards);}
+        &--back   { @include animation(laxIn 1500ms linear 500ms forwards);}
     }
 }
 
