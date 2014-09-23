@@ -32,10 +32,6 @@
     background: transparent url(/img/start/labs/datta-slacklogo-retina.png) no-repeat top left;
     background-size: 702px 706px;
     @include transform(translateY(440px));
-    @include transition(transform 500ms ease);
-    &--connected {
-        @include transform(translateY(0));
-    }
     @media only screen and (max-width: 640px) {
         display: none;
     }
