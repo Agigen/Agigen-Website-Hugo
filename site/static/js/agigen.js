@@ -217,7 +217,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     }])
     .controller('chatCtrl', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
 
-        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback;
+        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback,
+            $computer, $screen, $prompt, $promptInput;
 
         setPrompt = function(prompt) {
             $scope.prompt = prompt;
@@ -323,7 +324,19 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 return;
             }
 
-            $scope.connected = true;
+            if ($scope.scrollback.length === 0) {
+                $('html, body').animate({
+                    scrollTop: $computer.offset().top - 440 - (window.innerHeight - $computer.height()) / 2,
+                    translate: 440,
+                }, {
+                    step: function(now, tween) {
+                        if (tween.prop == 'translate') {
+                            $computer.css({transform: 'translateY(' + (440 - now) + 'px)'});
+                        }
+                    },
+                    duration: 500
+                });
+            }
 
             if (chat) {
                 if (!$scope.username) {
@@ -358,8 +371,12 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         // init values
+        $computer = $('.computer');
+        $screen = $('.screen');
+        $prompt = $('.screen__prompt');
+        $promptInput = $('.screen__prompt-input');
+
         $scope.scrollback = [];
-        $scope.connected = false;
         $scope.username = "";
         $scope.promptInput = "./start-chat";
 
