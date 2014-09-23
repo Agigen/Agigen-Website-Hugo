@@ -281,6 +281,7 @@
         }
         &__copy {
             @extend .beta;
+            font-weight: 300;
             font-size: 30px;
             max-width: 90%;
             margin-left: auto;
