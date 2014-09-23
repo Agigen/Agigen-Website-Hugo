@@ -2,32 +2,92 @@
     display: none;
 }
 
+.contact-header {
+    background: #222;
+    @include vhFejk(70);
+    position: relative;
+    overflow: hidden;
+    @extend .text--light;
+
+    &__overlay {
+        position: absolute;
+        display: table;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,.4);
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        @include transition(transform 1s $ease-in-out-cubic);
+        @include transform(translateY(0%));
+        &--hidden {
+            @include transform(translateY(-100%));
+        }
+
+        .contactways {
+            padding: 0;
+        }
+
+        &__content {
+            width: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+    }
+    &__togglemap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        color: #676767;
+        text-align: center;
+        z-index: 10;
+        @include transition(all 200ms $ease-in-out-cubic);
+        &:before {
+            top: -6px;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(255, 255, 255, 0);
+            border-bottom-color: #676767;
+            border-width: 6px 9px;
+            margin-left: -9px;
+            @include transform(translateY(0px));
+            @include transition(all 200ms $ease-in-out-cubic);
+        }
+        &:hover:before {
+            @include transform(translateY(-4px));
+            border-bottom-color: #ccc;
+        }
+        &:hover {
+            color: #ccc;
+        }
+    }
+
+    #map-canvas {
+        opacity: 1;
+        width: 100%;
+        top: 0;
+        left: 0;
+        bottom: -30px;
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+    }
+}
+
+
 .section {
     &--contact {
-        &__header {
-            position: relative;
-            @include vhFejk(70);
-            @extend .text--light;
-            background: #222;
-            .section__content {
-                position: relative;
-                z-index: 5;
-            }
-            @include media-query(palm) {
-                padding-top: 120px;
-            }
-
-            #map-canvas {
-                opacity: 0.25;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                position: absolute;
-                z-index: 0;
-                overflow: hidden;
-            }
-        }
         &__work {
             @extend .text--light;
             background: #00ccff;

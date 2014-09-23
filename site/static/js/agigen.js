@@ -152,6 +152,69 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         requestAnimFrame(updateParallax);
     }])
+    .controller('contactmapCtrl', ['$scope', function($scope){
+        $scope.showMap = false;
+        $scope.showMapLabel = function(){
+            return $scope.showMap ? 'Hide map' : 'Show map';
+        };
+        window.initializeGoogleMaps = function() {
+            var mapStyles = [
+                {"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]},
+                {
+                    "elementType": "labels",
+                    "stylers": [
+                        { "visibility": "off" }
+                    ]
+                }
+           ];
+
+
+            var zoomLevelSthlm = 13,
+               zoomLevelSweden = 7,
+               zoomLevelEurope = 5,
+               zoomLevelWorld = 4,
+               zoom = zoomLevelEurope;
+
+            function setZoom(z) {
+                zoom = z;
+                if (map){
+                    map.setZoom(z);
+                }
+            };
+
+            $.get("http://ipinfo.io", function(response) {
+                if (response.country == "SE") {
+                    setZoom(zoomLevelSweden)
+                    var loc = response.loc.split(","),
+                        sthlmBounds_ish = [59.724,59.763,20.141,20.204],
+                        lat = parseFloat(loc[0]),
+                        lon = parseFloat(loc[1]);
+                    if (
+                        (lat >= sthlmBounds_ish[0] && lat <= sthlmBounds_ish[1]) &&
+                        (lon >= sthlmBounds_ish[2] && lon <= sthlmBounds_ish[3])
+                    ) {
+                        setZoom(zoomLevelSthlm);
+                    };
+                }
+            }, "jsonp");
+
+            var mapOptions = {
+                zoom: zoom,
+                center: new google.maps.LatLng(59.332779, 18.081026),
+                styles: mapStyles,
+                disableDefaultUI: true,
+                backgroundColor: "#222222",
+                scrollwheel: false
+
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        }
+
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initializeGoogleMaps';
+        document.body.appendChild(script);
+    }])
     .controller('chatCtrl', ['$scope', '$timeout', function($scope, $timeout){
 
         var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback;
@@ -544,66 +607,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     $(document).one('touchstart.touchdetect', function() {
         $('html').addClass('touch-device');
     });
-
-    if ($('#map-canvas').length > 0) {
-        window.initializeGoogleMaps = function() {
-            var mapStyles = [
-                {"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]},
-                {
-                    "elementType": "labels",
-                    "stylers": [
-                        { "visibility": "off" }
-                    ]
-                }
-           ];
-
-
-            var zoomLevelSthlm = 13,
-               zoomLevelSweden = 7,
-               zoomLevelEurope = 5,
-               zoomLevelWorld = 4,
-               zoom = zoomLevelEurope;
-
-            function setZoom(z) {
-                zoom = z;
-                if (map){
-                    map.setZoom(z);
-                }
-            };
-
-            $.get("http://ipinfo.io", function(response) {
-                if (response.country == "SE") {
-                    setZoom(zoomLevelSweden)
-                    var loc = response.loc.split(","),
-                        sthlmBounds_ish = [59.724,59.763,20.141,20.204],
-                        lat = parseFloat(loc[0]),
-                        lon = parseFloat(loc[1]);
-                    if (
-                        (lat >= sthlmBounds_ish[0] && lat <= sthlmBounds_ish[1]) &&
-                        (lon >= sthlmBounds_ish[2] && lon <= sthlmBounds_ish[3])
-                    ) {
-                        setZoom(zoomLevelSthlm);
-                    };
-                }
-            }, "jsonp");
-
-            var mapOptions = {
-                zoom: zoom,
-                center: new google.maps.LatLng(59.332779, 18.081026),
-                styles: mapStyles,
-                disableDefaultUI: true,
-                backgroundColor: "#222222",
-                scrollwheel: false
-
-            };
-
-            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        }
-
-        var script = document.createElement('script');
-        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initializeGoogleMaps';
-        document.body.appendChild(script);
-    };
 
     $('.animate--in-view').inView({style: 'sticky'});
 }(jQuery, window));
