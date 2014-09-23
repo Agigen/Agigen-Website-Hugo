@@ -217,7 +217,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     }])
     .controller('chatCtrl', ['$scope', '$timeout', '$http', function($scope, $timeout, $http){
 
-        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback,
+        var msgAudio, typeAudio, commands, chat, chatRunning, ctrlKey, keys, setPrompt, pushCommandScrollback, history, historyIndex, setCursorLast,
             $computer, $screen, $prompt, $promptInput;
 
         setPrompt = function(prompt) {
@@ -230,8 +230,20 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         pushCommandScrollback = function() {
+            historyIndex = -1;
+            history.unshift($scope.promptInput);
+
             $scope.scrollback.push($scope.prompt + ' ' + $scope.promptInput);
             $scope.promptInput = "";
+        };
+
+        setCursorLast = function() {
+            if ($scope.promptInput) {
+                $timeout(function() {
+                    $promptInput.get(0).setSelectionRange($scope.promptInput.length, $scope.promptInput.length);
+                    $scope.updateCursorPosition();
+                }, 0);
+            }
         };
 
         $scope.kill = function() {
@@ -247,13 +259,17 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         }
 
         $scope.updateCursorPosition = function(){
-            var n = parseInt($('#screen-input')[0].selectionStart, 10),
+            var n = parseInt($promptInput.get(0).selectionStart, 10),
                 step_width = 8.4;
             $scope.cursorPositionLeft = step_width*(n) + 1 + $('.screen__prompt').width();
         };
 
         $scope.keyUp = function($event){
             $scope.updateCursorPosition();
+
+            if ([keys.up, keys.down].indexOf($event.which) !== -1) {
+                return false;
+            }
 
             if ($event.which == keys.ctrl) {
                 ctrlKey = false;
@@ -278,13 +294,40 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 keys.rcmd,
             ];
 
-            if ($event.which == keys.ctrl) {
+            if ($event.which === keys.ctrl) {
                 ctrlKey = true;
                 return;
             }
 
             if (ctrlKey && $event.which === keys.c) {
                 $scope.kill();
+                return;
+            }
+
+            if (!chat && $event.which === keys.up) {
+                if (historyIndex < history.length) {
+                    historyIndex++;
+                }
+
+                $scope.promptInput = history[historyIndex];
+
+                setCursorLast();
+
+                return false;
+            }
+
+            if (!chat && $event.which === keys.down) {
+                if (historyIndex > -1) {
+                    historyIndex--;
+                }
+
+                if (historyIndex > -1) {
+                    $scope.promptInput = history[historyIndex];
+                }
+
+                setCursorLast();
+
+                return false;
             }
 
             var type;
@@ -342,8 +385,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 if (!$scope.username) {
                     // Connect user
                     $scope.username = $scope.promptInput;
-
-                    pushCommandScrollback();
+                    $scope.scrollback.push($scope.prompt + ' ' + $scope.promptInput);
+                    $scope.promptInput = "";
 
                     $scope.scrollback.push("Hi " + $scope.username + ". We're connecting you...");
                     chat.connect($scope.username);
@@ -374,7 +417,10 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $computer = $('.computer');
         $screen = $('.screen');
         $prompt = $('.screen__prompt');
-        $promptInput = $('.screen__prompt-input');
+        $promptInput = $('.screen__input');
+
+        history = [];
+        historyIndex = -1;
 
         $scope.scrollback = [];
         $scope.username = "";
@@ -410,8 +456,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                         });
                 },
             'ls': function() {
-                    $scope.scrollback.push('-r-xr--r--   do-dragon');
-                    $scope.scrollback.push('-r-xr--r--   start-chat');
+                    $scope.scrollback.push('-r-xr-xr-x   do-dragon');
+                    $scope.scrollback.push('-r-xr-xr-x   start-chat');
                 },
             'help': function() {
                     $scope.scrollback.push("Sorry bro, you're on your own...");
