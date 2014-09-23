@@ -81,7 +81,6 @@
         }
     }
     &__input {
-        width: 90%;
         color: #0f0;
         outline: none;
         font-weight: bold;
@@ -93,7 +92,7 @@
         text-shadow: 0 0 0 #0f0;
     }
 
-    &__prompt {
+    &__prompt-wrapper {
         position: relative;
     }
 
