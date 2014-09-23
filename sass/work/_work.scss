@@ -94,9 +94,14 @@
                 }
             }
             &--awards {
+                text-align: center;
                 &__pretitle {
                     @extend .epsilon;
                     padding-bottom: 50px;
+                }
+                img {
+                    display: block;
+                    margin: 0 auto;
                 }
                 padding: 50px 0 100px;
                 background: #f0f0f0;
