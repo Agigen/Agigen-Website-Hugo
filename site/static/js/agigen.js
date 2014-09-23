@@ -419,10 +419,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 if (command.indexOf('sudo') === 0) {
                     $scope.scrollback.push("Oh come on man ;)");
                     return;
-                } else if (typeof commands[command] === 'function') {
-                    commands[command]();
-
                 } else {
+                    for (var key in commands) {
+                        if ((new RegExp(key)).test(command)) {
+                            commands[key]();
+                            return;
+                        };
+                    }
+
                     $scope.scrollback.push(command + ": command not found");
                 }
             }
@@ -455,7 +459,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         ctrlKey = false;
         commands = {
-            './start-chat': function() {
+            "^\\.\\/start-chat$": function() {
                     $scope.scrollback.push("Hello, what's your name?");
                     setPrompt("username:");
 
@@ -465,7 +469,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     chat.onClose = function() { $scope.$apply(function() { $scope.onClosed(); }); };
                     chat.onMessage = function(message) { $scope.onIncomingMessage(message); };
                 },
-            './do-dragon': function() {
+            "^\\.\\/do-dragon$": function() {
                     var interval;
 
                     $scope.showPrompt = false;
@@ -487,18 +491,18 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                             }, 3000);
                         });
                 },
-            'ls': function() {
+            "^ls$": function() {
                     $scope.scrollback.push('-r-xr-xr-x   do-dragon');
                     $scope.scrollback.push('-r--r--r--   readme.txt');
                     $scope.scrollback.push('-r-xr-xr-x   start-chat');
                 },
-            'help': function() {
+            "^help$": function() {
                     $scope.scrollback.push("Sorry bro, you're on your own...");
                 },
-            'cat readme.txt': function() {
+            "^cat(\\s+)readme.txt$": function() {
                     $scope.scrollback.push("README CONTENT");
                 },
-            'shutdown -h now': function() {
+            "^shutdown(\\s+)-h(\\s+)now$": function() {
                     $scope.scrollback.push("the system will shut down NOW!");
                     $timeout(function() {
                         $('<div>').css({
@@ -513,7 +517,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                         }).appendTo('body').fadeIn();
                     }, 1000);
                 },
-            'shutdown -h': function() {
+            "^shutdown(\\s+)-h$": function() {
                     $scope.scrollback.push("the system will shut down in 30 seconds");
                     $timeout(function() {
                         commands['shutdown -h now']();
