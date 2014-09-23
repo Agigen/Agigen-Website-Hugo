@@ -120,12 +120,12 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
             <label class="screen" for="screen-input">
                 <div class="computer__terminal">
                     <ul class="screen__lines">
-                        <li class="screen__line" ng-repeat="message in messages track by $index">
-                            {{"{{"}} message {{"}}"}}
+                        <li class="screen__line" ng-repeat="line in scrollback track by $index">
+                            <pre>{{"{{"}} line {{"}}"}}</pre>
                         </li>
                         <li class="screen__prompt">
-                            <span>$</span>
-                            <input type="text" value="" id="screen-input" class="screen__input" ng-model="message" ng-readonly="messages.length==2" ng-keydown="keyDown($event)" ng-keyup="keyUp($event)" autocomplete="off">
+                            <span>{{"{{"}} promptChar {{"}}"}}</span>
+                            <input type="text" value="" id="screen-input" class="screen__input" ng-model="prompt" ng-keydown="keyDown($event)" ng-keyup="keyUp($event)" ng-click="updateCursorPosition()" autocomplete="off">
                             <div class="screen__cursor" ng-style="{'left': cursorPositionLeft+'px', 'top': cursorPositionTop + 'px'}"></div>
                         </li>
                     </ul>

@@ -1,0 +1,23 @@
+{
+    "boss": true,
+    "browser": true,
+    "curly": true,
+    "devel": true,
+    "eqnull": true,
+    "eqeqeq": true,
+    "latedef": true,
+    "nonbsp": true,
+    "newcap": true,
+    "strict": true,
+    "undef": true,
+    "unused": true,
+    "predef": [  // Extra globals.
+        "require",
+        "define",
+        "notify"
+    ],
+    "globals": {
+        "Modernizr": false,
+        "agnular": false
+    }
+}
