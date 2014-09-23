@@ -19,30 +19,11 @@
         color: inherit;
     }
 
-    &__ingress {
-        color: #ffffff;
-        padding: 0 0 10px;
-        @include arrow(bottom, center, #ffffff);
-        color: inherit;
-    }
-
     &__cta {
         @extend .epsilon;
-    }
-
-    &--webprod &__cta {
-        color: $color-webprod-blue;
-
+        color: #444;
         &:hover {
-            color: darken($color-webprod-blue, 10%);
-        }
-    }
-
-    &--proddev &__cta {
-        color: $color-proddev-pink;
-
-        &:hover {
-            color: darken($color-proddev-pink, 10%);
+            color:#000;
         }
     }
 
@@ -56,6 +37,15 @@
 
         .container {
             margin-top: -140px;
+        }
+
+        &:hover {
+            .case__image {
+                @include transform(translateY(-10px));
+            }
+        }
+        .case_image {
+            @include transition(all 200ms $ease-in-out-cubic);
         }
 
         &--billogram {
@@ -82,6 +72,7 @@
             .case__image {
                 width: 320px;
                 max-width: 70%;
+                @include transition(all 200ms $ease-in-out-cubic);
             }
         }
 
@@ -95,6 +86,7 @@
             .case__image {
                 width: 380px;
                 max-width: 80%;
+                @include transition(all 200ms $ease-in-out-cubic);
             }
         }
 
@@ -129,7 +121,7 @@
             position: relative;
             bottom: -10px;
             margin: 0 auto;
-            @include transition (bottom 200ms $ease-in-out-cubic);
+            @include transition(transform 200ms $ease-in-out-cubic);
 
             &-wrapper {
                 position: absolute;
@@ -141,7 +133,7 @@
 
         &:hover {
             .case__image {
-                bottom: 0;
+                @include transform(translateY(-10px));
             }
         }
 
@@ -174,7 +166,9 @@
             background: #6abbb8;
             color: #fff;
             border-bottom: 0;
-
+            .case__image {
+                bottom: -30px;
+            }
             &:hover {
                 background: #60b3b0;
             }

@@ -13,7 +13,16 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
+  <title>
+    {{ .Title }}
+    {{ if ne .Title "Agigen" }}
+    &middot; {{ .Site.Title }}
+    {{ end }}
+  </title>
+
+
+
+
 
   <script>
     if ("ActiveXObject" in window) {
@@ -42,27 +51,8 @@
   <!-- RSS -->
   <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
 
-  <meta name="description" content="Agigen - We make the web a better place. A digital web production agency in Stockholm, Sweden.">
-  <meta itemprop="name" content="Agigen - Agile Generation AB">
-  <meta itemprop="description" content="Agigen - We make the web a better place. A digital web production agency in Stockholm, Sweden.">
 
-  <meta itemprop="image" content="http://agigen.se/img/share/opengraph.jpg">
-  <meta property="og:image" content="http://agigen.se/img/share/opengraph.jpg">
-  <meta name="twitter:image" content="http://agigen.se/img/share/opengraph.jpg">
-
-  <meta property="og:title" content="Agigen - Agile Generation AB">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Agigen.se">
-  <meta property="og:description" content="Agigen - We make the web a better place. A digital web production agency in Stockholm, Sweden.">
-  <meta property="og:url" content="http://agigen.se">
-  <meta property="fb:admins" content="562883652,1205209891">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@agigen">
-  <meta name="twitter:creator" content="@lendai">
-  <meta name="twitter:title" content="Agigen - Agile Generation AB">
-  <meta name="twitter:description" content="Agigen - We make the web a better place. A digital web production agency in Stockholm, Sweden.">
-
+  {{ partial "meta_sharing.html" . }}
 
   <link rel="dns-prefetch" href="//ajax.googleapis.com">
   <link rel="dns-prefetch" href="//agigen-slack-chat.appspot.com">

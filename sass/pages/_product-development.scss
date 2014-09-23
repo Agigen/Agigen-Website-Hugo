@@ -298,6 +298,7 @@
         }
         &__text {
             @extend .delta;
+            margin-bottom: 0;
         }
 
         .btn {
