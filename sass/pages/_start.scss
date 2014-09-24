@@ -269,6 +269,10 @@
     opacity: 0.4;
     max-height: 30px;
     max-width: 40%;
+    @include media-query(palm){
+        max-height: 20px;
+        max-width: 60%;
+    }
 }
 
 .section {

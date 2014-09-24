@@ -44,6 +44,12 @@
                 border-color: #222;
             }
         }
+        .case__title {
+            line-height: 100%;
+            @include media-query(palm){
+                font-size: 26px;
+            }
+        }
         .case__headline {
             margin-bottom: 0;
         }
