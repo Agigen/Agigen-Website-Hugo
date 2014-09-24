@@ -1,16 +1,18 @@
-.page--work .main-header--work {
+.page--work .main-header.main-header--work {
     @include vhFejk(70);
     background: #fff;
 }
 
 .awards-list {
+    margin-top: 100px;
 }
 
 .award {
-    height: 120px;
+    position: relative;
+    height: 150px;
+    line-height: 150px;
     margin: 0;
     text-align: center;
-    line-height: 120px;
     border: 1px #eee solid;
     border-width: 0 1px 1px 0;
 
@@ -21,17 +23,40 @@
         border-bottom: 0;
     }
 
-    figcaption {
+    .award__number {
         position: absolute;
-        top: 30px;
+        top: 0;
         left: 0;
+
         width: 100%;
+        color: #222;
+        font-size: 30px;
+        font-weight: bold;
+        color: #999;
+
+        opacity: 0;
+        @include transform(translateY(0));
+        @include transition(all 200ms);
     }
-    > img {
+
+    img {
         vertical-align: middle;
         display: inline-block;
-        max-width: 40%;
+        max-width: 50%;
+        @include transform(translateY(0px));
+        @include transition(transform 200ms);
     }
+    &:hover {
+        background-color: #eee;
+        .award__number {
+            opacity: 1;
+            @include transform(translateY(-20px));
+        }
+        img {
+            @include transform(translateY(20px));
+        }
+    }
+
 }
 
 .case--list {
