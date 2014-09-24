@@ -81,6 +81,10 @@
                 padding-top: 140px;
                 max-width: 90%;
             }
+
+            @include media-query(palm) {
+                padding-bottom: 150px;
+            }
         }
         &--sj {
             @include sneddisTop(-3.5, 150px);
@@ -95,6 +99,11 @@
                 padding-bottom: 20px;
                 max-width: 86%;
             }
+
+            @include media-query(palm) {
+                padding-top: 50px;
+                padding-bottom: 35px;
+            }
         }
         &--carlsberg {
 
@@ -102,6 +111,10 @@
                 position: relative;
                 right: 16%;
                 max-width: 113%;
+            }
+
+            @include media-query(palm) {
+                padding-top: 90px;
             }
         }
     }

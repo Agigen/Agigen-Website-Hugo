@@ -41,7 +41,9 @@
     background-position: center center;
     background-repeat: no-repeat;
     @include media-query(palm){
-        text-align: center;
+        &, & .case--list__contentwrapper {
+            text-align: center;
+        }
     }
 
     &__title {
@@ -101,9 +103,8 @@
         background-size: cover;
         padding: 0 0 30px;
 
-        @include media-query(lap-and-up){
-            @include sneddisTop(-4, 175px, #2e92c4);
-        }
+        @include sneddisTop(-4, 175px, #2e92c4);
+
         &:after {
             background: #2e92c4 url(/img/work/sj-blue.jpg);
         }
@@ -179,19 +180,24 @@
     }
 }
 
-.case--list__illustration {
+.case--list__illustration,
+.section--webprod-case__illustration,
+.section--proddev-case__illustration {
+    @include media-query(lap-and-up){
+        opacity: 0;
+    }
     &.in-view--partial {
         @include media-query(lap-and-up){
             @include animation(fade-in-from-left 500ms $ease-in-out-quint 200ms);
+            @include animation-fill-mode(forwards);
         }
-        opacity: 1;
     }
     &--from-right {
         &.in-view--partial {
             @include media-query(lap-and-up){
                 @include animation(fade-in-from-right 500ms $ease-in-out-quint 200ms);
+                @include animation-fill-mode(forwards);
             }
-            opacity: 1;
         }
     }
 }
