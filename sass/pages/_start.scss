@@ -235,6 +235,9 @@
 .grid--client-logos {
     width: 100%;
     margin: 40px auto;
+    @include media-query(palm){
+        margin: 0;
+    }
 }
 
 .client-logo {
@@ -242,6 +245,11 @@
     &-container {
         height: 120px;
         line-height: 120px;
+        @include media-query(palm){
+            height: 60px;
+            line-height: 60px;
+        }
+
         vertical-align: middle;
         margin: 0;
         border: 1px #eee solid;
@@ -261,14 +269,6 @@
     opacity: 0.4;
     max-height: 30px;
     max-width: 40%;
-
-    @include media-query(lap) {
-        margin: 0 auto 40px;
-    }
-    @include media-query(palm) {
-        margin: 0 auto 20px;
-    }
-
 }
 
 .section {
