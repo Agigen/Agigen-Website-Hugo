@@ -232,43 +232,43 @@
     }
 }
 
+.grid--client-logos {
+    width: 100%;
+    margin: 40px auto;
+    @include media-query(palm){
+        margin: 0;
+    }
+}
 
 .client-logo {
+
+    &-container {
+        height: 120px;
+        line-height: 120px;
+        @include media-query(palm){
+            height: 60px;
+            line-height: 60px;
+        }
+
+        vertical-align: middle;
+        margin: 0;
+        border: 1px #eee solid;
+        border-width: 0 1px 1px 0;
+
+
+        &--5 , &--10, &--15 {
+            border-right: none;
+        }
+        &--11, &--12, &--13, &--14, &--15, &--16 {
+            border-bottom: none;
+        }
+    }
+
     vertical-align: middle;
     display: inline-block;
-    max-height: 61px;
-    max-width: 160px;
     opacity: 0.4;
-    max-width: 120px;
-    max-height: 41px;
-    margin: 0 auto 80px;
-
-    max-width: 75%;
-
-    @include media-query(lap) {
-        margin: 0 auto 40px;
-    }
-
-    @include media-query(palm) {
-        margin: 0 auto 20px;
-    }
-
-
-    // &--mcdonalds {}
-    // &--lego {}
-    // &--google {}
-    // &--sj {}
-    // &--sony {}
-    // &--vodafone {}
-    // &--wb {}
-    // &--samsung {}
-    // &--adidas {}
-    // &--volvo {}
-    // &--carlsberg {}
-    // &--netflix {}
-    // &--mini {}
-
-
+    max-height: 30px;
+    max-width: 40%;
 }
 
 .section {
@@ -305,7 +305,7 @@
         background: white;
 
         &__ingress {
-            padding: 0 0 100px;
+            padding: 0 0 60px;
             font-size: 40px;
             @media only screen and (max-width: 1220px) {
                 font-size: 32px;
@@ -318,10 +318,6 @@
 
         &__logos {
             text-align: center;
-            vertical-align: middle;
-            .grid__item {
-                // background: pink;
-            }
         }
 
         &__logos-header {

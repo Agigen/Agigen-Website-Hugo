@@ -1,38 +1,82 @@
-.page--work .main-header--work {
-    @extend .text--light;
-    @include vhFejk(50);
-    background: #252525;
-    .text-wrapper {
-        max-width: 60%;
-    }
-    @include media-query(palm) {
-        padding: 80px 0;
-        .text-wrapper {
-            max-width: 90%;
-        }
-    }
-
+.page--work .main-header.main-header--work {
+    @include vhFejk(75);
+    background: #fff;
 }
 
+.awards-list {
+    margin-top: 100px;
+    @include media-query(palm){
+        margin-top: 30px;
+    }
+}
 
 .award {
-    &__number {
-        color: #676767;
-        font-size: 90px;
+    position: relative;
+    height: 150px;
+    line-height: 150px;
+    @include media-query(palm){
+        height: 70px;
+        line-height: 70px;
+    }
+
+    margin: 0;
+    text-align: center;
+    border: 1px #eee solid;
+    border-width: 0 1px 1px 0;
+
+    &--4, &--8 {
+        border-right: 0;
+    }
+    &--5, &--6, &--7, &--8 {
+        border-bottom: 0;
+    }
+
+    .award__number {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        color: #222;
+        font-size: 30px;
         font-weight: bold;
+        color: #999;
+
+        opacity: 0;
+        @include transform(translateY(0));
+        @include transition(all 200ms);
         @include media-query(palm) {
-            font-size: 50px;
+            font-size: 22px;
         }
     }
-    &__title {
-        span {
-            display:none;
+
+    img {
+        vertical-align: middle;
+        display: inline-block;
+        max-width: 50%;
+        @include transform(translateY(0px));
+        @include transition(transform 200ms);
+        @include media-query(palm) {
+            max-width: 80%;
+        }
+    }
+    &:hover {
+        background-color: #eee;
+        .award__number {
+            opacity: 1;
+            @include transform(translateY(-20px));
+            @include media-query(palm) {
+                @include transform(translateY(-10px));
+            }
         }
         img {
-            display: block;
-            margin: 0 auto;
+            @include transform(translateY(20px));
+            @include media-query(palm) {
+                @include transform(translateY(10px));
+            }
         }
     }
+
 }
 
 .case--list {
@@ -74,6 +118,11 @@
             opacity: 0;
             @include transition(opacity 500ms ease 200ms);
         }
+
+        @include media-query(palm) {
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     &__contentwrapper {
@@ -96,6 +145,9 @@
         .btn {
             @include btnColors(white, #1d55ac);
         }
+        @include media-query(palm){
+            padding: 60px 0 60px;
+        }
     }
     &--sj {
         background-color: #2e92c4;
@@ -110,6 +162,9 @@
         }
         &__illustration {
             max-width: 86.5%;
+            @include media-query(palm){
+                padding-top: 30px;
+            }
         }
         .btn {
             @include btnColors(white, #2e92c4);
@@ -118,7 +173,9 @@
             top: 20px;
         }
         .container {
-            top: -80px;
+            @include media-query(lap-and-up){
+                top: -80px;
+            }
         }
     }
 
@@ -127,8 +184,14 @@
     &--samsung {
         background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
         padding: 140px 0 220px;
+        @include media-query(palm){
+            padding: 90px 0 60px;
+        }
         .case--list__contentwrapper {
             top: -40px;
+        }
+        .container {
+            z-index: 10;
         }
     }
 
@@ -154,7 +217,9 @@
         .btn {
             @include btnColors(white, #222);
         }
-
+        @include media-query(palm){
+            padding: 60px 0;
+        }
         .text-wrapper {
             @include media-query(portable) {
                 max-width: 100%;
