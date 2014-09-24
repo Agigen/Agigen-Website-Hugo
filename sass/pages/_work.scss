@@ -1,37 +1,36 @@
 .page--work .main-header--work {
-    @extend .text--light;
-    @include vhFejk(50);
-    background: #252525;
-    .text-wrapper {
-        max-width: 60%;
-    }
-    @include media-query(palm) {
-        padding: 80px 0;
-        .text-wrapper {
-            max-width: 90%;
-        }
-    }
-
+    @include vhFejk(70);
+    background: #fff;
 }
 
+.awards-list {
+}
 
 .award {
-    &__number {
-        color: #676767;
-        font-size: 90px;
-        font-weight: bold;
-        @include media-query(palm) {
-            font-size: 50px;
-        }
+    height: 120px;
+    margin: 0;
+    text-align: center;
+    line-height: 120px;
+    border: 1px #eee solid;
+    border-width: 0 1px 1px 0;
+
+    &--4 {
+        border-right: 0;
     }
-    &__title {
-        span {
-            display:none;
-        }
-        img {
-            display: block;
-            margin: 0 auto;
-        }
+    &--5, &--6, &--7, &--8 {
+        border-bottom: 0;
+    }
+
+    figcaption {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+    }
+    > img {
+        vertical-align: middle;
+        display: inline-block;
+        max-width: 40%;
     }
 }
 

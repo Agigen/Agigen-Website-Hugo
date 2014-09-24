@@ -44,6 +44,9 @@
                 border-color: #222;
             }
         }
+        .case__headline {
+            margin-bottom: 0;
+        }
         .container {
             margin-top: -140px;
         }
@@ -53,11 +56,12 @@
                 @include transform(translateY(-10px));
             }
         }
-        .case_image {
+        .case__image {
             @include transition(all 200ms $ease-in-out-cubic);
         }
 
         &--billogram {
+            padding: 0 0 20px;
             .container {
                 margin-top: -210px;
 
@@ -91,7 +95,7 @@
             background: #fff;
             z-index: 10;
             position: relative;
-
+            padding-bottom: 20px;
             .case__image {
                 width: 380px;
                 max-width: 80%;
