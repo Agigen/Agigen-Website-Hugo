@@ -146,7 +146,7 @@
             @include btnColors(white, #1d55ac);
         }
         @include media-query(palm){
-            padding: 60px 0 60px;
+            padding: 60px 0 150px;
         }
     }
     &--sj {
@@ -177,6 +177,11 @@
                 top: -80px;
             }
         }
+
+        @include media-query(palm){
+            @include sneddisTop(-4, 125px, #2e92c4);
+            padding: 0 0 120px;
+        }
     }
 
 
@@ -185,7 +190,7 @@
         background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
         padding: 140px 0 220px;
         @include media-query(palm){
-            padding: 90px 0 60px;
+            padding: 90px 0 120px;
         }
         .case--list__contentwrapper {
             top: -40px;
