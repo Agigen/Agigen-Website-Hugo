@@ -85,7 +85,9 @@
     background-position: center center;
     background-repeat: no-repeat;
     @include media-query(palm){
-        text-align: center;
+        &, & .case--list__contentwrapper {
+            text-align: center;
+        }
     }
 
     &__title {
@@ -144,7 +146,7 @@
             @include btnColors(white, #1d55ac);
         }
         @include media-query(palm){
-            padding: 60px 0 60px;
+            padding: 60px 0 150px;
         }
     }
     &--sj {
@@ -153,9 +155,8 @@
         background-size: cover;
         padding: 0 0 30px;
 
-        @include media-query(lap-and-up){
-            @include sneddisTop(-4, 175px, #2e92c4);
-        }
+        @include sneddisTop(-4, 175px, #2e92c4);
+
         &:after {
             background: #2e92c4 url(/img/work/sj-blue.jpg);
         }
@@ -176,6 +177,11 @@
                 top: -80px;
             }
         }
+
+        @include media-query(palm){
+            @include sneddisTop(-4, 125px, #2e92c4);
+            padding: 0 0 120px;
+        }
     }
 
 
@@ -184,7 +190,7 @@
         background: #232120 url(/img/work/samsung-bg.jpg) no-repeat;
         padding: 140px 0 220px;
         @include media-query(palm){
-            padding: 90px 0 60px;
+            padding: 90px 0 120px;
         }
         .case--list__contentwrapper {
             top: -40px;
@@ -244,19 +250,24 @@
     }
 }
 
-.case--list__illustration {
+.case--list__illustration,
+.section--webprod-case__illustration,
+.section--proddev-case__illustration {
+    @include media-query(lap-and-up){
+        opacity: 0;
+    }
     &.in-view--partial {
         @include media-query(lap-and-up){
             @include animation(fade-in-from-left 500ms $ease-in-out-quint 200ms);
+            @include animation-fill-mode(forwards);
         }
-        opacity: 1;
     }
     &--from-right {
         &.in-view--partial {
             @include media-query(lap-and-up){
                 @include animation(fade-in-from-right 500ms $ease-in-out-quint 200ms);
+                @include animation-fill-mode(forwards);
             }
-            opacity: 1;
         }
     }
 }

@@ -318,6 +318,10 @@
             .container {
                 z-index: 3;
             }
+
+            @include media-query(palm) {
+                padding-bottom: 150px;
+            }
         }
         &--yogobe {
             &__content {
@@ -348,6 +352,10 @@
             &__illustration-container {
                 position: relative;
             }
+
+            @include media-query(palm) {
+                padding-top: 0px;
+            }
         }
         &--uppsalastudent {
             padding: 100px 0 0;
@@ -363,6 +371,11 @@
                     width: 80%;
                     display: block;
                 }
+            }
+
+            @include media-query(palm) {
+                padding-bottom: 40px;
+                padding-top: 90px;
             }
         }
 
