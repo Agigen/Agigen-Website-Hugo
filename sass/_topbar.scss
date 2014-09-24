@@ -1,6 +1,17 @@
 $topbar-height: 44px;
 $topbar-color: #fff;
 
+$topbar-filled-color:         #222;
+$topbar-webprod-filled-color: #222;
+$topbar-proddev-filled-color: #222;
+$topbar-labs-filled-color:    #222;
+
+
+// $topbar-filled-color:         #ff0066;
+// $topbar-webprod-filled-color: $color-proddev-pink;
+// $topbar-proddev-filled-color: $color-webprod-blue;
+// $topbar-labs-filled-color:    $color-labs-orange;
+
 .topbar {
     @include user-select(none);
     position: fixed;
@@ -41,7 +52,7 @@ $topbar-color: #fff;
         svg {
             width: 39px;
             height: 30px;
-            fill: white;
+            fill: $topbar-color;
             @include transition(all 300ms $ease-in-out-cubic);
 
             @include media-query(palm) {
@@ -49,20 +60,28 @@ $topbar-color: #fff;
                 height: 22px;
             }
 
+            .page--work & {
+                fill: $topbar-labs-filled-color;
+            }
+
             .topbar--filled & {
-                fill: #ff0066;
+                fill: $topbar-filled-color;
 
                 .page--services--web-production & {
-                    fill: $color-webprod-blue;
+                    fill: $topbar-webprod-filled-color;
+                }
+
+                .page--services--product-development & {
+                    fill: $topbar-proddev-filled-color;
                 }
 
                 .page--services--labs & {
-                    fill: #ff9900;
+                    fill: $topbar-labs-filled-color;
                 }
             }
 
             .menu-expanded & {
-                fill: white !important;
+                fill: $topbar-color !important;
             }
         }
         &:hover {
@@ -114,27 +133,35 @@ $topbar-color: #fff;
             &, &:before, &:after {
                 width: 26px;
                 height: 3px;
-                background-color: white;
+                background-color: $topbar-color;
 
                 @include media-query(palm) {
                     width: 24px;
                     height: 2px;
                 }
 
+                .page--work & {
+                    background-color: $topbar-labs-filled-color;
+                }
+
                 .topbar--filled & {
-                    background-color: #ff0066;
+                    background-color: $topbar-filled-color;
 
                     .page--services--web-production & {
-                        background-color: $color-webprod-blue;
+                        background-color: $topbar-webprod-filled-color;
+                    }
+
+                    .page--services--product-development & {
+                        background-color: $topbar-proddev-filled-color;
                     }
 
                     .page--services--labs & {
-                        background-color: #ff9900;
+                        background-color: $topbar-labs-filled-color;
                     }
                 }
 
                 .menu-expanded & {
-                    background-color: white !important;
+                    background-color: $topbar-color !important;
                 }
                 // .transition-smooth(transform, background-color, top);
                 @include transition(all 300ms $ease-in-out-cubic);

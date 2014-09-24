@@ -15,18 +15,20 @@
         @include transform(translate3d(0,0,0));
 
         &--1 {
-            height: 720px;
+            height: 100%;
             background-image: url(/img/start/splash/cloud_1920_720.png);
-            bottom: -360px;
+            background-size: contain;
+            bottom: -50%;
             right: 50%;
             // border: 1px blue solid;
             @include transform(translate3d(-40%,0,0));
             @include animation(cloudsRight 120s linear 200ms);
         }
         &--2 {
-            height: 1000px;
+            height: 125%;
             background-image: url(/img/start/splash/cloud_1920_1000.png);
-            bottom: -500px;
+            background-size: contain;
+            bottom: -75%;
             // border: 1px yellow solid;
             left: 50%;
             @include transform(translate3d(-30%,0,0));
@@ -45,7 +47,7 @@
     }
 }
 
-.could-wrapper {
+.cloud-wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -76,10 +78,10 @@
 }
 @include keyframes(cloudsRight) {
     from {
-        @include transform(translate3d(40%,0,0));
+        @include transform(translate3d(55%,0,0));
         opacity: 0;
     }
-    0.25% {
+    2.5% {
         opacity: 1;
     }
     to {

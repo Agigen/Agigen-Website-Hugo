@@ -70,8 +70,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         });
     }])
     .controller('introCtrl', ['$scope', function($scope) {
-        var $cloud1 = $('.could-wrapper--1'),
-            $cloud2 = $('.could-wrapper--2'),
+        var $cloud1 = $('.cloud-wrapper--1'),
+            $cloud2 = $('.cloud-wrapper--2'),
             $container = $('.main-header--start');
 
         $scope.$watch('scrollTop', function(v) {
