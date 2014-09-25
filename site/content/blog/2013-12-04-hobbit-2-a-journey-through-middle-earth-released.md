@@ -1,5 +1,5 @@
 ---
-title: 'Hobbit 2 - A journey through middle earth released'
+title: 'The Hobbit 2 Released'
 permalink: /blog/2013/12/hobbit-2-a-journey-through-middle-earth-released/
 date: "2013-12-04"
 list_image: "hobbit_320.jpg"
@@ -16,7 +16,6 @@ To promote the release of The Hobbit 2 &#8211; The Desolation of Smaug we create
 [Visit the site][1]
 
 Partners: North Kingdom, Dinahmoe, Plan 8, Schimpanz, More Media
-
 
 
 # Press
