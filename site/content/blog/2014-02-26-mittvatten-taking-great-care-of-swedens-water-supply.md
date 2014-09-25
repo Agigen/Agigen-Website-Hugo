@@ -1,11 +1,13 @@
 ---
-title: 'MittVatten - taking great care of Swedens water supply'
+title: 'MittVatten.se'
 permalink: /blog/2014/02/mittvatten-taking-great-care-of-swedens-water-supply/
 date: "2014-02-26"
 list_image: "mittvatten_320.jpg"
 categories:
   - Work
 ---
+
+Taking care of Swedens water supply
 
 For a while now we&#8217;ve been working with the frontend and backend of www.mittvatten.se &#8211; a site that is all about how to take care of Swedens perhaps greatest asset: its water!
 
