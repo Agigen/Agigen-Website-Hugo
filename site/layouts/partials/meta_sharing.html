@@ -7,9 +7,23 @@
 <meta name="twitter:creator" content="@lendai">
 <meta property="og:url" content="{{ .Permalink }}">
 
-{{ $title := "Agigen - Agile Generation AB" }}
+{{ if isset .Params "og_title" }}
+    <meta itemprop="name" content="{{ .Params.og_title }}">
+    <meta property="og:title" content="{{ .Params.og_title }}">
+    <meta name="twitter:title" content="{{ .Params.og_title }}">
+{{ else }}
+    {{ $title := "Agigen - Agile Generation AB" }}
+    <meta itemprop="name" content="{{ $title }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta name="twitter:title" content="{{ $title }}">
+{{ end }}
+
+
+
 {{ $description := "Agigen - We make the web a better place. A digital web production agency in Stockholm, Sweden." }}
 {{ $image := "http://agigen.se/img/share/opengraph.jpg "}}
+
+
 
 <meta itemprop="description" content="{{ $description }}">
 <meta name="description" content="{{ $description }}">
@@ -20,6 +34,4 @@
 <meta property="og:image" content="{{ $image }}">
 <meta name="twitter:image" content="{{ $image }}">
 
-<meta itemprop="name" content="{{ $title }}">
-<meta property="og:title" content="{{ $title }}">
-<meta name="twitter:title" content="{{ $title }}">
+
