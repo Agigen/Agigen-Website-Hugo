@@ -14,9 +14,9 @@
     }
 
     &__overlay {
+        @extend .vc;
         @include media-query(lap-and-up){
             position: absolute;
-            display: table;
             top: 0;
             left: 0;
             right: 0;
@@ -37,10 +37,7 @@
         }
 
         &__content {
-            width: 100%;
-            display: table-cell;
-            vertical-align: middle;
-            height: 100%;
+            @extend .vc__content;
         }
     }
     &__togglemap {

@@ -171,6 +171,10 @@
         }
         .case--list__contentwrapper {
             top: 20px;
+
+            @include media-query(palm){
+                top: 0;
+            }
         }
         .container {
             @include media-query(lap-and-up){

@@ -1,0 +1,16 @@
+.vc {
+    &:before, &__content {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    &:before {
+        content: "";
+        height: 100%;
+        margin-left: -0.5em;
+    }
+
+    &__content {
+        width: 100%;
+    }
+}

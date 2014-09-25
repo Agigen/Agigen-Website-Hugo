@@ -174,13 +174,12 @@
             max-width: 573px;
             &-wrapper {
                 position: absolute;
-                top: -260px;
+                @include transform(translateY(-20%));
                 @include media-query(palm) {
+                    @include transform(translateY(0));
                     position: relative;
                     display: block;
                     max-width: 80%;
-                    top: 0;
-                    left: 0;
                     margin: 0 auto -200px;
                 }
             }
