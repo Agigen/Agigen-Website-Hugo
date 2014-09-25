@@ -1,5 +1,6 @@
 .main-header {
     @extend .text--center;
+    @extend .vc;
     width: 100%;
     background: #d91853 no-repeat top center;
     @include vhFejk(75);
@@ -17,18 +18,8 @@
     //fixes overflow-hidden issue in firefox
     @include transform(translate3d(0,0,0));
 
-    &:before {
-        content: "";
-        height: 100%;
-        vertical-align: middle;
-        display: inline-block;
-        margin-left: -0.5em;
-    }
-
     &__content {
-        display: inline-block;
-        width: 100%;
-        vertical-align: middle;
+        @extend .vc__content;
         position: relative;
         z-index: 10;
     }
