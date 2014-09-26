@@ -1,8 +1,35 @@
-.page--meet-the-team .main-header {
-    background: $color-proddev-pink url(/img/about/header.jpg) no-repeat top center;
+.page--we-are-agigen .main-header {
+    background: #ddd url() no-repeat top center;
     background-size: cover;
-    @include vhFejk(50);
+    @include vhFejk(75);
+    .main-header__content {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+    }
+    .main-header__title {
+        @extend .epsilon;
+    }
 }
+
+.about-copy {
+    @extend .delta;
+}
+
+.section {
+    &--about-divider-office {
+        background: #db0158 url(/img/about/about-office-bg.jpg) no-repeat top center;
+        background-size: cover;
+    }
+    &--about-divider-love {
+        background: #2e3e40 url(/img/about/about-love.jpg) no-repeat top center;
+        background-size: cover;
+    }
+    &--about-team {
+        padding-top: 0;
+    }
+}
+
 
 .team-member {
     text-align: center;
@@ -15,16 +42,14 @@
     }
 
     &__photoframe-wrapper {
-        max-width: 278px;
         margin: 0 auto;
     }
 
     &__photoframe {
-        width: 100%;
-        padding-bottom: 100%;
+        width: 73%;
+        padding-bottom: 73%;
         box-sizing: content-box;
         height: 0;
-        border-radius: 50%;
         overflow: hidden;
         display: block;
         margin: 0 auto;
@@ -40,17 +65,17 @@
 
     &__name {
         text-align: center;
-        height: 0;
         box-sizing: content-box;
-        padding-bottom: 25%;
-
         span {
-            display: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #676767;
         }
 
         img {
             height: 100%;
             display: inline-block;
+            display: none;
 
             // compensate for jonas long schlong
             .team-member--jonas & {
@@ -60,11 +85,11 @@
         }
     }
     &__title {
-        padding-top: 20px;
+        padding-top: 5px;
         color: #656565;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: 100;
+        color: #676767;
     }
 }
 

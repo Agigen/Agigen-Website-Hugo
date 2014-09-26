@@ -7,15 +7,9 @@
 <meta property="og:url" content="{{ .Permalink }}">
 
 {{ if isset .Params "og_title" }}
-    {{ if eq .Type == "post" }}
-        <meta itemprop="name" content="{{ .Params.og_title }}">
-        <meta property="og:title" content="{{ .Params.og_title }}">
-        <meta name="twitter:title" content="{{ .Params.og_title }}">
-    {{ else }}
-        <meta itemprop="name" content="{{ .Params.og_title }}">
-        <meta property="og:title" content="{{ .Params.og_title }}">
-        <meta name="twitter:title" content="{{ .Params.og_title }}">
-    {{ end }}
+    <meta itemprop="name" content="{{ .Params.og_title }}">
+    <meta property="og:title" content="{{ .Params.og_title }}">
+    <meta name="twitter:title" content="{{ .Params.og_title }}">
 {{ else }}
     {{ $title := "Agigen - We make the web a better place" }}
     <meta itemprop="name" content="{{ $title }}">

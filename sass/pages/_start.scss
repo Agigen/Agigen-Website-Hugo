@@ -181,32 +181,7 @@
         }
 
     }
-    &__scroll {
-        position: absolute;
-        bottom: -5px;
-        width: 40px;
-        height: 40px;
-        left: 50%;
-        margin-left: -20px;
-        z-index: 30;
 
-        path {
-            @media only screen and (min-width: 640px) {
-                @include transition(opacity 400ms ease 2800ms);
-                opacity: 0;
-
-                @at-root .browser-ie & {
-                    @include transition(opacity 400ms ease 1000ms);
-                }
-            }
-        }
-
-        @media only screen and (max-width: 640px) {
-            margin-left: -15px;
-            width: 30px;
-            height: 30px;
-        }
-    }
 }
 .animate {
     @media only screen and (min-width: 640px) {
