@@ -60,8 +60,8 @@ $topbar-labs-filled-color:    #222;
                 height: 22px;
             }
 
-            .page--work & {
-                fill: $topbar-labs-filled-color;
+            .page--worklist & {
+                fill: $topbar-filled-color;
             }
 
             .topbar--filled & {
@@ -140,8 +140,8 @@ $topbar-labs-filled-color:    #222;
                     height: 2px;
                 }
 
-                .page--work & {
-                    background-color: $topbar-labs-filled-color;
+                .page--worklist & {
+                    background-color: $topbar-filled-color;
                 }
 
                 .topbar--filled & {
