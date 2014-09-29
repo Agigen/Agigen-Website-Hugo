@@ -44,13 +44,13 @@
                                 <img src="/img/blog/general_320.jpg" class="post__image">
                             {{ end }}
                         </div>
-                        <h5>
+                        <h5 class="blog-post__nav__meta">
                             {{ range .Params.categories }}
-                                <span class="category--{{ . | urlize | lower }}">{{ . }}</span>
+                                <span class="blog-post__nav__category--{{ . | urlize | lower }}">{{ . }}</span>
                             {{ end }}
                             {{ .Next.Date.Format "Mon, Jan 2, 2006"  }}
                         </h5>
-                        <h4>{{.Prev.Title}}</h4>
+                        <h4 class="blog-post__nav__title">{{.Prev.Title}}</h4>
                     </a>
                 {{end}}
             </div><!--
@@ -65,13 +65,13 @@
                                 <img src="/img/blog/general_320.jpg" class="post__image">
                             {{ end }}
                         </div>
-                        <h5>
+                        <h5 class="blog-post__nav__meta">
                             {{ range .Params.categories }}
-                                <span class="category--{{ . | urlize | lower }}">{{ . }}</span>
+                                <span class="blog-post__nav__category--{{ . | urlize | lower }}">{{ . }}</span>
                             {{ end }}
                             {{ .Next.Date.Format "Mon, Jan 2, 2006"  }}
                         </h5>
-                        <h4>{{ .Next.Title }}</h4>
+                        <h4 class="blog-post__nav__title">{{ .Next.Title }}</h4>
                     </a>
                 {{end}}
             </div>
