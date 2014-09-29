@@ -49,8 +49,8 @@ $billogram-rotate: 12deg;
                 }
             }
             &--yogobe {
-                top: 37%;
-                left: 18%;
+                top: 32%;
+                left: 14%;
                 @include transform(rotate($billogram-rotate));
                 @media only screen and (max-width: 1400px) {
                     left: 10%;

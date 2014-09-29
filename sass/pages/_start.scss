@@ -184,13 +184,13 @@
 .animate {
     @media only screen and (min-width: 640px) {
         .start-circle__title {
-            @include animation(title-in 1800ms linear 2700ms forwards);
+            @include animation(title-in 1500ms $ease-in-out-quint 2400ms forwards);
             path {
                 opacity: 1;
             }
         }
         .start-circle__circle__path {
-            @include animation(dash 5000ms $ease-in-out-quint 0 forwards);
+            @include animation(dash 5000ms $ease-in-out-quint 300ms forwards);
             // stroke-dashoffset: 0;
             // opacity: 1;
         }
@@ -212,16 +212,16 @@
 @include keyframes(dash) {
     0% {
         stroke-dashoffset: 2299;
-        @include animation-timing-function($ease-in-out-quint);
+        @include animation-timing-function($ease-in-quint);
         opacity: 1;
     }
     50% {
         stroke-dashoffset: 0;
-        @include animation-timing-function($ease-in-out-quint);
+        @include animation-timing-function($ease-out-quint);
         opacity: 1;
     }
     100% {
-        @include animation-timing-function($ease-in-out-quint);
+        @include animation-timing-function($ease-out-quint);
         stroke-dashoffset: -2299;
         opacity: 0;
     }
