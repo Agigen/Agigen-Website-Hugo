@@ -48,6 +48,32 @@
 }
 
 
+@mixin fotoSneddis($degrees, $height:100px) {
+    position: relative;
+    .container {
+        z-index: 2;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        background-color: #fff;
+        width: 150%;
+        height: $height;
+        position: absolute;
+        top: -$height;
+        left: 0;
+
+        @include transform(rotate(#{$degrees}deg));
+        @include transition(transform 300ms linear);
+        @include transform-origin(left bottom);
+        z-index: 1;
+    }
+    &:hover:after {
+        @include transform(rotate(0deg));
+    }
+}
+
+
 @mixin vhFejk($vh) {
     $i: 2000;
     @while $i > 400 {
