@@ -20,10 +20,20 @@
     &--about-divider-office {
         background: #db0158 url(/img/about/about-office-bg.jpg) no-repeat top center;
         background-size: cover;
+        padding-bottom: 300px;
     }
     &--about-divider-love {
         background: #2e3e40 url(/img/about/about-love.jpg) no-repeat top center;
         background-size: cover;
+        padding: 240px 0;
+    }
+    &--big-ideas {
+        background: white;
+        .container {
+            z-index: 3;
+        }
+        @include sneddisTop(-6, 240px);
+        padding-top: 50px;
     }
     &--about-team {
         padding-top: 0;
