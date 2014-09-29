@@ -13,7 +13,9 @@ To promote the release of The Hobbit 2 &#8211; The Desolation of Smaug we create
 
 <img src="/img/blog/posts/2014/01/hobbit.jpg" >
 
-[Visit the site][1]
+[Visit the site](http://middle-earth.thehobbit.com/)
+
+
 
 Partners: North Kingdom, Dinahmoe, Plan 8, Schimpanz, More Media
 

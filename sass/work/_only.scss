@@ -1,0 +1,33 @@
+.content--page-work {
+    .work__header-image--only {
+        max-width: 640px;
+    }
+
+    .work {
+        &__section {
+            &--only {
+                // &--three-points {
+                //     background: #f2f1f1;
+                //     color: black;
+                // }
+                &--grandfinale {
+                    background: #60a5cc url(/img/work/case/only/trivia-bg.jpg) no-repeat top center;
+                }
+            }
+        }
+    }
+    .work-video--only {
+        background-image: url(/img/work/case/only/video-bg.jpg);
+    }
+
+}
+
+
+
+.page--work {
+    &--the-liberation {
+        .main-header {
+            background: #000000 url(/img/work/case/only/only-bg.jpg) no-repeat bottom center;
+        }
+    }
+}

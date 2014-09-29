@@ -28,16 +28,15 @@
     <article class="blog-post">
         {{ .Content }}
     </article>
+</div>
 
-    <footer class="blog-post__footer ">
-
+<footer class="blog-post__footer">
+    <div class="container container--tight">
         <div class="grid">
             <div class="grid__item one-half">
                 {{if .Prev}}
                     <a class="blog-post__nav blog-post__nav--prev" href="{{.Prev.RelPermalink}}">
                         <div class="epsilon">Newer post</div>
-
-                        <h4>{{.Prev.Title}}</h4>
                         <div class="blog-post__nav__imgwrapper">
                             {{ if isset .Prev.Params "list_image" }}
                                 <img src="/img/blog/{{ .Prev.Params.list_image }}" class="post__image">
@@ -45,6 +44,13 @@
                                 <img src="/img/blog/general_320.jpg" class="post__image">
                             {{ end }}
                         </div>
+                        <h5 class="blog-post__nav__meta">
+                            {{ range .Params.categories }}
+                                <span class="blog-post__nav__category--{{ . | urlize | lower }}">{{ . }}</span>
+                            {{ end }}
+                            {{ .Next.Date.Format "Mon, Jan 2, 2006"  }}
+                        </h5>
+                        <h4 class="blog-post__nav__title">{{.Prev.Title}}</h4>
                     </a>
                 {{end}}
             </div><!--
@@ -52,8 +58,6 @@
                 {{if .Next}}
                     <a class="blog-post__nav blog-post__nav--next" href="{{.Next.RelPermalink}}">
                         <div class="epsilon">Older post</div>
-
-                        <h4>{{.Next.Title}}</h4>
                         <div class="blog-post__nav__imgwrapper">
                             {{ if isset .Next.Params "list_image" }}
                                 <img src="/img/blog/{{ .Next.Params.list_image }}" class="post__image">
@@ -61,12 +65,19 @@
                                 <img src="/img/blog/general_320.jpg" class="post__image">
                             {{ end }}
                         </div>
+                        <h5 class="blog-post__nav__meta">
+                            {{ range .Params.categories }}
+                                <span class="blog-post__nav__category--{{ . | urlize | lower }}">{{ . }}</span>
+                            {{ end }}
+                            {{ .Next.Date.Format "Mon, Jan 2, 2006"  }}
+                        </h5>
+                        <h4 class="blog-post__nav__title">{{ .Next.Title }}</h4>
                     </a>
                 {{end}}
             </div>
         </div>
-    </footer>
-</div>
+    </div>
+</footer>
 
 {{ partial "footer.html" . }}
 {{ partial "foot.html" . }}

@@ -35,7 +35,6 @@ $color-category-officefun: #9549b2;
 .blog-post__header--category--work,
 .page--work.page--node  .main-header {
     background: $color-category-work;
-
 }
 
 
@@ -189,38 +188,102 @@ $color-category-officefun: #9549b2;
         @extend .beta;
     }
     &__footer {
+        background: #f0f0f0;
+        @include sneddisTop(-4, 180px);
         padding-bottom: 100px;
     }
     &__nav {
+        @include transform(translateZ(0));
         display: block;
         text-align: center;
         width: 300px;
         &__imgwrapper {
-            margin: 10px auto 10px;
-            width: 200px;
-            height: 200px;
+            @include transform(translateZ(0));
+            margin: 30px auto 10px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             overflow: hidden;
+            background: #ff0066;
+            position: relative;
             img {
                 width: 100%;
                 height: 100%;
+                @include transition(opacity 200ms linear);
+            }
+            &:before {
+                content: " ";
+                position: absolute;
+                background: transparent url(/img/blog/arrow-left-retina.png) no-repeat 0px 0px;
+                background-size: 23px 38px;
+                width: 23px;
+                height: 38px;
+                top: 50%;
+                left: 50%;
+                margin: -18px 0 0 -11px;
+                @include transform(translateY(30px));
+                opacity: 0;
+                @include transition(transform 200ms linear 150ms, opacity 200ms linear 150ms);
             }
         }
         &--next {
             float: right;
-            .blog-post__nav__imgwrapper {
+            .blog-post__nav__imgwrapper:before {
+                background-image: url(/img/blog/arrow-right-retina.png);
             }
+
+
         }
         &--prev {
 
         }
+
+        &__category {
+            &--backstage {
+                color: $color-category-backstage;
+            }
+            &--case-studies {
+                color: $color-category-casestudies;
+            }
+            &--news {
+                color: $color-category-news;
+            }
+            &--office-fun {
+                color: $color-category-officefun;
+            }
+            &--work {
+                color: $color-category-work;
+            }
+        }
+
+        &__meta {
+            @extend .epsilon;
+            letter-spacing: 0;
+            color: #666;
+            margin: 35px 0 0;
+        }
+        &__title {
+            @extend .delta;
+        }
+
+        &:hover {
+            .blog-post__nav__imgwrapper img {
+                opacity: 0.2;
+            }
+            .blog-post__nav__imgwrapper:before {
+                opacity: 1;
+                @include transform(translateY(0px));
+            }
+        }
     }
+
+
+
     p {
         @extend .container--tight;
         @extend .delta;
         margin-left: auto;
         margin-right: auto;
-
     }
 
     h1 {
