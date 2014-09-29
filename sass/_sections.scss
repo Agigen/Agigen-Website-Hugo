@@ -7,9 +7,11 @@
         padding-bottom: 50px;
     }
 
-    @extend .vc;
+    &--center-content {
+        @extend .vc;
+    }
 
-    &__content {
+    &--center-content &__content {
         @extend .vc__content;
     }
 }
