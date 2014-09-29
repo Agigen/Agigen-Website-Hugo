@@ -1,13 +1,14 @@
 .page--work--build-with-chrome {
     .main-header {
         background: #2466bd url(/img/work/case/build/buildwithchrome-bg.jpg) no-repeat bottom center;
+        background-size: cover;
     }
 }
+
+.page--work--build-with-chrome .work__section {
+    padding: 140px 0;
+}
 .content--page-work {
-    .work__image--chrome-academy {
-        max-height: 300px;
-        max-width: 100%;
-    }
 
     .work__section {
         &--build {
@@ -16,7 +17,7 @@
             }
 
             &--green {
-                background: #2f9d60;
+                background: #2f9d60 url(/img/work/case/build/build-bg-tile.jpg) repeat center center;
             }
 
             &--red {
