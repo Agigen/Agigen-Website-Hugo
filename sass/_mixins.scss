@@ -68,9 +68,9 @@
         @include transform-origin(left bottom);
         z-index: 1;
     }
-    &:hover:after {
-        @include transform(rotate(0deg));
-    }
+    // &:hover:after {
+    //     @include transform(rotate(0deg));
+    // }
 }
 
 
