@@ -7,16 +7,13 @@ categories:
   - Case studies
 ---
 
-Vodafone Bufferbusters är ett projekt vi gjorde i samarbete med [North Kingdom][1] och [Monterosa][2]. Syftet var att bygga ett agumented reality-spel för Vodafone i Tyskland som går ut på att fånga Buffermonsters.
-
-Buffermonster är nämligen små luriga varelser som inte är synliga för blotta ögat, men de finns runt omkring oss och gör så att internet går långsamt. Därför måste vi alla hjälpas åt och fånga upp dem med våra smartphones i ett Ghost Busters-liknande spel.
-
+Vodafone Bufferbusters is a mobile agumented reality game that took place in Germany. The mission was to capture all the Buffer monsters that floats around and makes the internet slow and laggy.
 <!--more-->
+
+The buffer monsters are small, sneaky creatures that aren't visible for the naked eye, but they are all around us and makes the internet slow. That's why we need to work together and catch 'em all using our smartphones in a Ghost Busters vacuumer-likely manner.
 
 <img src="/img/blog/posts/2011/09/bufferbusters_feature.png" >
 
+The project was created together with North Kingdom and Monterosa.
 
-Vi på Agigen ansvarade för spelets backend som byggdes i Python och kördes i Google AppEngine för maximal skalbarhet. Totalt genererades det ut ca 1,5 miljoner monsters runt om i Tyskland som lagras i en NoSQL-databas.
-
- [1]: http://http://www.northkingdom.com/
- [2]: http://monterosa.se/
+Agigen took care of the backend and hosting, and the backend was built using Python and ran on Google App Engine. In total there was about 1,5 million Buffer monsters placed all over Germany.
