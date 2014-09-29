@@ -59,7 +59,7 @@
 
         &:hover {
             .case__image {
-                @include transform(translateY(-10px));
+                @include transform(translateY(-20px));
             }
         }
         .case__image {
@@ -69,7 +69,7 @@
         &--billogram {
             padding: 0 0 20px;
             .container {
-                margin-top: -210px;
+                margin-top: -120px;
 
                 @media screen and ( max-height: 900px ){
                     margin-top: -200px;
@@ -87,11 +87,22 @@
                     margin-top: -105px;
                 }
             }
-
-            .case__image {
-                width: 320px;
+            .case__image-container {
+                width: 264px;
                 max-width: 70%;
+                position: relative;
+                margin: 0 auto;
+                padding: 0 0 1px 0;
+            }
+            .case__image {
+                width: 100%;
                 @include transition(all 200ms $ease-in-out-cubic);
+            }
+            .case__image__shadow {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
             }
         }
 
