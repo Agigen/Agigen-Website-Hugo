@@ -1,6 +1,6 @@
 .main-header--start {
     background-image: url(/img/start/splash/mountain.jpg);
-    background-color: #980031;
+    background-color: #DD0053;
     background-repeat: no-repeat;
     background-position: top center;
     position: relative;
@@ -95,8 +95,8 @@
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 600px;
-    height: 600px;
+    width: 680px;
+    height: 680px;
 
     @include media-query(lap) {
         width: 400px;
@@ -134,28 +134,26 @@
     }
 
     &__title {
-        // @extend .delta;
+
         position: absolute;
         width: 80%;
         height: 53.33333%;
-
-        width: 50%;
-        height: 33.31;
-        // text-align: center;
-        // top: 50%;
-        // text-transform: uppercase;
-        // margin-top: -15px;
         z-index: 30;
-        left: 25%;
-        top: 25%;
+        left: 10%;
+        top: 23.5%;
 
+
+        @include transform-origin(center center);
+        opacity: 0;
+        @include transform(scale(0.5));
         path {
+
             @media only screen and (min-width: 640px) {
-                @include transition(opacity 450ms ease 2400ms);
+                // @include transition(opacity 450ms ease 2400ms);
                 opacity: 0;
 
                 @at-root .browser-ie & {
-                    @include transition(opacity 450ms ease 600ms);
+                    // @include transition(opacity 450ms ease 600ms);
                 }
             }
         }
@@ -166,12 +164,12 @@
         top: 0;
         left: 0;
         z-index: 10;
-
+        height: 100%;
         width: 100%;
         &__path {
             @media only screen and (min-width: 640px) {
-                stroke-dasharray: 1821;
-                stroke-dashoffset: 1821;
+                stroke-dasharray: 2299;
+                stroke-dashoffset: 2299;
 
                 @at-root .browser-ie & {
                     stroke-dashoffset: 0;
@@ -185,27 +183,51 @@
 }
 .animate {
     @media only screen and (min-width: 640px) {
-        .start-circle__title,
-        .start-circle__scroll {
+        .start-circle__title {
+            @include animation(title-in 1800ms linear 2700ms forwards);
             path {
                 opacity: 1;
             }
         }
         .start-circle__circle__path {
-            @include animation(dash 3000ms $ease-in-out-quint forwards);
+            @include animation(dash 5000ms $ease-in-out-quint 0 forwards);
+            // stroke-dashoffset: 0;
+            // opacity: 1;
         }
     }
 }
 
-@include keyframes(dash) {
-    from {
-        stroke-dashoffset: 1821;
 
+@include keyframes(title-in){
+    from {
+        opacity: 0;
+        @include transform(scale(0.5));
     }
     to {
-        stroke-dashoffset: 0;
+        opacity: 1;
+        @include transform(scale(1));
     }
 }
+
+@include keyframes(dash) {
+    0% {
+        stroke-dashoffset: 2299;
+        @include animation-timing-function($ease-in-out-quint);
+        opacity: 1;
+    }
+    50% {
+        stroke-dashoffset: 0;
+        @include animation-timing-function($ease-in-out-quint);
+        opacity: 1;
+    }
+    100% {
+        @include animation-timing-function($ease-in-out-quint);
+        stroke-dashoffset: -2299;
+        opacity: 0;
+    }
+}
+
+
 
 .grid--client-logos {
     width: 100%;
