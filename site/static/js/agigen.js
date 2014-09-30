@@ -157,7 +157,28 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.showMapLabel = function(){
             return $scope.showMap ? 'Hide map' : 'Show map';
         };
+
+        $scope.zoomLevelSthlm = 13;
+        $scope.zoomLevelSweden = 7;
+        $scope.zoomLevelEurope = 5;
+        $scope.zoomLevelOffice = 14;
+        // $scope.zoomLevelWorld = 4;
+        $scope.zoom = $scope.zoomLevelEurope;
+        $scope.toggleMap = function(){
+            $scope.setZoom($scope.zoomLevelOffice);
+            $scope.showMap = !$scope.showMap;
+        };
+
+        $scope.setZoom = function(z) {
+            console.log("trying to set zoom to", z);
+            if ($scope.map && $scope.zoom != z){
+                $scope.zoom = z;
+                $scope.map.setZoom(z);
+            }
+        };
+
         window.initializeGoogleMaps = function() {
+
             var mapStyles = [
                 {"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]},
                 {
@@ -166,25 +187,20 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                         { "visibility": "off" }
                     ]
                 }
-           ];
-
-
-            var zoomLevelSthlm = 13,
-               zoomLevelSweden = 7,
-               zoomLevelEurope = 5,
-               zoomLevelWorld = 4,
-               zoom = zoomLevelEurope;
-
-            function setZoom(z) {
-                zoom = z;
-                if (map){
-                    map.setZoom(z);
-                }
+            ];
+            var mapOptions = {
+                zoom: $scope.zoom,
+                center: new google.maps.LatLng(59.332779, 18.081026),
+                styles: mapStyles,
+                disableDefaultUI: true,
+                backgroundColor: "#222222",
+                scrollwheel: false
             };
 
             $.get("http://ipinfo.io", function(response) {
                 if (response.country == "SE") {
-                    setZoom(zoomLevelSweden)
+                    console.log("Sweden set zoom to", $scope.zoomLevelSweden);
+                    $scope.setZoom($scope.zoomLevelSweden)
                     var loc = response.loc.split(","),
                         sthlmBounds_ish = [59.724,59.763,20.141,20.204],
                         lat = parseFloat(loc[0]),
@@ -193,22 +209,11 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                         (lat >= sthlmBounds_ish[0] && lat <= sthlmBounds_ish[1]) &&
                         (lon >= sthlmBounds_ish[2] && lon <= sthlmBounds_ish[3])
                     ) {
-                        setZoom(zoomLevelSthlm);
+                        $scope.setZoom($scope.zoomLevelSthlm);
                     };
                 }
             }, "jsonp");
-
-            var mapOptions = {
-                zoom: zoom,
-                center: new google.maps.LatLng(59.332779, 18.081026),
-                styles: mapStyles,
-                disableDefaultUI: true,
-                backgroundColor: "#222222",
-                scrollwheel: false
-
-            };
-
-            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            $scope.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         }
 
         var script = document.createElement('script');
