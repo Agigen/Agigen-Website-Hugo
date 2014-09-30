@@ -114,6 +114,10 @@ $standard_delay: 350ms;
 
         &--between-points {
             height: 200px;
+            @media only screen and (max-height: 900px) {
+                height: 100px;
+            }
+
             .webprod-process__illustration__line {
                 height: 0%;
                 @include transition(height $time_pt_3 linear $standard_delay+300ms);
