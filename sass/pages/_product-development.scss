@@ -145,10 +145,10 @@
 
 .section {
 
-    &--proddev__title {
+    &__title {
         @extend .gamma;
     }
-    &--proddev__text {
+    &__text {
         @extend .delta;
     }
 
@@ -213,7 +213,7 @@
 
             }
         }
-        .section--proddev__text {
+        .section__text {
             max-width: 80%;
 
             @include media-query(portable) {

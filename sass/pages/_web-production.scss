@@ -12,21 +12,36 @@
     &--webprod-definition {
         background-color: white;
     }
+
     &--webprod-offer {
         background: $color-webprod-blue url(/img/webprod/blue-texture-retina.jpg) no-repeat top center;
         backgorund-size: cover;
         padding-top: 100px;
         min-height: 740px;
+
         &__illustration {
-            &-wrapper {
-                position: relative;
-                z-index: 100;
-            }
-            max-width: 100% !important;
             position: static;
-            // z-index: 10;
-            // left: 100px;
-            // top: -80px;
+            width: 573px;
+            max-width: none;
+
+            @include media-query(palm) {
+                max-width: 100%;
+            }
+
+            &-wrapper {
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+
+                @include media-query(palm) {
+                    @include transform(translateY(0));
+                    position: relative;
+                    top: 0;
+                    display: block;
+                    max-width: 80%;
+                    margin: 0 auto;
+                }
+            }
             &__animation {
                 position: absolute;
                 top: 6%;
@@ -36,21 +51,29 @@
                 background-size: cover;
             }
         }
+
         @include media-query(palm) {
             min-height: 0;
             padding-bottom: 100px;
+        }
+
+        .section__text {
+            max-width: 80%;
+
+            @include media-query(portable) {
+                max-width: none;
+            }
         }
     }
 
     &--webprod-tools {
         @include sneddisTop(-6, 240px, white);
-        padding-top: 0;
-        min-height: 500px;
+        padding: 50px 0 150px;
         &__illustration {
             position: absolute;
-            left: -70px;
+            right: 20px;
             top: -120px;
-            width: 100%;
+            width: 450px;
         }
         @include media-query(palm) {
             min-height: 0;

@@ -52,6 +52,27 @@ h1, h2, h3, h4, h5, h6 {
 
 @include media-query(palm){
     .alpha {
+        font-size: $lap-h1-size;
+    }
+    .beta {
+        font-size: $lap-h2-size;
+    }
+    .gamma {
+        font-size: $lap-h3-size;
+    }
+    .delta {
+        font-size: $lap-h4-size;
+    }
+    .epsilon {
+        font-size: $lap-h5-size;
+    }
+    .zeta {
+        font-size: $lap-h6-size;
+    }
+}
+
+@include media-query(palm){
+    .alpha {
         font-size: $palm-h1-size;
     }
     .beta {
