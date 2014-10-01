@@ -230,11 +230,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             $scope.updateCursorPosition();
 
             $timeout(function() {
-                if ($('html').hasClass('device--ios')) {
-                    $promptInput.width($promptWrapper.width() - $prompt.width() - 14 /* random wtf */);
-                } else {
-                    $promptInput.width($promptWrapper.width() - $prompt.width() - 2 /* random wtf */);
-                }
+                $promptInput.width($promptWrapper.width() - $prompt.width() - 2 /* random wtf */);
             }, 0);
         };
 
