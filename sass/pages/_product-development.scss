@@ -26,7 +26,8 @@
             stroke-dasharray: 1635;
             stroke-dashoffset: 1635;
 
-            .proddev-process.in-view--whole & {
+            .proddev-process.in-view--whole &,
+            .proddev-process.in-view--cover & {
                 @include animation(proddevprocess 1100ms $ease-out-expo 300ms forwards);
             }
         }
@@ -36,7 +37,8 @@
             stroke-dasharray: 1635;
             stroke-dashoffset: 1635;
 
-            .proddev-process.in-view--whole & {
+            .proddev-process.in-view--whole &,
+            .proddev-process.in-view--cover & {
                 @include animation(proddevprocess 3600ms $ease-out-expo 900ms forwards);
             }
         }
@@ -51,7 +53,8 @@
         @include transform-origin(center center);
         @include transform(scale(0));
 
-        .proddev-process.in-view--whole & {
+        .proddev-process.in-view--whole &,
+        .proddev-process.in-view--cover & {
             @include animation(processpoint 300ms linear forwards);
 
             &--2 { @include animation-delay(253.125ms); }
@@ -84,7 +87,8 @@
 
         opacity: 0;
 
-        .proddev-process.in-view--whole & {
+        .proddev-process.in-view--whole &,
+        .proddev-process.in-view--cover & {
             @include animation(processtep 300ms linear forwards);
 
             &--2 { @include animation-delay(253.125ms); }
@@ -149,12 +153,18 @@
     }
 
     &--proddev-howwework {
-        padding-top: 50px;
-        min-height: 675px;
+        padding-top: 0;
+        height: 675px;
         background: $color-proddev-pink url(/img/proddev/pink-texture.jpg) no-repeat top center;
         background-size: cover;
         @extend .text--light;
         @include sneddis(-4, 180px, white);
+
+        @include media-query(palm) {
+            padding-top: 50px;
+            height: auto;
+        }
+
         .container {
             z-index: 16;
         }
@@ -171,16 +181,25 @@
 
         &__illustration {
             position: static;
-            max-width: 573px;
+            width: 573px;
+            max-width: none;
+
+            @include media-query(palm) {
+                max-width: 100%;
+            }
+
             &-wrapper {
                 position: absolute;
-                @include transform(translateY(-20%));
+                top: 50%;
+                @include transform(translateY(-50%));
+
                 @include media-query(palm) {
                     @include transform(translateY(0));
                     position: relative;
+                    top: 0;
                     display: block;
                     max-width: 80%;
-                    margin: 0 auto -200px;
+                    margin: 0 auto;
                 }
             }
             &__animation {
@@ -208,6 +227,9 @@
         padding-top: 100px;
         .container {
             z-index: 5;
+        }
+        @include media-query(portable) {
+            padding-top: 75px;
         }
         @include media-query(palm) {
             overflow: hidden;

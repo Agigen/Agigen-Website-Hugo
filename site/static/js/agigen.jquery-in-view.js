@@ -49,7 +49,7 @@
 
         var callback = function() {
             this.each(function() {
-                var inViewTop, inViewBottom,
+                var inViewTop, inViewBottom, coverView,
                     $el = $(this),
                     scrollTop = $(window).scrollTop(),
                     offset = $el.offset();
@@ -60,11 +60,18 @@
                 inViewBottom = offset.top + $el.height() > scrollTop &&
                                offset.top + $el.height() <= scrollTop + window.innerHeight;
 
+                coverView = offset.top <= scrollTop && offset.top + $el.height() >= scrollTop + window.innerHeight;
+
                 if (options.style === 'toggle') {
                     if (inViewTop && inViewBottom) {
                         if (!$el.hasClass('in-view--whole')) {
                             $el.trigger('in-view');
                             $el.addClass('in-view in-view--whole');
+                        }
+                    } else if (coverView) {
+                        if (!$el.hasClass('in-view--cover')) {
+                            $el.trigger('in-view-cover');
+                            $el.addClass('in-view in-view--cover');
                         }
                     } else if (inViewTop || inViewBottom) {
                         if (!$el.hasClass('in-view--partial')) {
@@ -85,6 +92,13 @@
                         }
                         $el.addClass('in-view in-view--whole');
                     }
+
+                    if (coverView) {
+                        if (!$el.hasClass('in-view--cover')) {
+                            $el.trigger('in-view');
+                        }
+                        $el.addClass('in-view in-view--cover');
+                    };
 
                     if (inViewTop || inViewBottom) {
                         if (!$el.hasClass('in-view--partial')) {
