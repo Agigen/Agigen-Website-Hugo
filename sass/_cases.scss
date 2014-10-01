@@ -58,7 +58,7 @@
             margin-bottom: 0;
         }
         .container {
-            margin-top: -140px;
+            margin-top: -130px;
         }
 
         .case__image {
@@ -82,7 +82,6 @@
             padding: 0 0 20px;
             .container {
                 margin-top: -120px;
-
             }
             .case__image-container {
                 width: 264px;
@@ -112,7 +111,7 @@
             position: relative;
             padding-bottom: 20px;
             .case__image {
-                width: 380px;
+                width: 280px;
                 max-width: 80%;
                 @include transition(all 200ms $ease-in-out-cubic);
             }

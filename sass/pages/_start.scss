@@ -153,16 +153,13 @@
         path {
 
             @media only screen and (min-width: 640px) {
-                // @include transition(opacity 450ms ease 2400ms);
                 opacity: 0;
-
-                @at-root .browser-ie & {
-                    // @include transition(opacity 450ms ease 600ms);
-                }
             }
+
         }
 
     }
+
     &__circle {
         position: absolute;
         top: 0;
@@ -171,33 +168,36 @@
         height: 100%;
         width: 100%;
         &__path {
-            @media only screen and (min-width: 640px) {
-                stroke-dasharray: 2299;
-                stroke-dashoffset: 2299;
+            stroke-dasharray: 2299;
+            stroke-dashoffset: 2299;
+        }
 
-                @at-root .browser-ie & {
-                    stroke-dashoffset: 0;
-                }
-            }
+        .browser-ie & {
+            display: none !important;
+        }
 
+        .device--ios & {
+            display: none !important;
         }
 
     }
 
 }
 .animate {
-    @media only screen and (min-width: 640px) {
-        .start-circle__title {
-            @include animation(title-in 1500ms $ease-in-out-quint 2400ms forwards);
-            path {
-                opacity: 1;
-            }
+    .start-circle__title {
+        @include animation(title-in 1500ms $ease-in-out-quint 2400ms forwards);
+        path {
+            opacity: 1;
         }
-        .start-circle__circle__path {
-            @include animation(dash 5000ms $ease-in-out-quint 300ms forwards);
-            // stroke-dashoffset: 0;
-            // opacity: 1;
+
+        .device--ios & {
+            @include animation-delay(500ms);
         }
+    }
+    .start-circle__circle__path {
+        @include animation(dash 5000ms $ease-in-out-quint 300ms forwards);
+        // stroke-dashoffset: 0;
+        // opacity: 1;
     }
 }
 
