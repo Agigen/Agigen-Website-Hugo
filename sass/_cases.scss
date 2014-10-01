@@ -43,6 +43,12 @@
             @extend .btn;
             @include btnColors(#fff, #fff);
             color: #444;
+
+
+            .device--touch & {
+                border-color: #222;
+            }
+
             &:hover {
                 background-color: #222;
                 border-color: #222;
