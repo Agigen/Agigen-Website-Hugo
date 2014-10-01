@@ -150,6 +150,10 @@ $samsung-rotate: 0deg;
     }
 }
 
+.device--ios .lax {
+    display: none;
+}
+
 
 .in-view--partial {
 
