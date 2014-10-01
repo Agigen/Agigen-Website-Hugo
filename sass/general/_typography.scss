@@ -1,0 +1,30 @@
+.heading {
+    @extend .alpha;
+    text-transform: uppercase;
+    color: #252525;
+    font-weight: bold;
+
+    &--small {
+        @extend .gamma;
+        text-transform: none;
+        font-weight: 100;
+    }
+}
+
+.intro {
+    @extend .beta;
+    color: #252525;
+    font-weight: 100;
+}
+
+.body {
+    @extend .delta;
+    color: #666;
+}
+
+.label {
+    @extend .epsilon;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+}
