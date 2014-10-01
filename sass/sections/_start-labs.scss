@@ -1,17 +1,11 @@
 .section--labs {
-    @include transition(height 500ms ease);
-    height: 580px;
-
-    &-connected {
-        @include transition(height 500ms ease);
-        height: 1000px;
-    }
 
     @include media-query(palm) {
         height: 340px;
         background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat center 280px;
         background-size: 178px 177px;
     }
+
     padding: 60px 0 0;
     position: relative;
     .container {
@@ -23,15 +17,14 @@
 .computer {
     text-align: left;
     z-index: 5;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
+    position: relative;
     width: 702px;
-    margin-left: -351px;
     height: 706px;
     background: transparent url(/img/start/labs/datta-slacklogo-retina.png) no-repeat top left;
     background-size: 702px 706px;
-    @include transform(translateY(440px));
+    //@include transform(translateY(440px));
+    margin: 0 auto -440px;
+
     @media only screen and (max-width: 640px) {
         display: none;
     }

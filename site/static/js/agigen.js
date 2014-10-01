@@ -389,12 +389,16 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
             if ($scope.scrollback.length === 0) {
                 $('html, body').animate({
-                    scrollTop: $computer.offset().top - 440 - (window.innerHeight - $computer.height()) / 2,
-                    translate: 440,
+                    scrollTop: $computer.closest('.section').offset().top - $('.topbar').height(),
+                    translate: 100,
                 }, {
                     step: function(now, tween) {
                         if (tween.prop == 'translate') {
-                            $computer.css({transform: 'translateY(' + (440 - now) + 'px)'});
+                            // $computer.css({transform: 'translateY(' + (440 - now) + 'px)'});
+                            $computer.css({
+                                marginBottom: ((now/100)*440 - 440),
+                                marginTop: -(now/100)*230
+                            });
                         }
                     },
                     duration: 500
@@ -425,7 +429,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                     $scope.scrollback.push("Oh come on man ;)");
                     return;
                 } else {
-                    if (!run(command)) {
+                    if (run(command) === 127) {
                         $scope.scrollback.push(command + ": command not found");
                     }
                 }
@@ -558,11 +562,11 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
                 r = new RegExp(key);
                 if (r.test(command)) {
                     commands[key](command.match(r));
-                    return true;
+                    return 0;
                 };
             }
 
-            return false;
+            return 127;
         };
 
         keys = {
