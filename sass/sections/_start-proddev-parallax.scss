@@ -6,10 +6,17 @@
 
 $yogobe-rotate: -9deg;
 $billogram-rotate: 12deg;
+$front-scale--proddev: 1.5;
+
 .section--start-proddev {
     @extend .bgcolor--pink;
     .lax {
         @include transform-origin(center bottom);
+
+        &--front {
+            @include transform(scale($front-scale--proddev));
+        }
+
         &__link {
             text-indent: 0px;
             @media only screen and (max-width: 800px) {

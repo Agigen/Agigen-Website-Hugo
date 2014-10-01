@@ -57,12 +57,10 @@
         .case__headline {
             margin-bottom: 0;
         }
-        .container {
-            margin-top: -130px;
-        }
 
         .case__image {
             @include transition(all 200ms $ease-in-out-cubic);
+            @include transform(translate3d(0,0,0));
         }
 
         .case__image__shadow {
@@ -71,21 +69,25 @@
         }
 
         & .case__block-link:hover .case__image {
-            @include transform(translateY(-20px));
-        }
-
-        & .case__block-link:hover .case__image__shadow {
-            @include transform(scale(1.1));
+            @include transform(translate3d(0,-10px,0));
         }
 
         &--billogram {
-            padding: 0 0 20px;
             .container {
-                margin-top: -120px;
+                margin-top: -170px;
+
+                @include media-query (palm) {
+                    margin-top: -130px;
+                }
             }
             .case__image-container {
                 width: 264px;
                 max-width: 70%;
+
+                @include media-query(palm) {
+                    max-width: 50%;
+                }
+
                 position: relative;
                 margin: 0 auto;
                 padding: 0 0 1px 0;
@@ -97,8 +99,9 @@
             .case__image__shadow {
                 width: 100%;
                 position: absolute;
-                bottom: 0;
-                left: 0;
+                bottom: 10%;
+                left: 2%;
+                z-index: -1;
                 @include transform-origin(33.333% 70%);
             }
         }
@@ -109,10 +112,23 @@
             background: #fff;
             z-index: 10;
             position: relative;
-            padding-bottom: 20px;
+
+            .container {
+                margin-top: -130px;
+
+                @include media-query (palm) {
+                    margin-top: -110px;
+                }
+            }
+
             .case__image {
                 width: 280px;
                 max-width: 80%;
+
+                @include media-query(palm) {
+                    max-width: 55%;
+                }
+
                 @include transition(all 200ms $ease-in-out-cubic);
             }
         }

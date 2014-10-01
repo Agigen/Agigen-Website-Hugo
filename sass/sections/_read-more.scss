@@ -28,7 +28,7 @@
 
         color: #999999;
         @include media-query(palm) {
-            font-size: 18px;
+            font-size: $palm-beta-size;
         }
     }
     a {

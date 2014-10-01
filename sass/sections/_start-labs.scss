@@ -1,16 +1,20 @@
 .section--labs {
 
     @include media-query(palm) {
-        height: 340px;
         background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat center 280px;
         background-size: 178px 177px;
     }
 
-    padding: 60px 0 0;
+    padding: 100px 0 0;
     position: relative;
     .container {
         height: 100%;
         position: relative;
+        margin-bottom: 60px;
+    }
+
+    .btn {
+        @include btnColors(white, $color-labs-orange);
     }
 }
 

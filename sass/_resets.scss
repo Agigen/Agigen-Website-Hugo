@@ -50,18 +50,24 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+$palm-alpha-size: 40px;
+$palm-beta-size: 20px;
+$palm-gamma-size: 18px;
+$palm-delta-size: 16px;
+$palm-epsilon-size: 12px;
+
 
 @include media-query(palm){
     .alpha {
-        font-size: 40px;
+        font-size: $palm-alpha-size;
     }
     .beta {
-        font-size: 18px;
+        font-size: $palm-beta-size;
     }
     .epsilon {
-        font-size: 10px;
+        font-size: $palm-epsilon-size;
     }
     .delta {
-        font-size: 16px;
+        font-size: $palm-delta-size;
     }
 }

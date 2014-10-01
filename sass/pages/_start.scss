@@ -298,7 +298,7 @@
             }
             @include media-query(palm){
                 max-width: 80%;
-                font-size: 18px;
+                font-size: $palm-beta-size;
             }
 
         }
@@ -310,14 +310,14 @@
         background: white;
 
         &__ingress {
-            padding: 0 0 60px;
+            margin: 0 auto 80px;
             font-size: 40px;
             @media only screen and (max-width: 1220px) {
                 font-size: 32px;
             }
             @include media-query(palm){
-                padding: 0 0 0 0;
-                font-size: 18px;
+                margin: 0 auto 40px;
+                font-size: $palm-beta-size;
             }
         }
 

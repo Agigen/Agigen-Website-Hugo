@@ -76,7 +76,7 @@
 
 @mixin vhFejk($vh) {
     $i: 2000;
-    @while $i > 400 {
+    @while $i > 500 {
         @media screen and ( max-height: #{$i}px ){
             height: #{$vh/100*$i}px;
         }
@@ -86,7 +86,7 @@
 
 @mixin vhFejkPortable($vh) {
     $i: 2000;
-    @while $i > 400 {
+    @while $i > 500 {
         @media screen and ( max-height: #{$i}px ) and (max-width: $desk-start - 1){
             height: #{$vh/100*$i}px;
         }
