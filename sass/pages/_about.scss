@@ -2,6 +2,7 @@
     background: #ddd url(/img/about/header.jpg) no-repeat top center;
     background-size: cover;
     @include vhFejk(75);
+    @include vhFejkPortable(50);
     .main-header__content {
         position: absolute;
         bottom: 10px;
