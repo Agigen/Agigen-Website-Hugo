@@ -1,8 +1,9 @@
 .section--labs {
 
     @include media-query(palm) {
-        background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat center 280px;
+        background: $color-labs-orange url(/img/start/labs/datta.png) no-repeat center bottom -100px;
         background-size: 178px 177px;
+        padding-bottom: 40px;
     }
 
     padding: 100px 0 0;
