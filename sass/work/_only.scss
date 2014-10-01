@@ -1,6 +1,10 @@
 .content--page-work {
     .work__header-image--only {
         max-width: 640px;
+
+        @media only screen and (max-width: 1180px) {
+            max-width: 64%;
+        }
     }
 
     .work {

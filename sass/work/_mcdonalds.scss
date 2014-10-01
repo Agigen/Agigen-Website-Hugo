@@ -9,7 +9,11 @@
 
 .content--page-work  {
     .work__header-image--mcdonalds {
-        width: 460px;
+        max-width: 460px;
+
+        @media only screen and (max-width: 1180px) {
+            max-width: 46%;
+        }
     }
 
     .work__section--mcdonalds--three-points {

@@ -3,13 +3,11 @@ $samsung-case-color: #F6C365;
     .main-header {
         background-color: #333;
         background-image: url(/img/work/case/samsung/header.jpg);
+        background-position: center bottom;
     }
 }
 .content--page-work {
 
-    .work__header-image--samsung {
-        margin-top: -110px;
-    }
     .work__section {
         &--samsung {
             &--three-points {

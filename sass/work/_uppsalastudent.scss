@@ -9,8 +9,11 @@
 
 .content--page-work  {
     .work__header-image--uppsalastudent {
-        width: 680px;
-        max-width: 60%;
+        max-width: 680px;
+
+        @media only screen and (max-width: 1180px) {
+            max-width: 68%;
+        }
     }
     .work__divider--uppsalastudent {
         background: #f8f8f6 url(/img/work/case/uppsalastudent/objects-bg-tile.jpg) repeat top center;
