@@ -337,7 +337,7 @@
         @include transform(translate3d(0,0,0));
 
         position: relative;
-        @include media-query(palm){
+        @include media-query(portable){
             background-image: url(/img/start/webprod/mobile-bg.jpg);
             background-size: cover;
             background-repeat: no-repeat;
@@ -357,7 +357,7 @@
     }
 
     &--start-proddev {
-        @include media-query(palm){
+        @include media-query(portable){
             background-image: url(/img/start/proddev/mobile-bg.jpg);
             padding-bottom: 180px;
         }
