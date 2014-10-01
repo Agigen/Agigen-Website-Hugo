@@ -97,14 +97,22 @@
         }
         &--samsung {
             padding: 10px 0 60px;
+            @include media-query(portable) {
+                padding: 100px 0 0px;
+            }
             .container {
                 z-index: 3;
             }
             &__illustration {
-                padding-top: 140px;
-                max-width: 90%;
+                @include media-query(desk){
+                    padding-top: 140px;
+                    max-width: 90%;
+                }
+                @include media-query(portable) {
+                    max-width: 50%;
+                    padding-top: 30px;
+                }
             }
-
             @include media-query(palm) {
                 padding-bottom: 150px;
             }
@@ -113,6 +121,10 @@
             @include sneddisTop(-3.5, 150px);
             padding-top: 0;
             padding-bottom: 0;
+
+            @include media-query(portable) {
+                padding: 100px 0 0px;
+            }
             background: #f0f0f0;
             .container {
                 top: -60px;
@@ -121,6 +133,10 @@
             &__illustration {
                 padding-bottom: 20px;
                 max-width: 86%;
+                @include media-query(portable) {
+                    max-width: 50%;
+                    padding-top: 30px;
+                }
             }
 
             @include media-query(palm) {
@@ -134,6 +150,11 @@
                 position: relative;
                 right: 16%;
                 max-width: 113%;
+                @include media-query(portable) {
+                    position: static;
+                    max-width: 70%;
+                    padding-top: 30px;
+                }
             }
 
             @include media-query(palm) {

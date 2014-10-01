@@ -47,6 +47,11 @@
                 background-color: #222;
                 border-color: #222;
             }
+
+            @include media-query(palm) {
+                margin-top: 10px;
+                border-color: #666;
+            }
         }
         .case__title {
             line-height: 100%;
