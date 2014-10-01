@@ -164,7 +164,7 @@
 
         &:after, & + .section {
             z-index: 15;
-            @include media-query(lap-and-up) {
+            @include media-query(desk) {
                 padding-top: 240px;
             }
         }
