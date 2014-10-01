@@ -393,15 +393,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
             if ($scope.scrollback.length === 0) {
                 $('html, body').animate({
-                    scrollTop: $computer.closest('.section').offset().top - $('.topbar').height(),
+                    scrollTop: $computer.offset().top - (window.innerHeight - $computer.height()) / 2 - $('.topbar').height(),
                     translate: 100,
                 }, {
                     step: function(now, tween) {
                         if (tween.prop == 'translate') {
                             // $computer.css({transform: 'translateY(' + (440 - now) + 'px)'});
                             $computer.css({
-                                marginBottom: ((now/100)*440 - 440),
-                                marginTop: -(now/100)*230
+                                marginBottom: ((now/100)*440 - 440)
                             });
                         }
                     },
