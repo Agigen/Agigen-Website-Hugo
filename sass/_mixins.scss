@@ -84,3 +84,13 @@
     }
 }
 
+@mixin vhFejkPortable($vh) {
+    $i: 2000;
+    @while $i > 400 {
+        @media screen and ( max-height: #{$i}px ) and (max-width: $desk-start - 1){
+            height: #{$vh/100*$i}px;
+        }
+        $i: $i - 100;
+    }
+}
+
