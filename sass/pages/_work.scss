@@ -4,10 +4,12 @@
 
     @media only screen and (max-height: 900px) {
         padding: 80px;
+        .beta {
+
+            font-size: 26px;
+        }
     }
-    .beta {
-        font-size: 26px;
-    }
+
 }
 
 .awards-list {
