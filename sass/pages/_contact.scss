@@ -160,7 +160,7 @@
         left: 130px;
         width: 162px;
         height: auto;
-        @include media-query(palm) {
+        @include media-query(portable) {
             top: -120px;
             left: 50%;
             margin-left: -81px;

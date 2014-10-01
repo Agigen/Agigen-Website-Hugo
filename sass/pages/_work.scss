@@ -190,6 +190,10 @@
             @include media-query(palm){
                 padding-top: 30px;
             }
+            @include media-query(lap) {
+                padding-top: 30px;
+                max-width: 70%;
+            }
         }
         .btn {
             @include btnColors(white, #2e92c4);
@@ -227,6 +231,11 @@
         .container {
             z-index: 10;
         }
+        &__illustration {
+            @include media-query(lap) {
+                max-width: 70%;
+            }
+        }
     }
 
     &--billogram {
@@ -235,6 +244,9 @@
         padding: 0 0 60px;
         &__illustration {
             max-width: 88.5%;
+            @include media-query(lap) {
+                max-width: 70%;
+            }
         }
         .case--list__contentwrapper {
             top: -20px;
