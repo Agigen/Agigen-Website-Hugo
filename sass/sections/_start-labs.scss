@@ -79,6 +79,11 @@
 
         color: transparent;
         text-shadow: 0 0 0 #0f0;
+
+        .device--ios & {
+            color: #0f0;
+            text-shadow: none;
+        }
     }
 
     &__prompt-wrapper {
@@ -99,6 +104,10 @@
 
         input:focus + & {
             display: inline-block;
+        }
+
+        .device--ios & {
+            display: none !important;
         }
     }
 }

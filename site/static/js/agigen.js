@@ -230,7 +230,11 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             $scope.updateCursorPosition();
 
             $timeout(function() {
-                $promptInput.width($promptWrapper.width() - $prompt.width() - 2 /* random wtf */);
+                if ($('html').hasClass('device--ios')) {
+                    $promptInput.width($promptWrapper.width() - $prompt.width() - 14 /* random wtf */);
+                } else {
+                    $promptInput.width($promptWrapper.width() - $prompt.width() - 2 /* random wtf */);
+                }
             }, 0);
         };
 
@@ -783,6 +787,10 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
     $(document).one('touchstart.touchdetect', function() {
         $('html').addClass('touch-device');
     });
+
+    if (/ip(ad|hone|od)/gi.test(navigator.userAgent)) {
+        $('html').addClass('device device--ios');
+    }
 
     $('.animate--in-view').inView({style: 'sticky'});
 }(jQuery, window));
