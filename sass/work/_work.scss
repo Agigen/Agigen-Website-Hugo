@@ -38,7 +38,7 @@
                 font-weight: 100;
                 line-height: 125%;
                 @include media-query(palm) {
-                    font-size: $palm-beta-size;
+                    font-size: $palm-h2-size;
                 }
             }
             .btn {
@@ -164,7 +164,7 @@
                 &__copy {
                     @extend .kilo;
                     @include media-query(palm){
-                        font-size: $palm-beta-size;
+                        font-size: $palm-h2-size;
                     }
                 }
             }

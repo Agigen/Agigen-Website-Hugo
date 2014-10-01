@@ -50,24 +50,23 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-$palm-alpha-size: 40px;
-$palm-beta-size: 20px;
-$palm-gamma-size: 18px;
-$palm-delta-size: 16px;
-$palm-epsilon-size: 12px;
-
-
 @include media-query(palm){
     .alpha {
-        font-size: $palm-alpha-size;
+        font-size: $palm-h1-size;
     }
     .beta {
-        font-size: $palm-beta-size;
+        font-size: $palm-h2-size;
     }
-    .epsilon {
-        font-size: $palm-epsilon-size;
+    .gamma {
+        font-size: $palm-h3-size;
     }
     .delta {
-        font-size: $palm-delta-size;
+        font-size: $palm-h4-size;
+    }
+    .epsilon {
+        font-size: $palm-h5-size;
+    }
+    .zeta {
+        font-size: $palm-h6-size;
     }
 }
