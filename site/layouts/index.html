@@ -51,15 +51,17 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
 
 </section>
 
-<a class="case case--fullwidth case--fullwidth--samsung case--webprod" title="Web development case: Samsung - You need to see this app" href="/work/samsung-youneedtoseethis/">
+<div class="case case--fullwidth case--fullwidth--samsung case--webprod">
     <div class="container">
-        <h3 class="visuallyhidden">Web development case</h3>
-        <img src="/img/start/webprod/samsung-tab-s.png" class="case__image">
-        <h1 class="case__title">Samsung - You need to see this app</h1>
-        <p class="case__headline">Displaying 4954406991 pixels on a 320x568px screen.</p>
-        <button class="case__cta">View case</button>
+        <a href="/work/samsung-youneedtoseethis/" title="Web development case: Samsung - You need to see this app" class="case__block-link">
+            <h3 class="visuallyhidden">Web development case</h3>
+            <img src="/img/start/webprod/samsung-tab-s.png" class="case__image">
+            <h1 class="case__title">Samsung - You need to see this app</h1>
+            <p class="case__headline">Displaying 4954406991 pixels on a 320x568px screen.</p>
+            <button class="case__cta">View case</button>
+        </a>
     </div>
-</a>
+</div>
 
 
 <section class="section section--center-content section--start section--start-proddev animate--in-view"
@@ -98,24 +100,28 @@ ng-controller="parallaxCtrl" ng-mousemove="updateParallax($event)">
 
 </section>
 
-<a class="case case--fullwidth case--fullwidth--billogram case--proddev" href="/work/billogram" title="Product development case: Billogram">
+<div class="case case--fullwidth case--fullwidth--billogram case--proddev">
     <div class="container">
-        <h3 class="visuallyhidden">Product development case</h3>
-        <figure class="case__image-container">
-            <img src="/img/start/proddev/start-billogram.png" class="case__image">
-            <img src="/img/start/proddev/billogram-shadow.png" class="case__image__shadow" width="264" height="28">
-        </figure>
-        <h1 class="case__title">Billogram</h1>
-        <p class="case__headline">Invoicing on the fly - in the cloud.</p>
-        <button class="case__cta">View case</button>
+        <a href="/work/billogram" title="Product development case: Billogram" class="case__block-link">
+            <h3 class="visuallyhidden">Product development case</h3>
+            <figure class="case__image-container">
+                <img src="/img/start/proddev/start-billogram.png" class="case__image">
+                <img src="/img/start/proddev/billogram-shadow.png" class="case__image__shadow" width="264" height="28">
+            </figure>
+            <h1 class="case__title">Billogram</h1>
+            <p class="case__headline">Invoicing on the fly - in the cloud.</p>
+            <button class="case__cta">View case</button>
+        </a>
     </div>
-</a>
+</div>
 
 <section class="section section--labs text--light">
     <div class="container text--center">
         <h2 class="section--start__title">Labs</h2>
         <p class="delta">Our playground where we try out new tech and broaden our expertise.</p>
-        <a href="/services/labs" class="btn btn--large">Get inspired</a>
+        <p>
+            <a href="/services/labs" class="btn btn--large">Get inspired</a>
+        </p>
     </div>
 
     <div class="computer" ng-controller="chatCtrl" ng-cloak title="Chat with us - Powered by Slack.com">

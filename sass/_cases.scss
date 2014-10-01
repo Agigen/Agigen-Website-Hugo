@@ -2,6 +2,10 @@
     padding: 50px 0;
     display: block;
 
+    &__block-link {
+        display: inline-block;
+    }
+
     &__image {
         display: block;
         margin: 30px auto $base-spacing-unit;
@@ -57,13 +61,21 @@
             margin-top: -140px;
         }
 
-        &:hover {
-            .case__image {
-                @include transform(translateY(-20px));
-            }
-        }
         .case__image {
             @include transition(all 200ms $ease-in-out-cubic);
+        }
+
+        .case__image__shadow {
+            @include transition(all 200ms $ease-in-out-cubic);
+            @include transform-origin(center center);
+        }
+
+        & .case__block-link:hover .case__image {
+            @include transform(translateY(-20px));
+        }
+
+        & .case__block-link:hover .case__image__shadow {
+            @include transform(scale(1.1));
         }
 
         &--billogram {
@@ -103,6 +115,7 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                @include transform-origin(33.333% 70%);
             }
         }
 
