@@ -45,6 +45,10 @@
             display: none;
         }
     }
+
+    .device--ios & {
+        background-position: top center !important;
+    }
 }
 
 .cloud-wrapper {
