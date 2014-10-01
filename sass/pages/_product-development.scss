@@ -336,6 +336,10 @@
             &__illustration {
 
                 max-width: 86%;
+                @include media-query(portable) {
+                    width: 50%;
+                    padding-top: 30px;
+                }
             }
             .container {
                 z-index: 3;
@@ -346,21 +350,17 @@
             }
         }
         &--yogobe {
-            &__content {
-                @include media-query(lap-and-up) {
-                    padding-left: 50px;
-                }
-            }
             background: #f0f0f0;
             @include sneddisTop(-3.5, 150px);
             padding-top: 30px;
             padding-bottom: 90px;
 
-            @include media-query(palm){
-                .grid__item {
-                    text-align: center;
+            &__content {
+                @include media-query(desk) {
+                    padding-left: 50px;
                 }
             }
+
             .container {
                 z-index: 5;
             }
@@ -368,7 +368,12 @@
                 max-width: 110%;
                 position: relative;
                 left: -15%;
-
+                @include media-query(portable) {
+                    left: auto;
+                    position: static;
+                    width: 65%;
+                    padding-top: 30px;
+                }
 
             }
             &__illustration-container {
@@ -392,6 +397,10 @@
                     margin: 30px auto;
                     width: 80%;
                     display: block;
+                }
+                @include media-query(portable) {
+                    width: 50%;
+                    padding-top: 30px;
                 }
             }
 

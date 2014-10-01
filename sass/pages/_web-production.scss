@@ -97,6 +97,9 @@
         }
         &--samsung {
             padding: 10px 0 60px;
+            @include media-query(portable) {
+                padding: 100px 0 0px;
+            }
             .container {
                 z-index: 3;
             }
@@ -107,6 +110,7 @@
                 }
                 @include media-query(portable) {
                     max-width: 50%;
+                    padding-top: 30px;
                 }
             }
             @include media-query(palm) {
@@ -117,6 +121,10 @@
             @include sneddisTop(-3.5, 150px);
             padding-top: 0;
             padding-bottom: 0;
+
+            @include media-query(portable) {
+                padding: 100px 0 0px;
+            }
             background: #f0f0f0;
             .container {
                 top: -60px;
@@ -127,6 +135,7 @@
                 max-width: 86%;
                 @include media-query(portable) {
                     max-width: 50%;
+                    padding-top: 30px;
                 }
             }
 
@@ -142,7 +151,9 @@
                 right: 16%;
                 max-width: 113%;
                 @include media-query(portable) {
-                    max-width: 50%;
+                    position: static;
+                    max-width: 70%;
+                    padding-top: 30px;
                 }
             }
 
