@@ -174,9 +174,7 @@
 
         &:after, & + .section {
             z-index: 15;
-            @include media-query(desk) {
-                padding-top: 240px;
-            }
+
         }
 
         &__illustration {
@@ -222,68 +220,6 @@
         }
     }
 
-    &--proddev-team {
-        background-color: white;
-        padding-top: 100px;
-        .container {
-            z-index: 5;
-        }
-        @include media-query(portable) {
-            padding-top: 75px;
-        }
-        @include media-query(palm) {
-            overflow: hidden;
-        }
-        &__illustration {
-            position: static;
-            max-width: 100% !important;
-            z-index: 3;
-            height: auto;
-            &-wrapper {
-                position: absolute;
-                top: 50%;
-                @include transform(translateY(-50%));
-
-                @include media-query(palm) {
-                    position: relative;
-                    display: block;
-                    max-width: 80%;
-                    top: 0;
-                    left: 0;
-                    @include transform(translateY(0));
-                    margin: 0 auto -200px;
-                }
-            }
-            &__animation {
-                position: absolute;
-                z-index: 2;
-                background: transparent url() no-repeat 0px 0px;
-                background-size: contain;
-                &--phone {
-                    z-index: -1;
-                    top: 26.9%;
-                    left: 5.6%;
-                    right: 41%;
-                    bottom: 10.7%;
-                    background-image: url(/img/proddev/iphonealert.gif);
-                }
-                &--coffee {
-                    background-image: url(/img/proddev/coffee.gif);
-
-                    top: 10.5%;
-                    left: 63.6%;
-                    right: 11%;
-                    bottom: 64%;
-                }
-            }
-        }
-
-        @include media-query(palm){
-            padding-top: 0px;
-        }
-    }
-
-
     &--contact {
         min-height: 450px;
         background-size: cover;
@@ -302,6 +238,10 @@
                 font-size: 20px;
             }
         }
+    }
+
+    &--proddev-team {
+        padding-top: 50px;
     }
 
     &--proddev-contact {
