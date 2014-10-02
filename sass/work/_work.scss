@@ -171,26 +171,6 @@
                 }
             }
 
-            &--sj {
-                &--three-points {
-                    background: #e5e5e5;
-                    color: #000;
-                }
-                &__divider {
-                    margin-top: 120px;
-                    background: #E33086;
-                    height: 260px;
-                    margin-bottom: 100px;
-                    &__image {
-                        position: relative;
-                        z-index: 5;
-                        top: -100px;
-                        width: 560px;
-                        max-width: 50%;
-                        margin: 0 auto;
-                    }
-                }
-            }
             &--carlsberg {
                 &--video {
                     background: #321651 url(/img/work/case/carlsberg/video-bg.jpg) no-repeat top center;
@@ -230,15 +210,16 @@
     }
 }
 
-@import "work/build-with-chrome";
-@import "work/hobbit";
-@import "work/billogram";
-@import "work/yogobe";
 @import "work/bigblog";
-@import "work/samsung";
-@import "work/uppsalastudent";
+@import "work/billogram";
+@import "work/build-with-chrome";
 @import "work/ericsson";
+@import "work/hobbit";
 @import "work/mcdonalds";
 @import "work/minicooper";
 @import "work/only";
+@import "work/samsung";
+@import "work/sj";
+@import "work/uppsalastudent";
+@import "work/yogobe";
 

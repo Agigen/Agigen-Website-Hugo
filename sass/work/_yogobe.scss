@@ -12,7 +12,6 @@
             }
         }
     }
-
 }
 
 .work-video--yogobe {
@@ -22,7 +21,8 @@
 .page--work {
     &--yogobe {
         .main-header {
-            background: #9dd3ed url(/img/work/case/yogobe/yogobe-bg.jpg) no-repeat bottom center;
+            background-color: #9dd3ed;
+            background-image: url(/img/work/case/yogobe/yogobe-bg.jpg);
         }
     }
 }

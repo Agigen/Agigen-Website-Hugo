@@ -1,0 +1,24 @@
+$sj-case-color: #E33086;
+
+.content--page-work {
+    .work__section {
+        &--sj {
+            &--three-points {
+                background: #e5e5e5;
+                color: #000;
+            }
+        }
+    }
+}
+
+.image-wrapper--sj.image-wrapper--strikethrough {
+    &:before {
+        background: $sj-case-color;
+        @include transform(translateY(-48.75%));
+        max-height: 60%;
+    }
+
+    .image {
+        width: 560px;
+    }
+}
