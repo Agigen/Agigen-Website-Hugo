@@ -1,0 +1,30 @@
+.image {
+    max-width: 100% !important;
+    display: inline-block;
+    height: auto;
+
+    &-wrapper {
+
+        &--strikethrough {
+            text-align: center;
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                background: #000;
+                height: 240px;
+                width: 100%;
+
+                max-height: 90%;
+
+                position: absolute;
+                z-index: -1;
+                top: 50%;
+                @include transform(translateY(-50%));
+            }
+
+        }
+
+    }
+}

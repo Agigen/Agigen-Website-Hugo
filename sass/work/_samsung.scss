@@ -1,4 +1,5 @@
 $samsung-case-color: #F6C365;
+
 .page--work--samsung {
     .main-header {
         background-color: #333;
@@ -6,53 +7,31 @@ $samsung-case-color: #F6C365;
         background-position: center bottom;
     }
 }
-.content--page-work {
 
+.content--page-work {
     .work__section {
         &--samsung {
             &--three-points {
                 background: $samsung-case-color;
                 color: #000;
             }
-
-            &__divider {
-                text-align: center;
-                position: relative;
-
-                &:before {
-                    content: "";
-                    display: block;
-                    background: $samsung-case-color;
-                    height: 240px;
-                    width: 100%;
-
-                    max-height: 90%;
-
-                    position: absolute;
-                    z-index: -1;
-                    top: 50%;
-                    @include transform(translateY(-40%));
-                }
-
-                &__image {
-                    max-width: 90%;
-                    display: inline-block;
-                    height: auto;
-                }
-
-                &--city {
-
-                    margin-bottom: 50px;
-
-                    &:before {
-                        height: 340px;
-                        background: #fcfcfc url(/img/work/case/samsung/asset_stockholm_long.jpg) no-repeat top center;
-                        background-size: cover;
-
-                        @include transform(translateY(-51.25%));
-                    }
-                }
-            }
         }
+    }
+}
+
+.image-wrapper--samsung.image-wrapper--strikethrough {
+    &:before {
+        background: $samsung-case-color;
+        @include transform(translateY(-40%));
+        max-height: 60%;
+    }
+}
+
+.image-wrapper--samsung-city.image-wrapper--strikethrough {
+    &:before {
+        height: 340px;
+        background: #fcfcfc url(/img/work/case/samsung/asset_stockholm_long.jpg) no-repeat top center;
+        background-size: cover;
+        @include transform(translateY(-51.25%));
     }
 }
