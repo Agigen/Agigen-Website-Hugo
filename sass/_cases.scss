@@ -60,6 +60,8 @@
             }
         }
         .case__title {
+            @extend .epsilon;
+            color: #444;
             line-height: 100%;
             @include media-query(palm){
                 font-size: 26px;
