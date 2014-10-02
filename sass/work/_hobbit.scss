@@ -18,21 +18,20 @@
         &--grandfinale {
             background: #151d23 url(/img/work/case/hobbit/asset_grandfinale.jpg) no-repeat top center;
         }
-        &__divider {
-            height: 250px;
-            background: #3E4E4D url(/img/work/case/hobbit/asset_divider.jpg) no-repeat top center;
-            background-size: cover;
-            margin-bottom: 120px;
-            &__image {
-                margin: 0 auto;
-                position: relative;
-                top: -70px;
-            }
-        }
     }
 
     .work-video--hobbit {
         background-image: url(/img/work/case/hobbit/asset_moviebg.jpg);
     }
 
+}
+
+.image-wrapper--hobbit.image-wrapper--strikethrough {
+    &:before {
+        background: #3E4E4D url(/img/work/case/hobbit/asset_divider.jpg) no-repeat top center;
+        // @include transform(translateY(10%));
+        top: 45%;
+        max-height: 60%;
+        height: 250px;
+    }
 }
