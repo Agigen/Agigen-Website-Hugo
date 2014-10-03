@@ -364,18 +364,24 @@
     &__content {
         width: 100%;
         position: absolute;
-        top: 30%;
+        top: 33%;
         left: 0;
         z-index: 2;
         @include transition(transform 300ms ease, color 300ms ease);
+        @include media-query(portable){
+            color: white;
+            @include transform(translateY(-30px));
+        }
     }
     .btn {
-        opacity: 0;
-        @include transform(translateY(-30px));
         @include transition(transform 200ms linear 200ms, opacity 300ms linear 200ms);
+        @include media-query(desk){
+            opacity: 0;
+            @include transform(translateY(-30px));
+        }
     }
     &__hilight {
-        opacity: 0;
+        opacity: 0.6;
         position: absolute;
         top: 0;
         left: 0;
@@ -384,6 +390,9 @@
         background: rgba(0,0,255,1);
         z-index: 1;
         @include transition(opacity 200ms linear);
+        @include media-query(desk){
+            opacity: 0;
+        }
     }
 
     &__title {
