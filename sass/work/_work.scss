@@ -19,14 +19,13 @@
         &__header-image {
             display: block;
             margin: 0 auto;
-            max-width: 500px;
             z-index: 5;
-
-            @media only screen and (max-width: 1180px) {
-                max-width: 50%;
+            max-width: 70%;
+            margin-top: -25%;
+            @include media-query(desk){
+                max-width: 500px;
+                margin-top: -20%;
             }
-
-            margin-top: -10%;
         }
         &__tldr {
             &__pretitle {
