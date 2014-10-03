@@ -149,8 +149,9 @@ $standard_delay: 350ms;
 
         &--between-points {
             height: 200px;
-            @media only screen and (max-height: 900px) {
-                height: 100px;
+
+            @include media-query(portable) {
+                height: 50px;
             }
             @include media-query(palm) {
                 display: none;
