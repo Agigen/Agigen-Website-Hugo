@@ -35,8 +35,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                 $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (70)));
             } else {
-                $topbar.css({
-                    paddingTop: 10
+                $topbarWrapper.css({
+                    paddingTop: 0
                 });
                 $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (60)));
             }

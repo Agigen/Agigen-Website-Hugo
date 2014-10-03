@@ -35,7 +35,6 @@ $topbar-404-filled-color:     #fff;
 
     @include media-query(palm){
         opacity: 0.9;
-        padding-top: 10px;
         .container {
             width: 90%;
         }
