@@ -3,6 +3,7 @@
     background-size: cover;
     @include vhFejk(75);
     @include vhFejkPortable(50);
+    @include vhFejkPalm(40);
     .main-header__content {
         position: absolute;
         bottom: 10px;
@@ -26,11 +27,24 @@
         background: #db0158 url(/img/about/about-office-bg.jpg) no-repeat top center;
         background-size: cover;
         padding-bottom: 300px;
+        @include media-query(portable){
+            padding-bottom: 160px;
+            background-position: bottom center;
+        }
+        @include media-query(palm){
+            padding-bottom: 120px;
+        }
     }
     &--about-divider-love {
         background: #2e3e40 url(/img/about/about-love.jpg) no-repeat top center;
         background-size: cover;
         padding: 240px 0;
+        @include media-query(portable) {
+            padding: 180px 0;
+        }
+        @include media-query(palm) {
+            padding: 50px 0;
+        }
     }
     &--big-ideas {
         background: white;
@@ -39,9 +53,23 @@
         }
         @include sneddisTop(-6, 240px);
         padding-top: 50px;
+        @include media-query(portable){
+            &:after {
+                top: -80px;
+            }
+            padding: 0;
+        }
+        @include media-query(lap){
+            padding-top: 30px;
+        }
     }
     &--about-team {
         padding-top: 0;
+    }
+    &--about-gallery {
+        @include media-query(palm) {
+            padding-bottom: 10px;
+        }
     }
 }
 
@@ -49,7 +77,9 @@
 .team-member {
     text-align: center;
     padding-top: 70px;
-
+    @include media-query(palm) {
+        padding-top: 50px;
+    }
     // opacity: 0;
     @include transition(opacity 500ms ease 200ms);
     &.in-view--partial {
@@ -69,8 +99,13 @@
         display: block;
         margin: 0 auto;
         position: relative;
-
         margin-bottom: $base-spacing-unit;
+        @include media-query(palm){
+            margin-bottom: 15px;
+            width: 85%;
+            padding-bottom: 85%;
+        }
+
         img {
             display: block;
             width: 100%;
@@ -91,6 +126,8 @@
     &__name {
         text-align: center;
         box-sizing: content-box;
+        line-height: 125%;
+
         span {
             font-size: 16px;
             font-weight: bold;
@@ -111,11 +148,16 @@
         }
     }
     &__title {
-        padding-top: 5px;
+        padding-top: 10px;
         color: #656565;
         font-size: 20px;
         font-weight: 100;
         color: #676767;
+        line-height: 125%;
+
+        @include media-query(palm) {
+            font-size: 16px;
+        }
     }
 }
 
