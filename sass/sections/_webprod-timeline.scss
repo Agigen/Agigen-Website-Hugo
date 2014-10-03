@@ -5,15 +5,26 @@ $time_pt_3: 200ms;
 $standard_delay: 350ms;
 .webprod-process {
     font-size: 20px;
+    @include media-query(palm) {
+        font-size: 16px;
+    }
+
+
     color: #878787;
     &__timeline {
         width: 90%;
         max-width: 600px;
         margin: 100px auto;
+        @include media-query(palm){
+            margin: 0 auto;
+            max-width: 90%;
+        }
     }
     &__illustration {
         height: 200px;
-
+        @include media-query(palm) {
+            height: auto;
+        }
 
         &__dot {
             display: block;
@@ -53,6 +64,17 @@ $standard_delay: 350ms;
                 @include transition(height $time_pt_2 linear $time_pt_1+$time_pt_2);
             }
 
+            @include media-query(palm) {
+                height: auto;
+                margin-bottom: 0;
+                padding: 0 20px;
+                .webprod-process__illustration__dot,
+                .webprod-process__illustration__line--1 ,
+                .webprod-process__illustration__line--2 ,
+                .webprod-process__illustration__line--3 {
+                    display: none;
+                }
+            }
 
             &.in-view--whole {
                 .webprod-process__illustration__dot {
@@ -94,6 +116,15 @@ $standard_delay: 350ms;
                 opacity: 0;
             }
 
+            @include media-query(palm) {
+                height: auto;
+                margin-bottom: 0;
+                .webprod-process__illustration__line--1 ,
+                .webprod-process__illustration__line--2 {
+                    display: none;
+                }
+            }
+
             &.in-view--whole {
                 .webprod-process__illustration__dot {
                     @include animation(popin 200ms linear $standard_delay+$time_pt_1+$time_pt_3 forwards);
@@ -116,6 +147,9 @@ $standard_delay: 350ms;
             height: 200px;
             @media only screen and (max-height: 900px) {
                 height: 100px;
+            }
+            @include media-query(palm) {
+                display: none;
             }
 
             .webprod-process__illustration__line {
@@ -144,13 +178,18 @@ $standard_delay: 350ms;
         &--5 {
             p {
                 padding-bottom: 130px;
+                @include media-query(palm) {
+                    padding-bottom: 20px;
+                }
             }
         }
         &.animate--in-view {
             p {
-                opacity: 0;
-                @include transform(translateY(-30%));
-                @include transition(opacity 300ms linear 500ms, transform 300ms linear 500ms);
+                @include media-query(lap-and-up){
+                    opacity: 0;
+                    @include transform(translateY(-30%));
+                    @include transition(opacity 300ms linear 500ms, transform 300ms linear 500ms);
+                }
             }
         }
         &.animate--in-view.in-view--whole {
@@ -168,6 +207,12 @@ $standard_delay: 350ms;
             position: relative;
             margin: 0;
             padding: 0 0 0 80px;
+            @include media-query(palm) {
+                padding: 60px 20px 0;
+                text-align: left;
+                font-size: 16px;
+            }
+
             &:before , &:after {
                 content: " ";
                 display: block;
@@ -182,6 +227,9 @@ $standard_delay: 350ms;
                 height: 0%;
                 @include transition(height 300ms linear $standard_delay);
                 background: #00c6ff;
+                @include media-query(palm) {
+                    display: none;
+                }
             }
             &:after {
                 top: -2px;
@@ -191,6 +239,11 @@ $standard_delay: 350ms;
                 background: transparent url(/img/webprod/dot.svg) no-repeat top left;
                 opacity: 0;
                 @include transform(scale(0.2));
+                @include media-query(palm) {
+                    top: 0;
+                    left: 50%;
+                    margin-left: -22px;
+                }
             }
             &.in-view--partial {
                 &:after {
@@ -213,6 +266,10 @@ $standard_delay: 350ms;
             margin: 0 auto;
             max-width: 600px;
             text-align: center;
+            @include media-query(palm) {
+                text-align: left;
+                padding: 0 20px;
+            }
         }
     }
 }

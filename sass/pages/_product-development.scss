@@ -241,7 +241,9 @@
     }
 
     &--proddev-team {
-        padding-top: 50px;
+        @include media-query(palm){
+            padding-top: 0px;
+        }
     }
 
     &--proddev-contact {
