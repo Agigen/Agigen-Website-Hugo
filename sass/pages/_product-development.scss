@@ -89,17 +89,21 @@
             }
         }
 
-        opacity: 0;
+        @include media-query(desk) {
+            opacity: 0;
+        }
 
         .proddev-process.in-view--whole &,
         .proddev-process.in-view--cover & {
-            @include animation(processtep 300ms linear forwards);
+            @include media-query(desk) {
+                @include animation(processtep 300ms linear forwards);
 
-            &--2 { @include animation-delay(253.125ms); }
-            &--3 { @include animation-delay(337.5ms); }
-            &--4 { @include animation-delay(450ms); }
-            &--5 { @include animation-delay(600ms); }
-            &--6 { @include animation-delay(800ms); }
+                &--2 { @include animation-delay(253.125ms); }
+                &--3 { @include animation-delay(337.5ms); }
+                &--4 { @include animation-delay(450ms); }
+                &--5 { @include animation-delay(600ms); }
+                &--6 { @include animation-delay(800ms); }
+            }
         }
 
         &--1 {
@@ -143,9 +147,6 @@
             .lap-breaker {
                 display: none;
             }
-        }
-        @include media-query(palm){
-            opacity: 1;
         }
     }
 }
