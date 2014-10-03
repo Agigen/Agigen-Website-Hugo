@@ -154,13 +154,6 @@
                        left: 10px;
                     }
                 }
-
-                @include media-query(palm) {
-                    .grid__item {
-                        padding-bottom: 30px;
-                    }
-                    padding-bottom: 70px;
-                }
             }
 
             &__tech-img {
