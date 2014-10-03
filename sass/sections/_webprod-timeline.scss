@@ -28,9 +28,11 @@ $standard_delay: 350ms;
 
         &__dot {
             display: block;
-            @include transform(scale(0.2));
-            opacity: 0;
             margin: 0 auto;
+            @include media-query(lap-and-up) {
+                @include transform(scale(0.2));
+                opacity: 0;
+            }
         }
         &__line {
             width: 3px;
@@ -127,7 +129,9 @@ $standard_delay: 350ms;
 
             &.in-view--whole {
                 .webprod-process__illustration__dot {
-                    @include animation(popin 200ms linear $standard_delay+$time_pt_1+$time_pt_3 forwards);
+                    @include media-query(lap-and-up){
+                        @include animation(popin 200ms linear $standard_delay+$time_pt_1+$time_pt_3 forwards);
+                    }
                 }
                 .webprod-process__illustration__line--1 {
                     width: 50%;
@@ -237,8 +241,11 @@ $standard_delay: 350ms;
                 width: 44px;
                 height: 44px;
                 background: transparent url(/img/webprod/dot.svg) no-repeat top left;
-                opacity: 0;
-                @include transform(scale(0.2));
+
+                @include media-query(lap-and-up){
+                    @include transform(scale(0.2));
+                    opacity: 0;
+                }
                 @include media-query(palm) {
                     top: 0;
                     left: 50%;
