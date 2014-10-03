@@ -54,7 +54,7 @@ html.menu-open {
     &__grid {
         margin: 0 auto;
         max-width: 1000px;
-        width: 80%;
+        width: 90%;
         opacity: 0;
         // @include transform-origin(right top);
         // @include transform(skew(90deg));
@@ -102,8 +102,10 @@ html.menu-open {
         display: block;
         color: $main-menu-fontcolor;
         text-decoration: none;
-        line-height: 200%;
+        line-height: 1.2;
         font-size: 50px;
+
+        padding: 0.4em 0;
 
         @include transition(color 200ms ease);
 
@@ -117,7 +119,7 @@ html.menu-open {
         }
 
         @include media-query(palm){
-            font-size: 24px;
+            font-size: 22px;
         }
 
         &--main {
@@ -153,15 +155,14 @@ html.menu-open {
         display: block;
         //border-top: 1px #464646 solid;
         @extend .epsilon;
-        margin-top: 15px;
-        padding-top: 30px;
-        line-height: 200%;
+
+        padding-top: 45px;
+        line-height: 1;
+        margin-bottom: 0;
 
         @include media-query(palm){
             font-size: 9px;
             padding-top: 10px;
-            padding-bottom: 0px;
-            margin-top: 5px;
         }
 
     }
