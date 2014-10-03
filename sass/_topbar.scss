@@ -5,6 +5,7 @@ $topbar-filled-color:         #222;
 $topbar-webprod-filled-color: #222;
 $topbar-proddev-filled-color: #222;
 $topbar-labs-filled-color:    #222;
+$topbar-404-filled-color:     #fff;
 
 
 // $topbar-filled-color:         #ff0066;
@@ -77,6 +78,10 @@ $topbar-labs-filled-color:    #222;
 
                 .page--services--labs & {
                     fill: $topbar-labs-filled-color;
+                }
+
+                .page--404-page-not-found & {
+                    fill: $topbar-404-filled-color;
                 }
             }
 
@@ -158,6 +163,10 @@ $topbar-labs-filled-color:    #222;
                     .page--services--labs & {
                         background-color: $topbar-labs-filled-color;
                     }
+
+                    .page--404-page-not-found & {
+                        background-color: $topbar-404-filled-color;
+                    }
                 }
 
                 .menu-expanded & {
@@ -227,6 +236,10 @@ $topbar-labs-filled-color:    #222;
 
     &--filled {
         background: #fff;
+
+        .page--404-page-not-found & {
+            background: transparent;
+        }
     }
 
     &.menu-expanded {

@@ -1,0 +1,38 @@
+.page--404-page-not-found {
+    background: #252525;
+    color: #ffffff;
+
+    .page__ingress {
+        @extend .label;
+        color: #fff;
+    }
+
+    .page__title {
+        @extend .heading;
+        color: #fff;
+
+        // special case since '404' is so short
+        font-size: 200px;
+    }
+}
+
+.section--404 {
+    padding: 150px 0;
+}
+
+
+.fearless-panda--404-page-not-found {
+    background: #212121;
+
+    margin-bottom: 80px;
+
+    .fearless-panda__copy {
+        color: #ffffff;
+    }
+
+    .fearless-panda__btn {
+        @include btnColors(#212121, #fff);
+        background: #fff;
+        border-color: #fff;
+    }
+}
