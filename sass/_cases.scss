@@ -233,6 +233,11 @@
             &:hover {
                 background: #60b3b0;
             }
+            .btn {
+                @include media-query(palm){
+                    margin-bottom: -20px;
+                }
+            }
         }
 
         @include media-query(portable) {
