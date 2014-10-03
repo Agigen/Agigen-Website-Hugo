@@ -55,7 +55,7 @@
             }
 
             @include media-query(palm) {
-                margin-top: 10px;
+                margin-top: 20px;
                 border-color: #666;
             }
         }
@@ -153,6 +153,11 @@
         border-bottom: 5px #d8d8d8 solid;
         padding: 0;
         position: relative;
+
+        .btn {
+            @include btnColors(#fff, #fff);
+            margin: 20px 0 0;
+        }
 
         .container {
             position: relative;
