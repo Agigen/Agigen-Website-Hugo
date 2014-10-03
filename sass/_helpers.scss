@@ -55,6 +55,19 @@
     &--tight {
         max-width: 720px
     }
+
+    @include media-query(portable){
+       &--tight {
+           max-width: 70%;
+       }
+       width: 85%;
+    }
+    @include media-query(palm){
+        width: 80%;
+        &--tight {
+            max-width: 80%;
+        }
+    }
 }
 
 .grid {
@@ -115,8 +128,8 @@
         font-size: 12px;
         letter-spacing: 1px;
         margin: 5px;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
     }
 
     &--large {
