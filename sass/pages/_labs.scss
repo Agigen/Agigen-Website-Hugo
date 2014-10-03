@@ -1,8 +1,19 @@
 .page {
-    &--labs {
+    &--agigen-labs {
         .main-header {
-            background: $color-labs-orange;
+            background-color: $color-labs-orange;
+            background-image: url(/img/labs/top-bg.jpg);
             @include vhFejk(50);
         }
     }
+}
+
+.section {
+    &--labs-oddset {
+        background: #252525;
+    }
+}
+
+.labs-github-illustration {
+    max-width: 400px;
 }
