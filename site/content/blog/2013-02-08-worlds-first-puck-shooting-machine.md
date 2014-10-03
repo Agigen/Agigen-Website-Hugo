@@ -11,7 +11,7 @@ tags:
   - Javascript
   - python
 ---
-For the [Oddset Hockey Games][1], in cooperation with [The Viral Company][2], [Paramecanic][3] and [Svenska Spel][4], we built a web application to remote control a machine that shoots hockey pucks at a live goalkeeper.
+For the Oddset Hockey Games, in cooperation with The Viral Company, Paramecanic and Svenska Spel we built a web application to remote control a machine that shoots hockey pucks at a live goalkeeper.
 
 <!--more-->
 
