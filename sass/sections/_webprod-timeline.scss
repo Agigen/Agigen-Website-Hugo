@@ -41,6 +41,9 @@ $standard_delay: 350ms;
 
         &--1 {
             height: 420px;
+            @include media-query(lap){
+                height: 200px;
+            }
             margin-bottom: 35px;
             .webprod-process__illustration__dot {
                 position: relative;
@@ -97,6 +100,9 @@ $standard_delay: 350ms;
 
         &--6 {
             height: 245px;
+            @include media-query(lap){
+                height: 140px;
+            }
             margin-bottom: 60px;
             .webprod-process__illustration__line--1 {
                 width: 0%;
@@ -149,8 +155,9 @@ $standard_delay: 350ms;
 
         &--between-points {
             height: 200px;
-            @media only screen and (max-height: 900px) {
-                height: 100px;
+
+            @include media-query(portable) {
+                height: 50px;
             }
             @include media-query(palm) {
                 display: none;

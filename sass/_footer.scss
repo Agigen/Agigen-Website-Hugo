@@ -53,7 +53,7 @@
         &--bordered {
             @extend .btn;
             @include btnColors(white, $color-proddev-pink);
-
+            padding: 0 1em;
             line-height: 36px;
 
             &:hover {
