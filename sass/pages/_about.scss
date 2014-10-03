@@ -3,6 +3,7 @@
     background-size: cover;
     @include vhFejk(75);
     @include vhFejkPortable(50);
+    @include vhFejkPalm(40);
     .main-header__content {
         position: absolute;
         bottom: 10px;

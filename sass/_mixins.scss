@@ -94,3 +94,14 @@
     }
 }
 
+@mixin vhFejkPalm($vh) {
+    $i: 2000;
+    @while $i > 500 {
+        @media screen and ( max-height: #{$i}px ) and (max-width: $lap-start - 1){
+            height: #{$vh/100*$i}px;
+        }
+        $i: $i - 100;
+    }
+}
+
+
