@@ -45,6 +45,9 @@
             .btn {
                 @include btnColors(#333, white);
             }
+            @include media-query(palm){
+                padding-bottom: 50px;
+            }
         }
 
         &__divider {
@@ -94,7 +97,6 @@
                     .grid__item {
                         padding-bottom: 30px;
                     }
-                    padding-bottom: 70px;
                 }
                 strong {
                     text-transform: uppercase;
@@ -198,6 +200,12 @@
             &--fullsize {
                 width: 100%;
                 padding-bottom: 100px;
+                @include media-query(lap){
+                    padding-bottom: 50px;
+                }
+                @include media-query(palm){
+                    padding-bottom: 30px;
+                }
             }
         }
     }
