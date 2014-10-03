@@ -20,6 +20,10 @@ $topbar-404-filled-color:     #fff;
     width: 100%;
     z-index: 1000;
 
+    @include media-query(palm){
+        padding-top: 0;
+    }
+
     .menu-open & {
         overflow-y: scroll;
     }
