@@ -111,15 +111,20 @@
 .fearless-panda {
     position: relative;
     background: #05bcea;
-    border-radius: 130px;
-    padding: 80px;
+    border-radius: 20px;
+    padding: 30px;
 
-    @include media-query(palm) {
-        border-radius: 20px;
-        padding: 30px;
+    // compensate for the fearless panda
+    margin-top: 100px;
 
+    @include media-query(lap-and-up) {
+        border-radius: 130px;
+        padding: 80px;
+    }
+
+    @include media-query(desk) {
         // compensate for the fearless panda
-        margin-top: 100px;
+        margin-top: 0;
     }
 
     &__copy {
@@ -129,7 +134,7 @@
         margin-left: auto;
         margin-right: auto;
 
-        @include media-query(lap-and-up) {
+        @include media-query(desk) {
             margin-bottom: 0;
         }
     }
@@ -142,7 +147,7 @@
 
         min-width: 200px;
 
-        @include media-query(lap-and-up) {
+        @include media-query(desk) {
             position: absolute;
             top: 100%;
             left: 50%;
@@ -159,10 +164,10 @@
         margin-top: -145px;
         margin-bottom: 20px;
 
-        @include media-query(lap-and-up) {
+        @include media-query(desk) {
             position: absolute;
             top: 100%;
-            left: 130px;
+            left: 7.5%;
         }
     }
 }
