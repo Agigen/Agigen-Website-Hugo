@@ -129,6 +129,16 @@
                        top: 0;
                     }
 
+                    &:after {
+                       height: 1px;
+                       left: 10px;
+                    }
+
+                    &:last-child:before,
+                    &:last-child:after {
+                        display: none;
+                    }
+
                     @include media-query(palm) {
                         &:nth-child(2n + 2):before {
                             display: none;
@@ -149,9 +159,22 @@
                         }
                     }
 
-                    &:after {
-                       height: 1px;
-                       left: 10px;
+                    .page--work--billogram & {
+                        @include media-query(palm) {
+                            &:before,
+                            &:after {
+                                display: block;
+                            }
+
+                            &:nth-child(2):before {
+                                display: none;
+                            }
+
+                            &:nth-child(3):before,
+                            &:nth-child(3):after {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
