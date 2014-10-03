@@ -38,6 +38,10 @@ $color-category-officefun: #9549b2;
     background: $color-category-work;
 }
 
+.main-header__title--blog {
+    @extend .alpha;
+}
+
 
 
 .posts {
@@ -197,6 +201,7 @@ $color-category-officefun: #9549b2;
         @extend .beta;
     }
     &__footer {
+        margin-top: 100px;
         background: #f0f0f0;
         @include sneddisTop(-4, 180px);
         padding-bottom: 100px;

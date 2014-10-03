@@ -7,7 +7,7 @@ categories:
   - Backstage
 ---
 
-We helped build this cool WebGL LEGO®/Google Maps thing, so I (Karl Blomster) thought I&#8217;d talk for a bit about it.
+We helped build this cool WebGL LEGO®/Google Maps thing, so I thought I&#8217;d talk for a bit about it.
 
 <!--more-->
 

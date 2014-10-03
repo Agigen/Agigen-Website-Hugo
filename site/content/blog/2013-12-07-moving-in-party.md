@@ -7,6 +7,11 @@ categories:
   - Office fun
 format: image
 ---
+
+We finally got the photos from our moving in party.
+
+<!--more-->
+
 <img src="/img/blog/posts/2013/12/DSC_6553.jpg" alt="DSC_6553" />
 
 <img src="/img/blog/posts/2013/12/DSC_6562.jpg" alt="DSC_6562" />

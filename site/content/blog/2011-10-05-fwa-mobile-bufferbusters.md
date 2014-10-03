@@ -10,9 +10,10 @@ categories:
 
 We got awarded a Mobile of the Day award from Favourite Website Awards!
 
+<!--more-->
+
 <a href="http://www.thefwa.com/mobile/vodafone-bufferbusters" target="_blank">http://www.thefwa.com/mobile/vodafone-bufferbusters</a>
 
-<!--more-->
 <img src="/img/blog/posts/2013/09/fwa-bufferbusters.png" >
 
 
