@@ -184,7 +184,7 @@
 
                         {{ if isset .Page.Params "nocasestudy" }}
                         {{ else }}
-                            <a href="{{ .Page.RelPermalink }}" class="btn">View case study</a>
+                            <a href="{{ .Page.RelPermalink }}" class="btn"><span class="palm-hidden">View </span>case study</a>
                         {{ end }}
 
                         {{ if isset .Page.Params "siteurl" }}

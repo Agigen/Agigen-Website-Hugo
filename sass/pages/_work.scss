@@ -348,6 +348,9 @@
     padding: 100px 0 160px;
     @include media-query(palm){
         padding: 30px 0;
+        .container {
+            width: 90%;
+        }
     }
     .grid {
         margin-top: 30px;
@@ -360,6 +363,9 @@
     display: block;
     background: #f0f0f0;
     margin-bottom: 24px;
+    @include media-query(palm){
+        margin-bottom: 6%;
+    }
     position: relative;
     @extend .text--center;
 
@@ -410,6 +416,9 @@
     &__tagline {
         @extend .epsilon;
         @include media-query(palm) {
+            padding-left: 10px;
+            padding-right: 10px;
+            letter-spacing: 1px;
         }
         color: inherit;
     }
