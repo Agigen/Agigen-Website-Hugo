@@ -18,8 +18,9 @@
     &__label {
         text-transform: uppercase;
         padding-top: 30px;
-        font-size: 16px;
         font-weight: bold;
+        color: #656565 !important;
+
         &--left {
             text-align: right;
             text-align: center;
@@ -31,15 +32,12 @@
             text-align: center;
 
         }
-        font-weight: 300;
-        font-size: 40px;
-        color: #33cbff;
-
-        @include media-query(palm){
-            font-size: 30px;
-        }
+        color: #33cbff !important;
         a {
             color: #33cbff;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
