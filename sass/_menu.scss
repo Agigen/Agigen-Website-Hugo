@@ -103,6 +103,7 @@ html.menu-open {
         color: $main-menu-fontcolor;
         text-decoration: none;
         line-height: 200%;
+        font-size: 50px;
 
         @include transition(color 200ms ease);
 
@@ -111,23 +112,12 @@ html.menu-open {
             text-decoration: none;
         }
 
-        @media screen and ( max-height: 1200px ){
-            font-size: 50px;
-        }
-
-        @media screen and ( max-height: 750px ){
-            font-size: 40px;
-        }
-        @media screen and ( max-height: 650px ){
-            font-size: 35px;
-        }
-
         @include media-query(lap){
-            font-size: 24px;
+            font-size: 36px;
         }
 
         @include media-query(palm){
-            font-size: 16px;
+            font-size: 24px;
         }
 
         &--main {
