@@ -97,13 +97,11 @@
             padding: 120px 0 140px;
             @include media-query(palm) {
                 padding: 30px 0;
-                font-size: 16px;
             }
             &__copy {
                 padding: 30px 0 80px;
                 @include media-query(palm) {
                     padding: 0 0 30px;
-                    font-size: 16px;
                 }
             }
         }
@@ -130,7 +128,6 @@
         max-width: 460px;
         padding: 0;
         @include media-query(palm) {
-            font-size: 14px;
             padding: 10px 25px;
         }
     }
