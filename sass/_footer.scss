@@ -1,63 +1,63 @@
 
 .main-footer {
     background: $color-proddev-pink;
-    height: 80px;
-    padding: 15px 0 0;
-    line-height: 40px;
+    padding: 40px 0;
     color: #fff;
     margin: 0;
 
     @extend .epsilon;
-    @include media-query(palm){
-        font-size: 9px;
-        padding: 10px 0;
-        height: 60px;
+
+    @include media-query(palm) {
+        font-size: $palm-h3-size;
     }
+
     &__title {
-        margin-top: 8px;
+        a {
+            display: block;
+        }
+
         svg {
             height: 35px;
             width: auto;
             fill: white;
         }
-        float: left;
+
         display: inline-block;
-        @include media-query(palm){
-            display: none;
-        }
+        vertical-align: middle;
+        line-height: 1;
     }
+
     &__links {
         text-align: right;
         text-transform: uppercase;
-        @include media-query(palm){
-            text-align: center;
+
+        display: inline-block;
+        vertical-align: middle;
+
+        &--right {
+            float: right;
         }
+
     }
+
     &__link {
         display: inline-block;
         margin: 0 20px;
+
+        line-height: 40px;
+
         &:hover {
             text-decoration: underline;
         }
-        @media only screen and (max-width: 640px) {
-            margin: 0 5px;
-            font-size: 13px;
-        }
-        @include media-query(palm) {
-            font-size: 10px;
-        }
-
 
         &--bordered {
             @extend .btn;
-            padding: 0 15px;
             @include btnColors(white, $color-proddev-pink);
+
+            line-height: 36px;
+
             &:hover {
                 text-decoration: none;
-            }
-            @include media-query(palm){
-                padding: 0 5px;
-                font-size: 10px;
             }
         }
 

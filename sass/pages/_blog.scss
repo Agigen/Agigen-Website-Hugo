@@ -13,6 +13,7 @@ $color-category-officefun: #9549b2;
 .page--blog {
     .main-header {
         @include vhFejk(30);
+        @include vhFejkPortable(40);
     }
 }
 

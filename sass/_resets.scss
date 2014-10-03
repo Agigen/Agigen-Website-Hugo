@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-@include media-query(palm){
+@include media-query(lap){
     .alpha {
         font-size: $lap-h1-size;
     }
