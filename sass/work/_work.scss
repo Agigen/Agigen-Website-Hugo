@@ -127,18 +127,31 @@
                        width: 1px;
                        top: 0;
                     }
-                    &:last-child:before {
-                        display: none;
+
+                    @include media-query(palm) {
+                        &:nth-child(2n + 2):before {
+                            display: none;
+                        }
+
+                        &:nth-last-child(-n + 2):after {
+                            display: none;
+                        }
+                    }
+
+                    @include media-query(lap-and-up) {
+                        &:nth-child(4n + 4):before {
+                            display: none;
+                        }
+
+                        &:nth-last-child(-n + 4):after {
+                            display: none;
+                        }
                     }
 
                     &:after {
                        height: 1px;
                        left: 10px;
                     }
-                }
-
-                .grid:last-child .grid__item:after {
-                    display: none;
                 }
 
                 @include media-query(palm) {

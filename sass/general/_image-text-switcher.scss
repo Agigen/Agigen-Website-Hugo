@@ -19,8 +19,12 @@
     }
 
     &__image {
-        max-width: 50%;
+        max-width: 80%;
         margin: 0 auto;
+
+        @include media-query(desk) {
+            max-width: 50%;
+        }
 
         @include transition(all 200ms);
         .image-text-switcher:hover & {
