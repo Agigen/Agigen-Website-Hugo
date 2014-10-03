@@ -1,5 +1,6 @@
 {
     "title": "Work",
-    "type": "worklist"
+    "type": "worklist",
+    "og_description": "The works of awarded web agency Agigen."
 }
 
