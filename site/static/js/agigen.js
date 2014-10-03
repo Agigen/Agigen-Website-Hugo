@@ -24,12 +24,13 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
     app.controller('menuCtrl', ['$scope', '$timeout', function($scope, $timeout){
         var $container = $('.main-header'),
             $topbar = $('.topbar'),
+            $topbarWrapper = $('.topbar-wrapper'),
             checkTopbarScroll;
 
         checkTopbarScroll = function(v) {
             if (window.innerWidth >= breakpoints.lapStart) {
-                $topbar.css({
-                    paddingTop: Math.max(15, Math.min(60, 60 - v / 6))
+                $topbarWrapper.css({
+                    paddingTop: Math.max(0, Math.min(45, 45 - v / 6))
                 });
 
                 $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (70)));
