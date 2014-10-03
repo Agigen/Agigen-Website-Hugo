@@ -145,12 +145,13 @@
         background-color: #fff;
         border-color: #fff;
 
-        min-width: 200px;
+        min-width: 160px;
 
         @include media-query(desk) {
             position: absolute;
             top: 100%;
             left: 50%;
+            min-width: 200px;
 
             margin-top: -26px;
             margin-left: -100px;
