@@ -51,6 +51,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @include media-query(lap){
+    .giga {
+        font-size: $lap-giga-size;
+    }
     .alpha {
         font-size: $lap-h1-size;
     }
@@ -72,6 +75,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @include media-query(palm){
+    .giga {
+        font-size: $palm-giga-size;
+    }
     .alpha {
         font-size: $palm-h1-size;
     }
