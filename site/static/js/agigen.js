@@ -29,7 +29,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         checkTopbarScroll = function(v) {
             if (window.innerWidth >= breakpoints.lapStart) {
                 $topbar.css({
-                    paddingTop: Math.max(20, Math.min(60, 60 - v / 6))
+                    paddingTop: Math.max(15, Math.min(60, 60 - v / 6))
                 });
 
                 $topbar.toggleClass('topbar--filled', v > ($container.outerHeight() - (70)));
