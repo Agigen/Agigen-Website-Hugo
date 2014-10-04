@@ -13,15 +13,45 @@
                 background: #226ABB;
             }
 
+
+            &--green,
+            &--red,
+            &--explore {
+                padding: 140px 0;
+                position: relative;
+                &:before {
+                    content: " ";
+                    width: 174px;
+                    height: 209px;
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    top: -105px;
+                    margin-left: -87px;
+                    background: transparent url(/img/work/case/build/build-retina.png) no-repeat top center;
+                    background-size: 174px 209px;
+                }
+            }
+
             &--green {
                 background: #2f9d60 url(/img/work/case/build/build-bg-tile.jpg) repeat center center;
             }
 
             &--red {
+                margin-top: 200px;
                 background: #d63d3d url(/img/work/case/build/academy-bg.jpg) repeat center center;
+                &:before {
+                    height: 269px;
+                    background-image: url(/img/work/case/build/academy-retina.png);
+                    background-size: 174px 269px;
+                    top: -165px;
+                }
             }
 
             &--explore {
+                &:before {
+                    background-image: url(/img/work/case/build/explore-retina.png);
+                }
                 background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
             }
 
