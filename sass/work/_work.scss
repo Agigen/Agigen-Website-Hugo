@@ -24,7 +24,17 @@
             margin-top: -25%;
             @include media-query(desk){
                 max-width: 500px;
-                margin-top: -20%;
+                margin-top: -17%;
+            }
+            padding-top: 30px;
+            @media screen and ( max-height: 1000px ){
+                padding-top: 100px;
+            }
+            @media screen and ( max-height: 700px ){
+                padding-top: 150px;
+            }
+            @media screen and ( max-height: 600px ){
+                padding-top: 160px;
             }
         }
         &__tldr {
