@@ -341,7 +341,7 @@
         @include transform(translate3d(0,0,0));
 
         @mixin portable-fallback {
-            background-image: url(/img/start/webprod/mobile-bg.jpg);
+            background-image: url(/img/start/webprod/portable-bg.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: top center;
@@ -352,6 +352,10 @@
         position: relative;
         @include media-query(portable) {
             @include portable-fallback;
+        }
+
+        @include media-query(palm) {
+            background-image: url(/img/start/webprod/palm-bg.jpg);
         }
 
         .device--ios & {
@@ -376,13 +380,17 @@
     &--start-proddev {
 
         @mixin portable-fallback {
-            background-image: url(/img/start/proddev/mobile-bg.jpg);
+            background-image: url(/img/start/proddev/portable-bg.jpg);
             padding-bottom: 180px;
         }
 
         position: relative;
         @include media-query(portable) {
             @include portable-fallback;
+        }
+
+        @include media-query(palm) {
+            background-image: url(/img/start/proddev/palm-bg.jpg);
         }
 
         .device--ios & {
