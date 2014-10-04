@@ -36,4 +36,20 @@
             background-image: url(/img/work/case/carlsberg/video-bg.jpg);
         }
     }
+    &:hover {
+        .play-icon {
+            @include transform(scale(1.1));
+        }
+    }
+}
+
+.play-icon {
+    display: inline-block;
+    background: transparent url(/img/work/case/shared/icon_play.svg) no-repeat top left;
+    color: transparent;
+    width: 73px;
+    @include transition(transform ease-out 250ms);
+    @include media-query(palm) {
+        width: 26px;
+    }
 }
