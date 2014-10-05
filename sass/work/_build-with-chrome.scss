@@ -18,6 +18,9 @@
             &--red,
             &--explore {
                 padding: 140px 0;
+                @include media-query(palm){
+                    padding: 60px 0;
+                }
                 position: relative;
                 &:before {
                     content: " ";
@@ -26,10 +29,17 @@
                     display: block;
                     position: absolute;
                     left: 50%;
-                    top: -105px;
+                    top: -130px;
                     margin-left: -87px;
                     background: transparent url(/img/work/case/build/build-retina.png) no-repeat top center;
                     background-size: 174px 209px;
+                    @include media-query(palm){
+                        width: 87px;
+                        height: 105px;
+                        top: -65px;
+                        margin-left: -43.5px;
+                        background-size: 87px 105px;
+                    }
                 }
             }
 
@@ -44,7 +54,12 @@
                     height: 269px;
                     background-image: url(/img/work/case/build/academy-retina.png);
                     background-size: 174px 269px;
-                    top: -165px;
+                    top: -190px;
+                    @include media-query(palm){
+                        height: 135px;
+                        background-size: 87px 135px;
+                        top: -95px;
+                    }
                 }
             }
 
