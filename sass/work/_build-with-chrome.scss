@@ -17,9 +17,11 @@
             &--green,
             &--red,
             &--explore {
+                margin-top: 60px;
                 padding: 140px 0;
                 @include media-query(palm){
                     padding: 60px 0;
+                    margin-top: 30px;
                 }
                 position: relative;
                 &:before {
