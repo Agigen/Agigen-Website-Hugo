@@ -73,6 +73,7 @@
                     background-image: url(/img/work/case/build/explore-retina.png);
                 }
                 background: #4F81ED url(/img/work/case/build/blue-sky.jpg) no-repeat top center;
+                background-size: cover;
             }
 
             &--black {
@@ -81,6 +82,7 @@
 
             &--grandfinale {
                 background: #222 url(/img/work/case/build/legomovie.jpg) no-repeat center center;
+                background-size: cover;
             }
         }
     }
