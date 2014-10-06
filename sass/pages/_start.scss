@@ -147,6 +147,8 @@
         left: 10%;
         top: 23.5%;
 
+        opacity: 0;
+        @include transform(scale(0.5));
 
         @include transform-origin(center center);
         opacity: 0;
@@ -183,14 +185,18 @@
 }
 .animate {
     .start-circle__title {
-        @include animation(title-in 1500ms $ease-in-out-quint 2400ms forwards);
+        @include transition(all 1500ms $ease-in-out-quint 2400ms);
+
+        opacity: 1;
+        @include transform(scale(1));
+
         path {
             opacity: 1;
         }
 
         .device--ios &,
         .browser--ie & {
-            @include animation-delay(0ms);
+            @include transition-delay(0ms);
         }
     }
     .start-circle__circle__path {
@@ -200,17 +206,6 @@
     }
 }
 
-
-@include keyframes(title-in){
-    from {
-        opacity: 0;
-        @include transform(scale(0.5));
-    }
-    to {
-        opacity: 1;
-        @include transform(scale(1));
-    }
-}
 
 @include keyframes(dash) {
     0% {
