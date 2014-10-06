@@ -12,8 +12,15 @@
     &--labs-oddset {
         background: #252525;
     }
+    &--labs-github {
+        padding-bottom: 150px;
+        @include media-query(palm) {
+            padding-bottom: 60px;
+        }
+    }
 }
 
 .labs-github-illustration {
     width: 400px;
+
 }
