@@ -28,7 +28,7 @@ $topbar-404-filled-color:     #fff;
 .topbar {
     @include user-select(none);
     background: transparent;
-    padding: 12px 0;
+    padding: 20px 0;
     line-height: 1;
 
     @include transition(background 300ms $ease-in-out-cubic);
@@ -141,7 +141,7 @@ $topbar-404-filled-color:     #fff;
         font-size: 26px;
         line-height: 26px;
         padding: 20px;
-        margin: -20px -20px 0 0;
+        margin: -20px;
 
         @include media-query(palm) {
             font-size: 24px;
