@@ -48,6 +48,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.menuVisible2 = false;
         $scope.menuVisibleTimeout = false;
 
+        $scope.topbarCompensation = 0;
+
         $scope.menuKeyup = function($event) {
             if ($event.which === 27) {
                 $scope.menuVisible = false;
@@ -61,12 +63,17 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         $scope.$watch('menuVisible', function(menuVisible) {
             if (menuVisible) {
+                var topbarWidthBeforeOpeningMenu = $topbar.width();
                 $scope.menuVisibleTimeout = $timeout(function() {
                     $scope.menuVisible2 = true;
+                    $timeout(function() {
+                        $scope.topbarCompensation = $topbar.width() - topbarWidthBeforeOpeningMenu;
+                    }, 0);
                 }, 370);
             } else {
                 $timeout.cancel($scope.menuVisibleTimeout);
                 $scope.menuVisible2 = false;
+                $scope.topbarCompensation = 0;
             }
         });
     }])
