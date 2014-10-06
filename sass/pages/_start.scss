@@ -333,6 +333,13 @@
 
     &--start-webprod ,
     &--start-proddev {
+        .container {
+            @include media-query(palm) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
         @extend .text--light;
         @include vhFejk(90);
         overflow: hidden;
