@@ -1,24 +1,29 @@
-.screen-carousel-wrapper {
+.carousel-wrapper {
     margin: 0 auto;
 }
 
-.screen-carousel-bevel {
-    padding-top: 3.9%;
-    background: transparent url(/img/screen-carousel/chrome_window_top.png) top center no-repeat;
-    background-size: contain;
+.carousel-bevel {
+
     margin: 0 0 $base-spacing-unit;
 
+    &--desktop {
+        padding-top: 3.9%;
+        background: transparent url(/img/carousel/chrome_window_top.png) top center no-repeat;
+        background-size: contain;
+    }
+
     &--mobile {
-        background: transparent url(/img/screen-carousel/iphone4s-retina.png) top center no-repeat;
+        background: transparent url(/img/carousel/iphone4s-retina.png) top center no-repeat;
         background-size: contain;
         padding-top: 33.9772727%;
         padding-bottom: 31.9318182%;
         padding-left: 8.8636364%;
         padding-right: 7.0454545%;
     }
+
 }
 
-.screen-carousel {
+.carousel {
     position: relative;
     list-style: none;
     margin: 0;
@@ -32,13 +37,13 @@
     background: #fafafa;
     @include border-bottom-radius(10px);
 
-    .screen-carousel-bevel--mobile & {
+    .carousel-bevel--mobile & {
         border-radius: 0;
         padding-top: 148.6486486%;
     }
 }
 
-.screen-carousel__item {
+.carousel__item {
     position: absolute;
     top: 0;
     left: 0;
@@ -58,7 +63,7 @@
 
     &--current {
         opacity: 1;
-        @include border-bottom-radius(10px);
+        border-radius: 10px;
     }
 
     &--prev, &--next {
@@ -98,7 +103,13 @@
         }
     }
 
-    .screen-carousel-bevel--mobile & {
+    .carousel-bevel--desktop & {
+        &--current {
+            @include border-top-radius(0);
+        }
+    }
+
+    .carousel-bevel--mobile & {
         border-radius: 0 !important;
 
         &--below {
@@ -119,13 +130,13 @@
     }
 }
 
-.screen-carousel-nav {
+.carousel-nav {
     list-style: none;
     margin: 0 0 $base-spacing-unit;
     padding: 0;
 }
 
-.screen-carousel-nav__item {
+.carousel-nav__item {
     opacity: 0.5;
     @include transform(scale(0.666667));
     @include transition(all 300ms ease);
