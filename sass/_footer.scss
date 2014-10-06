@@ -7,10 +7,6 @@
 
     @extend .epsilon;
 
-    @include media-query(palm) {
-        font-size: $palm-h3-size;
-    }
-
     &__title {
         a {
             display: block;

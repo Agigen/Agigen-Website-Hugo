@@ -15,13 +15,6 @@ $color-labs-orange: #ff9900;
 
 @import "mixins";
 @import "helpers";
-@import "sections";
-@import "cases";
-
-@import "topbar";
-@import "header";
-@import "footer";
-@import "menu";
 
 @import "general/misc";
 @import "general/vertical-center";
@@ -31,7 +24,14 @@ $color-labs-orange: #ff9900;
 @import "general/images";
 @import "general/image-text-switcher";
 
+@import "sections";
 @import "sections/contact";
+@import "cases";
+
+@import "topbar";
+@import "header";
+@import "footer";
+@import "menu";
 
 @import "pages/pages";
 

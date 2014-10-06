@@ -27,4 +27,9 @@
     color: #666;
     text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 2px;
+
+    @include media-query(palm){
+        letter-spacing: 1px;
+    }
 }
