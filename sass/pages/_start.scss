@@ -191,7 +191,8 @@
             opacity: 1;
         }
 
-        .device--ios & {
+        .device--ios &,
+        .browser--ie & {
             @include animation-delay(500ms);
         }
     }
