@@ -48,6 +48,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         $scope.menuVisible2 = false;
         $scope.menuVisibleTimeout = false;
 
+        $scope.topbarCompensation = 0;
+
         $scope.menuKeyup = function($event) {
             if ($event.which === 27) {
                 $scope.menuVisible = false;
@@ -61,12 +63,17 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         $scope.$watch('menuVisible', function(menuVisible) {
             if (menuVisible) {
+                var topbarWidthBeforeOpeningMenu = $topbar.width();
                 $scope.menuVisibleTimeout = $timeout(function() {
                     $scope.menuVisible2 = true;
+                    $timeout(function() {
+                        $scope.topbarCompensation = $topbar.width() - topbarWidthBeforeOpeningMenu;
+                    }, 0);
                 }, 370);
             } else {
                 $timeout.cancel($scope.menuVisibleTimeout);
                 $scope.menuVisible2 = false;
+                $scope.topbarCompensation = 0;
             }
         });
     }])
@@ -159,6 +166,26 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             return $scope.showMap ? 'Hide map' : 'Show map';
         };
 
+        $scope.mapStyles = [
+            {"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]},
+            {
+                "elementType": "labels",
+                "stylers": [
+                    { "visibility": "off" }
+                ]
+            }
+        ];
+        $scope.mapStylesWithLabels = [
+            {"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]},
+            {
+                "elementType": "labels",
+                "stylers": [
+                    { "visibility": "on" }
+                ]
+            }
+        ];
+
+        $scope.agigenOfficeMarker;
         $scope.zoomLevelSthlm = 13;
         $scope.zoomLevelSweden = 7;
         $scope.zoomLevelEurope = 5;
@@ -166,8 +193,17 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         // $scope.zoomLevelWorld = 4;
         $scope.zoom = $scope.zoomLevelEurope;
         $scope.toggleMap = function(){
-            $scope.setZoom($scope.zoomLevelOffice);
             $scope.showMap = !$scope.showMap;
+            if ($scope.showMap) {
+                // showing map
+                $scope.setZoom($scope.zoomLevelOffice);
+                $scope.map.setOptions({styles: $scope.mapStylesWithLabels});
+                $scope.agigenOfficeMarker.setVisible(true);
+            } else {
+                // hiding map
+                $scope.map.setOptions({styles: $scope.mapStyles});
+                $scope.agigenOfficeMarker.setVisible(false);
+            }
         };
 
         $scope.setZoom = function(z) {
@@ -179,25 +215,14 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         window.initializeGoogleMaps = function() {
-
-            var mapStyles = [
-                {"stylers":[{"hue":"#ff1a00"},{"invert_lightness":true},{"saturation":-100},{"lightness":33},{"gamma":0.5}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#2D333C"}]},
-                {
-                    "elementType": "labels",
-                    "stylers": [
-                        { "visibility": "off" }
-                    ]
-                }
-            ];
             var mapOptions = {
                 zoom: $scope.zoom,
                 center: new google.maps.LatLng(59.332779, 18.081026),
-                styles: mapStyles,
+                styles: $scope.mapStyles,
                 disableDefaultUI: true,
                 backgroundColor: "#222222",
                 scrollwheel: false
             };
-
             $.get("http://ipinfo.io", function(response) {
                 if (response.country == "SE") {
                     console.log("Sweden set zoom to", $scope.zoomLevelSweden);
@@ -215,6 +240,20 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 }
             }, "jsonp");
             $scope.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            $scope.agigenOfficeMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(59.332779,18.081026),
+                map: $scope.map,
+                title: 'Agigen Office',
+                icon: {
+                    url: '/img/contact/location_agigen.png',
+                    scaledSize: new google.maps.Size(32, 50),
+                    size: new google.maps.Size(64, 100),
+                    anchor: new google.maps.Point(0, 32),
+                    origin: new google.maps.Point(0,0)
+                },
+                visible: false
+            });
+            window.map = $scope.map;
         }
 
         var script = document.createElement('script');
