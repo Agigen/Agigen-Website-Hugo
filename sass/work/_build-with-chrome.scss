@@ -51,6 +51,9 @@
 
             &--red {
                 margin-top: 200px;
+                @include media-query(palm){
+                    margin-top: 50px;
+                }
                 background: #d63d3d url(/img/work/case/build/academy-bg.jpg) repeat center center;
                 &:before {
                     height: 269px;

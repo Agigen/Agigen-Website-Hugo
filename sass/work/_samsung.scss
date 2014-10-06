@@ -18,9 +18,11 @@ $samsung-case-color: #F6C365;
         }
     }
     .work__header-image--samsung {
-        margin-top: -10%;
+        margin-top: -13%;
+        @include media-query(portable){
+            margin-top: -25%;
+        }
         @include media-query(palm){
-            margin-top: -20%;
             max-width: 100%;
         }
     }

@@ -2,6 +2,21 @@ $time_pt_1: 300ms;
 $time_pt_2: 300ms;
 $time_pt_3: 200ms;
 
+@include keyframes(popin){
+    0% {
+        opacity: 0;
+        @include transform(scale(0.2));
+    }
+    80% {
+        opacity: 1;
+        @include transform(scale(1.2));
+    }
+    100% {
+        opacity: 1;
+        @include transform(scale(1));
+    }
+}
+
 $standard_delay: 350ms;
 .webprod-process {
     font-size: 20px;
@@ -84,7 +99,11 @@ $standard_delay: 350ms;
 
             &.in-view--whole {
                 .webprod-process__illustration__dot {
-                    @include animation(popin 200ms linear 0 forwards);
+                    @include animation(popin 200ms linear 0ms);
+                    @include animation-fill-mode(fowards);
+                    opacity: 1;
+                    @include transform(scale(1));
+
                 }
                 .webprod-process__illustration__line--1 {
                     height: 50%;
@@ -293,17 +312,4 @@ $standard_delay: 350ms;
 }
 
 
-@include keyframes(popin){
-    0% {
-        opacity: 0;
-        @include transform(scale(0.2));
-    }
-    80% {
-        opacity: 1;
-        @include transform(scale(1.2));
-    }
-    100% {
-        opacity: 1;
-        @include transform(scale(1));
-    }
-}
+

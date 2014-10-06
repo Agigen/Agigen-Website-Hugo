@@ -11,9 +11,26 @@
 .section {
     &--labs-oddset {
         background: #252525;
+        padding-bottom: 140px;
+        @include media-query(palm) {
+            padding-bottom: 60px;
+        }
+        .alpha {
+            padding-bottom: 50px;
+            @include media-query(portable) {
+                padding-bottom: 20px;
+            }
+        }
+    }
+    &--labs-github {
+        padding-bottom: 150px;
+        @include media-query(palm) {
+            padding-bottom: 60px;
+        }
     }
 }
 
 .labs-github-illustration {
     width: 400px;
+
 }
