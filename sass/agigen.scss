@@ -16,11 +16,11 @@ $color-labs-orange: #ff9900;
 @import "mixins";
 @import "helpers";
 
+@import "general/typography";
 @import "general/misc";
 @import "general/vertical-center";
 @import "general/media";
 @import "general/carousel";
-@import "general/typography";
 @import "general/images";
 @import "general/image-text-switcher";
 

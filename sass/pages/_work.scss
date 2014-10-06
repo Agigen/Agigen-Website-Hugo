@@ -360,7 +360,8 @@
         }
     }
     .btn {
-        @include transition(transform 200ms $ease-out-quad 200ms, opacity 300ms $ease-out-quad 200ms);
+        @include btnColors(#fff, #fff);
+        @include transition(transform 200ms $ease-out-quad 200ms, opacity 300ms $ease-out-quad 0ms);
         @include media-query(desk){
             opacity: 0;
             @include transform(translateY(-30px));
@@ -406,6 +407,7 @@
                     @include transform(translateY(-30px));
                     .btn {
                         opacity: 1;
+                        @include transition(transform 200ms $ease-out-quad 200ms, opacity 300ms $ease-out-quad 200ms);
                         @include transform(translateY(0px));
                     }
                 }
