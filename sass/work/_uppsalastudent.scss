@@ -3,6 +3,11 @@
         .main-header {
             background-color: #3d2550;
             background-image: url(/img/work/case/uppsalastudent/uppsala-bg.jpg);
+            &__title {
+                @include media-query(palm){
+                    font-size: 26px;
+                }
+            }
         }
     }
 }
