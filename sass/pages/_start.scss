@@ -173,11 +173,8 @@
             stroke-dashoffset: 2299;
         }
 
+        .device--ios &,
         .browser--ie & {
-            display: none !important;
-        }
-
-        .device--ios & {
             display: none !important;
         }
 
@@ -191,8 +188,9 @@
             opacity: 1;
         }
 
-        .device--ios & {
-            @include animation-delay(500ms);
+        .device--ios &,
+        .browser--ie & {
+            @include animation-delay(0ms);
         }
     }
     .start-circle__circle__path {
