@@ -47,7 +47,7 @@ $samsung-rotate: 0deg;
     //@include transform(scale(0));
     opacity: 0;
 
-    .browser-ie & {
+    .browser--ie & {
         display: none;
     }
 

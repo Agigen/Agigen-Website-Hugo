@@ -20,7 +20,15 @@
 
   <script>
     if ("ActiveXObject" in window) {
-      document.getElementsByTagName('html')[0].className += ' browser-ie';
+      document.getElementsByTagName('html')[0].className += ' browser--ie';
+    }
+
+    if (/ip(ad|hone|od)/gi.test(navigator.userAgent)) {
+      document.getElementsByTagName('html')[0].className += ' device--ios';
+    }
+
+    if (/firefox/gi.test(navigator.userAgent)) {
+      document.getElementsByTagName('html')[0].className += ' browser--firefox';
     }
   </script>
 

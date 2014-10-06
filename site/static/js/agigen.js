@@ -92,7 +92,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         });
     }])
     .controller('parallaxCtrl', ['$scope', '$element', function($scope, $element){
-        var isIe = $('html').hasClass('browser-ie');
+        var isIe = $('html').hasClass('browser--ie');
         $scope.width = window.innerWidth;
 
         var targetX, targetY, damping = 150 /* higher value = slower damping */;
@@ -783,10 +783,6 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
     $(document).one('touchstart.touchdetect', function() {
         $('html').addClass('device device--touch');
     });
-
-    if (/ip(ad|hone|od)/gi.test(navigator.userAgent)) {
-        $('html').addClass('device device--ios');
-    }
 
     $('.animate--in-view').inView({style: 'sticky'});
 }(jQuery, window));
