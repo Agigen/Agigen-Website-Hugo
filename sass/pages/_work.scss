@@ -302,12 +302,12 @@
 .section--webprod-case__illustration,
 .section--proddev-case__illustration {
     @include media-query(lap-and-up){
-        @include transform(translateX(-30%));
-        @include transition(all 500ms $ease-in-out-quint 200ms);
+        @include transform(translateX(-20%));
+        @include transition(all 400ms $ease-out-quad 200ms);
         opacity: 0;
 
         &--from-right {
-            @include transform(translateX(30%));
+            @include transform(translateX(20%));
         }
 
 
