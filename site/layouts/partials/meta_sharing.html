@@ -35,10 +35,10 @@
     <meta property="og:image" content="{{ .Params.og_image }}">
     <meta name="twitter:image" content="{{ .Params.og_image }}">
 {{ else }}
-    {{ $image := "http://agigen.se/img/share/opengraph.jpg "}}
+    {{ $image := "http://agigen.se/img/utils/opengraph.jpg "}}
     <meta itemprop="image" content="{{ $image }}">
     <meta property="og:image" content="{{ $image }}">
-    <meta name="twitter:image" content="{{ $image }}">
+    <meta name="twitter:image" content="http://agigen.se/img/utils/summary_card_twitter.jpg">
 {{ end }}
 
 
