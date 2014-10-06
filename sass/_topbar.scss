@@ -141,11 +141,13 @@ $topbar-404-filled-color:     #fff;
         font-size: 26px;
         line-height: 26px;
         padding: 20px;
-        margin: -20px;
+        margin: -20px -20px 0 0;
 
         @include media-query(palm) {
             font-size: 24px;
             line-height: 24px;
+            margin-top: -22px;
+            margin-right: -19px;
         }
 
         &__inner {
