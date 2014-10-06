@@ -115,11 +115,37 @@
         }
         @include fotoSneddis(8, 80px);
 
-        .team-member--daniel &:after {
+        .team-member--johan  &:after ,
+        .team-member--miriam &:after ,
+        .team-member--oscar  &:after ,
+        .team-member--erika &:after {
+            display: none;
+        }
+
+        .team-member--kiwi   &:after ,
+        .team-member--daniel &:after ,
+        .team-member--max &:after {
             top: auto;
             bottom: -80px;
             @include transform(rotate(-8deg));
         }
+
+        .team-member--kiwi &:after ,
+        .team-member--max  &:after {
+            bottom: -23px;
+            right: auto;
+            top: auto;
+            left: -50%;
+            @include transform(rotate(8deg));
+        }
+        .team-member--viktor &:after {
+            top: -31px;
+            left: -25%;
+            @include transform(rotate(-8deg));
+        }
+
+
+
     }
 
 
