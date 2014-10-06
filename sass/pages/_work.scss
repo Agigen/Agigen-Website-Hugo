@@ -302,45 +302,20 @@
 .section--webprod-case__illustration,
 .section--proddev-case__illustration {
     @include media-query(lap-and-up){
-        opacity: 0;
-    }
-    &.in-view--partial {
-        @include media-query(lap-and-up){
-            @include animation(fade-in-from-left 500ms $ease-in-out-quint 200ms);
-            @include animation-fill-mode(forwards);
-        }
-    }
-    &--from-right {
-        &.in-view--partial {
-            @include media-query(lap-and-up){
-                @include animation(fade-in-from-right 500ms $ease-in-out-quint 200ms);
-                @include animation-fill-mode(forwards);
-            }
-        }
-    }
-}
-
-
-@include keyframes(fade-in-from-left) {
-    0% {
         @include transform(translateX(-100%));
+        @include transition(all 500ms $ease-in-out-quint 200ms);
         opacity: 0;
-    }
 
-    100% {
-        @include transform(translateX(0%));
-        opacity: 1;
-    }
-}
-@include keyframes(fade-in-from-right) {
-    0% {
-        @include transform(translateX(100%));
-        opacity: 0;
-    }
+        &--from-right {
+            @include transform(translateX(100%));
+        }
 
-    100% {
-        @include transform(translateX(0%));
-        opacity: 1;
+
+        &.in-view--partial {
+            @include transform(translateX(0%));
+            opacity: 1;
+        }
+
     }
 }
 
