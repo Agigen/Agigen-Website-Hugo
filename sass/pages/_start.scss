@@ -63,7 +63,7 @@
     &--2 {
     }
 
-    .browser-ie & {
+    .browser--ie & {
         display: none;
     }
 }
@@ -172,7 +172,7 @@
             stroke-dashoffset: 2299;
         }
 
-        .browser-ie & {
+        .browser--ie & {
             display: none !important;
         }
 
