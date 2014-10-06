@@ -27,9 +27,6 @@
         line-height: 125%;
 
         color: #999999;
-        @include media-query(palm) {
-            font-size: $palm-h2-size;
-        }
     }
     a {
         color: #ffffff;
