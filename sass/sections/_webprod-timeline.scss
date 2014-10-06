@@ -19,11 +19,7 @@ $time_pt_3: 200ms;
 
 $standard_delay: 350ms;
 .webprod-process {
-    font-size: 20px;
-    @include media-query(palm) {
-        font-size: 16px;
-    }
-
+    @extend .delta;
 
     color: #878787;
     &__timeline {
@@ -244,7 +240,6 @@ $standard_delay: 350ms;
             @include media-query(palm) {
                 padding: 60px 0 0;
                 text-align: left;
-                font-size: 16px;
             }
 
             &:before , &:after {
