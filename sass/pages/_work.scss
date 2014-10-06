@@ -353,14 +353,14 @@
         top: 33%;
         left: 0;
         z-index: 2;
-        @include transition(transform 300ms ease, color 300ms ease);
+        @include transition(transform 300ms $ease-out-quad, color 300ms $ease-out-quad);
         @include media-query(portable){
             color: white;
             @include transform(translateY(-30px));
         }
     }
     .btn {
-        @include transition(transform 200ms linear 200ms, opacity 300ms linear 200ms);
+        @include transition(transform 200ms $ease-out-quad 200ms, opacity 300ms $ease-out-quad 200ms);
         @include media-query(desk){
             opacity: 0;
             @include transform(translateY(-30px));
@@ -375,7 +375,7 @@
         right: 0;
         background: rgba(0,0,255,1);
         z-index: 1;
-        @include transition(opacity 200ms linear);
+        @include transition(opacity 200ms $ease-out-quad);
         @include media-query(desk){
             opacity: 0;
         }
