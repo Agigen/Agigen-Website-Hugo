@@ -303,7 +303,7 @@
 .section--proddev-case__illustration {
     @include media-query(lap-and-up){
         @include transform(translateX(-20%));
-        @include transition(all 400ms ease-out 200ms);
+        @include transition(all 400ms $ease-out-quad 200ms);
         opacity: 0;
 
         &--from-right {
