@@ -46,7 +46,8 @@
         }
     }
 
-    .device--ios & {
+    .device--ios &,
+    .browser--ie & {
         background-position: top center !important;
     }
 }
@@ -358,7 +359,8 @@
             background-image: url(/img/start/webprod/palm-bg.jpg);
         }
 
-        .device--ios & {
+        .device--ios &,
+        .browser--ie & {
             @include portable-fallback;
         }
     }
@@ -393,7 +395,8 @@
             background-image: url(/img/start/proddev/palm-bg.jpg);
         }
 
-        .device--ios & {
+        .device--ios &,
+        .browser--ie & {
             @include portable-fallback;
         }
 
