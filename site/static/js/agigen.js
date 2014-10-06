@@ -706,21 +706,21 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             }
         };
     }])
-    .directive('screenCarousel', ['$interval', function($interval) {
+    .directive('carousel', ['$interval', function($interval) {
         return {
             restrict: 'A',
             scope: true,
             template: '\
-<div class="screen-carousel-bevel screen-carousel-bevel--{{screenType}}">\
-    <ul class="screen-carousel" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">\
-        <li ng-repeat="src in srcs track by $index" class="screen-carousel__item"\
+<div class="carousel-bevel carousel-bevel--{{bevel}}">\
+    <ul class="carousel" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()">\
+        <li ng-repeat="src in srcs track by $index" class="carousel__item"\
             ng-click="setSlide($index)"\
             ng-class="{\
-                \'screen-carousel__item--current\': $index == index,\
-                \'screen-carousel__item--prev\': $index == (index - 1),\
-                \'screen-carousel__item--next\': $index == (index + 1),\
-                \'screen-carousel__item--below\': $index < index,\
-                \'screen-carousel__item--over\': $index > index,\
+                \'carousel__item--current\': $index == index,\
+                \'carousel__item--prev\': $index == (index - 1),\
+                \'carousel__item--next\': $index == (index + 1),\
+                \'carousel__item--below\': $index < index,\
+                \'carousel__item--over\': $index > index,\
             }"\
         >\
             <img ng-src="{{src}}">\
@@ -729,10 +729,10 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
     </ul>\
 </div>\
 <nav>\
-    <ul class="screen-carousel-nav">\
-        <li ng-repeat="src in srcs track by $index" class="screen-carousel-nav__item"\
+    <ul class="carousel-nav">\
+        <li ng-repeat="src in srcs track by $index" class="carousel-nav__item"\
             ng-class="{\
-                \'screen-carousel-nav__item--current\': $index == index,\
+                \'carousel-nav__item--current\': $index == index,\
             }"\
         >\
             <a ng-click="setSlide($index)">Item {{$index}}</a>\
@@ -741,9 +741,9 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
 </nav>\
             ',
             link: function(scope, element, attrs) {
-                scope.screenType = (attrs.screenType == 'mobile' ? 'mobile' : 'desktop');
-                element.addClass('screen-carousel-wrapper');
-                scope.srcs = attrs.screenCarousel.split(',');
+                scope.bevel = attrs.bevel ? attrs.bevel : 'desktop';
+                element.addClass('carousel-wrapper');
+                scope.srcs = attrs.carousel.split(',');
                 scope.index = scope.srcs.length > 2 ? 1 : 0;
 
                 scope.setSlide = function(index) {
