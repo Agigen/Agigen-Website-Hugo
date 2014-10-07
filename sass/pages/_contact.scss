@@ -144,9 +144,13 @@
         @include btnColors(#00ccff, #fff);
         background-color: #fff;
         border-color: #fff;
+        color: #05bcea !important;
 
         min-width: 160px;
 
+        &:hover {
+            color: #fff !important;
+        }
         @include media-query(desk) {
             position: absolute;
             top: 100%;
