@@ -325,6 +325,7 @@
         }
     }
 
+    &--start-labs,
     &--start-webprod ,
     &--start-proddev {
         .container {
@@ -333,7 +334,10 @@
                 max-width: 100%;
             }
         }
+    }
 
+    &--start-webprod ,
+    &--start-proddev {
         @extend .text--light;
         @include vhFejk(90);
         overflow: hidden;

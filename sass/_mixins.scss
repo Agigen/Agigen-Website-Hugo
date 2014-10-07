@@ -57,16 +57,18 @@
         content: " ";
         display: block;
         background-color: #fff;
-        width: 150%;
+        width: 120%;
         height: $height;
         position: absolute;
         top: -$height;
-        left: 0;
+        left: -10%;
 
         @include transform(rotate(#{$degrees}deg));
-        @include transition(transform 300ms linear);
+        @include transition(all 300ms $ease-out-quad);
         @include transform-origin(left bottom);
-        z-index: 1;
+
+
+        z-index: 20;
     }
     // &:hover:after {
     //     @include transform(rotate(0deg));

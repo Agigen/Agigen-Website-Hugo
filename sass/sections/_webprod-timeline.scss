@@ -22,6 +22,15 @@ $standard_delay: 350ms;
     @extend .delta;
 
     color: #878787;
+
+    &__champagne {
+        width: 88px;
+        height: auto;
+        max-width: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+
     &__timeline {
         width: 90%;
         max-width: 600px;

@@ -1,2 +1,2 @@
 #!/bin/bash
-sass --watch sass:site/static/css --style expanded --sourcemap
+sass --watch sass/agigen.scss:site/static/css/agigen.css --style expanded --sourcemap -I sass
