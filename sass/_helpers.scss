@@ -115,7 +115,11 @@
     }
 }
 
-
+.epsilon {
+    color: #999;
+    margin: 10px 0;
+    letter-spacing: 2px;
+}
 
 .btn {
     @extend .label;
@@ -125,8 +129,8 @@
 
     @include media-query(palm){
         margin: 5px;
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
     }
 
     &--large {
@@ -173,11 +177,7 @@
 .alpha {
     color: #252525;
 }
-.epsilon {
-    color: #999;
-    margin: 10px 0;
-    letter-spacing: 2px;
-}
+
 .delta {
     line-height: 1.5;
     font-weight: 300;
