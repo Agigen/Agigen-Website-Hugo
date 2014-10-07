@@ -70,9 +70,9 @@
 
         z-index: 20;
     }
-    // &:hover:after {
-    //     @include transform(rotate(0deg));
-    // }
+    &:hover:after {
+        @include transform(rotate(0deg));
+    }
 }
 
 

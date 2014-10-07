@@ -138,10 +138,7 @@
 
         .team-member--kiwi &:after ,
         .team-member--max  &:after {
-            bottom: -23px;
-            right: auto;
-            top: auto;
-            left: -50%;
+            @include transform-origin(right top);
             @include transform(rotate(8deg));
         }
         .team-member--viktor &:after {
@@ -152,12 +149,10 @@
         }
 
     }
-
-
-    &--viktor &__photoframe:after {
-    }
+    &--kiwi:hover &__photoframe:after,
+    &--max:hover &__photoframe:after,
+    &--daniel:hover &__photoframe:after,
     &--viktor:hover &__photoframe:after {
-        // top: -80px;
         @include transform(rotate(0deg));
     }
 
