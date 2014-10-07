@@ -28,27 +28,6 @@
   }
 }
 
-@include keyframes(proddevprocess) {
-    0% {
-      stroke-dashoffset: 1630;
-    }
-    // 20% {
-    //     stroke-dashoffset: 977;
-    // }
-    // 40% {
-    //     stroke-dashoffset: 733;
-    // }
-    // 60% {
-    //     stroke-dashoffset: 489;
-    // }
-    // 80% {
-    //     stroke-dashoffset: 245;
-    // }
-    100% {
-      stroke-dashoffset: 0;
-    }
-}
-
 @include keyframes(processpoint) {
     0% {
         @include transform(scale(0));

@@ -27,9 +27,11 @@
             stroke-dasharray: 1635;
             stroke-dashoffset: 1635;
 
+            @include transition(all 1100ms $ease-out-expo 300ms);
+
             .proddev-process.in-view--whole &,
             .proddev-process.in-view--cover & {
-                @include animation(proddevprocess 1100ms $ease-out-expo 300ms forwards);
+                stroke-dashoffset: 0;
             }
         }
         .path--faded {
@@ -38,9 +40,11 @@
             stroke-dasharray: 1635;
             stroke-dashoffset: 1635;
 
+            @include transition(all 1100ms $ease-out-expo 300ms);
+
             .proddev-process.in-view--whole &,
             .proddev-process.in-view--cover & {
-                @include animation(proddevprocess 3600ms $ease-out-expo 900ms forwards);
+                stroke-dashoffset: 0;
             }
         }
         width: 65%;
