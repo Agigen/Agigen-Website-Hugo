@@ -215,6 +215,9 @@
 
 .text-wrapper {
     max-width: 80%;
+    @include media-query(lap){
+        max-width: 90%;
+    }
     @include media-query(palm){
         max-width: 100%;
     }

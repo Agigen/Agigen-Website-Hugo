@@ -80,16 +80,23 @@
     @include media-query(palm) {
         padding-top: 50px;
     }
-    // opacity: 0;
-    @include transition(opacity 500ms ease 200ms);
-    &.in-view--partial {
-        // opacity: 1;
-    }
 
     &__photoframe-wrapper {
         margin: 0 auto;
     }
 
+    &__photo {
+        z-index: 1;
+        &--hover {
+            z-index: 10;
+            opacity: 0;
+            @include transition(opacity 300ms $ease-out-quad);
+        }
+    }
+
+    &:hover &__photo--hover {
+        opacity: 1;
+    }
     &__photoframe {
         width: 73%;
         padding-bottom: 73%;
@@ -111,7 +118,6 @@
             display: block;
             width: 100%;
             height: 100%;
-            @include filter(grayscale(100%));
         }
         @include fotoSneddis(8, 80px);
 
@@ -139,11 +145,20 @@
             @include transform(rotate(8deg));
         }
         .team-member--viktor &:after {
-            top: -31px;
-            left: -25%;
+            // top: -31px;
+            // left: -25%;
             @include transform(rotate(-8deg));
+            @include transform-origin(right bottom);
         }
 
+    }
+
+
+    &--viktor &__photoframe:after {
+    }
+    &--viktor:hover &__photoframe:after {
+        // top: -80px;
+        @include transform(rotate(0deg));
     }
 
     &__name {

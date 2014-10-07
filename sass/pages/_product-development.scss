@@ -246,6 +246,7 @@
         &__content {
             @extend .alpha;
             @extend .text-wrapper;
+
             @media only screen and (max-width: 640px) {
                 font-size: 20px;
             }
