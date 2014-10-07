@@ -270,7 +270,9 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             $scope.updateCursorPosition();
 
             $timeout(function() {
-                $promptInput.width($promptWrapper.width() - $prompt.width() - 2 /* random wtf */);
+
+                $promptInput.width($promptWrapper.width() - $prompt.width() - 12 /* random wtf */);
+                console.log( $promptInput.width() );
             }, 0);
         };
 
@@ -307,6 +309,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             var n = parseInt($promptInput.get(0).selectionStart, 10),
                 step_width = 8.4;
             $scope.cursorPositionLeft = step_width*(n) + 1 + $prompt.width();
+            console.log( $scope.cursorPositionLeft );
         };
 
         $scope.keyUp = function($event){
