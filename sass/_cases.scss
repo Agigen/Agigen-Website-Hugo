@@ -35,117 +35,110 @@
         border-color: #333;
     }
 
-    &--fullwidth {
-        text-align: center;
-        color: #333;
 
-        .case__cta {
+    &--start {
+        .container {
+            z-index: 10;
+        }
+        padding: 0 0 20px;
+        color: #333;
+        text-align: center;
+
+        &__content {
+            display: block;
+        }
+        &__image {
+            width: 280px;
+            max-width: 80%;
+
+            @include media-query(palm) {
+                max-width: 70%;
+            }
+        }
+
+        &__cta {
             @extend .btn;
             @include btnColors(#fff, #fff);
             color: #444;
+            margin-top: 20px;
 
+            @include media-query (lap-and-up){
+                margin-top: -10px;
+                opacity: 0;
+                @include transform(translateY(-30px));
+            }
 
             .device--touch & {
                 border-color: #222;
+                margin-top: 20px;
             }
 
             &:hover {
                 background-color: #222;
                 border-color: #222;
             }
+        }
 
-            @include media-query(palm) {
-                margin-top: 20px;
-                border-color: #666;
-            }
-        }
-        .case__title {
-            @extend .epsilon;
-            color: #444;
-            line-height: 100%;
-            @include media-query(palm){
-                font-size: 16px;
-            }
-        }
         .case__headline {
             margin-bottom: 0;
         }
 
-        .case__image {
-            @include transition(all 200ms $ease-in-out-cubic);
-            @include transform(translate3d(0,0,0));
+        .case__title {
+            @extend .epsilon;
+            color: #444;
+            line-height: 100%;
+            padding: 10px 0 0;
+            @include media-query(palm){
+                font-size: 16px;
+            }
         }
 
-        .case__image__shadow {
-            @include transition(all 200ms $ease-in-out-cubic);
-            @include transform-origin(center center);
+        &__content {
+            @include transition(transform 200ms $ease-out-quad 150ms);
+        }
+        &__cta {
+            @include transition(transform 300ms linear 50ms, opacity 180ms $ease-out-quad 0);
         }
 
-        & .case__block-link:hover .case__image {
-            @include transform(translate3d(0,-10px,0));
+        &:hover &__content {
+            @include media-query(lap-and-up) {
+                @include transform(translateY(-20px));
+                @include transition(transform 200ms $ease-out-quad);
+            }
         }
 
-        &--billogram {
+        .device--touch & &__cta ,
+        &:hover &__cta {
+            opacity: 1;
+            @include transform(translateY(0px));
+            @include transition(transform 200ms $ease-out-quad 100ms, opacity 300ms $ease-out-quad 120ms);
+            // @include transition(transform 300ms $ease-out-quad 0, opacity 200ms $ease-out-quad 0);
+        }
+
+        &--samsung {
             .container {
-                margin-top: -170px;
-
-                @include media-query (palm) {
-                    margin-top: -130px;
+                margin-top: -50px;
+                @include media-query(palm){
+                    margin-top: -30px;
                 }
             }
-            .case__image-container {
-                width: 264px;
+        }
+        &--billogram {
+            .case--start__image {
+                width: 200px;
                 max-width: 70%;
 
                 @include media-query(palm) {
                     max-width: 50%;
                 }
-
-                position: relative;
-                margin: 0 auto;
-                padding: 0 0 1px 0;
             }
-            .case__image {
-                width: 100%;
-                @include transition(all 200ms $ease-in-out-cubic);
-            }
-            .case__image__shadow {
-                width: 100%;
-                position: absolute;
-                bottom: 10%;
-                left: 2%;
-                z-index: -1;
-                @include transform-origin(33.333% 70%);
-            }
-        }
-
-        &--samsung {
-            // Fix for firefox which does not seem to respect overflow: hidden.
-            // Make this divider have white bg and position it above other content
-            background: #fff;
-            z-index: 10;
-            position: relative;
-
             .container {
-                margin-top: -130px;
-
-                @include media-query (palm) {
-                    margin-top: -110px;
+                margin-top: -120px;
+                @include media-query(palm){
+                    margin-top: -70px;
                 }
-            }
-
-            .case__image {
-                width: 280px;
-                max-width: 80%;
-
-                @include media-query(palm) {
-                    max-width: 55%;
-                }
-
-                @include transition(all 200ms $ease-in-out-cubic);
             }
         }
-
     }
 
     &--thin {
