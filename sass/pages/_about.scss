@@ -156,6 +156,40 @@
         @include transform(rotate(0deg));
     }
 
+
+    &__contact {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        text-align: center;
+        padding: 20px;
+        z-index: 30;
+        width: 100%;
+        @include transform(translateY(30px));
+        @include transition(opacity 300ms $ease-out-quad 200ms, transform 300ms $ease-out-quad 200ms);
+        &__item {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 10px;
+            background: white;
+            font: 1px; color: white;
+            overflow: hidden;
+            text-align: left;
+            text-indent: -1000px;
+            &:hover {
+                background: #f0f0f0;
+            }
+        }
+    }
+
+    &:hover &__contact {
+        opacity: 1;
+        @include transform(translateY(0));
+    }
+
     &__name {
         @extend .epsilon;
         text-align: center;
