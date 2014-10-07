@@ -169,18 +169,25 @@
         @include transform(translateY(30px));
         @include transition(opacity 300ms $ease-out-quad 200ms, transform 300ms $ease-out-quad 200ms);
         &__item {
-            width: 40px;
-            height: 40px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
             display: inline-block;
-            margin: 0 10px;
-            background: white;
-            font: 1px; color: white;
+            margin: 0 5px;
+            background: rgba(255,255,255,0.4) url(/img/about/mail.svg) no-repeat center center;
+            font: 1px;
+            color: transparent;
             overflow: hidden;
             text-align: left;
             text-indent: -1000px;
+            &--phone {
+                background-image: url(/img/about/phone.svg);
+            }
             &:hover {
-                background: #f0f0f0;
+                background-color: rgba(255,255,255,0.6);
+            }
+            &:active {
+                background-color: rgba(255,255,255,0.3);
             }
         }
     }
