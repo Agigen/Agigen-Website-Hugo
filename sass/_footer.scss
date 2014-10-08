@@ -34,6 +34,11 @@
             margin-left: 40px;
         }
 
+        &--left {
+            padding-top: 0;
+            position: relative;
+            top: -1px;
+        }
         &--right {
             float: right;
         }
@@ -67,7 +72,22 @@
                 text-decoration: none;
             }
         }
+    }
 
+    &__links--left {
+        .main-footer__link {
+            > img {
+                display: inline-block;
+                vertical-align: middle;
+            }
 
+            @include transition(transform ease 150ms);
+            &:hover {
+                @include transform(scale(1.1));
+            }
+            &:active {
+                @include transform(scale(0.9));
+            }
+        }
     }
 }
