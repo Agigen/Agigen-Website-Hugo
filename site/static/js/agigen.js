@@ -207,7 +207,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.setZoom = function(z) {
-            console.log("trying to set zoom to", z);
+            // console.log("trying to set zoom to", z);
             if ($scope.map && $scope.zoom != z){
                 $scope.zoom = z;
                 $scope.map.setZoom(z);
@@ -225,7 +225,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             };
             $.get("http://ipinfo.io", function(response) {
                 if (response.country == "SE") {
-                    console.log("Sweden set zoom to", $scope.zoomLevelSweden);
+                    // console.log("Sweden set zoom to", $scope.zoomLevelSweden);
                     $scope.setZoom($scope.zoomLevelSweden)
                     var loc = response.loc.split(","),
                         sthlmBounds_ish = [59.724,59.763,20.141,20.204],
@@ -270,9 +270,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             $scope.updateCursorPosition();
 
             $timeout(function() {
-
                 $promptInput.width($promptWrapper.width() - $prompt.width() - 12 /* random wtf */);
-                console.log( $promptInput.width() );
             }, 0);
         };
 
@@ -309,7 +307,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             var n = parseInt($promptInput.get(0).selectionStart, 10),
                 step_width = 8.4;
             $scope.cursorPositionLeft = step_width*(n) + 1 + $prompt.width();
-            console.log( $scope.cursorPositionLeft );
         };
 
         $scope.keyUp = function($event){
