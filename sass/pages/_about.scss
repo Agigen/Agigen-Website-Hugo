@@ -89,8 +89,10 @@
         z-index: 1;
         &--hover {
             z-index: 10;
-            opacity: 0;
-            @include transition(opacity 300ms $ease-out-quad);
+            @include media-query(lap-and-up){
+                opacity: 0;
+                @include transition(opacity 300ms $ease-out-quad);
+            }
         }
     }
 
@@ -131,21 +133,25 @@
         .team-member--kiwi   &:after ,
         .team-member--daniel &:after ,
         .team-member--max &:after {
-            top: auto;
-            bottom: -80px;
-            @include transform(rotate(-8deg));
+            @include media-query(lap-and-up){
+                top: auto;
+                bottom: -80px;
+                @include transform(rotate(-8deg));
+            }
         }
 
         .team-member--kiwi &:after ,
         .team-member--max  &:after {
-            @include transform-origin(right top);
-            @include transform(rotate(8deg));
+            @include media-query(lap-and-up){
+                @include transform-origin(right top);
+                @include transform(rotate(8deg));
+            }
         }
         .team-member--viktor &:after {
-            // top: -31px;
-            // left: -25%;
-            @include transform(rotate(-8deg));
-            @include transform-origin(right bottom);
+            @include media-query(lap-and-up){
+                @include transform(rotate(-8deg));
+                @include transform-origin(right bottom);
+            }
         }
 
     }
@@ -157,16 +163,20 @@
     }
 
 
+
+
     &__contact {
         position: absolute;
         bottom: 0;
         left: 0;
-        opacity: 0;
         text-align: center;
         padding: 20px;
         z-index: 30;
         width: 100%;
-        @include transform(translateY(30px));
+        @include media-query(lap-and-up){
+            opacity: 0;
+            @include transform(translateY(30px));
+        }
         @include transition(opacity 300ms $ease-out-quad 200ms, transform 300ms $ease-out-quad 200ms);
         &__item {
             width: 46px;

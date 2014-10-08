@@ -63,11 +63,12 @@
         top: -$height;
         left: -10%;
 
-        @include transform(rotate(#{$degrees}deg));
-        @include transition(all 300ms $ease-out-quad);
-        @include transform-origin(left bottom);
+        @include media-query(lap-and-up){
+            @include transform(rotate(#{$degrees}deg));
+            @include transition(all 300ms $ease-out-quad);
+            @include transform-origin(left bottom);
 
-
+        }
         z-index: 20;
     }
     &:hover:after {
