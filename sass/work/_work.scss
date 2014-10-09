@@ -42,10 +42,10 @@
                 @extend .epsilon;
             }
             padding: 50px 0 100px;
-            @extend .beta;
+            @extend .gamma;
             text-align: center;
             h2 {
-                @extend .beta;
+                @extend .gamma;
                 font-weight: 100;
                 line-height: 125%;
                 @include media-query(palm) {
@@ -53,7 +53,10 @@
                 }
             }
             .btn {
+                @extend .epsilon;
+                line-height: 3;
                 @include btnColors(#333, white);
+
             }
             @include media-query(palm){
                 padding-bottom: 50px;
