@@ -90,6 +90,9 @@
     &--webprod-contact {
         background-color: $color-webprod-blue;
         background-image: url(/img/webprod/contact-texture.jpg);
+        .btn:hover {
+            color: $color-webprod-blue !important;
+        }
     }
 
     &--webprod-case {
