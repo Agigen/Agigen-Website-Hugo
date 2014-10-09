@@ -21,6 +21,12 @@
                 padding-bottom: 20px;
             }
         }
+
+        .btn {
+            &:hover {
+                color: #222;
+            }
+        }
     }
     &--labs-github {
         padding-bottom: 150px;
