@@ -27,6 +27,13 @@
     @include media-query(palm) {
         padding: 50px 0;
     }
+
+    .btn.fearless-panda__btn {
+        color: #222 !important;
+        &:hover {
+            color: #fff !important;
+        }
+    }
 }
 
 
