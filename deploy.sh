@@ -2,6 +2,7 @@
 echo "Starting deploy";
 
 DIR="`dirname "${0}"`"
+cd $DIR
 
 # @todo Maybe add real version numbers in some other way
 version=$(date +"%y%m%d_%H%M");
@@ -27,7 +28,7 @@ git tag -a "$version" -m"Release $version of Agigen website"
 git push --tags
 
 # Cleanup
-cd $DIR
+cd -
 rm -rf /tmp/agigen-hugo-release
 
 mv $config~ $config
