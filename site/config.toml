@@ -3,6 +3,8 @@ MetaDataFormat = "json"
 languageCode = "en-us"
 title = "Agigen"
 pluralizeListTitles = false
+[params]
+  version = "1"
 
 [indexes]
   tag = "tags"

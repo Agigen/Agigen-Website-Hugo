@@ -34,7 +34,7 @@
 
   <!-- CSS -->
   <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="/css/agigen.css">
+  <link rel="stylesheet" href="/css/agigen.css?t={{ .Site.Params.version }}">
 
   <!-- Icons -->
 
@@ -49,10 +49,6 @@
   <link rel="icon" type="image/png" href="/img/utils/favicon-32x32.png" sizes="32x32">
   <meta name="msapplication-TileColor" content="#b91d47">
   <meta name="msapplication-TileImage" content="/img/utils/mstile-144x144.png">
-
-  <!-- RSS -->
-  <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
-
 
   {{ partial "meta_sharing.html" . }}
 
