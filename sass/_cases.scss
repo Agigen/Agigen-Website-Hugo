@@ -125,7 +125,7 @@
         }
         &--billogram {
             .case--start__image {
-                width: 200px;
+                width: 170px;
                 max-width: 70%;
 
                 @include media-query(palm) {
@@ -133,9 +133,9 @@
                 }
             }
             .container {
-                margin-top: -120px;
+                margin-top: -100px;
                 @include media-query(palm){
-                    margin-top: -70px;
+                    margin-top: -50px;
                 }
             }
         }
