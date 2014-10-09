@@ -464,13 +464,8 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
                 command = $scope.promptInput.trim();
                 pushCommandScrollback();
 
-                if (command.indexOf('sudo') === 0) {
-                    $scope.scrollback.push("Oh come on man ;)");
-                    return;
-                } else {
-                    if (run(command) === 127) {
-                        $scope.scrollback.push(command + ": command not found");
-                    }
+                if (run(command) === 127) {
+                    $scope.scrollback.push(command + ": command not found");
                 }
             }
         };
@@ -503,6 +498,13 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         ctrlKey = false;
         commands = {
+            "^sudo(\\s(.*))?$": function(matches) {
+                if (matches[2] === 'bash') {
+                    $scope.scrollback.push("ehehehe");
+                } else {
+                    $scope.scrollback.push("Oh come on man ;)");
+                }
+            },
             "^\\.\\/start-chat$": function() {
                     $scope.scrollback.push("Hello, what's your name?");
                     setPrompt("username:");
