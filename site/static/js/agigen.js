@@ -292,7 +292,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.kill = function() {
-            $scope.scrollback.push("^C");
             $scope.promptInput = "";
 
             if (chat) {
@@ -350,6 +349,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
 
             if (ctrlKey && $event.which === keys.c) {
+                $scope.scrollback.push("^C");
                 $scope.kill();
                 return;
             }
@@ -456,9 +456,15 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                     setPrompt(">");
                 } else {
-                    // Send message
-                    chat.send($scope.promptInput);
-                    $scope.promptInput = "";
+
+                    if (['/quit', '/wc', '/exit'].indexOf($scope.promptInput) !== -1) {
+                        $scope.scrollback.push($scope.prompt + ' ' + $scope.promptInput);
+                        $scope.kill();
+                    } else {
+                        // Send message
+                        chat.send($scope.promptInput);
+                        $scope.promptInput = "";
+                    }
                 }
             } else {
                 command = $scope.promptInput.trim();
