@@ -292,7 +292,6 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
         };
 
         $scope.kill = function() {
-            $scope.scrollback.push("^C");
             $scope.promptInput = "";
 
             if (chat) {
@@ -350,6 +349,7 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
             }
 
             if (ctrlKey && $event.which === keys.c) {
+                $scope.scrollback.push("^C");
                 $scope.kill();
                 return;
             }
@@ -456,21 +456,22 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
                     setPrompt(">");
                 } else {
-                    // Send message
-                    chat.send($scope.promptInput);
-                    $scope.promptInput = "";
+
+                    if (['/quit', '/wc', '/exit'].indexOf($scope.promptInput) !== -1) {
+                        $scope.scrollback.push($scope.prompt + ' ' + $scope.promptInput);
+                        $scope.kill();
+                    } else {
+                        // Send message
+                        chat.send($scope.promptInput);
+                        $scope.promptInput = "";
+                    }
                 }
             } else {
                 command = $scope.promptInput.trim();
                 pushCommandScrollback();
 
-                if (command.indexOf('sudo') === 0) {
-                    $scope.scrollback.push("Oh come on man ;)");
-                    return;
-                } else {
-                    if (run(command) === 127) {
-                        $scope.scrollback.push(command + ": command not found");
-                    }
+                if (run(command) === 127) {
+                    $scope.scrollback.push(command + ": command not found");
                 }
             }
         };
@@ -503,6 +504,13 @@ var mapsApiKey = "AIzaSyDMMFeNcOLwq4vEFgc9C39sshHtkiVa6jo";
 
         ctrlKey = false;
         commands = {
+            "^sudo(\\s(.*))?$": function(matches) {
+                if (matches[2] === 'bash') {
+                    $scope.scrollback.push("ehehehe");
+                } else {
+                    $scope.scrollback.push("Oh come on man ;)");
+                }
+            },
             "^\\.\\/start-chat$": function() {
                     $scope.scrollback.push("Hello, what's your name?");
                     setPrompt("username:");
@@ -765,7 +773,10 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
         };
     }]);
 
-    $('.start-circle').addClass('animate');
+
+    setTimeout(function(){
+        $('.start-circle').addClass('animate');
+    }, 10);
 
     $('.main-header__video').on('canplay', function(){
         $('.main-header__video').addClass('main-header__video--loaded');

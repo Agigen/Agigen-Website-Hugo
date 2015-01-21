@@ -12,7 +12,7 @@
 }
 
 .awards-list {
-    margin-top: 100px;
+    margin-top: 120px;
     @include media-query(palm){
         margin-top: 30px;
     }
@@ -239,6 +239,10 @@
             @include media-query(lap) {
                 max-width: 80%;
             }
+        }
+
+        .btn:hover {
+            color: #222;
         }
     }
 

@@ -187,7 +187,7 @@
     .start-circle__title {
         @include transition(all 1500ms $ease-in-out-quint 2400ms);
 
-        opacity: 1;
+        opacity: 1 !important;
         @include transform(scale(1));
 
         path {

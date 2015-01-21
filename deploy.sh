@@ -2,9 +2,14 @@
 echo "Starting deploy";
 
 DIR="`dirname "${0}"`"
+cd $DIR
 
 # @todo Maybe add real version numbers in some other way
 version=$(date +"%y%m%d_%H%M");
+config="site/config.toml"
+
+cp $config $config~
+sed -i.tmp "s/version = \".*\"/version = \"$version\"/" $config || exit $?
 
 # Checkout the git repo with the generated source code
 git clone --depth=1 git@github.com:Agigen/Generated-Site.git /tmp/agigen-hugo-release
@@ -23,8 +28,11 @@ git tag -a "$version" -m"Release $version of Agigen website"
 git push --tags
 
 # Cleanup
-cd $DIR
+cd -
 rm -rf /tmp/agigen-hugo-release
+
+mv $config~ $config
+rm $config.tmp
 
 # And be happy
 echo "Done!"
