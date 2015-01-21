@@ -1,0 +1,51 @@
+GOSF - the Great Online Shopping Festival
+
+What it is
+
+The largest online shopping event in the world, created to promote online shopping throughout India.
+
+Tre puffisar
+Scalability
+This site needed to be able to accommodate a potentially very large number of simultaneous visitors
+
+The mission
+Get Indians hyped about online shopping
+
+Accessibility
+We needed to make an as lightweight as possible site because of bad connection speeds in India
+
+It's not entirely clear to us why Google India would choose to work with a Swedish agency, but North Kingdom's reach apparently extends to the other side of the planet in both directions so here we were with a project we'd never heard of and the first info we get is: This site had several hundred thousands of simultaneous users last year and it crashed, it cannot crash this year. That is our top priority.
+
+Our second priority is to make the site as light as possible; it should work on a 2G mobile connection.
+
+This was beginning of October, project launch 25th of November. For once we felt we had an ocean of time. Little did we anticipate what was to come.
+
+It started off pretty normal, NK delivered designs for us to implement. The event was divided into four phases:
+teaser page
+pre-launch
+festival days
+end page
+
+The pre-launch site was to promote the retailers that would sell their wares during festival days and generally build the hype.
+
+NK designed a game where the player chose a category of wares and had to click on all the items that appeared on the screen and were part of the chosen category. We weren't meant to code the game but due to scheduling conflicts we ended up finishing it. The main difficulty was to keep it light enough that it would provide a pleasurable experience to a user with a slower connection. Since the game was images, sounds and javascript only we had to keep all the images in a sprite and ended up scrapping a couple of the sound effects to keep the content you needed to download to a minimum. 536 682 games were played.
+
+Other features on the site were a sign up for an alert e-mail at the start of the festival days, a promo for a retailer a day that had a special deal that day and a listing of all the retailers that would put up their wares duing festival days.
+
+The festival days site was pretty much just a retailer listing and an item listing. Our main focus here was to make sure the site wouldn't crash.
+
+We had decided from the start that Google's App engine would be the only viable solution for something that needed to scale this heavily. We scheduled load tests together with a company called Load Impact.
+
+Google's estimate was that some several hundred thousand simultaneous users would access the site. We ran some smaller tests with around 40k users first. And they didn't produce promising results.
+
+We added more caching. We put all our images in a bucket on cloudstorage. We added yet more caching. We changed all our png-icons to inline CSS. We added yet more caching (by this time, it felt like we had cached the whole world). And still the load tests wouldn't run smoothly.
+
+Eventually, pretty much without any changes to the result in the load tests, the Google guy we were in contact with (and who had suggested basically all the changes we did after the first few load tests) declared that he thought the site would hold up fine.
+
+It did. Huge success. Everyone was happy.
+
+We've figured that since the load tests were run from a mere six or seven locations, Google's App engine reacted as if it were being DDoSed. This was never confirmed with Google, but it's our theory at least.
+
+Still it was fun trying to prep for such an onslaught of visitors (even though there were no several hundred thousands of simultaneous users there were still a lot of users) and we learned a lot in the process.
+
+
