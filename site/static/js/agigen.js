@@ -655,6 +655,168 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             }
         };
     }])
+    .controller('slackCaseMap', ['$scope', function($scope){
+        var mapStyles = [
+            {
+            "featureType": "administrative",
+            "stylers": [
+            { "visibility": "off" }
+            ]
+            },{
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [
+            { "visibility": "off" }
+            ]
+            },{
+            "featureType": "road",
+            "stylers": [
+            { "visibility": "off" }
+            ]
+            },{
+            "featureType": "landscape.man_made",
+            "stylers": [
+            { "visibility": "off" }
+            ]
+            },{
+            "featureType": "poi",
+            "stylers": [
+            { "visibility": "off" }
+            ]
+            },{
+            "featureType": "landscape",
+            "stylers": [
+            { "color": "#ffffff" }
+            ]
+            },{
+            "featureType": "water",
+            "stylers": [
+            { "color": "#f4a543" }
+            ]
+            },{
+            "featureType": "administrative.country",
+            "elementType": "labels",
+            "stylers": [
+            { "visibility": "off" }
+            ]
+            },{
+            "featureType": "administrative",
+            "elementType": "geometry.stroke",
+            "stylers": [
+            { "color": "#ffffff" },
+            { "visibility": "simplified" }
+            ]
+            }
+        ];
+
+        $scope.agigenOfficeMarker;
+
+        var slackCountries = [
+            {code: 'AE', name: "United Arab Emirates", position: [24.466667, 54.366667]},
+            {code: 'AU', name: "Australia", position: [-35.282000, 149.128684]},
+            {code: 'AR', name: "Argentina", position: [-34.603723, -58.381593]},
+            {code: 'AW', name: "Aruba", position: [12.519000, -70.037]},
+            {code: 'BE', name: "Belgium", position: [50.850340, 4.35171]},
+            {code: 'BR', name: "Brazil", position: [-14.235004, -51.92528]},
+            {code: 'BY', name: "Belarus", position: [53.904540, 27.561524]},
+            {code: 'CA', name: "Canada", position: [45.421530, -75.697193]},
+            {code: 'CL', name: "Chile", position: [-33.469120, -70.641997]},
+            {code: 'CH', name: "Switzerland", position: [46.947922, 7.444608]},
+            {code: 'CO', name: "Colombia", position: [4.598056, -74.075833]},
+            {code: 'CZ', name: "Czech Republic", position: [50.075538, 14.4378]},
+            {code: 'DE', name: "Germany", position: [52.520007, 13.404954]},
+            {code: 'DK', name: "Denmark", position: [55.676097, 12.568337]},
+            {code: 'DO', name: "Dominican Republic", position: [18.466667, -69.95]},
+            {code: 'ES', name: "Spain", position: [40.416775, -3.70379]},
+            {code: 'FI', name: "Finland", position: [60.173324, 24.941025]},
+            {code: 'FR', name: "France", position: [48.856614, 2.352222]},
+            {code: 'GB', name: "United Kingdom", position: [51.507351, -0.127758]},
+            {code: 'GR', name: "Greece", position: [37.983917, 23.72936]},
+            {code: 'GU', name: "Guam", position: [13.470891, 144.751278]},
+            {code: 'HU', name: "Hungary", position: [47.497912, 19.040235]},
+            {code: 'HR', name: "Croatia", position: [45.815011, 15.981919]},
+            {code: 'IN', name: "India", position: [28.613939, 77.209021]},
+            {code: 'IT', name: "Italy", position: [41.902783, 12.496366]},
+            {code: 'JP', name: "Japan", position: [35.689487, 139.691706]},
+            {code: 'KR', name: "South Korea", position: [37.566535, 126.977969]},
+            {code: 'LB', name: "Lebanon", position: [33.888629, 35.495479]},
+            {code: 'LK', name: "Sri Lanka", position: [6.894070, 79.902478]},
+            {code: 'LV', name: "Latvia", position: [56.949649, 24.105186]},
+            {code: 'NL', name: "Netherlands", position: [52.370216, 4.895168]},
+            {code: 'NO', name: "Norway", position: [59.913869, 10.752245]},
+            {code: 'NP', name: "Nepal", position: [27.700000, 85.333333]},
+            {code: 'NZ', name: "New Zealand", position: [-41.286460, 174.776236]},
+            {code: 'PK', name: "Pakistan", position: [33.729388, 73.093146]},
+            {code: 'PL', name: "Poland", position: [52.229676, 21.012229]},
+            {code: 'PH', name: "Philippines", position: [14.599512, 120.984219]},
+            {code: 'RU', name: "Russia", position: [55.755826, 37.6173]},
+            {code: 'RO', name: "Romania", position: [44.426767, 26.102538]},
+            {code: 'RS', name: "Serbia", position: [44.786568, 20.448922]},
+            {code: 'SE', name: "Sweden", position: [59.332779,18.081026]},
+            {code: 'SK', name: "Slovakia", position: [48.145892, 17.107137]},
+            {code: 'SV', name: "El Salvador", position: [13.692940, -89.218191]},
+            {code: 'TN', name: "Tunisia", position: [36.806495, 10.181532]},
+            {code: 'TR', name: "Turkey", position: [39.920770, 32.85411]},
+            {code: 'UA', name: "Ukraine", position: [50.450100, 30.5234]},
+            {code: 'US', name: "United States", position: [38.907192, -77.036871]},
+            {code: 'UZ', name: "Uzbekistan", position: [41.266667, 69.216667]},
+            {code: 'VN', name: "Vietnam", position: [21.027764, 105.83416]},
+            {code: 'ZA', name: "South Africa", position: [-25.746111, 28.188056]}
+        ];
+
+        window.initializeGoogleMapsSlack = function() {
+            var mapOptions = {
+                zoom: 3,
+                center: new google.maps.LatLng(59.332779, 18.081026),
+                styles: mapStyles,
+                disableDefaultUI: true,
+                backgroundColor: "#F4A542",
+                scrollwheel: false
+            };
+
+            $scope.map = new google.maps.Map(document.getElementById('slack-map'), mapOptions);
+
+            var circle = {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: '#252525',
+                fillOpacity: 1,
+                scale: 12,
+                strokeColor: '#f4a542',
+                strokeWeight: 3
+            };
+
+            for (var i = 0; i < slackCountries.length; i++) {
+                var country = slackCountries[i];
+                if (country.position && country.position.length) {
+                    new google.maps.Marker({
+                        position: new google.maps.LatLng(country.position[0],country.position[1]),
+                        map: $scope.map,
+                        title: country.name,
+                        icon: circle
+                    });
+                };
+
+            };
+
+            $scope.agigenOfficeMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(59.332779,18.081026),
+                map: $scope.map,
+                title: 'Agigen Office',
+                icon: {
+                    url: '/img/contact/location_agigen.png',
+                    scaledSize: new google.maps.Size(32, 50),
+                    size: new google.maps.Size(64, 100),
+                    anchor: new google.maps.Point(0, 32),
+                    origin: new google.maps.Point(0,0)
+                },
+                visible: false
+            });
+        }
+
+        var script = document.createElement('script');
+        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=initializeGoogleMapsSlack';
+        document.body.appendChild(script);
+    }])
     .directive('workVideo', [function() {
         return {
             restrict: 'A',
