@@ -76,7 +76,22 @@
 </section>
 
 <section class="slack-case-map" ng-controller="slackCaseMap">
-    <div id="slack-map"></div>
+    <div id="slack-map" class="palm-hidden"></div>
+    <div class="slack-case-map__overlay palm-hidden">
+        <div class="container">
+            <aside class="slack-case-map__popup">
+                {{ country || "Totally 54 countries" }}
+            </aside>
+        </div>
+    </div>
+    <div class="slack-map--mobile lap-and-up-hidden container">
+
+        <h2>We've had visitors from the following countries</h2>
+        <ul>
+            <li ng-repeat="country in slackCountries" class="one-third">{{ country.name }}</li>
+        </ul>
+    </div>
+
 </section>
 
 <section class="container container--tight work__section">
@@ -90,7 +105,7 @@
 <section class="section section--center-content work__section work__section--grandfinale work__section--slack--grandfinale">
     <div class="section__content">
         <div class="container">
-            <h3 class="work__section--grandfinale__header">Our new friends</h3>
+            <h2 class="work__section--grandfinale__header">Our new friends</h3>
             <div class="work__section--grandfinale__copy">Egor has always made us laugh with his amazing photoshop skills and stories from Ukraine.</div>
         </div>
     </div>

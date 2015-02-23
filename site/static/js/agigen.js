@@ -686,7 +686,7 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
             },{
             "featureType": "landscape",
             "stylers": [
-            { "color": "#ffffff" }
+            { "color": "#ffc683" }
             ]
             },{
             "featureType": "water",
@@ -711,7 +711,7 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
 
         $scope.agigenOfficeMarker;
 
-        var slackCountries = [
+        $scope.slackCountries = [
             {code: 'AE', name: "United Arab Emirates", position: [24.466667, 54.366667]},
             {code: 'AU', name: "Australia", position: [-35.282000, 149.128684]},
             {code: 'AR', name: "Argentina", position: [-34.603723, -58.381593]},
@@ -767,50 +767,58 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
         window.initializeGoogleMapsSlack = function() {
             var mapOptions = {
                 zoom: 3,
-                center: new google.maps.LatLng(59.332779, 18.081026),
+                center: new google.maps.LatLng(20.594194, 13.183594),
                 styles: mapStyles,
                 disableDefaultUI: true,
                 backgroundColor: "#F4A542",
-                scrollwheel: false
+                scrollwheel: false,
+                draggable: false
             };
 
             $scope.map = new google.maps.Map(document.getElementById('slack-map'), mapOptions);
 
             var circle = {
                 path: google.maps.SymbolPath.CIRCLE,
-                fillColor: '#252525',
+                fillColor: '#ffffff',
+                fillOpacity: 0,
+                scale: 8,
+                strokeColor: '#ffffff',
+                strokeWeight: 2
+            };
+            var circleFilled = {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: '#ffffff',
                 fillOpacity: 1,
-                scale: 12,
-                strokeColor: '#f4a542',
-                strokeWeight: 3
+                scale: 8,
+                strokeColor: '#ffffff',
+                strokeWeight: 2
             };
 
-            for (var i = 0; i < slackCountries.length; i++) {
-                var country = slackCountries[i];
+            for (var i = 0; i < $scope.slackCountries.length; i++) {
+                var country = $scope.slackCountries[i];
                 if (country.position && country.position.length) {
-                    new google.maps.Marker({
+                    var marker = new google.maps.Marker({
                         position: new google.maps.LatLng(country.position[0],country.position[1]),
                         map: $scope.map,
                         title: country.name,
                         icon: circle
                     });
-                };
+                    google.maps.event.addListener(marker, 'mouseover', function() {
+                        this.setIcon(circleFilled);
+                        var name = this.title;
+                        $scope.$apply(function(){
+                            $scope.country = name;
+                        });
+                    });
+                    google.maps.event.addListener(marker, 'mouseout', function() {
+                        this.setIcon(circle);
+                        $scope.$apply(function(){
+                            $scope.country = false;
+                        });
+                    });
+                }
+            }
 
-            };
-
-            $scope.agigenOfficeMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(59.332779,18.081026),
-                map: $scope.map,
-                title: 'Agigen Office',
-                icon: {
-                    url: '/img/contact/location_agigen.png',
-                    scaledSize: new google.maps.Size(32, 50),
-                    size: new google.maps.Size(64, 100),
-                    anchor: new google.maps.Point(0, 32),
-                    origin: new google.maps.Point(0,0)
-                },
-                visible: false
-            });
         }
 
         var script = document.createElement('script');
@@ -969,8 +977,6 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
         };
         var interval = setInterval(countUp, 70);
     });
-
-
 
     var animateSvgs = function(){
         var path = $('.animate--svg path').each(function(i,e){
