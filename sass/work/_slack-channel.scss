@@ -2,13 +2,15 @@
     .main-header {
         background: $color-labs-orange;
     }
-
-    a {
-        font-weight: bold;
-        &:hover {
-            color: black;
+    .main-content {
+        a {
+            font-weight: bold;
+            &:hover {
+                color: black;
+            }
         }
     }
+
 }
 
 
@@ -83,7 +85,7 @@
         float: right;
         font-size: 14px;
         color: #666;
-        min-width: 165px;
+        min-width: 150px;
         text-align: right;
     }
 
