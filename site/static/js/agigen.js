@@ -772,7 +772,8 @@ H?$??f?H?D$pH?(H???H????H?(H??????GH?(H?,$??H??$?H?D$pH???$H??$?H?$H?LH??$?H?\$?
                 disableDefaultUI: true,
                 backgroundColor: "#F4A542",
                 scrollwheel: false,
-                draggable: false
+                draggable: true,
+                disableDoubleClickZoom: true
             };
 
             $scope.map = new google.maps.Map(document.getElementById('slack-map'), mapOptions);
