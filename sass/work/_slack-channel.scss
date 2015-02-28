@@ -1,6 +1,6 @@
 .page--work--agigen-chat {
     .main-header {
-        background: $color-labs-orange;
+        background: $color-labs-orange url(/img/work/case/slack/pattern-repeat-xy-light.png) repeat top center;
     }
     .main-content {
         a {
@@ -10,7 +10,9 @@
             }
         }
     }
-
+    .work__header-image {
+        max-width: 300px;
+    }
 }
 
 

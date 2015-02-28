@@ -27,7 +27,21 @@
                 color: #222;
             }
         }
+
+        @include sneddis(8, 270px);
     }
+    &--labs--agigen-chat {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        background: $color-labs-orange url(/img/work/case/slack/pattern-repeat-xy-light.png) repeat center center;
+        &__illustration {
+            position: relative;
+            z-index: 5;
+            max-width: 400px;
+        }
+    }
+
+
     &--labs-github {
         padding-bottom: 150px;
         @include media-query(palm) {
