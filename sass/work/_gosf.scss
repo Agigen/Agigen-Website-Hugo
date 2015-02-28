@@ -1,0 +1,64 @@
+.page--work {
+    &--google-gosf {
+        .main-header {
+            background-color: #2d3339;
+            background-image: url(/img/work/case/gosf/gosf-bg.jpg);
+        }
+    }
+}
+
+.content--page-work {
+    .work__section--gosf--three-points {
+        background: #1E76BD url(/img/work/case/gosf/bullets-bg.jpg);
+    }
+
+    .work__section--gosf--prelaunch {
+        background-image: url(/img/work/case/gosf/game-bg.jpg);
+    }
+
+    .work-section--gosf--festival {
+        background-image: url(/img/work/case/gosf/festival-bg.jpg);
+    }
+
+    .work__section--gosf--result {
+        background-image: url(/img/work/case/gosf/result-bg.jpg);
+    }
+
+    .work__section--gosf--grandfinale {
+        background-image: url(/img/work/case/gosf/closing-bg.jpg);
+    }
+}
+
+
+.counter-view {
+    text-align: center;
+    color: #252525;
+}
+    .counter-view__legend {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-bottom: 30px;
+        @include media-query(palm) {
+            padding-bottom: 15px;
+        }
+    }
+    .counter-view__number {
+        display: inline-block;
+        border: 1px #ebebeb solid;
+        border-radius: 10px;
+        font-size: 88px;
+        font-weight: bold;
+        margin: 5px 3px;
+        min-width: 90px;
+        line-height: 100%;
+        padding: 2% 0 2% 0;
+
+        @include media-query(lap) {
+            font-size: 60px;
+            min-width: 60px;
+        }
+        @include media-query(palm) {
+            min-width: 40px;
+            font-size: 40px;
+        }
+    }
