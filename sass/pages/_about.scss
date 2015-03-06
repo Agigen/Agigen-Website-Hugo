@@ -126,12 +126,14 @@
         .team-member--johan  &:after ,
         .team-member--miriam &:after ,
         .team-member--oscar  &:after ,
-        .team-member--erika &:after {
+        .team-member--erika &:after ,
+        .team-member--albin &:after {
             display: none;
         }
 
         .team-member--kiwi   &:after ,
         .team-member--daniel &:after ,
+        .team-member--sven &:after ,
         .team-member--max &:after {
             @include media-query(lap-and-up){
                 top: auto;
