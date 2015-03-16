@@ -1,0 +1,211 @@
+{
+   "date": "2015-03-12T10:55:21+02:00",
+   "title": "ACO Moist",
+   "og_title": "Agigen Case Study - ACO Moist",
+   "pretitle": "Create your own commercial - the biometric way",
+   "small_image": "moist.jpg",
+   "color": "#f4a543",
+   "weight": 0,
+   "video": "aco"
+}
+
+<div class="container">
+    <img src="/img/work/case/aco/header_macbook.png" class="work__header-image">
+</div>
+
+<section class="work__tldr">
+    <div class="container container--tight">
+        <h3 class="work__tldr__pretitle">What it is</h3>
+        <h2>
+            An interactive experience that makes the user cut their own commercial, using the webcam to detect whenever they blink.
+        </h2>
+        <a href="https://www.threefacesofmoist.com" class="btn btn--large">Visit experience</a>
+    </div>
+</section>
+
+<section class="work__section work__section--three-points work__section--aco--three-points">
+    <div class="container">
+
+        <div class="grid">
+            <div class="grid__item lap-and-up-one-third">
+                <strong>Face recognition</strong><br>
+                Let the user use their eyes to interact with the experience.
+                </div><!--
+            --><div class="grid__item lap-and-up-one-third">
+                <strong>The mission</strong><br>
+                Get everyone up to date with ACOs new brand and products.
+            </div><!--
+            --><div class="grid__item lap-and-up-one-third hard--bottom">
+                <strong>Localization</strong><br>
+                Communicate the same experience for three different markets, four languages and two brands.
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="container container--tight work__section hard--bottom">
+    <h2>Background</h2>
+
+    <p>ACO, a Swedish pharmaceutical brand, recently made a complete makeover of their brand to focus more on beauty products and skin care. DDB Stockholm contacted us with an idea that revolved around Moisture. As ACO’s products moisturize the skin, the blink moisturizes your eyes. That was the starting point for this project.</p>
+
+    <p>Three videos were created with similar camera movements but with different shots. One revolved around Moisture, one revolved around Feeling and one focused on Product.</p>
+</section>
+
+
+<div class="container">
+
+    <div class="grid">
+        <div class="grid__item lap-and-up-one-third text--center">
+
+            <video width="480" height="270" autoplay="autoplay" loop="loop" class="aco-case-video">
+                <source src="/img/work/case/aco/videos/moist.mp4"  type="video/mp4">
+                <source src="/img/work/case/aco/videos/moist.webm"  type="video/webm">
+            </video>
+            The Moist
+
+            </div><!--
+        --><div class="grid__item lap-and-up-one-third text--center">
+
+            <video width="480" height="270" autoplay="autoplay" loop="loop" class="aco-case-video">
+                <source src="/img/work/case/aco/videos/skin.mp4"  type="video/mp4">
+                <source src="/img/work/case/aco/videos/skin.webm"  type="video/webm">
+            </video>
+
+            The Skin
+
+        </div><!--
+        --><div class="grid__item lap-and-up-one-third text--center">
+
+            <video width="480" height="270" autoplay="autoplay" loop="loop" class="aco-case-video">
+                <source src="/img/work/case/aco/videos/product.mp4"  type="video/mp4">
+                <source src="/img/work/case/aco/videos/product.webm"  type="video/webm">
+            </video>
+
+            The Product
+
+        </div>
+    </div>
+</div>
+
+
+<section class="container container--tight work__section">
+    <p>When the user blinks we make a cut to another video, and that way every visitor’s experience of the new ACO commercial will be a completely different one. The number of possibilites are astonishing, with 4,724*10<sup>882</sup> possible variations of the video</p>
+
+    <p class="text--center" style="line-height: 2">
+        <strong>
+            3 possible videos every frame <sup>(25 frames * 74 sec)</sup><br>
+            3<sup>25*74</sup> &asymp; 4,724*10<sup>882</sup> possibilites
+        </strong>
+    </p>
+</section>
+
+
+<div class="aco--light-blue-bg">
+    <section class="container container--tight work__section">
+        <h2 class="text--center">How it works</h2>
+
+        <ol class="aco-how-it-works">
+            <li>
+                <div class="grid"><div class="grid__item one-half">
+
+                    <p>After entering the experience, the user is prompted to engage in a physical manner by allowing the browser to gain access to the camera of the computer.</p>
+
+                </div><div class="grid__item one-half">
+
+                    <img src="/img/work/case/aco/howitworks_1.png">
+
+                </div></div>
+            </li>
+            <li>
+                <div class="grid grid--rev"><div class="grid__item one-half">
+
+                    <p>Once the camera has been engaged and the application has access to it the scan for the users eyes begin immediately.
+                    </p>
+
+                </div><div class="grid__item one-half">
+
+                    <img src="/img/work/case/aco/howitworks_2.png">
+
+                </div></div>
+            </li>
+            <li>
+                <div class="grid"><div class="grid__item one-half">
+
+                    <p>This is where the fun begins. Through careful coding and countless hours of tweaking the camera we present the user a custom commercial, cut in real time based on when the user blinks.</p>
+
+                </div><div class="grid__item one-half">
+
+                    <img src="/img/work/case/aco/howitworks_3.png">
+
+                </div></div>
+            </li>
+        </ol>
+    </section>
+</div>
+
+<section class="container container--tight work__section">
+    <h2>Web Workers</h2>
+    <p>A quite old technology that we never really had the chance to play around with in depth are web workers (http://en.wikipedia.org/wiki/Web_worker). Web workers are basically threading in Javascript. In this case we used it to take the heavy CPU load off the main thread that renders the UI.</p>
+
+    <p>The site runs a main thread, and two web workers. One worker handles the face detection; finding a square on the webcam canvas that contains your face. The other worker searches within that square to find the area where your eyes currently are, and communicates that back to the UI thread, which detects the actual blinks.</p>
+
+    <p>The face- and eye recognition are the most expensive algorithms, and the blinking is very cheap in comparison. When we started the project we were thinking about putting the blink detection in it’s own thread, but it was deemed unnecessary.</p>
+
+    some kind of illustration of the threads here?
+</section>
+
+<div class="aco--light-blue-bg">
+    <section class="container container--tight work__section">
+        <h2>Algorithm</h2>
+        <p>The algorithm we used for the face and eye tracking is the <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola-Jones</a> object detection framework, that’s also used in <a href="http://opencv.org/" target="_blank">OpenCV</a> which we used in early testing. We took a great deal of inspiration from <a href="http://trackingjs.com/" target="_blank">tracking.js</a>, but rewrote most of the code to make it work with web workers.</p>
+    </section>
+</div>
+
+
+<section class="container container--tight work__section">
+    <h2>Alternative versions</h2>
+
+    <p>Since the <a href="http://caniuse.com/#feat=stream" target="_blank">getUserMedia API isn’t available</a> in Safari and Internet Explorer we had to come up with another solution for those two browsers. The client was adamant that it work in all browsers, and our only option was Flash, something that we normally don’t do so we were in a bit of a conundrum. With just a few hours till the whole project was taken somewhere else we got a tip about a guy who joined up with our team. It was a great collaboration.</p>
+
+    <p>We also had to create some fallback solution for those who didn’t want to allow access to their webcam or didn’t have one. We used the letter ‘B’ for blink to trigger the swaps between films.</p>
+
+    <p>And the poor sods who just couldn’t handle three videos at once at least got a view of the final cut commercial.</p>
+</section>
+<section class="aco-test text--light text--center">
+    <div class="work__section container">
+    <h2>Try it out</h2>
+    <div class="">
+        <iframe src="//agigen-aco-moist.appspot.com" width="100%" height="340" seamless="seamless" scrolling="no" class="aco-test-frame"></iframe>
+    </div>
+    </div>
+</section>
+
+<section class="container container--tight work__section">
+    <h2>Youtube Gadget</h2>
+    <p>ACO Moist was also the first project in which we developed inside a <a href="https://support.google.com/youtube/answer/1727240?hl=en" target="_blank">Youtube Gadget</a>, a custom tab available for Youtube partners. The development and functionality available is pretty similar to those of Facebook apps.</p>
+</section>
+
+<section class="container container--tight work__section">
+    <h2>Localization</h2>
+    <p>The site is available in four languages; English, Swedish, Norwegian and Finnish - we’re bloody excellent at localization now.</p>
+</section>
+
+
+<div class="aco--light-blue-bg">
+    <section class="container container--tight work__section">
+        <h2>Afterwards</h2>
+        <p>The site has just been launched. We’ll update you later on the success.</p>
+    </section>
+</div>
+
+<section class="section section--center-content work__section work__section--grandfinale work__section--aco--grandfinale">
+    <div class="section__content">
+        <div class="container ">
+            <div class="work__section--grandfinale__copy text--left two-thirds">During development a cat accidentally sat in front of the blink detection. <br><span class="text--dark">It worked =^.^=</span></div>
+        </div>
+    </div>
+</section>
+

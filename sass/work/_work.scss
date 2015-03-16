@@ -2,6 +2,7 @@
     @include vhFejk(50);
 }
 
+
 .content--page-work {
 
     position: relative;
@@ -249,6 +250,19 @@
 }
 
 .page--work {
+    .main-content {
+        a {
+            font-weight: bold;
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+
+
+.page--work {
     &--wheres-the-party {
         .main-header {
             background-color: #333;
@@ -262,7 +276,7 @@
         }
     }
 }
-
+@import "work/aco";
 @import "work/bigblog";
 @import "work/billogram";
 @import "work/build-with-chrome";

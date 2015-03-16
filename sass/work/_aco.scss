@@ -1,0 +1,53 @@
+.page--work--aco-moist {
+    .main-header {
+        background-image: url(/img/work/case/aco/top_fallback.jpg);
+        background-color: #868283;
+    }
+}
+.content--page-work {
+
+    .work__section {
+        &--aco--three-points {
+            background: #83c1ca;
+        }
+
+        &--aco--grandfinale {
+            background: #81BDC4 url(/img/work/case/aco/kitty_bg.jpg) no-repeat center center;
+            background-size: cover;
+        }
+    }
+    .aco--light-blue-bg {
+        background: #e8f5f7;
+        .work__section {
+            background: transparent;
+        }
+    }
+
+
+}
+
+.aco-how-it-works {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .grid {
+        padding-top: 30px;
+    }
+}
+
+.aco-test {
+    background: #333333;
+    .work__section {
+        background: transparent;
+    }
+}
+.aco-test-frame {
+    background: #333333;
+    border: none;
+}
+.aco-case-video {
+    display: block;
+    max-width: 100%;
+}
+
