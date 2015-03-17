@@ -37,6 +37,10 @@
             @media screen and ( max-height: 600px ){
                 padding-top: 160px;
             }
+            @media screen and ( max-width: 590px ){
+                padding-top: 0;
+            }
+
         }
         &__tldr {
             &__pretitle {

@@ -28,16 +28,16 @@
 
         <div class="grid">
             <div class="grid__item lap-and-up-one-third">
-                <strong>Face recognition</strong><br>
-                Let the user use their eyes to interact with the experience.
-                </div><!--
-            --><div class="grid__item lap-and-up-one-third">
                 <strong>The mission</strong><br>
                 Get everyone up to date with ACOs new brand and products.
+                </div><!--
+            --><div class="grid__item lap-and-up-one-third">
+                <strong>Face recognition</strong><br>
+                Let the user use their eyes to interact with the experience.
             </div><!--
             --><div class="grid__item lap-and-up-one-third hard--bottom">
                 <strong>Localization</strong><br>
-                Communicate the same experience for three different markets, four languages and two brands.
+                Communicate the same experience for four languages and two brands.
             </div>
         </div>
 
@@ -60,18 +60,18 @@
     <div class="grid">
         <div class="grid__item lap-and-up-one-third text--center">
 
-            <video width="480" height="270" autoplay="autoplay" loop="loop" class="aco-case-video">
-                <source src="/img/work/case/aco/videos/moist.mp4"  type="video/mp4">
-                <source src="/img/work/case/aco/videos/moist.webm"  type="video/webm">
+            <video width="480" height="270" autoplay="autoplay" loop="loop" poster="/img/work/case/aco/videos/moist.jpg" class="aco-case-video">
+                <source src="/img/work/case/aco/videos/moist.mp4" type="video/mp4">
+                <source src="/img/work/case/aco/videos/moist.webm" type="video/webm">
             </video>
             <span class="epsilon">The Moist</span>
 
             </div><!--
         --><div class="grid__item lap-and-up-one-third text--center">
 
-            <video width="480" height="270" autoplay="autoplay" loop="loop" class="aco-case-video">
-                <source src="/img/work/case/aco/videos/skin.mp4"  type="video/mp4">
-                <source src="/img/work/case/aco/videos/skin.webm"  type="video/webm">
+            <video width="480" height="270" autoplay="autoplay" loop="loop" poster="/img/work/case/aco/videos/skin.jpg" class="aco-case-video">
+                <source src="/img/work/case/aco/videos/skin.mp4" type="video/mp4">
+                <source src="/img/work/case/aco/videos/skin.webm" type="video/webm">
             </video>
 
             <span class="epsilon">The Skin</span>
@@ -79,9 +79,9 @@
         </div><!--
         --><div class="grid__item lap-and-up-one-third text--center">
 
-            <video width="480" height="270" autoplay="autoplay" loop="loop" class="aco-case-video">
-                <source src="/img/work/case/aco/videos/product.mp4"  type="video/mp4">
-                <source src="/img/work/case/aco/videos/product.webm"  type="video/webm">
+            <video width="480" height="270" autoplay="autoplay" loop="loop" poster="/img/work/case/aco/videos/product.jpg" class="aco-case-video">
+                <source src="/img/work/case/aco/videos/product.mp4" type="video/mp4">
+                <source src="/img/work/case/aco/videos/product.webm" type="video/webm">
             </video>
 
             <span class="epsilon">The Product</span>
@@ -152,10 +152,22 @@
 
 <section class="aco-test text--light text--center">
     <div class="work__section container">
-    <h2>Try it out</h2>
-    <div class="">
-        <iframe src="//agigen-aco-moist.appspot.com" width="100%" height="340" seamless="seamless" scrolling="no" class="aco-test-frame"></iframe>
-    </div>
+        <h2>Try it out</h2>
+        <div class="palm-hidden">
+            <iframe src="//agigen-aco-moist.appspot.com" width="100%" height="335" seamless="seamless" scrolling="no" class="aco-test__frame"></iframe>
+        </div>
+
+        <p class="text--center aco-test__disclaimer container container--tight">
+            <span class="palm-hidden">Live camera not working?</span>
+            <span class="lap-and-up-hidden">Browser not supported</span>
+
+
+            <br>
+            This demo requires a webcam and a desktop browser with native webcam support.<br>
+            <img src="/img/work/case/aco/chrome_logo.png" alt="Google Chrome logo">
+
+        </p>
+
     </div>
 </section>
 
@@ -167,7 +179,8 @@
 
     <p>The face- and eye recognition are the most expensive algorithms, and the blinking is very cheap in comparison. When we started the project we were thinking about putting the blink detection in it’s own thread, but it was deemed unnecessary.</p>
 
-    some kind of illustration of the threads here?
+    <img src="/img/work/case/aco/webworkers.png" class="soft--top img--center">
+
 </section>
 
 <div class="aco--light-blue-bg">
@@ -214,8 +227,8 @@
 
 <section class="section section--center-content work__section work__section--grandfinale work__section--aco--grandfinale">
     <div class="section__content">
-        <div class="container ">
-            <div class="work__section--grandfinale__copy text--left two-thirds">During development a cat accidentally sat in front of the blink detection. <br><span class="text--dark">It worked =^.^=</span></div>
+        <div class="container">
+            <div class="work__section--grandfinale__copy text--left palm-text--center lap-and-up-two-thirds">During development a cat accidentally sat in front of the blink detection. <br><span class="text--dark">It worked =^.^=</span></div>
         </div>
     </div>
 </section>

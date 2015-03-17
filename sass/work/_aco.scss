@@ -3,6 +3,10 @@
         background-image: url(/img/work/case/aco/top_fallback.jpg);
         background-color: #868283;
     }
+
+    .content--page-work .work__header-image {
+
+    }
 }
 .content--page-work {
 
@@ -34,23 +38,42 @@
     p {
         margin-left: 60px;
         margin-right: 16px;
+        @include media-query(palm) {
+            margin: 0;
+        }
     }
 
     &__number {
-        display: block;
-        background: #83c1ca;
-        color: white;
+
+        display: inline;
         float: left;
-        line-height: 40px;
-        height: 40px;
-        text-align: center;
-        width: 40px;
-        border-radius: 50%;
+        padding-right: 10px;
+
+        &:after {
+            @include media-query(palm) {
+                content: ".";
+            }
+        }
+
+        @include media-query(lap-and-up) {
+            display: block;
+            background: #83c1ca;
+            color: white;
+            line-height: 40px;
+            height: 40px;
+            text-align: center;
+            padding-right: 0;
+            width: 40px;
+            border-radius: 50%;
+        }
     }
 
 
     &__number , p {
         margin-top: 40px;
+        @include media-query(palm) {
+            margin-top: 20px;
+        }
 
     }
     .grid {
@@ -63,18 +86,41 @@
     .work__section {
         background: transparent;
     }
+    &__frame {
+        background: #333333;
+        border: none;
+    }
+
+    &__disclaimer {
+
+        @include media-query(lap-and-up) {
+            margin-top: 40px;
+            border-top: 1px #656565 solid;
+            padding-top: 60px;
+        }
+
+
+        font-size: 12px !important;
+        color: #656565 !important;
+        font-weight: bold;
+
+        img {
+            margin-top: 20px;
+            width: 40px;
+        }
+    }
 }
-.aco-test-frame {
-    background: #333333;
-    border: none;
-}
+
+
 .aco-case-video {
     display: block;
     max-width: 100%;
 }
 
 .aco-card {
-    min-height: 480px;
+    @include media-query(lap-and-up) {
+        min-height: 480px;
+    }
     background: #f6f6f6;
     padding: 60px 40px 40px;
     margin-top: 30px;
