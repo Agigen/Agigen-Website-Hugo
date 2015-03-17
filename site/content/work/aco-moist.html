@@ -55,7 +55,7 @@
 </section>
 
 
-<div class="container">
+<div class="container ">
 
     <div class="grid">
         <div class="grid__item lap-and-up-one-third text--center">
@@ -64,7 +64,7 @@
                 <source src="/img/work/case/aco/videos/moist.mp4"  type="video/mp4">
                 <source src="/img/work/case/aco/videos/moist.webm"  type="video/webm">
             </video>
-            The Moist
+            <span class="epsilon">The Moist</span>
 
             </div><!--
         --><div class="grid__item lap-and-up-one-third text--center">
@@ -74,7 +74,7 @@
                 <source src="/img/work/case/aco/videos/skin.webm"  type="video/webm">
             </video>
 
-            The Skin
+            <span class="epsilon">The Skin</span>
 
         </div><!--
         --><div class="grid__item lap-and-up-one-third text--center">
@@ -84,7 +84,7 @@
                 <source src="/img/work/case/aco/videos/product.webm"  type="video/webm">
             </video>
 
-            The Product
+            <span class="epsilon">The Product</span>
 
         </div>
     </div>
@@ -104,47 +104,60 @@
 
 
 <div class="aco--light-blue-bg">
-    <section class="container container--tight work__section">
+    <section class="container work__section">
         <h2 class="text--center">How it works</h2>
 
-        <ol class="aco-how-it-works">
+        <ol class="aco-how-it-works three-quarters">
             <li>
-                <div class="grid"><div class="grid__item one-half">
-
-                    <p>After entering the experience, the user is prompted to engage in a physical manner by allowing the browser to gain access to the camera of the computer.</p>
-
-                </div><div class="grid__item one-half">
+                <div class="grid grid--rev"><div class="grid__item lap-and-up-one-half">
 
                     <img src="/img/work/case/aco/howitworks_1.png">
 
+
+                </div><div class="grid__item lap-and-up-one-half">
+
+                    <aside class="aco-how-it-works__number">1</aside>
+                    <p>After entering the experience, the user is prompted to engage in a physical manner by allowing the browser to gain access to the camera of the computer.</p>
+
                 </div></div>
             </li>
             <li>
-                <div class="grid grid--rev"><div class="grid__item one-half">
-
-                    <p>Once the camera has been engaged and the application has access to it the scan for the users eyes begin immediately.
-                    </p>
-
-                </div><div class="grid__item one-half">
+                <div class="grid"><div class="grid__item lap-and-up-one-half">
 
                     <img src="/img/work/case/aco/howitworks_2.png">
 
+                </div><div class="grid__item lap-and-up-one-half">
+
+                    <aside class="aco-how-it-works__number">2</aside>
+                    <p>Once the camera has been engaged and the application has access to it the scan for the users eyes begin immediately.
+                    </p>
+
                 </div></div>
             </li>
             <li>
-                <div class="grid"><div class="grid__item one-half">
-
-                    <p>This is where the fun begins. Through careful coding and countless hours of tweaking the camera we present the user a custom commercial, cut in real time based on when the user blinks.</p>
-
-                </div><div class="grid__item one-half">
+                <div class="grid grid--rev"><div class="grid__item lap-and-up-one-half">
 
                     <img src="/img/work/case/aco/howitworks_3.png">
+
+                </div><div class="grid__item lap-and-up-one-half">
+
+                    <aside class="aco-how-it-works__number">3</aside>
+                    <p>This is where the fun begins. Through careful coding and countless hours of tweaking the camera we present the user a custom commercial, cut in real time based on when the user blinks.</p>
 
                 </div></div>
             </li>
         </ol>
     </section>
 </div>
+
+<section class="aco-test text--light text--center">
+    <div class="work__section container">
+    <h2>Try it out</h2>
+    <div class="">
+        <iframe src="//agigen-aco-moist.appspot.com" width="100%" height="340" seamless="seamless" scrolling="no" class="aco-test-frame"></iframe>
+    </div>
+    </div>
+</section>
 
 <section class="container container--tight work__section">
     <h2>Web Workers</h2>
@@ -164,8 +177,27 @@
     </section>
 </div>
 
+<section class="container container--tight work__section hard--bottom">
 
-<section class="container container--tight work__section">
+    <div class="grid"><div class="grid__item lap-and-up-one-half">
+
+        <div class="aco-card aco-card--youtube">
+            <h2>Youtube Gadget</h2>
+            <p>ACO Moist was also the first project in which we developed inside a <a href="https://support.google.com/youtube/answer/1727240?hl=en" target="_blank">Youtube Gadget</a>, a custom tab available for Youtube partners. The development and functionality available is pretty similar to those of Facebook apps.</p>
+        </div>
+
+    </div><div class="grid__item lap-and-up-one-half">
+
+        <div class="aco-card aco-card--localization">
+            <h2>Localization</h2>
+            <p>The site is available in four languages; English, Swedish, Norwegian and Finnish - we’re bloody excellent at localization now.</p>
+            <img src="/img/work/case/aco/localization.png" class="three-quarters img--center" >
+        </div>
+
+    </div></div>
+</section>
+
+<section class="container container--tight work__section hard--bottom">
     <h2>Alternative versions</h2>
 
     <p>Since the <a href="http://caniuse.com/#feat=stream" target="_blank">getUserMedia API isn’t available</a> in Safari and Internet Explorer we had to come up with another solution for those two browsers. The client was adamant that it work in all browsers, and our only option was Flash, something that we normally don’t do so we were in a bit of a conundrum. With just a few hours till the whole project was taken somewhere else we got a tip about a guy who joined up with our team. It was a great collaboration.</p>
@@ -174,32 +206,11 @@
 
     <p>And the poor sods who just couldn’t handle three videos at once at least got a view of the final cut commercial.</p>
 </section>
-<section class="aco-test text--light text--center">
-    <div class="work__section container">
-    <h2>Try it out</h2>
-    <div class="">
-        <iframe src="//agigen-aco-moist.appspot.com" width="100%" height="340" seamless="seamless" scrolling="no" class="aco-test-frame"></iframe>
-    </div>
-    </div>
-</section>
 
 <section class="container container--tight work__section">
-    <h2>Youtube Gadget</h2>
-    <p>ACO Moist was also the first project in which we developed inside a <a href="https://support.google.com/youtube/answer/1727240?hl=en" target="_blank">Youtube Gadget</a>, a custom tab available for Youtube partners. The development and functionality available is pretty similar to those of Facebook apps.</p>
+    <h2>Afterwards</h2>
+    <p>The site has just been launched. We’ll update you later on the success.</p>
 </section>
-
-<section class="container container--tight work__section">
-    <h2>Localization</h2>
-    <p>The site is available in four languages; English, Swedish, Norwegian and Finnish - we’re bloody excellent at localization now.</p>
-</section>
-
-
-<div class="aco--light-blue-bg">
-    <section class="container container--tight work__section">
-        <h2>Afterwards</h2>
-        <p>The site has just been launched. We’ll update you later on the success.</p>
-    </section>
-</div>
 
 <section class="section section--center-content work__section work__section--grandfinale work__section--aco--grandfinale">
     <div class="section__content">

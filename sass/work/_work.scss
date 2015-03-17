@@ -107,9 +107,15 @@
                 text-align: center;
                 @extend .delta;
                 font-weight: 300;
+
+                .grid__item {
+                    padding-left: 24px+15px;
+                    padding-right: 15px;
+                }
                 @include media-query(palm) {
                     .grid__item {
                         padding-bottom: 30px;
+
                     }
                 }
                 strong {
