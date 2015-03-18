@@ -37,7 +37,7 @@
             </div><!--
             --><div class="grid__item lap-and-up-one-third hard--bottom">
                 <strong>Localization</strong><br>
-                Communicate the same experience for four languages and two brands.
+                Communicate the same experience for two brands and in four languages.
             </div>
         </div>
 
@@ -49,9 +49,9 @@
 <section class="container container--tight work__section hard--bottom">
     <h2>Background</h2>
 
-    <p>ACO, a Swedish pharmaceutical brand, recently made a complete makeover of their brand to focus more on beauty products and skin care. DDB Stockholm contacted us with an idea that revolved around Moisture. As ACO’s products moisturize the skin, the blink moisturizes your eyes. That was the starting point for this project.</p>
+    <p>ACO, a Nordic skincare brand, recently made a complete makeover of their brand to focus more on beauty products and skin care. DDB Stockholm contacted us with an idea that revolved around Moisture. As ACO’s products moisturize the skin, the blink moisturizes your eyes. That was the starting point for this project.</p>
 
-    <p>Three videos were created with similar camera movements but with different shots. One revolved around Moisture, one revolved around Feeling and one focused on Product.</p>
+    <p>Three videos were created with similar camera movements but with different shots. One revolved around the feeling of moisture, one revolved around skin and one focused on the product.</p>
 </section>
 
 
@@ -64,7 +64,7 @@
                 <source src="/img/work/case/aco/videos/moist.mp4" type="video/mp4">
                 <source src="/img/work/case/aco/videos/moist.webm" type="video/webm">
             </video>
-            <span class="epsilon">The Moist</span>
+            <span class="epsilon">The Moisture</span>
 
             </div><!--
         --><div class="grid__item lap-and-up-one-third text--center">
@@ -92,7 +92,7 @@
 
 
 <section class="container container--tight work__section">
-    <p>When the user blinks we make a cut to another video, and that way every visitor’s experience of the new ACO commercial will be a completely different one. The number of possibilites are astonishing, with 4,724*10<sup>882</sup> possible variations of the video</p>
+    <p>When the user blinks we make a cut to another video, and that way every visitor’s experience of the new ACO commercial will be a completely different one. The number of possibilites are astonishing, with 4,724*10<sup>882</sup> possible variations of the video.</p>
 
     <p class="text--center" style="line-height: 2">
         <strong>
@@ -173,11 +173,11 @@
 
 <section class="container container--tight work__section">
     <h2>Web Workers</h2>
-    <p>A quite old technology that we never really had the chance to play around with in depth are web workers (http://en.wikipedia.org/wiki/Web_worker). Web workers are basically threading in Javascript. In this case we used it to take the heavy CPU load off the main thread that renders the UI.</p>
+    <p>A quite old technology that we never really had the chance to play around with in depth are <a href="http://en.wikipedia.org/wiki/Web_worker" target="_blank">web workers</a>. Web workers are basically threading in Javascript. In this case we used it to take the heavy CPU load off the main thread that renders the UI.</p>
 
     <p>The site runs a main thread, and two web workers. One worker handles the face detection; finding a square on the webcam canvas that contains your face. The other worker searches within that square to find the area where your eyes currently are, and communicates that back to the UI thread, which detects the actual blinks.</p>
 
-    <p>The face- and eye recognition are the most expensive algorithms, and the blinking is very cheap in comparison. When we started the project we were thinking about putting the blink detection in it’s own thread, but it was deemed unnecessary.</p>
+    <p>The face and eye recognition are the most expensive algorithms, and the blink detectionf is very cheap in comparison. When we started the project we were thinking about putting the blink detection in it’s own thread, but it was deemed unnecessary.</p>
 
     <img src="/img/work/case/aco/webworkers.png" class="soft--top img--center">
 
@@ -186,7 +186,7 @@
 <div class="aco--light-blue-bg">
     <section class="container container--tight work__section">
         <h2>Algorithm</h2>
-        <p>The algorithm we used for the face and eye tracking is the <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola-Jones</a> object detection framework, that’s also used in <a href="http://opencv.org/" target="_blank">OpenCV</a> which we used in early testing. We took a great deal of inspiration from <a href="http://trackingjs.com/" target="_blank">tracking.js</a>, but rewrote most of the code to make it work with web workers.</p>
+        <p>The algorithm we used for the face and eye tracking is the <a href="http://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework" target="_blank">Viola-Jones</a> object detection framework, that’s also used in <a href="http://opencv.org/" target="_blank">OpenCV</a> which we used in early testing. We took a great deal of inspiration from <a href="http://trackingjs.com/" target="_blank">tracking.js</a> and their implementation, but wrote most of the code to make it work with web workers.</p>
     </section>
 </div>
 
