@@ -115,11 +115,11 @@
             // @include transition(transform 300ms $ease-out-quad 0, opacity 200ms $ease-out-quad 0);
         }
 
-        &--samsung {
+        &--aco {
             .container {
-                margin-top: -50px;
+                margin-top: -142px;
                 @include media-query(palm){
-                    margin-top: -30px;
+                    margin-top: -55px;
                 }
             }
         }
