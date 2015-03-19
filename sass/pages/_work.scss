@@ -164,9 +164,10 @@
         }
     }
 
-    &--build {
-        background-color: #1d55ac;
-        background-image: url(/img/work/google-bg.jpg);
+    &--aco {
+        background-color: #472e5a;
+        background-image: url(/img/work/aco-bg.jpg);
+
         padding: 150px 0 240px;
         .btn {
             @include btnColors(white, #1d55ac);
@@ -175,19 +176,20 @@
             padding: 60px 0 150px;
         }
     }
-    &--sj {
-        background-color: #2e92c4;
-        background-image: url(/img/work/sj-bg.jpg);
-        background-size: cover;
+    &--build {
+        $build-color: #1c5fb3;
+        background-color: $build-color;
+        // background-image: url(/img/work/sj-bg.jpg);
+        // background-size: cover;
         padding: 0 0 30px;
 
-        @include sneddisTop(-4, 175px, #2e92c4);
+        @include sneddisTop(-4, 175px, $build-color);
 
         &:after {
-            background: #2e92c4 url(/img/work/sj-blue.jpg);
+            background: $build-color;
         }
         &__illustration {
-            max-width: 86.5%;
+            max-width: 88%;
             @include media-query(palm){
                 padding-top: 30px;
             }
@@ -197,7 +199,7 @@
             }
         }
         .btn {
-            @include btnColors(white, #2e92c4);
+            @include btnColors(white, $build-color);
         }
         .case--list__contentwrapper {
             top: 20px;
