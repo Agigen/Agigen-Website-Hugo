@@ -178,7 +178,7 @@
 
     <p>The site runs a main thread, and two web workers. One worker handles the face detection; finding a square on the webcam canvas that contains your face. The other worker searches within that square to find the area where your eyes currently are, and communicates that back to the UI thread, which detects the actual blinks.</p>
 
-    <p>The face and eye recognition are the most expensive algorithms, and the blink detectionf is very cheap in comparison. When we started the project we were thinking about putting the blink detection in it’s own thread, but it was deemed unnecessary.</p>
+    <p>The face and eye recognition are the most expensive algorithms, and the blink detection is very cheap in comparison. When we started the project we were thinking about putting the blink detection in it’s own thread, but it was deemed unnecessary.</p>
 
     <img src="/img/work/case/aco/webworkers.png" class="soft--top img--center">
 
