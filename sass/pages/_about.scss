@@ -160,7 +160,8 @@
     &--kiwi:hover &__photoframe:after,
     &--max:hover &__photoframe:after,
     &--daniel:hover &__photoframe:after,
-    &--viktor:hover &__photoframe:after {
+    &--viktor:hover &__photoframe:after ,
+    &--sven:hover &__photoframe:after {
         @include transform(rotate(0deg));
     }
 
