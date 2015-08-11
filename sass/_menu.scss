@@ -118,6 +118,15 @@ html.menu-open {
             font-size: 36px;
         }
 
+        @media screen and ( max-height: 970px ){
+            font-size: 36px;
+            padding: 0.3em 0;
+        }
+        @media screen and ( max-height: 800px ){
+            font-size: 30px;
+        }
+
+
         @include media-query(palm){
             font-size: 22px;
         }
@@ -160,10 +169,14 @@ html.menu-open {
         line-height: 1;
         margin-bottom: 0;
 
+        @media screen and ( max-height: 970px ){
+            padding-top: 25px;
+        }
         @include media-query(palm){
             font-size: 9px;
             padding-top: 10px;
         }
+
 
     }
 }
