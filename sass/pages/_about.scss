@@ -78,7 +78,7 @@
     text-align: center;
     padding-top: 70px;
     @include media-query(palm) {
-        padding-top: 50px;
+        padding-top: 40px;
     }
 
     &__photoframe-wrapper {
@@ -180,10 +180,17 @@
             opacity: 0;
             @include transform(translateY(30px));
         }
+        @include media-query(palm) {
+            padding: 0;
+        }
+
         @include transition(opacity 300ms $ease-out-quad 200ms, transform 300ms $ease-out-quad 200ms);
         &__item {
             width: 46px;
             height: 46px;
+
+
+
             border-radius: 50%;
             display: inline-block;
             margin: 0 5px;
@@ -202,6 +209,12 @@
             &:active {
                 background-color: rgba(255,255,255,0.3);
             }
+
+            @include media-query(palm) {
+                width: 30px;
+                height: 30px;
+                background-size: 15px;
+            }
         }
     }
 
@@ -215,6 +228,10 @@
         text-align: center;
         box-sizing: content-box;
         line-height: 125%;
+
+        @include media-query(palm) {
+            margin-bottom: 0;
+        }
 
         img {
             height: 100%;
@@ -233,6 +250,10 @@
         @extend .delta;
 
         padding-top: 10px;
+        @include media-query(palm) {
+            padding-top: 5px;
+            font-size: 14px;
+        }
         font-weight: 100;
         color: #676767;
         line-height: 125%;
