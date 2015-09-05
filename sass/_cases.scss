@@ -115,9 +115,9 @@
             // @include transition(transform 300ms $ease-out-quad 0, opacity 200ms $ease-out-quad 0);
         }
 
-        &--aco {
+        &--suissemania {
             .container {
-                margin-top: -142px;
+                margin-top: -90px;
                 @include media-query(palm){
                     margin-top: -55px;
                 }
