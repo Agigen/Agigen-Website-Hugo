@@ -1,0 +1,118 @@
+$suisse-red: #d33b37;
+.page--work--suisse-mania {
+    .main-header {
+        background: #DC9A5D url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
+        background-size: cover;
+    }
+}
+.content--page-work ,
+.content--page-work .work__tldr {
+    .btn--suisse {
+        border-radius: 8px;
+        background-color: $suisse-red;
+        color: #fff;
+        border: none;
+        &:hover {
+            background-color: darken($suisse-red, 10%);
+            color: #fff;
+        }
+    }
+
+
+    .section-intro-headline {
+        @extend .epsilon;
+        color: $suisse-red;
+    }
+    .section-pois-headline {
+        @extend .epsilon;
+        color: #0b83fb;;
+    }
+
+
+    .suisse-landscape {
+        padding: 0;
+        background: transparent url(/img/work/case/suisse/suissem_world.png);
+        background-size: cover;
+        img {
+            display: block;
+        }
+    }
+
+    .section-maina-everywhere-headline {
+        @extend .epsilon;
+        color: $suisse-red;
+    }
+}
+
+
+.sm-padding--left {
+    @include media-query(lap-and-up) {
+        padding-left: 60px;
+    }
+}
+.sm-padding--right {
+    @include media-query(lap-and-up) {
+        padding-right: 60px;
+    }
+}
+
+
+.video-with-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+}
+    .video-with-image__video {
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #f0f0f0;
+    }
+    .video-with-image__image {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        @include transform(translate(50%, -50%));
+    }
+        .video-with-image__image--left {
+            right: auto;
+            left: 0;
+            @include transform(translate(-50%, -50%));
+        }
+
+
+.sound-button {
+    border: 2px solid #0b83fb;
+    text-transform: uppercase;
+    border-radius: 8px;
+    color: #0b83fb;
+    font-size: 16px;
+    display: inline-block;
+    padding: 16px 30px;
+    min-width: 206px;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    &:hover {
+        background: #0b83fb;
+        color: #fff;
+        .sound-button__flag {
+            &:before {
+                content: ' ';
+                display: block;
+                width: 20px;
+                height: 20px;
+                background: red;
+            }
+        }
+    }
+}
+    .sound-button__flag {
+        position: relative;
+        vertical-align: middle;
+        top: -2px;
+        padding-right: 5px;
+    }
