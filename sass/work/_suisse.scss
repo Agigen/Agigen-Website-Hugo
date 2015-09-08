@@ -3,6 +3,30 @@ $suisse-red: #d33b37;
     .main-header {
         background: #DC9A5D url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
         background-size: cover;
+        color: #333;
+    }
+
+    .main-header__pretitle {
+        color: #333;
+    }
+    .main-header__title {
+        background: transparent url(/img/work/case/suisse/sm-header-logo.svg) no-repeat top center;
+        background-size: 100%;
+        display: block;
+        width: 66%;
+        padding-bottom: 9%; /* Correct aspect ratio for logo 66:9 */
+        overflow: hidden;
+        font-size: 1px;
+        text-indent: -1000px;
+        margin: 0 auto;
+
+    }
+
+    .main-content .container {
+        max-width: 1120px;
+    }
+    .main-content .container--tight {
+        max-width: 720px;
     }
 }
 .content--page-work ,
@@ -19,22 +43,62 @@ $suisse-red: #d33b37;
     }
 
 
+    .suisse-headline-darkbold {
+        @extend .gamma;
+        color: #333;
+        font-weight: bold;
+    }
+    .suisse-thin-gamma {
+        @extend .gamma;
+        font-weight: 100;
+    }
+
+    .suisse-content-image {
+        @include media-query(palm) {
+            width: 60%;
+            margin-bottom: 30px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
     .section-intro-headline {
         @extend .epsilon;
         color: $suisse-red;
     }
+
+
+
+    .section-background-image {
+
+    }
     .section-pois-headline {
         @extend .epsilon;
-        color: #0b83fb;;
+        color: #0b83fb;
     }
-
+    .section-pois-video-image {
+        .video-with-image__image--left {
+            right: 0;
+            left: auto;
+            @include transform(translate(50%, -50%));
+        }
+    }
 
     .suisse-landscape {
         padding: 0;
-        background: transparent url(/img/work/case/suisse/suissem_world.png);
+        background: transparent url(/img/work/case/suisse/suissem_world.jpg);
         background-size: cover;
         img {
             display: block;
+            width: 95%;
+            margin: 0 auto;
+        }
+    }
+
+    .suisse-objects-image {
+        @include media-query(lap-and-up) {
+            margin: 0 auto 100px;
         }
     }
 
@@ -42,17 +106,46 @@ $suisse-red: #d33b37;
         @extend .epsilon;
         color: $suisse-red;
     }
+
+
+    .section-ground-blue {
+        background: #0b83fb;
+        color: #fff;
+    }
+
+    .suisse-world-images {
+        margin: 80px 0;
+        img {}
+    }
+
+
+    .suisse-version {
+        text-align: center;
+    }
+        .suisse-version__image {}
+        .suisse-version__title {
+            text-transform: uppercase;
+            padding: 30px 0;
+        }
+        .suisse-version__desc {}
+
+    .suisse-animals {
+        @include media-query(lap-and-up) {
+            margin: 100px auto;
+        }
+    }
+
 }
 
 
 .sm-padding--left {
     @include media-query(lap-and-up) {
-        padding-left: 60px;
+        padding-left: 110px;
     }
 }
 .sm-padding--right {
     @include media-query(lap-and-up) {
-        padding-right: 60px;
+        padding-right: 110px;
     }
 }
 
@@ -61,6 +154,13 @@ $suisse-red: #d33b37;
     position: relative;
     width: 100%;
     padding-bottom: 100%;
+    margin: 0 auto;
+
+    @include media-query(palm) {
+        width: 75%;
+        padding-bottom: 75%;
+        margin-bottom: 30px;
+    }
 }
     .video-with-image__video {
         border-radius: 50%;
@@ -77,6 +177,9 @@ $suisse-red: #d33b37;
         right: 0;
         top: 50%;
         @include transform(translate(50%, -50%));
+        @include media-query(palm) {
+            width: 35%;
+        }
     }
         .video-with-image__image--left {
             right: auto;
