@@ -1,7 +1,7 @@
 $suisse-red: #d33b37;
 .page--work--suisse-mania {
     .main-header {
-        background: #DC9A5D url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
+        background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
         background-size: cover;
         color: #333;
     }
@@ -108,10 +108,23 @@ $suisse-red: #d33b37;
     }
 
 
-    .section-ground-blue {
-        background: #0b83fb;
-        color: #fff;
+    .section-production-blue {
+        background: #0b83fb url(/img/work/case/suisse/suissem_break-production.jpg) no-repeat top center;
+        background-size: cover;
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
     }
+        .section-production-blue__headline {
+            @extend .gamma;
+            color: #fff;
+            font-weight: bold;
+
+        }
+        .section-production-blue__desc {
+            color: #fff;
+        }
 
     .suisse-world-images {
         margin: 80px 0;
@@ -135,6 +148,23 @@ $suisse-red: #d33b37;
         }
     }
 
+
+
+    .suisse-team {
+        text-align: center;
+    }
+        .suisse-team__badge-link {}
+        .suisse-team__badge {
+            width: 35%;
+            margin: 0 auto;
+        }
+        .suisse-team__headline {
+            color: #333;
+            padding: 30px 0;
+            text-transform: uppercase;
+        }
+        .suisse-team__desc {}
+        .suisse-team__link {}
 }
 
 
