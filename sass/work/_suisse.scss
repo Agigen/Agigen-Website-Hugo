@@ -1,4 +1,18 @@
 $suisse-red: #d33b37;
+
+// Styling of the case on the case study list page
+.case--list--suisse {
+    background-color: #4D5231;
+    background-image: url(/img/work/case/suisse/suissem_casebackground.jpg);
+
+    padding: 150px 0 240px;
+    .btn {
+        @include btnColors(white, #1d55ac);
+    }
+    @include media-query(palm){
+        padding: 60px 0 150px;
+    }
+}
 .page--work--suisse-mania {
     .main-header {
         background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
@@ -62,20 +76,17 @@ $suisse-red: #d33b37;
         }
     }
 
-    .section-intro-headline {
-        @extend .epsilon;
-        color: $suisse-red;
-    }
-
-
-
-    .section-background-image {
-
-    }
-    .section-pois-headline {
+    .suisse-small-headline {
         @extend .epsilon;
         color: #0b83fb;
+        padding-bottom: 10px;
     }
+        .suisse-small-headline--red {
+            color: $suisse-red;
+
+        }
+
+
     .section-pois-video-image {
         .video-with-image__image--left {
             right: 0;
@@ -206,6 +217,7 @@ $suisse-red: #d33b37;
         right: 0;
         top: 50%;
         @include transform(translate(50%, -50%));
+        width: 22%;
         @include media-query(palm) {
             width: 35%;
         }
