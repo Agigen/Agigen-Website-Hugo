@@ -41,6 +41,14 @@ $suisse-red: #d33b37;
     .main-content .container--tight {
         max-width: 720px;
     }
+
+    .grid.grid--suisse {
+        margin-left: -40px;
+        > .grid__item {
+            padding-left: 40px;
+
+        }
+    }
 }
 .content--page-work ,
 .content--page-work .work__tldr {
@@ -137,7 +145,6 @@ $suisse-red: #d33b37;
         }
 
     .suisse-world-images {
-        margin: 80px 0;
         img {}
     }
 
@@ -153,9 +160,6 @@ $suisse-red: #d33b37;
         .suisse-version__desc {}
 
     .suisse-animals {
-        @include media-query(lap-and-up) {
-            margin: 100px auto;
-        }
     }
 
 
