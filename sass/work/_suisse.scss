@@ -98,14 +98,6 @@ $suisse-red: #d33b37;
         }
 
 
-    .section-pois-video-image {
-        .video-with-image__image--left {
-            right: 0;
-            left: auto;
-            @include transform(translate(50%, -50%));
-        }
-    }
-
     .suisse-landscape {
         padding: 0;
         background: transparent url(/img/work/case/suisse/suissem_world.jpg);
@@ -225,19 +217,6 @@ $suisse-red: #d33b37;
         height: 480px;
         margin-bottom: 50px;
     }
-}
-
-.suisse-balloon {
-    @include animation(suisseballoon 4.0s linear);
-    @include animation-iteration-count(infinite);
-}
-@include keyframes(suisseballoon) {
-  0%, 100% {
-    @include transform(translateY(-10%));
-  }
-  50% {
-    @include transform(translateY(5%));
-  }
 }
 
 
