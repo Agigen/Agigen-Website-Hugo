@@ -216,12 +216,12 @@ $suisse-red: #d33b37;
 
 .sm-padding--left {
     @include media-query(lap-and-up) {
-        padding-left: 110px;
+        padding-left: 90px;
     }
 }
 .sm-padding--right {
     @include media-query(lap-and-up) {
-        padding-right: 110px;
+        padding-right: 90px;
     }
 }
 
