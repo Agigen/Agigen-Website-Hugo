@@ -2,22 +2,25 @@ $suisse-red: #d33b37;
 
 // Styling of the case on the case study list page
 .case--list--suisse {
-    background-color: #4D5231;
-    background-image: url(/img/work/case/suisse/suissem_casebackground.jpg);
+    background: #d43b38;
+    @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
+    @include sneddisTop(-3, 80px, #ffffff);
 
-    padding: 150px 0 240px;
+    padding: 140px 0 120px;
     .btn {
         @include btnColors(white, #1d55ac);
     }
     @include media-query(palm){
-        padding: 60px 0 150px;
+        padding: 80px 0 60px;
     }
 }
 .page--work--suisse-mania {
     .main-header {
-        background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
-        background-size: cover;
-        color: #333;
+        // background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
+        // background-size: cover;
+            @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
+
+        color: #fff;
     }
 
     .work__tldr {
@@ -36,7 +39,7 @@ $suisse-red: #d33b37;
     }
 
     .main-header__pretitle {
-        color: #333;
+        color: #fff;
     }
     .main-header__title {
         background: transparent url(/img/work/case/suisse/sm-header-logo.svg) no-repeat top center;
@@ -112,20 +115,6 @@ $suisse-red: #d33b37;
             color: $suisse-red;
 
         }
-
-
-    .suisse-landscape {
-        padding: 0;
-        background: transparent url(/img/work/case/suisse/suissem_world.jpg);
-        background-size: cover;
-        margin-top: 60px;
-        margin-bottom: 80px;
-        img {
-            display: block;
-            width: 95%;
-            margin: 0 auto;
-        }
-    }
 
     .suisse-objects-image {
         @include media-query(lap-and-up) {
@@ -299,7 +288,7 @@ $suisse-red: #d33b37;
 
     &:hover {
         background: #0b83fb;
-        color: #fff;
+        color: #fff !important;
         .sound-button__flag {
             &:before {
                 content: ' ';
