@@ -214,15 +214,28 @@ $suisse-red: #d33b37;
     }
 }
 
+
+.suisse-goo {
+    position: relative;
+    &:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 78.5%;
+        background: transparent;
+    }
+}
 .suisse-goo-iframe {
     width: 100%;
     border: none;
     height: 600px;
     background: white;
-    margin-bottom: 100px;
+
     @include media-query(palm) {
-        height: 480px;
-        margin-bottom: 50px;
+        height: 450px;
     }
 }
 
