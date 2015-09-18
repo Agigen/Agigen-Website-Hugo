@@ -4,7 +4,7 @@ $suisse-red: #d33b37;
 .case--list--suisse {
     background: #d43b38;
     @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
-    @include sneddisTop(-3, 80px, #ffffff);
+    @include sneddisTop(-3, 140px, #ffffff);
 
     padding: 140px 0 120px;
     .btn {
@@ -16,9 +16,8 @@ $suisse-red: #d33b37;
 }
 .page--work--suisse-mania {
     .main-header {
-        // background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat bottom center;
-        // background-size: cover;
-            @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
+        background: #f9f9f9 url(/img/work/case/suisse/header-bg.jpg) no-repeat center center;
+            // @include linear-gradient(rgba(212,59,56,1), rgba(231,56,39,1));
 
         color: #fff;
     }
